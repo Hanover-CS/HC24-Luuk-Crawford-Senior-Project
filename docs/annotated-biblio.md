@@ -1,6 +1,6 @@
 # Biblio
 
-### Example 1: Wendy's
+### Example 1: [Wendy's](https://order.wendys.com/categories?site=menu&lang=en_US)
 
 Wendy's is a popular fast food restaurant that has ordering online capabilities, ranging from ordering ahead of time for dine-in, takeout, or even delivery.
 As seen below, the mobile browser and app look pretty much the same, with needing to click an item to customize and add to the cart. With the PC browser, you can click add to cart, and it will give the option between combo or single item.
@@ -15,6 +15,8 @@ Wendy's also has a version on the [android][2] and [apple][3] app stores.
 
 #### Thoughts:
   Wendy's layout is one way I could try and organize the app. Having the menu items in different slots would likely make it easier to make menu changes in the future. Having this much fancy-looking customization to orders and fancy looking interface is something I don't think I should aim for in this amount of time. I may make the menu a scroll of the options. Toppings and such can show up after selecting an item, similar to the app store image with checkboxes to optional toppings and such. Pictures would be nice, so I would add some temporary ones. I might prefer a smaller layout. It would be cool if I could just emulate the current ordering sheets into digital format since people are already familiar with those.
+
+### Example 2: [Chipotle](https://www.chipotle.com/) 
 
 
 [1]: https://order.wendys.com/categories?site=menu&lang=en_US
