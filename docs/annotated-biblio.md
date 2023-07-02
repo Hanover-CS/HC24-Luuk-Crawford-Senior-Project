@@ -20,6 +20,10 @@ Wendy's also has a version on the [android][2] and [apple][3] app stores.
 
 ### Example 2: [Chipotle](https://www.chipotle.com/) 
 
+Chipotle is a good example because they have food similar to the underground such as their [quesadilla and burrito](https://github.com/Hanover-CS/HC24-Luuk-Crawford-Senior-Project/assets/32851596/353d2fc6-e825-4613-a81b-7232145e9a7b). For example, on the burrito up to 2 meats can be selected, and if 2 are selected they are [half portions visually](https://github.com/Hanover-CS/HC24-Luuk-Crawford-Senior-Project/assets/32851596/fbe3fa9d-8ac7-4149-b638-e803b37f4629).
+
+
+
 [1]: https://order.wendys.com/categories?site=menu&lang=en_US
 [2]: https://play.google.com/store/apps/details?id=com.wendys.nutritiontool
 [3]: https://apps.apple.com/us/app/wendys/id540518599
