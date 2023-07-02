@@ -22,6 +22,8 @@ Wendy's also has a version on the [android][2] and [apple][3] app stores.
 
 Chipotle is a good example because they have food similar to the underground such as their [quesadilla and burrito options, viewed from the mobile browser](https://github.com/Hanover-CS/HC24-Luuk-Crawford-Senior-Project/assets/32851596/353d2fc6-e825-4613-a81b-7232145e9a7b). For example, on the burrito up to 2 meats can be selected, and if 2 are selected they are [half portions visually](https://github.com/Hanover-CS/HC24-Luuk-Crawford-Senior-Project/assets/32851596/fbe3fa9d-8ac7-4149-b638-e803b37f4629).
 
+#### Thoughts:
+  I like the process of Chipotle's ordering more than Wendy's, because instead of assuming what people want it requires the person to select what should be added to the order, the same way the [current ordering sheets](https://github.com/Hanover-CS/HC24-Luuk-Crawford-Senior-Project/assets/32851596/19be7b5f-ed5d-42bb-882a-7042fcce4b22) work.
 
 
 [1]: https://order.wendys.com/categories?site=menu&lang=en_US
