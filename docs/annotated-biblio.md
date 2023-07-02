@@ -1,5 +1,5 @@
 Wendy's is a popular fast food resturant that has ordering early capabilities. Ranging from ordering ahead of time for dine in, takeout, or even delivery.
-As seen below, the mobile browser and app look pretty much the same with needing to click an item to customize and add to cart. The PC browser you can click add to cart and it will give the option between combo or single item. Any other customizations must be added when viewing the cart.
+As seen below, the mobile browser and app look pretty much the same with needing to click an item to customize and add to cart. The PC browser you can click add to cart and it will give the option between combo or single item.
 
 [Wendy's browser][1] example:
 ![wendysOrderPC](https://github.com/Hanover-CS/HC24-Luuk-Crawford-Senior-Project/assets/32851596/c66e8ef7-ba24-4c58-b5c0-6485cb900e8d)
