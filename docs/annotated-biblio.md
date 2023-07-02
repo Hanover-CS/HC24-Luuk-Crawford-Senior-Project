@@ -2,7 +2,7 @@
 
 ### Example 1: Wendy's
 
-Wendy's is a popular fast food restaurant that has ordering early capabilities, ranging from ordering ahead of time for dine-in, takeout, or even delivery.
+Wendy's is a popular fast food restaurant that has ordering online capabilities, ranging from ordering ahead of time for dine-in, takeout, or even delivery.
 As seen below, the mobile browser and app look pretty much the same, with needing to click an item to customize and add to the cart. With the PC browser, you can click add to cart, and it will give the option between combo or single item.
 
 [Wendy's browser][1] example:
