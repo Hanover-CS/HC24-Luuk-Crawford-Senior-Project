@@ -16,10 +16,9 @@ Wendy's also has a version on the [android][2] and [apple][3] app stores.
 
 
 #### Thoughts:
-  Wendy's layout is one way I could try and organize the app. Having the menu items in different slots would likely make it easier to make menu changes in the future. Having this much fancy-looking customization to orders and fancy looking interface is something I don't think I should aim for in this amount of time. I may make the menu a scroll of the options. Toppings and such can show up after selecting an item, similar to the app store image with checkboxes to optional toppings and such. Pictures would be nice, so I would add some temporary ones. I might prefer a smaller layout. It would be cool if I could just emulate the current ordering sheets into digital format since people are already familiar with those.
+  Wendy's layout is one way I could try and organize the app. Having the menu items in different slots would likely make it easier to make menu changes in the future. Having this much fancy-looking customization to orders and fancy looking interface is something I don't think I should aim for in this amount of time. I may make the menu a scroll of the options. Toppings and such can show up after selecting an item, similar to the app store image with checkboxes to optional toppings and such. Pictures would be nice, so I would add some temporary ones. I might prefer a smaller layout. It would be cool if I could just emulate the [current ordering sheets](https://github.com/Hanover-CS/HC24-Luuk-Crawford-Senior-Project/assets/32851596/19be7b5f-ed5d-42bb-882a-7042fcce4b22) into digital format since people are already familiar with those.
 
 ### Example 2: [Chipotle](https://www.chipotle.com/) 
-
 
 [1]: https://order.wendys.com/categories?site=menu&lang=en_US
 [2]: https://play.google.com/store/apps/details?id=com.wendys.nutritiontool
