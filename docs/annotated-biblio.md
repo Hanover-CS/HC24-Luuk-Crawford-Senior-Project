@@ -11,7 +11,7 @@ As seen below, the mobile browser and app look pretty much the same, with needin
 [Wendy's browser][1] example (view from mobile):
 [Wendy's mobile browser view screenshot](https://github.com/Hanover-CS/HC24-Luuk-Crawford-Senior-Project/assets/32851596/2c80eb13-3fe6-4da7-85f0-2dbb5049ad71)
 
-Wendy's also has a version on the [android][2] and [apple][3] app stores.
+Wendy's also has a version on the [Google Play][2] and [Apple's app store][3].
 [Wendy's app view screenshot](https://github.com/Hanover-CS/HC24-Luuk-Crawford-Senior-Project/assets/32851596/67cf3bfd-43c7-40b5-a942-7f0cfe5f7462)
 
 
