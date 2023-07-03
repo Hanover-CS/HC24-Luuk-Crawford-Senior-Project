@@ -31,7 +31,7 @@ Taco Bell also has a burritos and most orders are customizable. Items can be tak
 
 
 ### Thoughts:
-  There is a lot of customization that the underground doesn't currently offer. I don't expect to reach this level of customization because I don't think I'll have time to add a quantity option if i'm not sure how much i'll be able to complete anyway as one person.
+  There is a lot of customization that the underground doesn't currently offer. I don't expect to reach this level of customization because I don't think I'll have time to add a quantity or on the side option. Maybe I could have a spot for people to add a note on the order but that would make things more difficult than it already is.
 
 [1]: https://order.wendys.com/categories?site=menu&lang=en_US
 [2]: https://play.google.com/store/apps/details?id=com.wendys.nutritiontool
