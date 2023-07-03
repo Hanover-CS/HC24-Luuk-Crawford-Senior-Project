@@ -27,7 +27,8 @@ Chipotle is a good example because they have food similar to the underground suc
 
 ### Example 3: [Taco Bell](https://www.tacobell.com/food)
 
-Taco Bell also has a burritos and most orders are customizable. Items can be taken as is or customized to the customer's liking. Taco bell seems to have more customization than the other competitors. They let the customer choose how much of each ingredient and swap them with others. They also inude the option to put some of the topping options on the side.
+Taco Bell also has a burritos and most orders are customizable. Items can be taken as is or customized to the customer's liking. Taco bell seems to have more customization than the other competitors. They let the customer choose how much of each ingredient and swap them with others. For example the [beef slot has 10 options](https://github.com/Hanover-CS/HC24-Luuk-Crawford-Senior-Project/assets/32851596/5be3b2bd-814c-4f92-b772-28643185b69c). They also inude the option to put some of the topping options on the side.
+
 
 ### Thoughts:
   There is a lot of customization that the underground doesn't currently offer. I don't expect to reach this level of customization because I don't think I'll have time to add a quantity option if i'm not sure how much i'll be able to complete anyway as one person.
