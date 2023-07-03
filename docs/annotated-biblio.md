@@ -1,5 +1,7 @@
 # Biblio
 
+## Similar apps
+
 ### Example 1: [Wendy's](https://order.wendys.com/categories?site=menu&lang=en_US)
 
 Wendy's is a popular fast food restaurant that has ordering online capabilities, ranging from ordering ahead of time for dine-in, takeout, or even delivery.
@@ -32,6 +34,12 @@ Taco Bell also has a burritos and most orders are customizable. Items can be tak
 
 ### Thoughts:
   There is a lot of customization that the underground doesn't currently offer. I don't expect to reach this level of customization because I don't think I'll have time to add a quantity or on the side option. Maybe I could have a spot for people to add a note on the order but that would make things more difficult than it already is.
+
+
+## Section 2
+
+### Something test 123
+  Hi
 
 [1]: https://order.wendys.com/categories?site=menu&lang=en_US
 [2]: https://play.google.com/store/apps/details?id=com.wendys.nutritiontool
