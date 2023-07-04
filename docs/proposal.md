@@ -21,3 +21,7 @@ My intention for this project is to create a way for people to order ahead of ti
 #### 3. Chef's screen
    
       - a way to view orders in progress (atleast for the chef)
+
+---
+
+### Competitor example
