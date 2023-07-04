@@ -4,6 +4,7 @@ My intention for this project is to create a way for people to order ahead of ti
 
 ### Main Features
 1. Order an item
+   
    a. a menu to select items from
    b. customize item's toppings
    c. confirm and submit
