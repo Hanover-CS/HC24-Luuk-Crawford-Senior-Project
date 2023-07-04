@@ -5,14 +5,19 @@ My intention for this project is to create a way for people to order ahead of ti
 ### Main Features
 1. Order an item
    
-   a. a menu to select items from
+   a. menu to select items from
+   
    b. customize item's toppings
+   
    c. confirm and submit
+   
 
 #### Once that works, if I have time it would be nice to also impliment...
 
 2. A server
+   
    a. store orders
 
-3. Chef's screen
-   a. a way to view orders in progress (atleast the chef and maybe customer)
+4. Chef's screen
+   
+   a. way to view orders in progress (atleast the chef and maybe customer)
