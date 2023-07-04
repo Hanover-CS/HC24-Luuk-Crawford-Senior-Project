@@ -8,7 +8,7 @@ My intention for this project is to create a way for people to order ahead of ti
    b. customize item's toppings
    c. confirm and submit
 
-Once that works, if I have time it would be nice to also impliment...
+#### Once that works, if I have time it would be nice to also impliment...
 
 2. A server
    a. store orders
