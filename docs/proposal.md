@@ -28,5 +28,5 @@ My intention for this project is to create a way for people to order ahead of ti
 
 ---
 
-=
 ### Competitor example
+
