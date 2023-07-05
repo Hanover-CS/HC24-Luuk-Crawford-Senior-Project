@@ -22,6 +22,10 @@ My intention for this project is to create a way for people to order ahead of ti
    
       - a way to view orders in progress (atleast for the chef)
 
+#### 4. Other
+      - login using hanover microsoft email
+      - push notifications for customers to know when order is complete.
+
 ---
 
 =
