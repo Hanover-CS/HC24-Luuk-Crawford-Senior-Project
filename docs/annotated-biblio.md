@@ -38,8 +38,20 @@ Taco Bell also has a burritos and most orders are customizable. Items can be tak
 
 ## Language & technology options
 
-### Kotlin
-  start
+### web app development
+Web app development would allow any web using device to use the app.
+
+Downside is I would need to spend a lot more time to get started because I don’t have experience with this and would likely run into more issues starting from nothing. I would rather resume learning mobile app development than start something from scratch for a solo project.
+
+### multiplatform development
+Multiplatform development means code I make should work for multiple platforms. If I pursue mobile development, this means when I’m testing and working with an Android, it is coded in an environment that should also work with iOS devices. This makes supporting multiple platforms easier as I wouldn't need to learn and use two different languages at a time for iOS and Android. 
+
+#### Kotlin
+During May term we used Kotlin for android development. Kotlin is available for mobile multiplatform development. However, multiplatform development for mobile with Kotlin is in beta which may come with some unexpected problems during development. It's noted as ["almost stable"](https://kotlinlang.org/docs/multiplatform-mobile-getting-started.html) at the moment.
+
+
+
+
 
 [1]: https://order.wendys.com/categories?site=menu&lang=en_US
 [2]: https://play.google.com/store/apps/details?id=com.wendys.nutritiontool
