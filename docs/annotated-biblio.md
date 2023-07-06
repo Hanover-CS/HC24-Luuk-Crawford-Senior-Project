@@ -49,9 +49,10 @@ Multiplatform development means code I make should work for multiple platforms. 
 I intend to stick to mobile development for this project. Taking the multiplatform development path instead of web app means I have a better chance of getting this program work, and hopefully work on both android and iOS.
 
 #### Kotlin
-During May term we used Kotlin for android development. Kotlin is available for mobile multiplatform development as well. Though we only used Android during that class. 
+Kotlin is a multiplatform programming language that ["used by over 60% of professional Android developers"](https://developer.android.com/kotlin).
+I have some familiarity with Kotlin as during May term I used Kotlin for my first android development. 
 
-One downside to Kotlin is that multiplatform development for mobile is in beta which may come with some unexpected problems during development. It's noted as ["almost stable"](https://kotlinlang.org/docs/multiplatform-mobile-getting-started.html) at the moment.
+One downside to Kotlin is that multiplatform development for mobile is in beta which may come with some unexpected problems during development. It's noted as ["almost stable"](https://kotlinlang.org/docs/multiplatform-mobile-getting-started.html) at the moment. This means I should be able to get it working on Android, but having it also work on iOS may have some unexpected barriers. 
 
 
 
