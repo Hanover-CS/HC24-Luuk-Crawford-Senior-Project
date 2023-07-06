@@ -51,13 +51,9 @@ I intend to stick to mobile development for this project. Taking the multiplatfo
 #### Kotlin
 Kotlin is a multiplatform programming language that ["used by over 60% of professional Android developers"](https://developer.android.com/kotlin). And Kotlin has been [Google's top pick for Android development](https://techcrunch.com/2022/08/18/five-years-later-google-is-still-all-in-on-kotlin/) as well.
 
-I have some familiarity with Kotlin as during May term I used Kotlin for my first android development. 
+I have some familiarity with Kotlin as during May term we used Kotlin for our first android development. 
 
-One downside to Kotlin is that multiplatform development for mobile is in beta which may come with some unexpected problems during development if I wanted to support iOS as well. It's noted as [almost stable](https://kotlinlang.org/docs/multiplatform-mobile-getting-started.html) at the moment. This means I should be able to get it working on Android, and having it also work on iOS can work but may have some unexpected barriers. 
-
-#### Java
-Another option would be Java
-
+One downside to Kotlin is that multiplatform development for mobile is in beta which may come with some unexpected problems during development if I wanted to support iOS as well. It's noted as [almost stable](https://kotlinlang.org/docs/multiplatform-mobile-getting-started.html) at the moment. This means I should be able to get it working on Android, having it also work on iOS can work but may have some unexpected barriers. 
 
 [1]: https://order.wendys.com/categories?site=menu&lang=en_US
 [2]: https://play.google.com/store/apps/details?id=com.wendys.nutritiontool
