@@ -43,19 +43,20 @@ Web app development would allow any web using device to use the app.
 
 Downside is I would need to spend a lot more time to get started because I don’t have experience with this and would likely run into more issues starting from nothing. I would rather resume learning mobile app development than start something from scratch for a solo project.
 
-### Multiplatform development
+### Multiplatform mobile development
 Multiplatform development means code I make should work for multiple platforms. If I pursue mobile development, this means when I’m testing and working with an Android, it is coded in an environment that should also work with iOS devices. This makes supporting multiple platforms easier as I wouldn't need to learn and use two different languages at a time for iOS and Android. 
 
 I intend to stick to mobile development for this project. Taking the multiplatform development path instead of web app means I have a better chance of getting this program work, and hopefully work on both android and iOS.
 
 #### Kotlin
-Kotlin is a multiplatform programming language that ["used by over 60% of professional Android developers"](https://developer.android.com/kotlin).
+Kotlin is a multiplatform programming language that ["used by over 60% of professional Android developers"](https://developer.android.com/kotlin). And Kotlin has been [Google's top pick for Android development](https://techcrunch.com/2022/08/18/five-years-later-google-is-still-all-in-on-kotlin/) as well. _____WIP
+
 I have some familiarity with Kotlin as during May term I used Kotlin for my first android development. 
 
-One downside to Kotlin is that multiplatform development for mobile is in beta which may come with some unexpected problems during development. It's noted as ["almost stable"](https://kotlinlang.org/docs/multiplatform-mobile-getting-started.html) at the moment. This means I should be able to get it working on Android, but having it also work on iOS may have some unexpected barriers. 
+One downside to Kotlin is that multiplatform development for mobile is in beta which may come with some unexpected problems during development if I wanted to support iOS as well. It's noted as ["almost stable"](https://kotlinlang.org/docs/multiplatform-mobile-getting-started.html) at the moment. This means I should be able to get it working on Android, and having it also work on iOS can work but may have some unexpected barriers. 
 
-
-
+#### Java
+Another option would be Java
 
 
 [1]: https://order.wendys.com/categories?site=menu&lang=en_US
