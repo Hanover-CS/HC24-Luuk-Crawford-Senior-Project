@@ -29,3 +29,13 @@ My intention for this project is to create a way for people to order ahead of ti
 ---
 
 ### Comparable solution
+
+#### [Chipotle](https://www.chipotle.com/)
+
+Chipotle on android loads to a [welcome login screen](https://github.com/Hanover-CS/HC24-Luuk-Crawford-Senior-Project/assets/32851596/b88ffab7-d7fd-40e7-ab57-f08167a983dc). Though it can be skipped to view the menu and start to fill a cart after choosing a location.
+I will make a landing screen that has a menu preview or a button to login to Hanover email through microsoft. The login will only be implimented if I happen to have extra time to figure out how that works.
+
+Once login is confirmed, or if we pretend a login was confirmed the next page of actual ordering will show up.
+
+
+
