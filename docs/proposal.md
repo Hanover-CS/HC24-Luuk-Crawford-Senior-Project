@@ -1,6 +1,6 @@
 ## Underground Ordering
 ### Project Idea
-My intention for this project is to create a way for people to order ahead of time at the underground. I would like to at minimum create an interface using items at the underground as an example of how this could be useful, as a proof of concept. This would be useful as some food such as the quesadillas can take 15 minutes to make. Being able to order ahead of time means students would less disruption to their workflow waiting around for food to be prepared. I would like to have the app communicate to a server to send the order to. And if I can get that to work, it would be good to have a chef's screen to recieve the orders. Another stretch goal would be to incorporate hanover outlook logins to prevent abuse.
+My intention for this project is to create a way for people to order ahead of time at the underground. I would like to at minimum create an interface using items at the underground as an example of how this could be useful, as a proof of concept. This would be useful as some food such as the quesadillas can take 15 minutes to make. Being able to order ahead of time means students would less disruption to their workflow waiting around for food to be prepared. I would like to have the app communicate to a server to send the order to. And if I can get that to work, it would be good to have a chef's screen to recieve the orders. Another stretch goal would be to incorporate hanover outlook logins to prevent abuse and push notifications.
 
 ### Main Features
 #### 1. Order an item
@@ -28,7 +28,7 @@ My intention for this project is to create a way for people to order ahead of ti
 
 ---
 
-### Comparable solution (focusing on interface)
+### Comparable solution (focusing on interface choices)
 
 #### [Chipotle](https://www.chipotle.com/)
 
@@ -39,14 +39,17 @@ Once login is confirmed, or if we pretend a login was confirmed the next page of
 
 Chipotle's menu loads as [a series of labeled pictures](https://github.com/Hanover-CS/HC24-Luuk-Crawford-Senior-Project/assets/32851596/74963349-cc17-45be-864e-66513fdf3f63) showing each of the kinds of items. And once an item is selected, it then loads the options specific for that menu item. 
 
-I think a screen like this would be good for people to choose what item they want. If I make it a scrolling list I can add and remove available items to fit the current menu without redesigning the interface. I could add temporary images as well from the internet that look similar to what we get at the underground.
+One option would be to just recreate the [ordering sheets](https://github-production-user-asset-6210df.s3.amazonaws.com/32851596/250412801-19be7b5f-ed5d-42bb-882a-7042fcce4b22.jpg) with the same format but digital but I think a screen more similar to Chipotle would be better if I included pictures. Using a scrolling list also means I can add and remove available items to fit the current menu without redesigning the interface.
 
 Chipotle's customization of orders is done by having the customer select which items to include, with meant being [split into half portions](https://github.com/Hanover-CS/HC24-Luuk-Crawford-Senior-Project/assets/32851596/76fddee4-b6bc-4153-ac04-6c2a0af3affb) if two are selected. 
 
-I would like to have a list of toppings presented in a similar mannar once an item is chosen. And a side selection if available on that item.
+I would like to have a list of toppings presented in a similar mannar once an item is chosen. Basically checkboxes next to the options or the topping buttons being highlighted if selected.
 
 Chipotle takes the possible customizations further with [the quantity of an ingredient options with ability to put it on the side](https://github.com/Hanover-CS/HC24-Luuk-Crawford-Senior-Project/assets/32851596/aa747fa0-f0eb-485d-9742-ce18ebf854f0). This would add a level of complexity I don't think I will be able to support in this amount of time.
 
-Chipotle gives the option to add other items to the order. Since mealswipes only support one main item I will likely just have a confirm order button after its customization.
+Chipotle gives the option to add other items to the order. Since mealswipes only support one main item I will likely just have a confirm order button after a single item's customization.
 
 Once an order is confirmed the next screen would have something to keep track of the order if I get server communication both ways working.
+
+### Server
+
