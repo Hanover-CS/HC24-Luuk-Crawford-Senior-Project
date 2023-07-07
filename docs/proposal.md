@@ -37,5 +37,15 @@ I will make a landing screen that has a menu preview or a button to login to Han
 
 Once login is confirmed, or if we pretend a login was confirmed the next page of actual ordering will show up.
 
+Chipotle's menu loads as [a series of labeled pictures](https://github.com/Hanover-CS/HC24-Luuk-Crawford-Senior-Project/assets/32851596/74963349-cc17-45be-864e-66513fdf3f63) showing each of the kinds of items. And once an item is selected, it then loads the options specific for that menu item. 
+
+I think a screen like this would be good for people to choose what item they want. If I make it a scrolling list I can add and remove available items to fit the current menu without redesigning the interface. I could add temporary images as well from the internet that look similar to what we get at the underground.
+
+Chipotle's customization of orders is done by having the customer select which items to include, with meant being [split into half portions](https://github.com/Hanover-CS/HC24-Luuk-Crawford-Senior-Project/assets/32851596/76fddee4-b6bc-4153-ac04-6c2a0af3affb) if two are selected. 
+
+I would like to have a list of toppings presented in a similar mannar once an item is chosen. And a side selection if available on that item.
+
+Chipotle takes the possible customizations further with [the quantity of an ingredient options with ability to put it on the side](https://github.com/Hanover-CS/HC24-Luuk-Crawford-Senior-Project/assets/32851596/aa747fa0-f0eb-485d-9742-ce18ebf854f0). This would add a level of complexity I don't think I will be able to support in this amount of time.
+
 
 
