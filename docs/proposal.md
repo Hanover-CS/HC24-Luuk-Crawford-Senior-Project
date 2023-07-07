@@ -47,5 +47,4 @@ I would like to have a list of toppings presented in a similar mannar once an it
 
 Chipotle takes the possible customizations further with [the quantity of an ingredient options with ability to put it on the side](https://github.com/Hanover-CS/HC24-Luuk-Crawford-Senior-Project/assets/32851596/aa747fa0-f0eb-485d-9742-ce18ebf854f0). This would add a level of complexity I don't think I will be able to support in this amount of time.
 
-
-
+Chipotle gives the option to add other items to the order. Since mealswipes only support one main item I will likely just have a confirm order button after its customization.
