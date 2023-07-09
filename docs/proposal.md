@@ -57,6 +57,9 @@ There are multiple potential server options such as the three major offerings su
 I was thinking Microsoft Azure as that is what we use for our Hanover accounts, but I think using something like [supabase](https://supabase.com/) to set up an online database to store the orders would be sufficent for my needs as I am just hoping to learn to get server and app communication working, I don't need or want to deal with more complicated offerings. Supabase has [more than enough storage and unlimited api calls](https://supabase.com/pricing) for me to test this app for free. It has Kotlin support as well so it meets my basic needs. Supabase also has a nice interface so far, atleast for [creating the tables visually](https://github.com/Hanover-CS/HC24-Luuk-Crawford-Senior-Project/assets/32851596/769b538d-6129-4225-9c0f-c20dcd30a821). I do have some SQL experience but features like to visualize that are helpful for faster progress if I get to this.
 
 ### References
+
 “Chipotle - Fresh Food Fast - Apps on Google Play.” Google, play.google.com/store/apps/details?id=com.chipotle.ordering. Accessed 2 July 2023. 
+
 “Pricing.” Supabase, supabase.com/pricing. Accessed 9 July 2023. 
+
 "Underground Order Sheet." Hanover College, https://github-production-user-asset-6210df.s3.amazonaws.com/32851596/250412801-19be7b5f-ed5d-42bb-882a-7042fcce4b22.jpg. Copied in person 24 May 2023.
