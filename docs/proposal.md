@@ -51,6 +51,11 @@ Chipotle gives the option to add other items to the order. Since mealswipes only
 
 Once an order is confirmed the next screen would have something to keep track of the order if I get server communication both ways working.
 
+### Integrated Development Environment (IDE)
+[WIP]
+https://kotlinlang.org/docs/multiplatform-mobile-integrate-in-existing-app.html#decide-what-code-to-make-cross-platform 
+
+
 ### Server
 
 There are multiple potential server options such as the three major offerings such as [Microsoft Azure](https://azure.microsoft.com/en-us), [AWS](https://aws.amazon.com/), and [Google Cloud](https://cloud.google.com/). 
