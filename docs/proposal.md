@@ -1,6 +1,6 @@
 ## Underground Ordering
 ### Project Idea
-My intention for this project is to create a way for people to order ahead of time at the underground. I would like to at minimum create an interface using items at the underground as an example of how this could be useful, as a proof of concept. This would be useful as some food such as the quesadillas can take 15 minutes to make. Being able to order ahead of time means students would less disruption to their workflow waiting around for food to be prepared. I would like to have the app communicate to a server to send the order to. And if I can get that to work, it would be good to have a chef's screen to recieve the orders. Another stretch goal would be to incorporate hanover outlook logins to prevent abuse and push notifications.
+My intention for this project is to create a way for people to order ahead of time at the underground. I would like to at minimum create an interface using items at the underground as an example of how this could be useful, as a proof of concept. This would be useful as some food such as the quesadillas can take 15 minutes to make. Being able to order ahead of time means students would less disruption to their workflow waiting around for food to be prepared. I would like to have the app communicate to a server to send the order to. And if I can get that to work, it would be good to have a chef's screen to recieve the orders. Another stretch goal would be to add push notifications and incorporate Hanover Outlook logins to prevent abuse.
 
 ### Main Features
 #### 1. Order an item
@@ -51,8 +51,11 @@ Chipotle gives the option to add other items to the order. Since mealswipes only
 
 Once an order is confirmed the next screen would have something to keep track of the order if I get server communication both ways working.
 
-### Integrated Development Environment (IDE)
-[WIP]
+### Development Plan [Language + Integrated Development Environment (IDE)]
+I intend to continue using [Android Studio](https://developer.android.com/studio) as my IDE for this project. I chose this because I am more familiar with it as I used it during May term android development class and it's Google's official android app IDE. This means it will be up to date and have a lot of helpful information online.
+
+I will continue using Kotlin in android studio. Kotlin is Google's go to language at the moment for android development and it's what I used earlier so I don't have to start a new language from scratch.
+
 https://kotlinlang.org/docs/multiplatform-mobile-integrate-in-existing-app.html#decide-what-code-to-make-cross-platform 
 
 
