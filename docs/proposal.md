@@ -62,8 +62,6 @@ I intend to continue using [Android Studio](https://developer.android.com/studio
 #### Language
 I will continue using Kotlin in android studio. Kotlin is Google's go to language at the moment for android development and it's what I used earlier. It meets all my needs as it will work for android and it can also work cross platform to iOS if the app gets to that.
 
-https://kotlinlang.org/docs/multiplatform-mobile-integrate-in-existing-app.html#decide-what-code-to-make-cross-platform 
-
 ### Server
 
 There are multiple potential server options such as the three major offerings such as [Microsoft Azure](https://azure.microsoft.com/en-us), [AWS](https://aws.amazon.com/), and [Google Cloud](https://cloud.google.com/). 
