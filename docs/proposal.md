@@ -51,13 +51,18 @@ Chipotle gives the option to add other items to the order. Since mealswipes only
 
 Once an order is confirmed the next screen would have something to keep track of the order if I get server communication both ways working.
 
-### Development Plan [Language + Integrated Development Environment (IDE)]
-I intend to continue using [Android Studio](https://developer.android.com/studio) as my IDE for this project. I chose this because I am more familiar with it as I used it during May term android development class and it's Google's official android app IDE. This means it will be up to date and have a lot of helpful information online.
+### Development Plan
 
-I will continue using Kotlin in android studio. Kotlin is Google's go to language at the moment for android development and it's what I used earlier so I don't have to start a new language from scratch.
+#### What platform?
+My current plan is to make it as an android app. I might try to use the cross platform development capabilities of my other choices below but Apple makes things difficult as Kotlin, which is in development but available for cross platform, [expects me to have Xcode](https://kotlinlang.org/docs/multiplatform-mobile-integrate-in-existing-app.html#create-an-ios-project-in-xcode) to test on iOS phones which is exclusive to macs.
+
+####  Integrated Development Environment (IDE)
+I intend to continue using [Android Studio](https://developer.android.com/studio) as my IDE for this project. I chose this because I am more familiar with it as I used it during May term android development class and it's Google's official android app IDE. This means it will be up to date and have a lot of helpful documentation and helpful sources online.
+
+#### Language
+I will continue using Kotlin in android studio. Kotlin is Google's go to language at the moment for android development and it's what I used earlier. It meets all my needs as it will work for android and it can also work cross platform to iOS if the app gets to that.
 
 https://kotlinlang.org/docs/multiplatform-mobile-integrate-in-existing-app.html#decide-what-code-to-make-cross-platform 
-
 
 ### Server
 
