@@ -2,4 +2,5 @@
     <string name="app_name">HC24-Luuk-Crawford-Senior-Project</string>
     <string name="toOrderPage">Begin Order</string>
     <string name="typeOfOrderOptions">Order Options</string>
+    <string name="itemNameTest">Item Name Test</string>
 </resources>
