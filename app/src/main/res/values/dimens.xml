@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="itemSlotSize">184dp</dimen>
+    <dimen name="itemSlotSize">104dp</dimen>
 </resources>

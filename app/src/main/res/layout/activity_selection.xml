@@ -2,17 +2,11 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    >
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="116dp"
 
-        android:text="@string/typeOfOrderOptions"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
 
     <ScrollView
         android:layout_width="match_parent"
@@ -23,8 +17,35 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_margin="0dp"
             android:orientation="vertical">
+
+            <TextView
+                android:background="@color/hanoverWebRed"
+                android:textColor="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+
+                android:textAlignment="center"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:background="@color/hanoverWebRed"
+                android:id="@+id/textView2"
+                android:textColor="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:paddingBottom="20dp"
+                android:text="@string/typeOfOrderOptions"
+                android:textAlignment="center"
+                android:textSize="35sp"
+                android:paddingVertical="13dp"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/itemSlotSize"
@@ -43,8 +64,8 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-
-                    android:paddingLeft="195dp"
+                    android:paddingLeft="155dp"
+                    android:paddingTop="10dp"
                     android:textSize="23sp"
                     android:textColor="@color/black"
                     android:textStyle="bold"
@@ -70,8 +91,8 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-
-                    android:paddingLeft="195dp"
+                    android:paddingLeft="155dp"
+                    android:paddingTop="10dp"
                     android:textSize="23sp"
                     android:textColor="@color/black"
                     android:textStyle="bold"
@@ -97,8 +118,8 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-
-                    android:paddingLeft="195dp"
+                    android:paddingLeft="155dp"
+                    android:paddingTop="10dp"
                     android:textSize="23sp"
                     android:textColor="@color/black"
                     android:textStyle="bold"
@@ -124,8 +145,8 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-
-                    android:paddingLeft="195dp"
+                    android:paddingLeft="155dp"
+                    android:paddingTop="10dp"
                     android:textSize="23sp"
                     android:textColor="@color/black"
                     android:textStyle="bold"
@@ -151,8 +172,8 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-
-                    android:paddingLeft="195dp"
+                    android:paddingLeft="155dp"
+                    android:paddingTop="10dp"
                     android:textSize="23sp"
                     android:textColor="@color/black"
                     android:textStyle="bold"
@@ -178,8 +199,8 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-
-                    android:paddingLeft="195dp"
+                    android:paddingLeft="155dp"
+                    android:paddingTop="10dp"
                     android:textSize="23sp"
                     android:textColor="@color/black"
                     android:textStyle="bold"
@@ -205,8 +226,8 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-
-                    android:paddingLeft="195dp"
+                    android:paddingLeft="155dp"
+                    android:paddingTop="10dp"
                     android:textSize="23sp"
                     android:textColor="@color/black"
                     android:textStyle="bold"
@@ -232,8 +253,8 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-
-                    android:paddingLeft="195dp"
+                    android:paddingLeft="155dp"
+                    android:paddingTop="10dp"
                     android:textSize="23sp"
                     android:textColor="@color/black"
                     android:textStyle="bold"
