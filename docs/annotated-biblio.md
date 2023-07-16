@@ -44,16 +44,19 @@ Web app development would allow any web using device to use the app.
 Downside is I would need to spend a lot more time to get started because I don’t have experience with this and would likely run into more issues starting from nothing. I would rather resume learning mobile app development than start something from scratch for a solo project.
 
 ### Multiplatform mobile development
-Multiplatform development means code I make should work for multiple platforms. If I pursue mobile development, this means when I’m testing and working with an Android, it is coded in an environment that should also work with iOS devices without needing to rewrite too much code. This makes supporting multiple platforms easier as I wouldn't need to learn and use two different languages at a time for iOS and Android.
+Multiplatform development means code I make should work for multiple platforms. If I pursue mobile development, this means when I’m testing and working with an Android (for example), it is coded in an environment that should also work with iOS devices without needing to rewrite too much code. This makes supporting multiple platforms easier as I wouldn't need to learn and use two different languages at a time for iOS and Android.
 
 This will be useful if I have time to attempt to make it work on iOS, though I don't think I will be able to unless I do more research to figure out a way around Xcode being Mac only.
-
-I intend to stick to mobile development for this project. As Kotlin is multiplatform it is possible I could reuse a lot of it to make it work on PC or elsewhere if this project were to be continued one day.
 
 #### Kotlin
 Kotlin is a multiplatform programming language that ["used by over 60% of professional Android developers"](https://developer.android.com/kotlin). And Kotlin has been [Google's top pick for Android development](https://techcrunch.com/2022/08/18/five-years-later-google-is-still-all-in-on-kotlin/) as well.
 
-I have some familiarity with Kotlin as during May term we used Kotlin for our first android development. 
+#### Some features of [Kotlin multiplatform](https://kotlinlang.org/docs/multiplatform.html)
+- Same code usable between platforms [(for example macOS, iOS, Linux Windows, Android)](https://kotlinlang.org/docs/native-overview.html#target-platforms)
+- Kotlin in beta for multiplatform mobile
+- [20% less likely to crash](https://kotlinlang.org/docs/android-overview.html)
+- Also good for [server side](https://kotlinlang.org/docs/server-overview.html#frameworks-for-server-side-development-with-kotlin) and scalability
+- [Xcode](https://developer.apple.com/xcode/) needed for [iOS integration](https://kotlinlang.org/docs/multiplatform-mobile-samples.html)
 
 One downside to Kotlin is that multiplatform development for mobile is in beta which may come with some unexpected problems during development if I wanted to support iOS as well. It's noted as [almost stable](https://kotlinlang.org/docs/multiplatform-mobile-getting-started.html) at the moment. This means I should be able to get it working on Android, having it also work on iOS can work but may have some unexpected barriers. 
 
