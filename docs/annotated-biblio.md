@@ -52,13 +52,23 @@ This will be useful if I have time to attempt to make it work on iOS, though I d
 Kotlin is a multiplatform programming language that ["used by over 60% of professional Android developers"](https://developer.android.com/kotlin). And Kotlin has been [Google's top pick for Android development](https://techcrunch.com/2022/08/18/five-years-later-google-is-still-all-in-on-kotlin/) as well.
 
 #### Some features of [Kotlin multiplatform](https://kotlinlang.org/docs/multiplatform.html)
-- Same code usable between platforms [(for example macOS, iOS, Linux Windows, Android)](https://kotlinlang.org/docs/native-overview.html#target-platforms)
-- Kotlin in beta for multiplatform mobile
-- [20% less likely to crash](https://kotlinlang.org/docs/android-overview.html)
-- Also good for [server side](https://kotlinlang.org/docs/server-overview.html#frameworks-for-server-side-development-with-kotlin) and scalability
-- [Xcode](https://developer.apple.com/xcode/) needed for [iOS integration](https://kotlinlang.org/docs/multiplatform-mobile-samples.html)
+Kotlin allows developers to use the same code between platforms. [For example macOS, iOS, Linux Windows and Android](https://kotlinlang.org/docs/native-overview.html#target-platforms) can share code meaning less rewriting per platform. Kotlin in [beta](https://kotlinlang.org/docs/components-stability.html#stability-levels-explained)
 
-One downside to Kotlin is that multiplatform development for mobile is in beta which may come with some unexpected problems during development if I wanted to support iOS as well. It's noted as [almost stable](https://kotlinlang.org/docs/multiplatform-mobile-getting-started.html) at the moment. This means I should be able to get it working on Android, having it also work on iOS can work but may have some unexpected barriers. 
+While not evertything works both android and iOS, multiplatform mobile with Kotlin means code can be shared between [Android and iOS, such as core layers, business logic, presentation logic, and more](https://kotlinlang.org/docs/multiplatform-mobile-faq.html).
+
+for multiplatform to also work on mobile meaning new updates have a chance of making old code needing to be updated. It is the last stage before being deemed stable so it should be fine to use but since [it's not 100% finished... changes are possible](https://kotlinlang.org/docs/multiplatform.html).
+
+Even with multiplatform capabilities not being 100% complete, apps using Kotlin on android are very stable as Google found they are [20% less likely to crash](https://kotlinlang.org/docs/android-overview.html). It would just be the multiplatform capabilities that might have some changes in the future other than normal updates.
+
+[Xcode](https://developer.apple.com/xcode/) is needed for [iOS integration](https://kotlinlang.org/docs/multiplatform-mobile-samples.html)
+
+Kotlin is also good for [server side](https://kotlinlang.org/docs/server-overview.html#frameworks-for-server-side-development-with-kotlin) and scalability. While this project probably won't have much code going on server side it is nice to know It has those capabilities if needed.
+
+There is also a [plugin](https://plugins.jetbrains.com/plugin/14936-kotlin-multiplatform-mobile) to help with cross platform development, but it seems to be focused for those with macOS as well.
+
+[JetBrains officially supports IntelliJ IDEA and Android Studio](https://kotlinlang.org/docs/kotlin-ide.html#intellij-idea) but other IDEs have community support as well.
+
+#### More Multiplatform comparisons
 
 [1]: https://order.wendys.com/categories?site=menu&lang=en_US
 [2]: https://play.google.com/store/apps/details?id=com.wendys.nutritiontool
