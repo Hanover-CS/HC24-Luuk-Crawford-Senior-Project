@@ -72,7 +72,7 @@ There is also a [plugin](https://plugins.jetbrains.com/plugin/14936-kotlin-multi
 Flutter is an option that was created by Google in 2017. It uses a language Google developed called [Dart](https://developers.google.com/learn/topics/dart). Some of the [key features](https://kotlinlang.org/docs/cross-platform-frameworks.html#react-native) noted are that is has a feature that can let you see what your changes are doing without needing to recompile. It also has its own renderering engine instead of relying on web browser technology. Being in google ecosystem means easier access to features such as Google's Material Design which can be useful for making app interfaces.
 
 #### [React Native](https://reactnative.dev/)
-Created by [Meta](https://about.meta.com/) in 2015. This option uses JavaScript. This also has a fast refresh feature to see changes quickly. React Native focuses on UI. It uses [Flipper](https://fbflipper.com/) which helps with debugging on mobile.
+Created by [Meta](https://about.meta.com/) in 2015. This option uses JavaScript. This optiona also has a fast refresh feature to see changes quickly. React Native focuses on UI. It uses [Flipper](https://fbflipper.com/) which helps with debugging on mobile.
 
 
 
