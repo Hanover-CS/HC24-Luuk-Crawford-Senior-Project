@@ -43,12 +43,12 @@ Web app development would allow any web using device to use the app.
 
 Downside is I would need to spend a lot more time to get started because I don’t have experience with this and would likely run into more issues starting from nothing. I would rather resume learning mobile app development than start something from scratch for a solo project.
 
-### Multiplatform mobile development
+### Multiplatform mobile development [top options](https://kotlinlang.org/docs/cross-platform-frameworks.html#kotlin-multiplatform-mobile)
 Multiplatform development means code I make should work for multiple platforms. If I pursue mobile development, this means when I’m testing and working with an Android (for example), it is coded in an environment that should also work with iOS devices without needing to rewrite too much code. This makes supporting multiple platforms easier as I wouldn't need to learn and use two different languages at a time for iOS and Android.
 
 This will be useful if I have time to attempt to make it work on iOS, though I don't think I will be able to unless I do more research to figure out a way around Xcode being Mac only.
 
-#### Kotlin
+#### [Kotlin Multiplatform Mobile](https://kotlinlang.org/docs/multiplatform-mobile-getting-started.html)
 Kotlin is a multiplatform programming language that ["used by over 60% of professional Android developers"](https://developer.android.com/kotlin). And Kotlin has been [Google's top pick for Android development](https://techcrunch.com/2022/08/18/five-years-later-google-is-still-all-in-on-kotlin/) as well.
 
 #### Some features of [Kotlin multiplatform](https://kotlinlang.org/docs/multiplatform.html)
@@ -68,10 +68,9 @@ There is also a [plugin](https://plugins.jetbrains.com/plugin/14936-kotlin-multi
 
 [JetBrains officially supports IntelliJ IDEA and Android Studio](https://kotlinlang.org/docs/kotlin-ide.html#intellij-idea) but other IDEs have community support as well. 
 
-#### More Multiplatform posibilities.
-[Flutter](https://flutter.dev/) is an option that was created by Google in 2017. It uses a language Google developed called [Dart](https://developers.google.com/learn/topics/dart). Some of the [key features](https://kotlinlang.org/docs/cross-platform-frameworks.html#react-native) noted are that is has a feature that can let you see what your changes are doing without needing to recompile. It also has its own renderering engine instead of relying on web browser technology. Being in google ecosystem means easier access to features such as Google's Material Design which can be useful for making app interfaces.
+#### [Flutter](https://flutter.dev/)
+Flutter is an option that was created by Google in 2017. It uses a language Google developed called [Dart](https://developers.google.com/learn/topics/dart). Some of the [key features](https://kotlinlang.org/docs/cross-platform-frameworks.html#react-native) noted are that is has a feature that can let you see what your changes are doing without needing to recompile. It also has its own renderering engine instead of relying on web browser technology. Being in google ecosystem means easier access to features such as Google's Material Design which can be useful for making app interfaces.
 
-https://kotlinlang.org/docs/cross-platform-frameworks.html#kotlin-multiplatform-mobile
 
 [1]: https://order.wendys.com/categories?site=menu&lang=en_US
 [2]: https://play.google.com/store/apps/details?id=com.wendys.nutritiontool
