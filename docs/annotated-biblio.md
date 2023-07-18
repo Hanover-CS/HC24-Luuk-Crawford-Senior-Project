@@ -66,9 +66,12 @@ Kotlin is also good for [server side](https://kotlinlang.org/docs/server-overvie
 
 There is also a [plugin](https://plugins.jetbrains.com/plugin/14936-kotlin-multiplatform-mobile) to help with cross platform development, but it seems to be focused for those with macOS as well.
 
-[JetBrains officially supports IntelliJ IDEA and Android Studio](https://kotlinlang.org/docs/kotlin-ide.html#intellij-idea) but other IDEs have community support as well.
+[JetBrains officially supports IntelliJ IDEA and Android Studio](https://kotlinlang.org/docs/kotlin-ide.html#intellij-idea) but other IDEs have community support as well. 
 
-#### More Multiplatform comparisons
+#### More Multiplatform posibilities.
+[Flutter](https://flutter.dev/) is an option that was created by Google in 2017. It uses a language Google developed called [Dart](https://developers.google.com/learn/topics/dart). Some of the [key features](https://kotlinlang.org/docs/cross-platform-frameworks.html#react-native) noted are that is has a feature that can let you see what your changes are doing without needing to recompile. It also has its own renderering engine instead of relying on web browser technology. Being in google ecosystem means easier access to features such as Google's Material Design which can be useful for making app interfaces.
+
+https://kotlinlang.org/docs/cross-platform-frameworks.html#kotlin-multiplatform-mobile
 
 [1]: https://order.wendys.com/categories?site=menu&lang=en_US
 [2]: https://play.google.com/store/apps/details?id=com.wendys.nutritiontool
