@@ -60,9 +60,12 @@ Once an order is confirmed the next screen would have something to keep track of
 I intend to continue using [Android Studio](https://developer.android.com/studio) as my IDE for this project. I chose this because I am more familiar with it as I used it during May term android development class and it's Google's official android app IDE. This means it will be up to date and have a lot of helpful documentation and helpful sources online.
 
 #### Language
-I will continue using Kotlin in [Android Studio](https://developer.android.com/studio) as I did during May term. It is [Google's top pick for Android development](https://techcrunch.com/2022/08/18/five-years-later-google-is-still-all-in-on-kotlin/) as mentioned in my [annotated bibliography](https://github.com/Hanover-CS/HC24-Luuk-Crawford-Senior-Project/blob/main/docs/annotated-biblio.md). [JetBrains,the creator of Kotlin, also officially supports IntelliJ IDEA and Android Studio](https://kotlinlang.org/docs/kotlin-ide.html#intellij-idea) so this will be a stable coding environment to work in.
+I will continue using Kotlin in [Android Studio](https://developer.android.com/studio) as I did during May term. It is [Google's top pick for Android development](https://techcrunch.com/2022/08/18/five-years-later-google-is-still-all-in-on-kotlin/) as mentioned in my [annotated bibliography](https://github.com/Hanover-CS/HC24-Luuk-Crawford-Senior-Project/blob/main/docs/annotated-biblio.md). [JetBrains, the creator of Kotlin, also officially supports IntelliJ IDEA and Android Studio](https://kotlinlang.org/docs/kotlin-ide.html#intellij-idea) so this will be a stable coding environment to work in.
 
 I also chose these options as they have support for [multiple platforms including mobile support in beta](https://kotlinlang.org/docs/multiplatform-mobile-getting-started.html). Meaning if this project were to attempt iOS or other support one day, most of the code should be reusable. Though I am partly [risking needing to rewrite other parts of my code](https://kotlinlang.org/docs/multiplatform.html) if "migration steps" for updates are needed.
+
+Kotlin is a good choice because I have recent familiarity with it and my research found I can use it server side if needed as well. 
+And even though multiplatform capabilities are not 100% complete, apps using Kotlin on android are very stable as Google found they are [20% less likely to crash](https://kotlinlang.org/docs/android-overview.html).
 
 ### Server
 
