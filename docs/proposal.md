@@ -53,14 +53,16 @@ Once an order is confirmed the next screen would have something to keep track of
 
 ### Development Plan
 
-#### What platform?
-My current plan is to make it as an android app. I might try to use the cross platform development capabilities of my other choices below but Apple makes things difficult as Kotlin, which is in development but available for cross platform, [expects me to have Xcode](https://kotlinlang.org/docs/multiplatform-mobile-integrate-in-existing-app.html#create-an-ios-project-in-xcode) to test on iOS phones which is exclusive to macs.
+#### What platform to support?
+**My current plan is to make it an android app.** I might try to use the cross platform development capabilities of my other choices below but Apple makes things difficult as Kotlin, which is in development but available for cross platform, [expects me to have Xcode](https://kotlinlang.org/docs/multiplatform-mobile-integrate-in-existing-app.html#create-an-ios-project-in-xcode) to test on iOS phones which is exclusive to macs.
 
 ####  Integrated Development Environment (IDE)
 I intend to continue using [Android Studio](https://developer.android.com/studio) as my IDE for this project. I chose this because I am more familiar with it as I used it during May term android development class and it's Google's official android app IDE. This means it will be up to date and have a lot of helpful documentation and helpful sources online.
 
 #### Language
-I will continue using Kotlin in android studio. Kotlin is Google's go to language at the moment for android development and it's what I used earlier. It meets all my needs as it will work for android and it can also work cross platform to iOS if the app gets to that.
+I will continue using Kotlin in [Android Studio](https://developer.android.com/studio) as I did during May term. It is [Google's top pick for Android development](https://techcrunch.com/2022/08/18/five-years-later-google-is-still-all-in-on-kotlin/) as mentioned in my [annotated bibliography](https://github.com/Hanover-CS/HC24-Luuk-Crawford-Senior-Project/blob/main/docs/annotated-biblio.md). [JetBrains,the creator of Kotlin, also officially supports IntelliJ IDEA and Android Studio](https://kotlinlang.org/docs/kotlin-ide.html#intellij-idea) so this will be a stable coding environment to work in.
+
+I also chose these options as they have support for [multiple platforms including mobile support in beta](https://kotlinlang.org/docs/multiplatform-mobile-getting-started.html). Meaning if this project were to attempt iOS or other support one day, most of the code should be reusable. Though I am partly [risking needing to rewrite other parts of my code](https://kotlinlang.org/docs/multiplatform.html) if "migration steps" for updates are needed.
 
 ### Server
 
