@@ -66,7 +66,7 @@ This will be useful if I have time to attempt to make it work on iOS, though I d
 #### [React Native](https://reactnative.dev/)
 - Created by [Meta](https://about.meta.com/) in 2015.
 - This option uses JavaScript.
-- This optiona also has a fast refresh feature to see changes quickly.
+- This option also has a fast refresh feature to see changes quickly.
 - React Native focuses on UI.
 - It uses [Flipper](https://fbflipper.com/) which helps with debugging on mobile.
 
