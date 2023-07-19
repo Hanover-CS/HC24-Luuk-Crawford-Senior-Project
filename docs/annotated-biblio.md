@@ -49,30 +49,26 @@ Multiplatform development means code I make should work for multiple platforms. 
 This will be useful if I have time to attempt to make it work on iOS, though I don't think I will be able to unless I do more research to figure out a way around Xcode being Mac only.
 
 #### [Kotlin Multiplatform Mobile](https://kotlinlang.org/docs/multiplatform-mobile-getting-started.html)
-Kotlin is a multiplatform programming language that ["used by over 60% of professional Android developers"](https://developer.android.com/kotlin). And Kotlin has been [Google's top pick for Android development](https://techcrunch.com/2022/08/18/five-years-later-google-is-still-all-in-on-kotlin/) as well.
-
-#### Some features of [Kotlin multiplatform](https://kotlinlang.org/docs/multiplatform.html)
-Kotlin allows developers to use the same code between platforms. [For example macOS, iOS, Linux Windows and Android](https://kotlinlang.org/docs/native-overview.html#target-platforms) can share code meaning less rewriting per platform. Kotlin in [beta](https://kotlinlang.org/docs/components-stability.html#stability-levels-explained)
-
-While not evertything works both android and iOS, multiplatform mobile with Kotlin means code can be shared between [Android and iOS, such as core layers, business logic, presentation logic, and more](https://kotlinlang.org/docs/multiplatform-mobile-faq.html).
-
-for multiplatform to also work on mobile meaning new updates have a chance of making old code needing to be updated. It is the last stage before being deemed stable so it should be fine to use but since [it's not 100% finished... changes are possible](https://kotlinlang.org/docs/multiplatform.html).
-
-Even with multiplatform capabilities not being 100% complete, apps using Kotlin on android are very stable as Google found they are [20% less likely to crash](https://kotlinlang.org/docs/android-overview.html). It would just be the multiplatform capabilities that might have some changes in the future other than normal updates.
-
-[Xcode](https://developer.apple.com/xcode/) is needed for [iOS integration](https://kotlinlang.org/docs/multiplatform-mobile-samples.html)
-
-Kotlin is also good for [server side](https://kotlinlang.org/docs/server-overview.html#frameworks-for-server-side-development-with-kotlin) and scalability. While this project probably won't have much code going on server side it is nice to know It has those capabilities if needed.
-
-There is also a [plugin](https://plugins.jetbrains.com/plugin/14936-kotlin-multiplatform-mobile) to help with cross platform development, but it seems to be focused for those with macOS as well.
-
-[JetBrains officially supports IntelliJ IDEA and Android Studio](https://kotlinlang.org/docs/kotlin-ide.html#intellij-idea) but other IDEs have community support as well. 
+- Created by [JetBrains](https://www.jetbrains.com/) in 2011
+- Kotlin is a multiplatform programming language that ["used by over 60% of professional Android developers"](https://developer.android.com/kotlin) and [Google's top pick for Android development](https://techcrunch.com/2022/08/18/five-years-later-google-is-still-all-in-on-kotlin/)
+- Kotlin allows developers to use the same code between platforms. [For example macOS, iOS, Linux Windows and Android](https://kotlinlang.org/docs/native-overview.html#target-platforms) can share code meaning less rewriting per platform for [core layers, business logic, presentation logic, and more](https://kotlinlang.org/docs/multiplatform-mobile-faq.html).
+- Kotlin multiplatform for mobile is currently in [beta](https://kotlinlang.org/docs/components-stability.html#stability-levels-explained).
+- [JetBrains officially supports IntelliJ IDEA and Android Studio](https://kotlinlang.org/docs/kotlin-ide.html#intellij-idea). Other IDEs have community support as well.
+- Also good for [server side](https://kotlinlang.org/docs/server-overview.html#frameworks-for-server-side-development-with-kotlin) and scalability. 
 
 #### [Flutter](https://flutter.dev/)
-Flutter is an option that was created by Google in 2017. It uses a language Google developed called [Dart](https://developers.google.com/learn/topics/dart). Some of the [key features](https://kotlinlang.org/docs/cross-platform-frameworks.html#react-native) noted are that is has a feature that can let you see what your changes are doing without needing to recompile. It also has its own renderering engine instead of relying on web browser technology. Being in google ecosystem means easier access to features such as Google's Material Design which can be useful for making app interfaces.
+- Flutter is an option that was created by Google in 2017.
+- It uses a language Google developed called [Dart](https://developers.google.com/learn/topics/dart).
+- Some of the [key features](https://kotlinlang.org/docs/cross-platform-frameworks.html#react-native) noted are that is has a feature that can let you see what your changes are doing without needing to recompile.
+- It also has its own renderering engine instead of relying on web browser technology.
+- Being in google ecosystem means easier access to features such as Google's Material Design which can be useful for making app interfaces.
 
 #### [React Native](https://reactnative.dev/)
-Created by [Meta](https://about.meta.com/) in 2015. This option uses JavaScript. This optiona also has a fast refresh feature to see changes quickly. React Native focuses on UI. It uses [Flipper](https://fbflipper.com/) which helps with debugging on mobile.
+- Created by [Meta](https://about.meta.com/) in 2015.
+- This option uses JavaScript.
+- This optiona also has a fast refresh feature to see changes quickly.
+- React Native focuses on UI.
+- It uses [Flipper](https://fbflipper.com/) which helps with debugging on mobile.
 
 
 
