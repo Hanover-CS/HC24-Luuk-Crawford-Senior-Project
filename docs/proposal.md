@@ -56,10 +56,9 @@ Once an order is confirmed the next screen would have something to keep track of
 #### What platform to support?
 **My current plan is to make it an Android app.** I might try to use the cross-platform development capabilities of my other choices below but Apple makes things difficult as Kotlin, which is in development but available for cross-platform, [expects me to have Xcode](https://kotlinlang.org/docs/multiplatform-mobile-integrate-in-existing-app.html#create-an-ios-project-in-xcode) to test on iOS phones which is exclusive to macs.
 
-####  Integrated Development Environment (IDE)
+#### Language and Integrated Development Environment (IDE) decisions
 I intend to continue using [Android Studio](https://developer.android.com/studio) as my IDE for this project. I chose this because I am more familiar with it as I used it during my May term Android development class and it's Google's official Android app IDE. This means it will be up to date and have a lot of helpful documentation and helpful sources online.
 
-#### Language
 I will continue using Kotlin in [Android Studio](https://developer.android.com/studio) as I did during my May term. It is [Google's top pick for Android development](https://techcrunch.com/2022/08/18/five-years-later-google-is-still-all-in-on-kotlin/) as mentioned in my [annotated bibliography](https://github.com/Hanover-CS/HC24-Luuk-Crawford-Senior-Project/blob/main/docs/annotated-biblio.md). [JetBrains, the creator of Kotlin, also officially supports IntelliJ IDEA and Android Studio](https://kotlinlang.org/docs/kotlin-ide.html#intellij-idea) so this will be a stable coding environment to work in.
 
 I also chose these options as they have support for [multiple platforms including mobile support in beta](https://kotlinlang.org/docs/multiplatform-mobile-getting-started.html). Meaning if this project were to attempt iOS or other support one day, most of the code should be reusable. Though I am partly [risking needing to rewrite other parts of my code](https://kotlinlang.org/docs/multiplatform.html) if "migration steps" for updates are needed.
@@ -67,12 +66,18 @@ I also chose these options as they have support for [multiple platforms includin
 Kotlin is a good choice because I have recent familiarity with it and my research found I can use it server-side if needed as well. 
 And even though multiplatform capabilities are not 100% complete, apps using Kotlin on Android are very stable as Google found they are [20% less likely to crash](https://kotlinlang.org/docs/android-overview.html).
 
+An option I considered for a programming langauge is [Dart](https://developers.google.com/learn/topics/dart), which is what [Flutter](https://flutter.dev/) uses. And [both Dart and Kotlin work in Android Studio](https://blog.codemagic.io/dart-vs-kotlin/). This used to be the top choice for cross platform but [Kotlin is prefered for Android development](https://blog.codemagic.io/dart-vs-kotlin/). If I were to for sure push iOS development I might choose Dart over Kotlin, but for this I am satisfied with focusing on just Android but keeping the door open toward crossplatform that Kotlin provides. 
+
+Another option was [React Native](https://reactnative.dev/)
+
 ### Server
 
 There are multiple potential server options such as the three major offerings such as [Microsoft Azure](https://azure.microsoft.com/en-us), [AWS](https://aws.amazon.com/), and [Google Cloud](https://cloud.google.com/). 
 I was thinking Microsoft Azure as that is what we use for our Hanover accounts, but I think using something like [supabase](https://supabase.com/) to set up an online database to store the orders would be sufficient for my needs as I am just hoping to learn to get server and app communication working, I don't need or want to deal with more complicated offerings. Supabase has [more than enough storage and unlimited API calls](https://supabase.com/pricing) for me to test this app for free. It has Kotlin support as well so it meets my basic needs. Supabase also has a nice interface so far, at least for [creating the tables visually](https://github.com/Hanover-CS/HC24-Luuk-Crawford-Senior-Project/assets/32851596/769b538d-6129-4225-9c0f-c20dcd30a821). I do have some SQL experience but features like to visualize that are helpful for faster progress if I get to this.
 
 ### References ( wip, was using the wrong format. should be https://libguides.murdoch.edu.au/IEEE )
+
+https://blog.codemagic.io/dart-vs-kotlin/   july 20th
 
 “Chipotle - Fresh Food Fast - Apps on Google Play.” Google, play.google.com/store/apps/details?id=com.chipotle.ordering. Accessed 2 July 2023. 
 
