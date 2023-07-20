@@ -68,7 +68,7 @@ And even though multiplatform capabilities are not 100% complete, apps using Kot
 
 An option I considered for a programming langauge is [Dart](https://developers.google.com/learn/topics/dart), which is what [Flutter](https://flutter.dev/) uses. And [both Dart and Kotlin work in Android Studio](https://blog.codemagic.io/dart-vs-kotlin/). This used to be the top choice for cross platform but [Kotlin is prefered for Android development](https://blog.codemagic.io/dart-vs-kotlin/). If I were to for sure push iOS development I might choose Dart over Kotlin, but for this I am satisfied with focusing on just Android but keeping the door open toward crossplatform that Kotlin provides. 
 
-Another option was [React Native](https://reactnative.dev/)
+Another option is [React Native](https://reactnative.dev/). Reach Native uses JavaScript. When [comparing React Native directly against Kotlin Multiplatform](https://dzone.com/articles/react-native-vs-kotlin-a-quick-comparison), Kotlin is designed "for developing mobile applications". Using JavaScript with React Native requires [third-party libraries](https://dzone.com/articles/react-native-vs-kotlin-a-quick-comparison) to achieve the same thing. React Native offers a quick reload option to see changes but I am currently satisfied with the speed of Android Studio. This artlce also came to the conclusion that if focusing on multiplatform then React Native may be the better option. But for those focusing on Android, "you must consider Kotlin".
 
 ### Server
 
