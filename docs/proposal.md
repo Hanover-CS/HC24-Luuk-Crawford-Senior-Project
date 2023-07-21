@@ -77,7 +77,7 @@ I was thinking Microsoft Azure as that is what we use for our Hanover accounts, 
 
 ### References ( wip, was using the wrong format. should be https://libguides.murdoch.edu.au/IEEE )
 
-https://blog.codemagic.io/dart-vs-kotlin/   july 20th
+https://blog.codemagic.io/dart-vs-kotlin/  + https://dzone.com/articles/react-native-vs-kotlin-a-quick-comparison july 20th
 
 “Chipotle - Fresh Food Fast - Apps on Google Play.” Google, play.google.com/store/apps/details?id=com.chipotle.ordering. Accessed 2 July 2023. 
 
