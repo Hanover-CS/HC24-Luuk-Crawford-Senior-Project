@@ -51,6 +51,11 @@ Chipotle gives the option to add other items to the order. Since mealswipes only
 
 Once an order is confirmed the next screen would have something to keep track of the order if I get server communication both ways working.
 
+I drew about what I have in mind for the app, in terms of interface choices.
+![undergroundAppDraftCropped](https://github.com/Hanover-CS/HC24-Luuk-Crawford-Senior-Project/assets/32851596/5ae39d76-aec3-47c2-b9fb-a7024692bebe)
+
+
+
 ### Development Plan
 
 #### What platform to support?
