@@ -85,12 +85,15 @@ I was thinking Microsoft Azure as that is what we use for our Hanover accounts, 
 
 ### References ( wip, was using the wrong format. should be https://libguides.murdoch.edu.au/IEEE )
 
-https://blog.codemagic.io/dart-vs-kotlin/  + https://dzone.com/articles/react-native-vs-kotlin-a-quick-comparison july 20th
+[1] S. Biswas, “Dart vs Kotlin: detailed comparison,” Codemagic blog, Feb. 02, 2021. https://blog.codemagic.io/dart-vs-kotlin/ (accessed Jul. 20, 2023).
 
-“Chipotle - Fresh Food Fast - Apps on Google Play.” Google, play.google.com/store/apps/details?id=com.chipotle.ordering. Accessed 2 July 2023. 
+[2] Nanthini, “React Native vs Kotlin: A Quick Comparison - DZone,” dzone.com. https://dzone.com/articles/react-native-vs-kotlin-a-quick-comparison (accessed Jul. 20, 2023).
 
-“Make Your Android Application Work on IOS – Tutorial: Kotlin.” Kotlinlang, kotlinlang.org/docs/multiplatform-mobile-integrate-in-existing-app.html#decide-what-code-to-make-cross-platform. Accessed 9 July 2023. 
+[3] “Chipotle - Fresh Food Fast - Apps on Google Play.” https://play.google.com/store/apps/details?id=com.chipotle.ordering&hl=en_US (accessed Jul. 2, 2023).
 
-“Pricing.” Supabase, supabase.com/pricing. Accessed 9 July 2023. 
+[4] “Make your Android application work on iOS – tutorial | Kotlin,” Kotlin Help. https://kotlinlang.org/docs/multiplatform-mobile-integrate-in-existing-app.html (accessed Jul. 9, 2023).
 
-"Underground Order Sheet." Hanover College, https://github-production-user-asset-6210df.s3.amazonaws.com/32851596/250412801-19be7b5f-ed5d-42bb-882a-7042fcce4b22.jpg. Copied in person 24 May 2023.
+[5] “Pricing & fees,” Supabase. https://supabase.com//pricing (accessed Jul. 9, 2023).
+
+[6] C. Luuk, “Photo of Underground Ordering Sheet.” May 24, 2023. [In person]. Available: https://github-production-user-asset-6210df.s3.amazonaws.com/32851596/250412801-19be7b5f-ed5d-42bb-882a-7042fcce4b22.jpg (accessed Jul. 22, 2023)
+
