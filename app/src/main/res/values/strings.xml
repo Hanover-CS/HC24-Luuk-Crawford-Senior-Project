@@ -3,4 +3,6 @@
     <string name="toOrderPage">Begin Order</string>
     <string name="typeOfOrderOptions">Order Options</string>
     <string name="itemNameTest">Item Name Test</string>
+    <string name="choiceOfSide">+ choice of side</string>
+    <string name="mealswipe">Mealswipe</string>
 </resources>
