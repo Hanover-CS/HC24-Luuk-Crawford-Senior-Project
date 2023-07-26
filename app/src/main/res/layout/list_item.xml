@@ -5,57 +5,66 @@
     android:layout_height="match_parent">
 
 
-    <androidx.cardview.widget.CardView
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/itemSlotSize"
-        android:cardElevation="5dp"
-        android:cardCornerRadius="5dp"
-        android:cardBackgroundColor="@color/white"
+
         >
         <ImageView
-
+            android:id="@+id/foodPhoto"
+            android:src="@drawable/ic_launcher_background"
             android:layout_width="@dimen/itemSlotSize"
             android:layout_height="@dimen/itemSlotSize"
             android:layout_margin="5dp"
             android:background="@color/white"
             android:elevation="3dp"
-            android:src="@drawable/ic_launcher_background"
             />
 
 
         <TextView
+            android:id="@+id/itemName"
+            android:text="itemNameTest"
+
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:paddingLeft="155dp"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="center"
+            android:layout_marginEnd="-1dp"
+            android:layout_toEndOf="@+id/foodPhoto"
             android:paddingTop="10dp"
+            android:textColor="@color/black"
             android:textSize="23sp"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            android:text="@string/itemNameTest"
-            android:layout_gravity="center"/>
-        <TextView
+            android:textStyle="bold" />
 
+        <TextView
+            android:id="@+id/foodSideInformation"
+            android:text="choiceOfSide"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/choiceOfSide"
-            android:paddingLeft="155dp"
-            android:paddingTop="37dp"
-            android:textColor="@color/black"
-            android:textSize="18dp"
 
-            ></TextView>
+            android:layout_alignParentBottom="true"
+
+            android:layout_marginStart="71dp"
+
+            android:layout_marginBottom="42dp"
+            android:layout_toEndOf="@+id/foodPhoto"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
         <TextView
 
+            android:text="mealswipe"
+            android:id="@+id/foodPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/mealswipe"
-            android:paddingLeft="110dp"
+            android:layout_marginStart="7dp"
+
+            android:layout_toEndOf="@+id/foodPhoto"
             android:paddingTop="64dp"
+
+
             android:textColor="@color/black"
-            android:textSize="20dp"
+            android:textSize="20sp" />
 
-
-            ></TextView>
-
-    </androidx.cardview.widget.CardView>
+    </RelativeLayout>
 </LinearLayout>
