@@ -21,7 +21,7 @@ class SelectionActivity : AppCompatActivity() {
         setContentView(binding.root)
 
 
-        val imageId = intArrayOf(R.drawable.ic_launcher_background,R.drawable.ic_launcher_background,R.drawable.ic_launcher_background)
+        val imageId = intArrayOf(R.drawable.phototest,R.drawable.phototest,R.drawable.phototest)
 
         val itemNames = arrayOf("name1","Name2","nameThree")
 
@@ -31,7 +31,7 @@ class SelectionActivity : AppCompatActivity() {
 
 
 
-        //setContentView(R.layout.activity_selection)
+//        setContentView(R.layout.activity_selection)
 
 
         menuArrayList = ArrayList()
