@@ -8,10 +8,11 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.ImageView
 import android.widget.TextView
+import com.zybooks.hc24_luuk_crawford_senior_project.MenuOffer
 import androidx.core.graphics.createBitmap
 
-class MenuAdapter(private val context : Activity,private val arrayList : ArrayList<MenuOffer>) : ArrayAdapter<MenuOffer>(context,
-R.layout.list_item,arrayList){
+class MenuAdapter(private val context : Activity, private val arrayList : ArrayList<MenuOffer>) : ArrayAdapter<MenuOffer> (context,
+    R.layout.list_item, arrayList){
 
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
