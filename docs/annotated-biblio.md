@@ -25,37 +25,52 @@ Wendy's also has a version on the [Google Play][2] and [Apple's app store][3].
 Chipotle is a good example because they have food similar to the underground such as their [quesadilla and burrito options, viewed from the mobile browser](https://github.com/Hanover-CS/HC24-Luuk-Crawford-Senior-Project/assets/32851596/353d2fc6-e825-4613-a81b-7232145e9a7b). For example, on the burrito up to 2 meats can be selected, and if 2 are selected they are [half portions visually](https://github.com/Hanover-CS/HC24-Luuk-Crawford-Senior-Project/assets/32851596/fbe3fa9d-8ac7-4149-b638-e803b37f4629). Chipotle apps available in [Google Play](https://play.google.com/store/apps/details?id=com.chipotle.ordering) and [Apple's app store](https://apps.apple.com/us/app/chipotle-fresh-food-fast/id327228455).
 
 #### Thoughts:
-  I like the process of Chipotle's ordering more than Wendy's because instead of assuming what people want it requires the person to select what should be added to the order, the same way the [current ordering sheets](https://github.com/Hanover-CS/HC24-Luuk-Crawford-Senior-Project/assets/32851596/19be7b5f-ed5d-42bb-882a-7042fcce4b22) work. Though the current ordering sheets do not include the burrito because those you need to talk to the chef working there like subway.
+  I like the process of Chipotle's ordering more than Wendy's because instead of assuming what people want it requires the person to select what should be added to the order, the same way the [current ordering sheets](https://github.com/Hanover-CS/HC24-Luuk-Crawford-Senior-Project/assets/32851596/19be7b5f-ed5d-42bb-882a-7042fcce4b22) work. The current ordering sheets do not include the burrito because for those you need to talk to the chef working there like Subway.
 
 ### Example 3: [Taco Bell](https://www.tacobell.com/food)
 
-Taco Bell also has a burritos and most orders are customizable. Items can be taken as is or customized to the customer's liking. Taco bell seems to have more customization than the other competitors. They let the customer choose how much of each ingredient and swap them with others. For example the [beef slot has 10 options](https://github.com/Hanover-CS/HC24-Luuk-Crawford-Senior-Project/assets/32851596/5be3b2bd-814c-4f92-b772-28643185b69c). They also inude the option to put some of the topping options on the side. App available in [Google Play](https://play.google.com/store/apps/details?id=com.tacobell.ordering&hl=en) and [Apple's app store](https://apps.apple.com/us/app/taco-bell-fast-food-delivery/id497387361).
+Taco Bell also has burritos and most orders are customizable. Items can be taken as is or customized to the customer's liking. Taco Bell seems to have more customization than the other competitors. They let the customer choose how much of each ingredient and swap them with others. For example the [beef slot has 10 options](https://github.com/Hanover-CS/HC24-Luuk-Crawford-Senior-Project/assets/32851596/5be3b2bd-814c-4f92-b772-28643185b69c). They also include the option to put some of the topping options on the side. App available in [Google Play](https://play.google.com/store/apps/details?id=com.tacobell.ordering&hl=en) and [Apple's app store](https://apps.apple.com/us/app/taco-bell-fast-food-delivery/id497387361).
 
 
 ### Thoughts:
-  There is a lot of customization that the underground doesn't currently offer. I don't expect to reach this level of customization because I don't think I'll have time to add a quantity or on the side option. Maybe I could have a spot for people to add a note on the order but that would make things more difficult than it already is.
+  There is a lot of customization that the Underground doesn't currently offer. I don't expect to reach this level of customization because I don't think I'll have time to add a quantity or on the side option. Maybe I could have a spot for people to add a note on the order but that would make things more difficult than it already is.
 
 
 ## Language & technology options
 
 ### Web app development
-Web app development would allow any web using device to use the app.
+Web app development would allow any web-using device to use the app.
 
-Downside is I would need to spend a lot more time to get started because I don’t have experience with this and would likely run into more issues starting from nothing. I would rather resume learning mobile app development than start something from scratch for a solo project.
+The downside is I would need to spend a lot more time to get started because I don’t have experience with this and would likely run into more issues starting from nothing. I would rather resume learning mobile app development than start something from scratch for a solo project.
 
-### Multiplatform mobile development
-Multiplatform development means code I make should work for multiple platforms. If I pursue mobile development, this means when I’m testing and working with an Android, it is coded in an environment that should also work with iOS devices without needing to rewrite too much code. This makes supporting multiple platforms easier as I wouldn't need to learn and use two different languages at a time for iOS and Android.
+### Multiplatform mobile development [top options](https://kotlinlang.org/docs/cross-platform-frameworks.html#kotlin-multiplatform-mobile)
+Multiplatform development means most code I make should also work for multiple platforms without needing to have completely different versions. If I pursue mobile development, this means when I’m testing and working with an Android (for example), it is coded in an environment that should also work with iOS devices without needing to rewrite too much code. This makes supporting multiple platforms easier as I wouldn't need to learn and use two different languages at a time for iOS and Android.
 
 This will be useful if I have time to attempt to make it work on iOS, though I don't think I will be able to unless I do more research to figure out a way around Xcode being Mac only.
 
-I intend to stick to mobile development for this project. As Kotlin is multiplatform it is possible I could reuse a lot of it to make it work on PC or elsewhere if this project were to be continued one day.
+#### [Kotlin Multiplatform Mobile](https://kotlinlang.org/docs/multiplatform-mobile-getting-started.html)
+- Created by [JetBrains](https://www.jetbrains.com/) in 2011
+- Kotlin is a multiplatform programming language that ["used by over 60% of professional Android developers"](https://developer.android.com/kotlin) and [Google's top pick for Android development](https://techcrunch.com/2022/08/18/five-years-later-google-is-still-all-in-on-kotlin/)
+- Kotlin allows developers to use the same code between platforms. [For example macOS, iOS, Linux Windows, and Android](https://kotlinlang.org/docs/native-overview.html#target-platforms) can share code meaning less rewriting per platform for [core layers, business logic, presentation logic, and more](https://kotlinlang.org/docs/multiplatform-mobile-faq.html).
+- Kotlin multiplatform for mobile is currently in [beta](https://kotlinlang.org/docs/components-stability.html#stability-levels-explained).
+- [JetBrains officially supports IntelliJ IDEA and Android Studio](https://kotlinlang.org/docs/kotlin-ide.html#intellij-idea). Other IDEs have community support as well.
+- Also good for [server side](https://kotlinlang.org/docs/server-overview.html#frameworks-for-server-side-development-with-kotlin) and scalability. 
 
-#### Kotlin
-Kotlin is a multiplatform programming language that ["used by over 60% of professional Android developers"](https://developer.android.com/kotlin). And Kotlin has been [Google's top pick for Android development](https://techcrunch.com/2022/08/18/five-years-later-google-is-still-all-in-on-kotlin/) as well.
+#### [Flutter](https://flutter.dev/)
+- Flutter is an option that was created by Google in 2017.
+- It uses a language Google developed called [Dart](https://developers.google.com/learn/topics/dart).
+- Some of the [key features](https://kotlinlang.org/docs/cross-platform-frameworks.html#react-native) noted are that it has a feature that can let you see what your changes are doing without needing to recompile.
+- It also has its own rendering engine instead of relying on web browser technology.
+- Being in the Google ecosystem means easier access to features such as Google's Material Design which can be useful for making app interfaces.
 
-I have some familiarity with Kotlin as during May term we used Kotlin for our first android development. 
+#### [React Native](https://reactnative.dev/)
+- Created by [Meta](https://about.meta.com/) in 2015.
+- This option uses JavaScript.
+- This option also has a fast refresh feature to see changes quickly.
+- React Native focuses on UI.
+- It uses [Flipper](https://fbflipper.com/) which helps with debugging on mobile.
 
-One downside to Kotlin is that multiplatform development for mobile is in beta which may come with some unexpected problems during development if I wanted to support iOS as well. It's noted as [almost stable](https://kotlinlang.org/docs/multiplatform-mobile-getting-started.html) at the moment. This means I should be able to get it working on Android, having it also work on iOS can work but may have some unexpected barriers. 
+
 
 [1]: https://order.wendys.com/categories?site=menu&lang=en_US
 [2]: https://play.google.com/store/apps/details?id=com.wendys.nutritiontool
