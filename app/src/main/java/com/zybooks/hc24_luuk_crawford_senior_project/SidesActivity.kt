@@ -20,6 +20,10 @@ class SidesActivity : AppCompatActivity(){
         val price = intent.getStringExtra("price")
 
 
+        binding.name.text = name
+        //binding.foodSideInformation.text = side
+        //binding.foodPrice.text = price
+
 
 
     }
