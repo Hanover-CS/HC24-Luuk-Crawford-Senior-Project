@@ -29,6 +29,8 @@ class SelectionActivity : AppCompatActivity() {
 
         val itemPrices = arrayOf("Mealswipe", "Mealswipe", "Mealswipe + 3")
 
+        val itemExtraOptions = arrayOf("abc","adf","bcd")
+
 
 
 //        setContentView(R.layout.activity_selection)
@@ -37,7 +39,7 @@ class SelectionActivity : AppCompatActivity() {
         menuArrayList = ArrayList()
 
         for (i in itemNames.indices){
-            val item = MenuOffer(itemNames[i], sideInfos[i], itemPrices[i], imageId[i])
+            val item = MenuOffer(itemNames[i], sideInfos[i], itemPrices[i], imageId[i], itemExtraOptions[i])
             menuArrayList.add(item)
         }
 
@@ -49,12 +51,14 @@ class SelectionActivity : AppCompatActivity() {
             val name = itemNames[position]
             val side = sideInfos[position]
             val price = itemPrices[position]
+            val extraOptions = itemExtraOptions[position]
 
             val i = Intent(this, SidesActivity::class.java)
             i.putExtra("name", name)
             i.putExtra("image", image)
             i.putExtra("side", side)
             i.putExtra("price", price)
+            i.putExtra("extraOptions", extraOptions)
             startActivity(i)
 
         }

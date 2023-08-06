@@ -25,13 +25,17 @@ class MenuAdapter(private val context : Activity, private val arrayList : ArrayL
         val sideInfo: TextView = view.findViewById(R.id.foodSideInformation)
         val price: TextView = view.findViewById(R.id.foodPrice)
 
-        //image view
+
+
+
 
 
         itemName.text = arrayList[position].name
         sideInfo.text = arrayList[position].side
         price.text = arrayList[position].price
         imageView.setImageResource(arrayList[position].imageID)
+
+
 
         return view
 
