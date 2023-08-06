@@ -29,9 +29,15 @@ class SidesActivity : AppCompatActivity(){
         //binding.foodSideInformation.text = side
         //binding.foodPrice.text = price
 
-        //if (extraOptions.contains("A")){
-          //  binding.debug.text = extraOptions
-        //}
+        if (extraOptions != null) {
+            if (extraOptions.contains('a')){
+                binding.debug.text = extraOptions
+            }else{
+                binding.debug.text = "not contain a"
+            }
+        }else{
+            binding.debug.text = "ERROR: null extraOptions"
+        }
 
 
 
