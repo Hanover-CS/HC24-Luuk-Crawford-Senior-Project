@@ -15,12 +15,15 @@ class SidesActivity : AppCompatActivity(){
         setContentView(binding.root)
 
         val name = intent.getStringExtra("name")
-        val image = intent.getStringExtra("image")
+        val image = intent.getIntExtra("image", R.drawable.ic_launcher_background)
+        //val image = intent.getStringExtra("image")
         val side = intent.getStringExtra("side")
         val price = intent.getStringExtra("price")
 
 
         binding.name.text = name
+        binding.foodPhoto.setImageResource(image)
+
         //binding.foodSideInformation.text = side
         //binding.foodPrice.text = price
 

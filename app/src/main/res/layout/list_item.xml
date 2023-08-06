@@ -10,15 +10,18 @@
         android:layout_height="@dimen/itemSlotSize"
 
         >
+
         <ImageView
             android:id="@+id/foodPhoto"
-            android:src="@drawable/ic_launcher_background"
             android:layout_width="@dimen/itemSlotSize"
             android:layout_height="@dimen/itemSlotSize"
-            android:layout_margin="5dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
             android:background="@color/white"
             android:elevation="3dp"
-            />
+            android:src="@drawable/ic_launcher_background" />
 
 
         <TextView
