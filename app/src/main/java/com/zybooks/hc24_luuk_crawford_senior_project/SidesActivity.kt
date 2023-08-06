@@ -19,13 +19,19 @@ class SidesActivity : AppCompatActivity(){
         //val image = intent.getStringExtra("image")
         val side = intent.getStringExtra("side")
         val price = intent.getStringExtra("price")
+        val extraOptions = intent.getStringExtra("extraOptions")
 
 
         binding.name.text = name
         binding.foodPhoto.setImageResource(image)
+        binding.debug.text = extraOptions
 
         //binding.foodSideInformation.text = side
         //binding.foodPrice.text = price
+
+        //if (extraOptions.contains("A")){
+          //  binding.debug.text = extraOptions
+        //}
 
 
 
