@@ -5,4 +5,5 @@
     <string name="itemNameTest">Item Name Test</string>
     <string name="choiceOfSide">+ choice of side</string>
     <string name="mealswipe">Mealswipe</string>
+    <string name="itemName">tempItemName</string>
 </resources>

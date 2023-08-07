@@ -6,39 +6,4 @@
     android:layout_height="match_parent">
 
 
-    <TextView
-        android:id="@+id/name"
-        android:layout_width="260dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="88dp"
-        android:text="itemNameReplacesText"
-        android:textSize="23sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.794"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"></TextView>
-
-    <ImageView
-        android:id="@+id/foodPhoto"
-        android:layout_width="@dimen/itemSlotSize"
-        android:layout_height="@dimen/itemSlotSize"
-        android:layout_marginTop="64dp"
-        android:background="@color/white"
-        android:elevation="3dp"
-        android:src="@drawable/ic_launcher_background"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.009"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/debug"
-        android:layout_width="200dp"
-        android:layout_height="20dp"
-        android:layout_marginBottom="16dp"
-        android:text="debugReplaceThis"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

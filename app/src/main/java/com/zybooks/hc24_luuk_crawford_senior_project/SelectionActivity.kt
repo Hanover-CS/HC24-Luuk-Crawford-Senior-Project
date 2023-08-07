@@ -21,7 +21,7 @@ class SelectionActivity : AppCompatActivity() {
         setContentView(binding.root)
 
 
-        val imageId = intArrayOf(R.drawable.phototest,R.drawable.phototest,R.drawable.phototest)
+        val imageId = intArrayOf(R.drawable.phototest,R.drawable.ic_launcher_background,R.drawable.ic_launcher_foreground)
 
         val itemNames = arrayOf("name1","Name2","nameThree")
 
