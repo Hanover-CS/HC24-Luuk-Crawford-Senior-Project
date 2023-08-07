@@ -24,8 +24,8 @@ class SidesActivity : AppCompatActivity(){
         val price = intent.getStringExtra("price")
         val extraOptions = intent.getStringExtra("extraOptions")
 
-
-        this.setContentView(R.layout.list_item)
+        this.setContentView(R.layout.toppings_generic)
+        //this.setContentView(R.layout.list_item)
 
 
         val itemName = findViewById<TextView>(R.id.itemName)
@@ -39,6 +39,7 @@ class SidesActivity : AppCompatActivity(){
 
         val foodPicture = findViewById<ImageView>(R.id.foodPhoto)
         foodPicture.setImageResource(image)
+
 
 
         //binding.name.text = name
