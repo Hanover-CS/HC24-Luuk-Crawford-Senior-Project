@@ -2,10 +2,8 @@ package com.zybooks.hc24_luuk_crawford_senior_project
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.LayoutInflater
 
 import androidx.appcompat.app.AppCompatActivity
-import com.zybooks.hc24_luuk_crawford_senior_project.databinding.ActivityMainBinding
 import com.zybooks.hc24_luuk_crawford_senior_project.databinding.ActivitySelectionBinding
 
 class SelectionActivity : AppCompatActivity() {
@@ -53,7 +51,7 @@ class SelectionActivity : AppCompatActivity() {
             val price = itemPrices[position]
             val extraOptions = itemExtraOptions[position]
 
-            val i = Intent(this, SidesActivity::class.java)
+            val i = Intent(this, CustomizationActivity::class.java)
             i.putExtra("name", name)
             i.putExtra("image", image)
             i.putExtra("side", side)

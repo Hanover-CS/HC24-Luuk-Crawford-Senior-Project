@@ -1,14 +1,12 @@
 package com.zybooks.hc24_luuk_crawford_senior_project
 
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.zybooks.hc24_luuk_crawford_senior_project.databinding.ActivitySelectionBinding
 import com.zybooks.hc24_luuk_crawford_senior_project.databinding.ActivitySidesBinding
 
-class SidesActivity : AppCompatActivity(){
+class CustomizationActivity : AppCompatActivity(){
     private lateinit var binding: ActivitySidesBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,7 +22,7 @@ class SidesActivity : AppCompatActivity(){
         val price = intent.getStringExtra("price")
         val extraOptions = intent.getStringExtra("extraOptions")
 
-        this.setContentView(R.layout.toppings_generic)
+        this.setContentView(R.layout.regular_customization)
         //this.setContentView(R.layout.list_item)
 
 
