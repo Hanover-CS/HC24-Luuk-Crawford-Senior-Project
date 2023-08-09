@@ -6,4 +6,8 @@
     <string name="choiceOfSide">+ choice of side</string>
     <string name="mealswipe">Mealswipe</string>
     <string name="itemName">tempItemName</string>
+    <string name="selectSide">Side (select one)</string>
+    <string name="fries">Hand Cut Fries</string>
+    <string name="tots">Tater Tots</string>
+    <string name="macNCheese">Mac-N-Cheese</string>
 </resources>
