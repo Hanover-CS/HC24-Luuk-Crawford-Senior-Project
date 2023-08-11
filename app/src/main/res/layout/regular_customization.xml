@@ -32,7 +32,7 @@
 
     <include
         android:id="@+id/toppingOptions"
-
+        android:layout_marginTop="20dp"
         layout="@layout/toppings_options"
 
         android:layout_width="wrap_content"
