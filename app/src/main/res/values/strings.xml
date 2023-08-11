@@ -17,4 +17,5 @@
     <string name="americanCheese">Americn Cheese</string>
     <string name="back">Cancel and go back.</string>
     <string name="selectToppings">Toppings</string>
+    <string name="submitOrder">Submit/Confirm Order</string>
 </resources>
