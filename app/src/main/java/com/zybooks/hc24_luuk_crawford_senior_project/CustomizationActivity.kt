@@ -15,9 +15,6 @@ class CustomizationActivity : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         binding = ActivitySidesBinding.inflate(layoutInflater)
 
-        //setContentView(binding.root)
-
-
 
 
         val name = intent.getStringExtra("name")
@@ -27,13 +24,14 @@ class CustomizationActivity : AppCompatActivity(){
         val price = intent.getStringExtra("price")
         val extraOptions = intent.getStringExtra("extraOptions")
 
+
+        //regular customization START
         this.setContentView(R.layout.regular_customization)
         val buttonClick = findViewById<Button>(R.id.backToList)
         buttonClick.setOnClickListener {
             val intent = Intent(this, SelectionActivity::class.java)
             startActivity(intent)
         }
-
 
         val itemName = findViewById<TextView>(R.id.itemName)
         itemName.text = name
@@ -47,17 +45,11 @@ class CustomizationActivity : AppCompatActivity(){
         val foodPicture = findViewById<ImageView>(R.id.foodPhoto)
         foodPicture.setImageResource(image)
 
-
-
-        //binding.name.text = name
-        //binding.foodPhoto.setImageResource(image)
-        //binding.debug.text = extraOptions
+        //regular customization END
 
 
 
 
-        //binding.foodSideInformation.text = side
-        //binding.foodPrice.text = price
 
 
         if (extraOptions != null) {
