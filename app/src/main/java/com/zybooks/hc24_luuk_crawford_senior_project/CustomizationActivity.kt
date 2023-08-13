@@ -1,6 +1,8 @@
 package com.zybooks.hc24_luuk_crawford_senior_project
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -15,15 +17,22 @@ class CustomizationActivity : AppCompatActivity(){
 
         //setContentView(binding.root)
 
+
+
+
         val name = intent.getStringExtra("name")
         val image = intent.getIntExtra("image", R.drawable.ic_launcher_background)
-        //val image = intent.getStringExtra("image")
+
         val side = intent.getStringExtra("side")
         val price = intent.getStringExtra("price")
         val extraOptions = intent.getStringExtra("extraOptions")
 
         this.setContentView(R.layout.regular_customization)
-        //this.setContentView(R.layout.list_item)
+        val buttonClick = findViewById<Button>(R.id.backToList)
+        buttonClick.setOnClickListener {
+            val intent = Intent(this, SelectionActivity::class.java)
+            startActivity(intent)
+        }
 
 
         val itemName = findViewById<TextView>(R.id.itemName)
