@@ -18,4 +18,11 @@
     <string name="back">Cancel and go back.</string>
     <string name="selectToppings">Toppings</string>
     <string name="submitOrder">Submit/Confirm Order</string>
+    <string name="limeRice">Lime Rice</string>
+    <string name="blackBeans">Black Beans</string>
+    <string name="queso">Queso</string>
+    <string name="chicken">Chicken</string>
+    <string name="jalapenos">Jalapenos</string>
+    <string name="sourCream">Sour Cream</string>
+    <string name="salsa">Salsa</string>
 </resources>
