@@ -33,7 +33,6 @@ class SelectionActivity : AppCompatActivity() {
             "name": "Quesadilla",
             "customization": "Quesadilla"
         }]"""
-
         data class MenuItem(val id: Int, val name: String, val customization: String)
         val mapper = ObjectMapper().registerKotlinModule()
 
