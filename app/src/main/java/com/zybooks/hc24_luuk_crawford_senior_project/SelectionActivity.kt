@@ -50,22 +50,26 @@ class SelectionActivity : AppCompatActivity() {
         binding.listview.isClickable = true
         binding.listview.adapter = MenuAdapter(this,menuArrayList) //14:30
         binding.listview.setOnItemClickListener { parent, view, position, id ->
-
-            val image = imageId[position]
-            val name = itemNames[position]
-            val side = sideInfos[position]
-            val price = itemPrices[position]
-
-            val i = Intent(this, CustomizationActivity::class.java)
-            i.putExtra("name", name)
-            i.putExtra("image", image)
-            i.putExtra("side", side)
-            i.putExtra("price", price)
-
-            startActivity(i)
-
+            startCustomizationActivityWithInfo(imageId, position, itemNames, sideInfos, itemPrices)
         }
 
+    }
+
+    private fun startCustomizationActivityWithInfo(
+        imageId: IntArray,
+        position: Int,
+        itemNames: List<String>,
+        sideInfos: ArrayList<String>,
+        itemPrices: ArrayList<String>
+    ) {
+
+        val i = Intent(this, CustomizationActivity::class.java)
+        i.putExtra("name", itemNames[position])
+        i.putExtra("image", imageId[position])
+        i.putExtra("side", sideInfos[position])
+        i.putExtra("price", itemPrices[position])
+
+        startActivity(i)
     }
 
     private fun fillMenuArrayListWith(
