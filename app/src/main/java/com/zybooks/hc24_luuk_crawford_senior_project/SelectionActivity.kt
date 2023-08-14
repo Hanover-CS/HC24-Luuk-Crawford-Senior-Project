@@ -52,8 +52,6 @@ class SelectionActivity : AppCompatActivity() {
         val itemPrices = arrayListOf<String>()
 
 
-        val itemExtraOptions = arrayOf("abc","adf","bcd")
-
 
 
 //        setContentView(R.layout.activity_selection)
@@ -65,19 +63,22 @@ class SelectionActivity : AppCompatActivity() {
         for (i in itemNames.indices){
 
             when(itemCustomization[i]){
-                "Burger" -> sideInfos.add("+ Choice of side")
-                "Quesadilla" -> sideInfos.add("")
-                else -> sideInfos.add("unknown sideInfo")
+                "Burger" ->{
+                    sideInfos.add("+ Choice of side")
+                    itemPrices.add("Mealswipe")
+                }
+                "Quesadilla" ->{
+                    sideInfos.add("")
+                    itemPrices.add("Mealswipe + 3")
+                }
+                else -> {
+                    sideInfos.add("unknown sideInfo")
+                    itemPrices.add("unknown itemPrice")
+                }
             }
 
-            when(itemCustomization[i]) {
-                "Burger" -> itemPrices.add("Mealswipe")
-                "Quesadilla" -> itemPrices.add("Mealswipe + 3")
-                else -> itemPrices.add("unknown itemPrice")
-            }
 
-
-            val item = MenuOffer(itemNames[i], sideInfos[i], itemPrices[i], imageId[i], itemExtraOptions[i])
+            val item = MenuOffer(itemNames[i], sideInfos[i], itemPrices[i], imageId[i])
             menuArrayList.add(item)
         }
 
@@ -89,14 +90,14 @@ class SelectionActivity : AppCompatActivity() {
             val name = itemNames[position]
             val side = sideInfos[position]
             val price = itemPrices[position]
-            val extraOptions = itemExtraOptions[position]
+
 
             val i = Intent(this, CustomizationActivity::class.java)
             i.putExtra("name", name)
             i.putExtra("image", image)
             i.putExtra("side", side)
             i.putExtra("price", price)
-            i.putExtra("extraOptions", extraOptions)
+
             startActivity(i)
 
         }

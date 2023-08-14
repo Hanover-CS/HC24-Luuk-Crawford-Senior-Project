@@ -22,7 +22,7 @@ class CustomizationActivity : AppCompatActivity(){
 
         val side = intent.getStringExtra("side")
         val price = intent.getStringExtra("price")
-        val extraOptions = intent.getStringExtra("extraOptions")
+
 
 
         //regular customization START
@@ -47,22 +47,6 @@ class CustomizationActivity : AppCompatActivity(){
 
         //regular customization END
 
-
-
-
-
-
-        if (extraOptions != null) {
-            if (extraOptions.contains('a')){
-                //binding.debug.text = extraOptions
-
-
-            }else{
-                //binding.debug.text = "not contain a"
-            }
-        }else{
-            //binding.debug.text = "ERROR: null extraOptions"
-        }
 
 
 
