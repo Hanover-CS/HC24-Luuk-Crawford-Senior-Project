@@ -5,7 +5,9 @@ import android.os.Bundle
 
 import androidx.appcompat.app.AppCompatActivity
 import com.zybooks.hc24_luuk_crawford_senior_project.databinding.ActivitySelectionBinding
-
+import com.fasterxml.jackson.databind.ObjectMapper
+import com.fasterxml.jackson.module.kotlin.readValue
+import com.fasterxml.jackson.module.kotlin.registerKotlinModule
 class SelectionActivity : AppCompatActivity() {
 
     private lateinit var binding : ActivitySelectionBinding
@@ -18,14 +20,38 @@ class SelectionActivity : AppCompatActivity() {
 
         setContentView(binding.root)
 
+        val menujson = """[{
+            "id": 0,
+            "name": "Hamburger",
+            "customization": "Burger"
+        }, {
+            "id": 1,
+            "name": "Veggie Burger",
+            "customization": "Burger"
+        }, {
+            "id": 2,
+            "name": "Quesadilla",
+            "customization": "Quesadilla"
+        }]"""
 
+        data class MenuItem(val id: Int, val name: String, val customization: String)
+        val mapper = ObjectMapper().registerKotlinModule()
+
+        val menuItems: List<MenuItem> = mapper.readValue(menujson)
+        val itemNames = menuItems.map { it.name }
+        val itemCustomization = menuItems.map {it.customization}
+
+
+
+
+        //figure out values
         val imageId = intArrayOf(R.drawable.phototest,R.drawable.ic_launcher_background,R.drawable.ic_launcher_foreground)
 
-        val itemNames = arrayOf("name1","Name2","nameThree")
 
-        val sideInfos = arrayOf("sideInfo1", "", "SideInfo3")
 
-        val itemPrices = arrayOf("Mealswipe", "Mealswipe", "Mealswipe + 3")
+        val sideInfos = arrayListOf<String>()
+        val itemPrices = arrayListOf<String>()
+
 
         val itemExtraOptions = arrayOf("abc","adf","bcd")
 
@@ -34,9 +60,24 @@ class SelectionActivity : AppCompatActivity() {
 //        setContentView(R.layout.activity_selection)
 
 
+        //add items to menu list
         menuArrayList = ArrayList()
 
         for (i in itemNames.indices){
+
+            when(itemCustomization[i]){
+                "Burger" -> sideInfos.add("+ Choice of side")
+                "Quesadilla" -> sideInfos.add("")
+                else -> sideInfos.add("unknown sideInfo")
+            }
+
+            when(itemCustomization[i]) {
+                "Burger" -> itemPrices.add("Mealswipe")
+                "Quesadilla" -> itemPrices.add("Mealswipe + 3")
+                else -> itemPrices.add("unknown itemPrice")
+            }
+
+
             val item = MenuOffer(itemNames[i], sideInfos[i], itemPrices[i], imageId[i], itemExtraOptions[i])
             menuArrayList.add(item)
         }
