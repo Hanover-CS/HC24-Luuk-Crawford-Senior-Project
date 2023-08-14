@@ -35,52 +35,17 @@ class SelectionActivity : AppCompatActivity() {
         }]"""
         data class MenuItem(val id: Int, val name: String, val customization: String)
         val mapper = ObjectMapper().registerKotlinModule()
-
         val menuItems: List<MenuItem> = mapper.readValue(menujson)
+
         val itemNames = menuItems.map { it.name }
-        val itemCustomization = menuItems.map {it.customization}
+        val itemCustomizationType = menuItems.map {it.customization}
 
-
-
-
-        //figure out values
         val imageId = intArrayOf(R.drawable.phototest,R.drawable.ic_launcher_background,R.drawable.ic_launcher_foreground)
-
-
 
         val sideInfos = arrayListOf<String>()
         val itemPrices = arrayListOf<String>()
 
-
-
-
-//        setContentView(R.layout.activity_selection)
-
-
-        //add items to menu list
-        menuArrayList = ArrayList()
-
-        for (i in itemNames.indices){
-
-            when(itemCustomization[i]){
-                "Burger" ->{
-                    sideInfos.add("+ Choice of side")
-                    itemPrices.add("Mealswipe")
-                }
-                "Quesadilla" ->{
-                    sideInfos.add("")
-                    itemPrices.add("Mealswipe + 3")
-                }
-                else -> {
-                    sideInfos.add("unknown sideInfo")
-                    itemPrices.add("unknown itemPrice")
-                }
-            }
-
-
-            val item = MenuOffer(itemNames[i], sideInfos[i], itemPrices[i], imageId[i])
-            menuArrayList.add(item)
-        }
+        fillMenuArrayListWith(itemNames, itemCustomizationType, sideInfos, itemPrices, imageId)
 
         binding.listview.isClickable = true
         binding.listview.adapter = MenuAdapter(this,menuArrayList) //14:30
@@ -90,7 +55,6 @@ class SelectionActivity : AppCompatActivity() {
             val name = itemNames[position]
             val side = sideInfos[position]
             val price = itemPrices[position]
-
 
             val i = Intent(this, CustomizationActivity::class.java)
             i.putExtra("name", name)
@@ -102,6 +66,45 @@ class SelectionActivity : AppCompatActivity() {
 
         }
 
+    }
+
+    private fun fillMenuArrayListWith(
+        itemNames: List<String>,
+        itemCustomizationType: List<String>,
+        sideInfos: ArrayList<String>,
+        itemPrices: ArrayList<String>,
+        imageId: IntArray
+    ) {
+        menuArrayList = ArrayList()
+        for (i in itemNames.indices) {
+            addInfoToListsBasedOnType(itemCustomizationType, i, sideInfos, itemPrices)
+            val item = MenuOffer(itemNames[i], sideInfos[i], itemPrices[i], imageId[i])
+            menuArrayList.add(item)
+        }
+    }
+
+    private fun addInfoToListsBasedOnType(
+        customizationType: List<String>,
+        i: Int,
+        sideInfos: ArrayList<String>,
+        itemPrices: ArrayList<String>
+    ) {
+        when (customizationType[i]) {
+            "Burger" -> {
+                sideInfos.add("+ Choice of side")
+                itemPrices.add("Mealswipe")
+            }
+
+            "Quesadilla" -> {
+                sideInfos.add("")
+                itemPrices.add("Mealswipe + 3")
+            }
+
+            else -> {
+                sideInfos.add("unknown sideInfo")
+                itemPrices.add("unknown itemPrice")
+            }
+        }
     }
 
 
