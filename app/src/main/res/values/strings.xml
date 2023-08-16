@@ -5,6 +5,7 @@
     <string name="itemNameTest">Item Name Test</string>
     <string name="choiceOfSide">+ choice of side</string>
     <string name="mealswipe">Mealswipe</string>
+    <string name="mealswipe3">Mealswipe + $3</string>
     <string name="itemName">tempItemName</string>
     <string name="selectSide">Side (select one)</string>
     <string name="fries">Hand Cut Fries</string>
@@ -25,4 +26,7 @@
     <string name="jalapenos">Jalapenos</string>
     <string name="sourCream">Sour Cream</string>
     <string name="salsa">Salsa</string>
+    <string name="unknown">unknown</string>
+    <string name="nothing" />
+
 </resources>

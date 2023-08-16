@@ -95,18 +95,19 @@ class SelectionActivity : AppCompatActivity() {
     ) {
         when (customizationType[i]) {
             "Burger" -> {
-                sideInfos.add("+ Choice of side")
-                itemPrices.add("Mealswipe")
+                sideInfos.add(getString(R.string.choiceOfSide))
+                itemPrices.add(getString(R.string.mealswipe))
+
             }
 
             "Quesadilla" -> {
-                sideInfos.add("")
-                itemPrices.add("Mealswipe + 3")
+                sideInfos.add(getString(R.string.nothing))
+                itemPrices.add(getString(R.string.mealswipe3))
             }
 
             else -> {
-                sideInfos.add("unknown sideInfo")
-                itemPrices.add("unknown itemPrice")
+                sideInfos.add(getString(R.string.unknown))
+                itemPrices.add(getString(R.string.unknown))
             }
         }
     }
