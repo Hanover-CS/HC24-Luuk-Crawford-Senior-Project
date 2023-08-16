@@ -8,9 +8,12 @@ import android.widget.Button
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_main)
+        setupButton()
+    }
 
-
+    private fun setupButton() {
         val buttonClick = findViewById<Button>(R.id.toSelectionActivity)
         buttonClick.setOnClickListener {
             val intent = Intent(this, SelectionActivity::class.java)

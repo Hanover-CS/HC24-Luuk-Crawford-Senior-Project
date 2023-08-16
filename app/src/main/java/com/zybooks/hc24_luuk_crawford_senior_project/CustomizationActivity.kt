@@ -13,43 +13,52 @@ class CustomizationActivity : AppCompatActivity(){
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivitySidesBinding.inflate(layoutInflater)
+
+        val itemName = intent.getStringExtra("name")
+        loadLayout(itemName)
 
 
+    }
 
-        val name = intent.getStringExtra("name")
+    private fun loadLayout(itemName: String?) {
+        when (itemName) {
+            "Burger" -> {
+                this.setContentView(R.layout.regular_customization)
+            }
+
+            "Quesadilla" -> {
+                this.setContentView(R.layout.quesadilla_customization)
+            }
+
+            else -> {
+                this.setContentView(R.layout.regular_customization)
+            }
+        }
+        fillItemInfo(itemName)
+        setupBackButton()
+    }
+
+    private fun fillItemInfo(name: String?) {
+        val itemName = findViewById<TextView>(R.id.itemName)
+        itemName.text = name
+
+        val sideText = findViewById<TextView>(R.id.foodSideInformation)
+        sideText.text = intent.getStringExtra("side")
+
+        val costText = findViewById<TextView>(R.id.foodPrice)
+        costText.text = intent.getStringExtra("price")
+
+        val foodPicture = findViewById<ImageView>(R.id.foodPhoto)
         val image = intent.getIntExtra("image", R.drawable.ic_launcher_background)
+        foodPicture.setImageResource(image)
+    }
 
-        val side = intent.getStringExtra("side")
-        val price = intent.getStringExtra("price")
-
-
-
-        //regular customization START
-        this.setContentView(R.layout.regular_customization)
+    private fun setupBackButton() {
         val buttonClick = findViewById<Button>(R.id.backToList)
         buttonClick.setOnClickListener {
             val intent = Intent(this, SelectionActivity::class.java)
             startActivity(intent)
         }
-
-        val itemName = findViewById<TextView>(R.id.itemName)
-        itemName.text = name
-
-        val sideText = findViewById<TextView>(R.id.foodSideInformation)
-        sideText.text = side
-
-        val costText = findViewById<TextView>(R.id.foodPrice)
-        costText.text = price
-
-        val foodPicture = findViewById<ImageView>(R.id.foodPhoto)
-        foodPicture.setImageResource(image)
-
-        //regular customization END
-
-
-
-
     }
 
 }

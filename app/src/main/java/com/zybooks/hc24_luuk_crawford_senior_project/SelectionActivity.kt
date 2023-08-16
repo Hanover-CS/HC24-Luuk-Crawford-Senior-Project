@@ -33,6 +33,7 @@ class SelectionActivity : AppCompatActivity() {
             "name": "Quesadilla",
             "customization": "Quesadilla"
         }]"""
+
         data class MenuItem(val id: Int, val name: String, val customization: String)
         val mapper = ObjectMapper().registerKotlinModule()
         val menuItems: List<MenuItem> = mapper.readValue(menujson)
@@ -41,7 +42,6 @@ class SelectionActivity : AppCompatActivity() {
         val itemCustomizationType = menuItems.map {it.customization}
 
         val imageId = intArrayOf(R.drawable.phototest,R.drawable.ic_launcher_background,R.drawable.ic_launcher_foreground)
-
         val sideInfos = arrayListOf<String>()
         val itemPrices = arrayListOf<String>()
 
@@ -50,12 +50,12 @@ class SelectionActivity : AppCompatActivity() {
         binding.listview.isClickable = true
         binding.listview.adapter = MenuAdapter(this,menuArrayList) //14:30
         binding.listview.setOnItemClickListener { parent, view, position, id ->
-            startCustomizationActivityWithInfo(imageId, position, itemNames, sideInfos, itemPrices)
+            startCustomizationActivityWithIntent(imageId, position, itemNames, sideInfos, itemPrices)
         }
 
     }
 
-    private fun startCustomizationActivityWithInfo(
+    private fun startCustomizationActivityWithIntent(
         imageId: IntArray,
         position: Int,
         itemNames: List<String>,
