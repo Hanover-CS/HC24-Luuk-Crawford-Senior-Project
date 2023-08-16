@@ -20,30 +20,19 @@ class SelectionActivity : AppCompatActivity() {
 
         setContentView(binding.root)
 
-        val menujson = """[{
-            "id": 0,
-            "name": "Hamburger",
-            "customization": "Burger"
-        }, {
-            "id": 1,
-            "name": "Veggie Burger",
-            "customization": "Burger"
-        }, {
-            "id": 2,
-            "name": "Quesadilla",
-            "customization": "Quesadilla"
-        }]"""
+        val menujson = getMenu()
 
         data class MenuItem(val id: Int, val name: String, val customization: String)
         val mapper = ObjectMapper().registerKotlinModule()
+
         val menuItems: List<MenuItem> = mapper.readValue(menujson)
 
         val itemNames = menuItems.map { it.name }
         val itemCustomizationType = menuItems.map {it.customization}
 
-        val imageId = intArrayOf(R.drawable.phototest,R.drawable.ic_launcher_background,R.drawable.ic_launcher_foreground)
         val sideInfos = arrayListOf<String>()
         val itemPrices = arrayListOf<String>()
+        val imageId = gatherImages()
 
         fillMenuArrayListWith(itemNames, itemCustomizationType, sideInfos, itemPrices, imageId)
 
@@ -53,6 +42,32 @@ class SelectionActivity : AppCompatActivity() {
             startCustomizationActivityWithIntent(imageId, position, itemNames, sideInfos, itemPrices)
         }
 
+    }
+
+    private fun gatherImages(): IntArray {
+        val imageId = intArrayOf(
+            R.drawable.phototest,
+            R.drawable.ic_launcher_background,
+            R.drawable.ic_launcher_foreground
+        )
+        return imageId
+    }
+
+    private fun getMenu(): String {
+        val menujson = """[{
+                "id": 0,
+                "name": "Hamburger",
+                "customization": "Burger"
+            }, {
+                "id": 1,
+                "name": "Veggie Burger",
+                "customization": "Burger"
+            }, {
+                "id": 2,
+                "name": "Quesadilla",
+                "customization": "Quesadilla"
+            }]"""
+        return menujson
     }
 
     private fun startCustomizationActivityWithIntent(
