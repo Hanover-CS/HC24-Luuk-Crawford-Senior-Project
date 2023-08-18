@@ -7,6 +7,10 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.zybooks.hc24_luuk_crawford_senior_project.databinding.ActivitySidesBinding
+import io.github.jan.supabase.createSupabaseClient
+import io.github.jan.supabase.postgrest.Postgrest
+import io.github.jan.supabase.postgrest.postgrest
+
 
 class CustomizationActivity : AppCompatActivity(){
     private lateinit var binding: ActivitySidesBinding
@@ -36,6 +40,29 @@ class CustomizationActivity : AppCompatActivity(){
         }
         fillItemInfo(itemName)
         setupBackButton()
+
+/*
+        val client = createSupabaseClient(
+            supabaseUrl = "https://zvozxhyetcfobozzlvkv.supabase.co",
+            supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp2b3p4aHlldGNmb2Jvenpsdmt2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODUzOTY3OTIsImV4cCI6MjAwMDk3Mjc5Mn0.d1cHG_ZusA3VEfs8AtmXFjIJoww3fO6hQz5sKlx0Blg"
+        ) {
+            install(Postgrest)
+        }
+
+        client.postgrest["countries"].update(
+            {
+                set("customer", "test1")
+            }
+        ) {
+
+            eq("id", 1)
+        }*/
+
+
+
+
+
+
     }
 
     private fun fillItemInfo(name: String?) {
@@ -60,5 +87,7 @@ class CustomizationActivity : AppCompatActivity(){
             startActivity(intent)
         }
     }
+
+
 
 }
