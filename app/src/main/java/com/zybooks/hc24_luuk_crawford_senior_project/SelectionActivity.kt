@@ -1,6 +1,8 @@
 package com.zybooks.hc24_luuk_crawford_senior_project
 
 import android.content.Intent
+import android.content.res.Resources
+import android.graphics.BitmapFactory
 import android.os.Bundle
 
 import androidx.appcompat.app.AppCompatActivity
@@ -29,10 +31,12 @@ class SelectionActivity : AppCompatActivity() {
 
         val itemNames = menuItems.map { it.name }
         val itemCustomizationType = menuItems.map {it.customization}
+        val itemID = menuItems.map {it.id}
 
         val sideInfos = arrayListOf<String>()
         val itemPrices = arrayListOf<String>()
-        val imageId = gatherImages()
+        val imageId = gatherImages(itemID)
+        //val imageId = gatherImages(itemID)
 
         fillMenuArrayListWith(itemNames, itemCustomizationType, sideInfos, itemPrices, imageId)
 
@@ -44,26 +48,29 @@ class SelectionActivity : AppCompatActivity() {
 
     }
 
-    private fun gatherImages(): IntArray {
-        val imageId = intArrayOf(
-            R.drawable.phototest,
-            R.drawable.ic_launcher_background,
-            R.drawable.ic_launcher_foreground
-        )
-        return imageId
+    private fun gatherImages(itemID: List<Int>): IntArray {
+        var imageId = mutableListOf<Int>()
+        for (id in itemID){
+            try {
+                imageId.add(R.drawable.phototest)
+            }catch (e: Resources.NotFoundException){
+                imageId.add(R.drawable.ic_launcher_background)
+            }
+        }
+        return imageId.toIntArray()
     }
 
     private fun getMenu(): String {
         val menujson = """[{
-                "id": 0,
+                "id": 100,
                 "name": "Hamburger",
                 "customization": "Burger"
             }, {
-                "id": 1,
+                "id": 101,
                 "name": "Veggie Burger",
                 "customization": "Burger"
             }, {
-                "id": 2,
+                "id": 200,
                 "name": "Quesadilla",
                 "customization": "Quesadilla"
             }]"""
