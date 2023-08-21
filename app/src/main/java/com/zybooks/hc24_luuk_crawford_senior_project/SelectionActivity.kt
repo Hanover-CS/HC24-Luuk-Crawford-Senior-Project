@@ -52,7 +52,6 @@ class SelectionActivity : AppCompatActivity() {
         var imageId = mutableListOf<Int>()
         for (id in itemID){
             try {
-                //imageId.add(R.drawable.id)
                 val resID = resources.getIdentifier("food$id", "drawable", packageName)
                 imageId.add(resID)
             }catch (e: Resources.NotFoundException){
