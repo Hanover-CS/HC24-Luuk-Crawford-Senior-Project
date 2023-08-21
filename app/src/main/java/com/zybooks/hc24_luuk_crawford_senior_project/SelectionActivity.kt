@@ -36,7 +36,6 @@ class SelectionActivity : AppCompatActivity() {
         val sideInfos = arrayListOf<String>()
         val itemPrices = arrayListOf<String>()
         val imageId = gatherImages(itemID)
-        //val imageId = gatherImages(itemID)
 
         fillMenuArrayListWith(itemNames, itemCustomizationType, sideInfos, itemPrices, imageId)
 
@@ -66,11 +65,19 @@ class SelectionActivity : AppCompatActivity() {
                 "id": 100,
                 "name": "Hamburger",
                 "customization": "Burger"
-            }, {
+            },{
                 "id": 101,
                 "name": "Veggie Burger",
                 "customization": "Burger"
-            }, {
+            },{
+                "id": 102,
+                "name": "BLT",
+                "customization": "Burger"
+            },{
+                "id": 103,
+                "name": "Fried Chicken Burger",
+                "customization": "Burger"
+            },{
                 "id": 200,
                 "name": "Quesadilla",
                 "customization": "Quesadilla"
