@@ -1,5 +1,7 @@
 lsi: false
 safe: true
+title: "Ordering app"
+description: "Order ahead of time at the underground!"
 
 incremental: false
 highlighter: rouge
