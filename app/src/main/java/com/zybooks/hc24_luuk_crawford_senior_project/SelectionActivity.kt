@@ -74,7 +74,7 @@ class SelectionActivity : AppCompatActivity() {
                 "customization": "Burger"
             },{
                 "id": 103,
-                "name": "Fried Chicken Burger",
+                "name": "Fried Chicken Sandwich",
                 "customization": "Burger"
             },{
                 "id": 200,
