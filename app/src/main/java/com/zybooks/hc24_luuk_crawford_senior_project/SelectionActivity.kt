@@ -47,7 +47,7 @@ class SelectionActivity : AppCompatActivity() {
 
     }
     private fun gatherImages(itemID: List<Int>): IntArray {
-        var imageId = mutableListOf<Int>()
+        val imageId = mutableListOf<Int>()
         for (id in itemID){
             try {
                 val resID = resources.getIdentifier("food$id", "drawable", packageName)
