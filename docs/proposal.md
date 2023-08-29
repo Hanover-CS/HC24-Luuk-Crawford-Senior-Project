@@ -9,7 +9,7 @@ My intention for this project is to create a way for people to order ahead of ti
    - confirm and submit
    
 
-#### Once that works, if I have time it would be nice to also implement...
+   Once that works, if I have time it would be nice to also implement...
 
 2. A server
    - store orders
