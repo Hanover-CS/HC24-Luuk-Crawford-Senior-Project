@@ -86,7 +86,7 @@ I was thinking Microsoft Azure as that is what we use for our Hanover accounts, 
 
 [3] “Chipotle - Fresh Food Fast - Apps on Google Play.” https://play.google.com/store/apps/details?id=com.chipotle.ordering&hl=en_US (accessed Jul. 2, 2023).
 
-[4] “Make your Android application work on iOS – tutorial | Kotlin,” Kotlin Help. https://kotlinlang.org/docs/multiplatform-mobile-integrate-in-existing-app.html (accessed Jul. 9, 2023).
+[4] “Make your Android application work on iOS – tutorial '|' Kotlin,” Kotlin Help. https://kotlinlang.org/docs/multiplatform-mobile-integrate-in-existing-app.html (accessed Jul. 9, 2023).
 
 [5] “Pricing & fees,” Supabase. https://supabase.com//pricing (accessed Jul. 9, 2023).
 
