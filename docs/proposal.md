@@ -78,17 +78,22 @@ Another option is [React Native](https://reactnative.dev/). Reach Native uses Ja
 There are multiple potential server options such as the three major offerings such as [Microsoft Azure](https://azure.microsoft.com/en-us), [AWS](https://aws.amazon.com/), and [Google Cloud](https://cloud.google.com/). 
 I was thinking Microsoft Azure as that is what we use for our Hanover accounts, but I think using something like [supabase](https://supabase.com/) to set up an online database to store the orders would be sufficient for my needs as I am just hoping to learn to get server and app communication working, I don't need or want to deal with more complicated offerings. Supabase has [more than enough storage and unlimited API calls](https://supabase.com/pricing) for me to test this app for free. It has Kotlin support as well so it meets my basic needs. Supabase also has a nice interface so far, at least for [creating the tables visually](https://github.com/Hanover-CS/HC24-Luuk-Crawford-Senior-Project/assets/32851596/769b538d-6129-4225-9c0f-c20dcd30a821). I do have some SQL experience but features like to visualize that are helpful for faster progress if I get to this.
 
-### References ( wip, was using the wrong format. should be https://libguides.murdoch.edu.au/IEEE )
+### References
 
-[1] S. Biswas, “Dart vs Kotlin: detailed comparison,” Codemagic blog, Feb. 02, 2021. https://blog.codemagic.io/dart-vs-kotlin/ (accessed Jul. 20, 2023).
+[1] “Cloud Computing Services,” Google Cloud [Online]. Available: https://cloud.google.com/ (accessed Aug. 31, 2023).
 
-[2] Nanthini, “React Native vs Kotlin: A Quick Comparison - DZone,” dzone.com. https://dzone.com/articles/react-native-vs-kotlin-a-quick-comparison (accessed Jul. 20, 2023).
+[2] “Cloud Computing Services, Microsoft Azure.” Microsoft Azure [Online]. Available: https://azure.microsoft.com/en-us (accessed Aug. 31, 2023).
 
-[3] “Chipotle - Fresh Food Fast - Apps on Google Play.” https://play.google.com/store/apps/details?id=com.chipotle.ordering&hl=en_US (accessed Jul. 2, 2023).
+[3] “Cloud Computing Services - Amazon Web Services (AWS),” Amazon Web Services, Inc [Online]. Available: https://aws.amazon.com/ (accessed Aug. 31, 2023).
 
-[4] “Make your Android application work on iOS – tutorial `|` Kotlin,” Kotlin Help. https://kotlinlang.org/docs/multiplatform-mobile-integrate-in-existing-app.html (accessed Jul. 9, 2023).
+[4] S. Biswas, “Dart vs Kotlin: detailed comparison,” Codemagic blog, Feb. 02, 2021 [Online]. Available: https://blog.codemagic.io/dart-vs-kotlin/ (accessed Jul. 20, 2023).
 
-[5] “Pricing & fees,” Supabase. https://supabase.com//pricing (accessed Jul. 9, 2023).
+[5] Nanthini, “React Native vs Kotlin: A Quick Comparison - DZone,” dzone.com [Online]. Available: https://dzone.com/articles/react-native-vs-kotlin-a-quick-comparison (accessed Jul. 20, 2023).
 
-[6] C. Luuk, “Photo of Underground Ordering Sheet.” May 24, 2023. [In person]. Available: https://github-production-user-asset-6210df.s3.amazonaws.com/32851596/250412801-19be7b5f-ed5d-42bb-882a-7042fcce4b22.jpg (accessed Jul. 22, 2023)
+[7] “Chipotle - Fresh Food Fast - Apps on Google Play.” [Online]. Available: https://play.google.com/store/apps/details?id=com.chipotle.ordering&hl=en_US (accessed Jul. 2, 2023).
 
+[7] “Make your Android application work on iOS – tutorial, Kotlin,” Kotlin Help [Online]. Available: https://kotlinlang.org/docs/multiplatform-mobile-integrate-in-existing-app.html (accessed Jul. 9, 2023).
+
+[8] “Pricing & fees,” Supabase [Online]. Available:  https://supabase.com//pricing (accessed Jul. 9, 2023).
+
+[9] C. Luuk, “Photo of Underground Ordering Sheet.” May 24, 2023 [Photo]. Available: https://github-production-user-asset-6210df.s3.amazonaws.com/32851596/250412801-19be7b5f-ed5d-42bb-882a-7042fcce4b22.jpg (accessed Jul. 22, 2023)
