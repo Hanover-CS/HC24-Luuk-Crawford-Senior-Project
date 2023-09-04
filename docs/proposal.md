@@ -56,9 +56,9 @@ I would like to have a list of toppings presented similarly once an item is chos
 
 Chipotle takes the possible customizations further with quantity of ingredient customization with option to put it on the side [2]. 
 
-<div style="float: right; margin-right: 20px;">
-  <img src="https://github.com/Hanover-CS/HC24-Luuk-Crawford-Senior-Project/assets/32851596/aa747fa0-f0eb-485d-9742-ce18ebf854f0" alt="side option displayed"  height="450">
-</div>
+
+<img src="https://github.com/Hanover-CS/HC24-Luuk-Crawford-Senior-Project/assets/32851596/aa747fa0-f0eb-485d-9742-ce18ebf854f0" alt="side option displayed"  height="450">
+
 
 
 This would add a level of complexity I don't think I will be able to support in this amount of time.
