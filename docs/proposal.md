@@ -3,49 +3,44 @@
 My intention for this project is to create a way for people to order ahead of time at the underground. I would like to at minimum create an interface using items from the underground as an example of how this could be useful, as a proof of concept. This would be useful as some food such as the quesadillas can take 15 minutes to make. Being able to order ahead of time means students would have less disruption to their workflow waiting around for food to be prepared. I would like to have the app communicate with a server to send the order. And if I can get that to work, it would be good to have a chef's screen to receive the orders. Another stretch goal would be to add push notifications and incorporate Hanover Outlook logins to prevent abuse.
 
 ### Main Features
-#### 1. Order an item
-   
-      - a menu to select items from
-   
-      - ability to customize item's toppings
-   
-      - confirm and submit
+1. Order an item
+   - a menu to select items from
+   - ability to customize item's toppings
+   - confirm and submit
    
 
-#### Once that works, if I have time it would be nice to also implement...
+   Once that works, if I have time it would be nice to also implement...
 
-#### 2. A server
-   
-      - store orders
+2. A server
+   - store orders
 
-#### 3. Chef's screen
-   
-      - a way to view orders in progress (at least for the chef)
+3. Chef's screen
+   - a way to view orders in progress (at least for the chef)
 
-#### 4. Other
-      - log in using Hanover Microsoft email
-      - push notifications for customers to know when the order is complete
+4. Other
+   - log in using Hanover Microsoft email
+   - push notifications for customers to know when the order is complete
 
 ---
 
 ### Comparable solution (focusing on interface choices)
 
-#### [Chipotle](https://www.chipotle.com/)
+#### [Chipotle][1] [1]
 
-Chipotle on Android loads to a [welcome login screen](https://github.com/Hanover-CS/HC24-Luuk-Crawford-Senior-Project/assets/32851596/b88ffab7-d7fd-40e7-ab57-f08167a983dc). Though it can be skipped to view the menu and start to fill a cart after choosing a location.
+[Chipotle on Android][2] loads to a [welcome login screen](https://github.com/Hanover-CS/HC24-Luuk-Crawford-Senior-Project/assets/32851596/b88ffab7-d7fd-40e7-ab57-f08167a983dc) [2]. Though it can be skipped to view the menu and start to fill a cart after choosing a location.
 I will make a landing screen that has a menu preview or a button to log in to Hanover email through Microsoft. The login will only be implemented if I happen to have extra time to figure out how that works.
 
 Once login is confirmed, or if we pretend a login was confirmed the next page of actual ordering will show up.
 
-Chipotle's menu loads as [a series of labeled pictures](https://github.com/Hanover-CS/HC24-Luuk-Crawford-Senior-Project/assets/32851596/74963349-cc17-45be-864e-66513fdf3f63) showing each of the kinds of items. And once an item is selected, it then loads the options specific to that menu item. 
+Chipotle's menu loads as [a series of labeled pictures](https://github.com/Hanover-CS/HC24-Luuk-Crawford-Senior-Project/assets/32851596/74963349-cc17-45be-864e-66513fdf3f63) showing each of the kinds of items [2]. And once an item is selected, it then loads the options specific to that menu item. 
 
-One option would be to just recreate the [ordering sheets](https://github-production-user-asset-6210df.s3.amazonaws.com/32851596/250412801-19be7b5f-ed5d-42bb-882a-7042fcce4b22.jpg) with the same format but digital but I think a screen more similar to Chipotle would be better if I included pictures. Using a scrolling list also means I can add and remove available items to fit the current menu without redesigning the interface.
+One option would be to just recreate the [ordering sheets](https://github-production-user-asset-6210df.s3.amazonaws.com/32851596/250412801-19be7b5f-ed5d-42bb-882a-7042fcce4b22.jpg) with the same format but digital but I think a screen more similar to Chipotle would be better if I included pictures [3]. Using a scrolling list also means I can add and remove available items to fit the current menu without redesigning the interface.
 
-Chipotle's customization of orders is done by having the customer select which items to include, with meant being [split into half portions](https://github.com/Hanover-CS/HC24-Luuk-Crawford-Senior-Project/assets/32851596/76fddee4-b6bc-4153-ac04-6c2a0af3affb) if two are selected. 
+Chipotle's customization of orders is done by having the customer select which items to include, with meant being [split into half portions](https://github.com/Hanover-CS/HC24-Luuk-Crawford-Senior-Project/assets/32851596/76fddee4-b6bc-4153-ac04-6c2a0af3affb) if two are selected [2]. 
 
 I would like to have a list of toppings presented similarly once an item is chosen. Checkboxes next to the options or the topping buttons are highlighted if selected.
 
-Chipotle takes the possible customizations further with [quantity of ingredient customization with option to put it on the side](https://github.com/Hanover-CS/HC24-Luuk-Crawford-Senior-Project/assets/32851596/aa747fa0-f0eb-485d-9742-ce18ebf854f0). This would add a level of complexity I don't think I will be able to support in this amount of time.
+Chipotle takes the possible customizations further with [quantity of ingredient customization with option to put it on the side](https://github.com/Hanover-CS/HC24-Luuk-Crawford-Senior-Project/assets/32851596/aa747fa0-f0eb-485d-9742-ce18ebf854f0) [2]. This would add a level of complexity I don't think I will be able to support in this amount of time.
 
 Chipotle gives the option to add other items to the order. Since mealswipes only support one main item I will likely just have a confirm order button after a single item's customization.
 
@@ -62,12 +57,12 @@ I'm not sure if I am going to use actual pictures of items or the emoji images.
 ### Development Plan
 
 #### What platform to support?
-**My current plan is to make it an Android app.** I might try to use the cross-platform development capabilities of my other choices below but Apple makes things difficult as Kotlin, which is in development but available for cross-platform, [expects me to have Xcode](https://kotlinlang.org/docs/multiplatform-mobile-integrate-in-existing-app.html#create-an-ios-project-in-xcode) to test on iOS phones which is exclusive to macs.
+**My current plan is to make it an Android app.** I might try to use the cross-platform development capabilities of my other choices below but Apple makes things difficult as Kotlin, which is in development but available for cross-platform, [expects me to have Xcode][4] to test on iOS phones which is exclusive to macs [4].
 
 #### Language and Integrated Development Environment (IDE) decisions
-I intend to continue using [Android Studio](https://developer.android.com/studio) as my IDE for this project. I chose this because I am more familiar with it as I used it during my May term Android development class and it's Google's official Android app IDE. This means it will be up to date and have a lot of helpful documentation and helpful sources online.
+I intend to continue using [Android Studio][5] as my IDE for this project. I chose this because I am more familiar with it as I used it during my May term Android development class and it's Google's official Android app IDE. This means it will be up to date and have a lot of helpful documentation and helpful sources online.
 
-I will continue using Kotlin in [Android Studio](https://developer.android.com/studio) as I did during my May term. It is [Google's top pick for Android development](https://techcrunch.com/2022/08/18/five-years-later-google-is-still-all-in-on-kotlin/) as mentioned in my [annotated bibliography](https://github.com/Hanover-CS/HC24-Luuk-Crawford-Senior-Project/blob/main/docs/annotated-biblio.md). [JetBrains, the creator of Kotlin, also officially supports IntelliJ IDEA and Android Studio](https://kotlinlang.org/docs/kotlin-ide.html#intellij-idea) so this will be a stable coding environment to work in.
+I will continue using Kotlin in [Android Studio][5] as I did during my May term. It is [Google's top pick for Android development](https://techcrunch.com/2022/08/18/five-years-later-google-is-still-all-in-on-kotlin/). [JetBrains, the creator of Kotlin, also officially supports IntelliJ IDEA and Android Studio](https://kotlinlang.org/docs/kotlin-ide.html#intellij-idea) so this will be a stable coding environment to work in.
 
 I also chose these options as they have support for [multiple platforms including mobile support in beta](https://kotlinlang.org/docs/multiplatform-mobile-getting-started.html). Meaning if this project were to attempt iOS or other support one day, most of the code should be reusable. Though I am partly [risking needing to rewrite other parts of my code](https://kotlinlang.org/docs/multiplatform.html) if "migration steps" for updates are needed.
 
@@ -83,17 +78,40 @@ Another option is [React Native](https://reactnative.dev/). Reach Native uses Ja
 There are multiple potential server options such as the three major offerings such as [Microsoft Azure](https://azure.microsoft.com/en-us), [AWS](https://aws.amazon.com/), and [Google Cloud](https://cloud.google.com/). 
 I was thinking Microsoft Azure as that is what we use for our Hanover accounts, but I think using something like [supabase](https://supabase.com/) to set up an online database to store the orders would be sufficient for my needs as I am just hoping to learn to get server and app communication working, I don't need or want to deal with more complicated offerings. Supabase has [more than enough storage and unlimited API calls](https://supabase.com/pricing) for me to test this app for free. It has Kotlin support as well so it meets my basic needs. Supabase also has a nice interface so far, at least for [creating the tables visually](https://github.com/Hanover-CS/HC24-Luuk-Crawford-Senior-Project/assets/32851596/769b538d-6129-4225-9c0f-c20dcd30a821). I do have some SQL experience but features like to visualize that are helpful for faster progress if I get to this.
 
-### References ( wip, was using the wrong format. should be https://libguides.murdoch.edu.au/IEEE )
+### References
 
-[1] S. Biswas, “Dart vs Kotlin: detailed comparison,” Codemagic blog, Feb. 02, 2021. https://blog.codemagic.io/dart-vs-kotlin/ (accessed Jul. 20, 2023).
+[1] “Mexican Food - Restaurant & Catering - Chipotle Mexican Grill,” Chipotle. https://www.chipotle.com (accessed Aug. 31, 2023).
 
-[2] Nanthini, “React Native vs Kotlin: A Quick Comparison - DZone,” dzone.com. https://dzone.com/articles/react-native-vs-kotlin-a-quick-comparison (accessed Jul. 20, 2023).
+[2] “Chipotle - Fresh Food Fast - Apps on Google Play.” [Online]. Available: https://play.google.com/store/apps/details?id=com.chipotle.ordering&hl=en_US (accessed Jul. 2, 2023).
 
-[3] “Chipotle - Fresh Food Fast - Apps on Google Play.” https://play.google.com/store/apps/details?id=com.chipotle.ordering&hl=en_US (accessed Jul. 2, 2023).
+[3] C. Luuk, “Photo of Underground Ordering Sheet.” May 24, 2023 [Photo]. Available: https://github-production-user-asset-6210df.s3.amazonaws.com/32851596/250412801-19be7b5f-ed5d-42bb-882a-7042fcce4b22.jpg (accessed Jul. 22, 2023)
 
-[4] “Make your Android application work on iOS – tutorial | Kotlin,” Kotlin Help. https://kotlinlang.org/docs/multiplatform-mobile-integrate-in-existing-app.html (accessed Jul. 9, 2023).
+[4] “Make your Android application work on iOS – tutorial | Kotlin,” Kotlin Help. https://kotlinlang.org/docs/multiplatform-mobile-integrate-in-existing-app.html#create-an-ios-project-in-xcode (accessed Jul. 9, 2023).
 
-[5] “Pricing & fees,” Supabase. https://supabase.com//pricing (accessed Jul. 9, 2023).
+[5] “Download Android Studio & App Tools,” Android Developers. https://developer.android.com/studio (accessed Aug. 31, 2023).
 
-[6] C. Luuk, “Photo of Underground Ordering Sheet.” May 24, 2023. [In person]. Available: https://github-production-user-asset-6210df.s3.amazonaws.com/32851596/250412801-19be7b5f-ed5d-42bb-882a-7042fcce4b22.jpg (accessed Jul. 22, 2023)
+WIP
 
+[1] “Cloud Computing Services,” Google Cloud [Online]. Available: https://cloud.google.com/ (accessed Aug. 31, 2023).
+
+[2] “Cloud Computing Services, Microsoft Azure.” Microsoft Azure [Online]. Available: https://azure.microsoft.com/en-us (accessed Aug. 31, 2023).
+
+[3] “Cloud Computing Services - Amazon Web Services (AWS),” Amazon Web Services, Inc [Online]. Available: https://aws.amazon.com/ (accessed Aug. 31, 2023).
+
+[4] S. Biswas, “Dart vs Kotlin: detailed comparison,” Codemagic blog, Feb. 02, 2021 [Online]. Available: https://blog.codemagic.io/dart-vs-kotlin/ (accessed Jul. 20, 2023).
+
+[5] Nanthini, “React Native vs Kotlin: A Quick Comparison - DZone,” dzone.com [Online]. Available: https://dzone.com/articles/react-native-vs-kotlin-a-quick-comparison (accessed Jul. 20, 2023).
+
+[7] “Chipotle - Fresh Food Fast - Apps on Google Play.” [Online]. Available: https://play.google.com/store/apps/details?id=com.chipotle.ordering&hl=en_US (accessed Jul. 2, 2023).
+
+[7] “Make your Android application work on iOS – tutorial, Kotlin,” Kotlin Help [Online]. Available: https://kotlinlang.org/docs/multiplatform-mobile-integrate-in-existing-app.html (accessed Jul. 9, 2023).
+
+[8] “Pricing & fees,” Supabase [Online]. Available:  https://supabase.com//pricing (accessed Jul. 9, 2023).
+
+[9] C. Luuk, “Photo of Underground Ordering Sheet.” May 24, 2023 [Photo]. Available: https://github-production-user-asset-6210df.s3.amazonaws.com/32851596/250412801-19be7b5f-ed5d-42bb-882a-7042fcce4b22.jpg (accessed Jul. 22, 2023)
+
+[1]: https://www.chipotle.com/
+[2]: https://play.google.com/store/apps/details?id=com.chipotle.ordering&hl=en_US
+
+[4]: https://kotlinlang.org/docs/multiplatform-mobile-integrate-in-existing-app.html#create-an-ios-project-in-xcode
+[5]: https://developer.android.com/studio
