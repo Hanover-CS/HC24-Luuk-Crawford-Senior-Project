@@ -33,14 +33,14 @@ I will make a landing screen that has a menu preview or a button to log in to Ha
 Once login is confirmed, the next page of actual ordering will show up.
 
 Chipotle's menu loads as a series of labeled pictures showing each of the kinds of items [2]. And once an item is selected, it then loads the options specific for that menu item. 
-
-<img src="https://github.com/Hanover-CS/HC24-Luuk-Crawford-Senior-Project/assets/32851596/aa747fa0-f0eb-485d-9742-ce18ebf854f0" alt="Chipotle toppings example"  height="450"><div style="clear: both;"></div>
+<div style="clear: both;"></div>
+<img src="https://github.com/Hanover-CS/HC24-Luuk-Crawford-Senior-Project/assets/32851596/aa747fa0-f0eb-485d-9742-ce18ebf854f0" alt="Chipotle toppings example"  height="450">
 
 
 One option would be to just recreate the current ordering sheets with the same format with checboxes next to each item. 
 
-
-<img src="https://github-production-user-asset-6210df.s3.amazonaws.com/32851596/250412801-19be7b5f-ed5d-42bb-882a-7042fcce4b22.jpg" alt="Ordering Sheets image"  height="450"><div style="clear: both;"></div>
+<div style="clear: both;"></div>
+<img src="https://github-production-user-asset-6210df.s3.amazonaws.com/32851596/250412801-19be7b5f-ed5d-42bb-882a-7042fcce4b22.jpg" alt="Ordering Sheets image"  height="450">
 
 I think a screen more similar to Chipotle would be better if I included pictures [3]. Using a scrolling list also means I can add and remove available items to fit the current menu without redesigning the interface.
 
