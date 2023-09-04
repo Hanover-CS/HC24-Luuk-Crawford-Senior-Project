@@ -27,20 +27,41 @@ My intention for this project is to create a way for people to order ahead of ti
 
 #### [Chipotle][1] [1]
 
-[Chipotle on Android][2] loads to a [welcome login screen](https://github.com/Hanover-CS/HC24-Luuk-Crawford-Senior-Project/assets/32851596/b88ffab7-d7fd-40e7-ab57-f08167a983dc) [2]. Though it can be skipped to view the menu and start to fill a cart after choosing a location.
+[Chipotle on Android][2] loads to a [welcome login screen](https://github.com/Hanover-CS/HC24-Luuk-Crawford-Senior-Project/assets/32851596/b88ffab7-d7fd-40e7-ab57-f08167a983dc =250x150) [2]. Though it can be skipped to view the menu and start to fill a cart after choosing a location.
 I will make a landing screen that has a menu preview or a button to log in to Hanover email through Microsoft. The login will only be implemented if I happen to have extra time to figure out how that works.
 
-Once login is confirmed, or if we pretend a login was confirmed the next page of actual ordering will show up.
+Once login is confirmed, the next page of actual ordering will show up.
 
-Chipotle's menu loads as [a series of labeled pictures](https://github.com/Hanover-CS/HC24-Luuk-Crawford-Senior-Project/assets/32851596/74963349-cc17-45be-864e-66513fdf3f63) showing each of the kinds of items [2]. And once an item is selected, it then loads the options specific to that menu item. 
+Chipotle's menu loads as a series of labeled pictures showing each of the kinds of items [2]. And once an item is selected, it then loads the options specific for that menu item. 
+<div style="float: right; margin-right: 20px;">
+  <img src="https://github.com/Hanover-CS/HC24-Luuk-Crawford-Senior-Project/assets/32851596/aa747fa0-f0eb-485d-9742-ce18ebf854f0" alt="Chipotle toppings example"  height="450">
+</div>
 
-One option would be to just recreate the [ordering sheets](https://github-production-user-asset-6210df.s3.amazonaws.com/32851596/250412801-19be7b5f-ed5d-42bb-882a-7042fcce4b22.jpg) with the same format but digital but I think a screen more similar to Chipotle would be better if I included pictures [3]. Using a scrolling list also means I can add and remove available items to fit the current menu without redesigning the interface.
+One option would be to just recreate the current ordering sheets with the same format with checboxes next to each item. 
 
-Chipotle's customization of orders is done by having the customer select which items to include, with meant being [split into half portions](https://github.com/Hanover-CS/HC24-Luuk-Crawford-Senior-Project/assets/32851596/76fddee4-b6bc-4153-ac04-6c2a0af3affb) if two are selected [2]. 
+<div style="float: right; margin-right: 20px;">
+  <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/32851596/250412801-19be7b5f-ed5d-42bb-882a-7042fcce4b22.jpg" alt="Ordering Sheets image"  height="450">
+</div>
+
+I think a screen more similar to Chipotle would be better if I included pictures [3]. Using a scrolling list also means I can add and remove available items to fit the current menu without redesigning the interface.
+
+Chipotle's customization of orders is done by having the customer select which items to include, with meant being split into half portions if two are selected [2]. 
+
+<div style="float: right; margin-right: 20px;">
+  <img src="https://github.com/Hanover-CS/HC24-Luuk-Crawford-Senior-Project/assets/32851596/76fddee4-b6bc-4153-ac04-6c2a0af3affb" alt="half portions Chipotle displayed"  height="450">
+</div>
+
 
 I would like to have a list of toppings presented similarly once an item is chosen. Checkboxes next to the options or the topping buttons are highlighted if selected.
 
-Chipotle takes the possible customizations further with [quantity of ingredient customization with option to put it on the side](https://github.com/Hanover-CS/HC24-Luuk-Crawford-Senior-Project/assets/32851596/aa747fa0-f0eb-485d-9742-ce18ebf854f0) [2]. This would add a level of complexity I don't think I will be able to support in this amount of time.
+Chipotle takes the possible customizations further with quantity of ingredient customization with option to put it on the side [2]. 
+
+<div style="float: right; margin-right: 20px;">
+  <img src="https://github.com/Hanover-CS/HC24-Luuk-Crawford-Senior-Project/assets/32851596/aa747fa0-f0eb-485d-9742-ce18ebf854f0" alt="side option displayed"  height="450">
+</div>
+
+
+This would add a level of complexity I don't think I will be able to support in this amount of time.
 
 Chipotle gives the option to add other items to the order. Since mealswipes only support one main item I will likely just have a confirm order button after a single item's customization.
 
