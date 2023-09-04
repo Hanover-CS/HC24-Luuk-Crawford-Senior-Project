@@ -75,8 +75,8 @@ Another option is [React Native](https://reactnative.dev/). Reach Native uses Ja
 
 ### Server
 
-There are multiple potential server options such as the three major offerings such as [Microsoft Azure](https://azure.microsoft.com/en-us), [AWS](https://aws.amazon.com/), and [Google Cloud](https://cloud.google.com/). 
-I was thinking Microsoft Azure as that is what we use for our Hanover accounts, but I think using something like [supabase](https://supabase.com/) to set up an online database to store the orders would be sufficient for my needs as I am just hoping to learn to get server and app communication working, I don't need or want to deal with more complicated offerings. Supabase has [more than enough storage and unlimited API calls](https://supabase.com/pricing) for me to test this app for free. It has Kotlin support as well so it meets my basic needs. Supabase also has a nice interface so far, at least for [creating the tables visually](https://github.com/Hanover-CS/HC24-Luuk-Crawford-Senior-Project/assets/32851596/769b538d-6129-4225-9c0f-c20dcd30a821). I do have some SQL experience but features like to visualize that are helpful for faster progress if I get to this.
+There are multiple potential server options including major offerings such as [Microsoft Azure](https://azure.microsoft.com/en-us), [AWS](https://aws.amazon.com/), and [Google Cloud](https://cloud.google.com/). 
+Google also offers [Firebase](https://firebase.google.com/), which has easy to follow tutorials that also use Android Studio, making it easier for me to impliment correctly. Google cloud can be used for storage but firebase seems to be better for Realtime Databases. https://blog.back4app.com/firebase-vs-google-cloud/
 
 ### References
 
@@ -91,6 +91,7 @@ I was thinking Microsoft Azure as that is what we use for our Hanover accounts, 
 [5] “Download Android Studio & App Tools,” Android Developers. https://developer.android.com/studio (accessed Aug. 31, 2023).
 
 WIP
+[?] J. Clark, “Firebase vs Google Cloud - What are the differences?,” Jun. 09, 2022. https://blog.back4app.com/firebase-vs-google-cloud/ (accessed Sep. 04, 2023).
 
 [1] “Cloud Computing Services,” Google Cloud [Online]. Available: https://cloud.google.com/ (accessed Aug. 31, 2023).
 
