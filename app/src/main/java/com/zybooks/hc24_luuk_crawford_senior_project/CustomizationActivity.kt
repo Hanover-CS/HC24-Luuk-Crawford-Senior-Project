@@ -2,14 +2,21 @@ package com.zybooks.hc24_luuk_crawford_senior_project
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.graphics.toColor
+import com.google.android.gms.tasks.OnSuccessListener
+import com.google.firebase.FirebaseApp
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.ktx.Firebase
 import com.zybooks.hc24_luuk_crawford_senior_project.databinding.ActivitySidesBinding
-
 class CustomizationActivity : AppCompatActivity(){
     private lateinit var binding: ActivitySidesBinding
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,6 +43,7 @@ class CustomizationActivity : AppCompatActivity(){
         }
         fillItemInfo(itemName)
         setupBackButton()
+        setupConfirmButton()
     }
 
     private fun fillItemInfo(name: String?) {
@@ -58,6 +66,25 @@ class CustomizationActivity : AppCompatActivity(){
         buttonClick.setOnClickListener {
             val intent = Intent(this, SelectionActivity::class.java)
             startActivity(intent)
+        }
+    }
+
+    private fun setupConfirmButton(){
+        val buttonClick = findViewById<Button>(R.id.submitOrderButton)
+        buttonClick.setOnClickListener{
+
+            val dataToSave = HashMap<String, String>()
+
+            val itemName = findViewById<TextView>(R.id.itemName).text.toString()
+
+
+            dataToSave.put("item", itemName)
+            dataToSave.put("side", "Tater Tots")
+            dataToSave.put("toppings", "LTO")
+
+
+            FirebaseFirestore.getInstance().document("sampleData/order001").set(dataToSave)
+
         }
     }
 

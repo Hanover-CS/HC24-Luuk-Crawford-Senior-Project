@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1038183400510",
+    "project_id": "orderinghanover",
+    "storage_bucket": "orderinghanover.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1038183400510:android:efb68b06c17812859cbd6f",
+        "android_client_info": {
+          "package_name": "com.zybooks.hc24_luuk_crawford_senior_project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1038183400510-hv1mkmk2imcsvkgljjt29e63aabgjjg6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBemzjQxN9XyVZvzFVZRsc-p3HNlqvMtAA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1038183400510-hv1mkmk2imcsvkgljjt29e63aabgjjg6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
