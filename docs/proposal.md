@@ -33,23 +33,22 @@ I will make a landing screen that has a menu preview or a button to log in to Ha
 Once login is confirmed, the next page of actual ordering will show up.
 
 Chipotle's menu loads as a series of labeled pictures showing each of the kinds of items [2]. And once an item is selected, it then loads the options specific for that menu item. 
-<div style="float: right; margin-right: 20px;">
-  <img src="https://github.com/Hanover-CS/HC24-Luuk-Crawford-Senior-Project/assets/32851596/aa747fa0-f0eb-485d-9742-ce18ebf854f0" alt="Chipotle toppings example"  height="450">
-</div>
+
+<img src="https://github.com/Hanover-CS/HC24-Luuk-Crawford-Senior-Project/assets/32851596/aa747fa0-f0eb-485d-9742-ce18ebf854f0" alt="Chipotle toppings example"  height="450">
+
 
 One option would be to just recreate the current ordering sheets with the same format with checboxes next to each item. 
 
-<div style="float: right; margin-right: 20px;">
-  <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/32851596/250412801-19be7b5f-ed5d-42bb-882a-7042fcce4b22.jpg" alt="Ordering Sheets image"  height="450">
-</div>
+
+<img src="https://github-production-user-asset-6210df.s3.amazonaws.com/32851596/250412801-19be7b5f-ed5d-42bb-882a-7042fcce4b22.jpg" alt="Ordering Sheets image"  height="450">
 
 I think a screen more similar to Chipotle would be better if I included pictures [3]. Using a scrolling list also means I can add and remove available items to fit the current menu without redesigning the interface.
 
 Chipotle's customization of orders is done by having the customer select which items to include, with meant being split into half portions if two are selected [2]. 
 
-<div style="float: right; margin-right: 20px;">
-  <img src="https://github.com/Hanover-CS/HC24-Luuk-Crawford-Senior-Project/assets/32851596/76fddee4-b6bc-4153-ac04-6c2a0af3affb" alt="half portions Chipotle displayed"  height="450">
-</div>
+
+<img src="https://github.com/Hanover-CS/HC24-Luuk-Crawford-Senior-Project/assets/32851596/76fddee4-b6bc-4153-ac04-6c2a0af3affb" alt="half portions Chipotle displayed"  height="450">
+
 
 
 I would like to have a list of toppings presented similarly once an item is chosen. Checkboxes next to the options or the topping buttons are highlighted if selected.
