@@ -81,21 +81,21 @@ I'm not sure if I am going to use actual pictures of items or the emoji images.
 #### Language and Integrated Development Environment (IDE) decisions
 I intend to continue using [Android Studio][link5] as my IDE for this project. I chose this because I am more familiar with it as I used it during my May term Android development class and it's Google's official Android app IDE [5]. This means it will be up to date and have a lot of helpful documentation and helpful sources online.
 
-I will continue using Kotlin in [Android Studio][link5] as I did during my May term. It is [Google's top pick for Android development][link6] [5][6]. [JetBrains, the creator of Kotlin, also officially supports IntelliJ IDEA and Android Studio](https://kotlinlang.org/docs/kotlin-ide.html#intellij-idea) so this will be a stable coding environment to work in.
+I will continue using Kotlin in [Android Studio][link5] as I did during my May term. It is [Google's top pick for Android development][link6] [5][6]. [JetBrains, the creator of Kotlin, also officially supports IntelliJ IDEA and Android Studio][link7] so this will be a stable coding environment to work in [7].
 
-I also chose these options as they have support for [multiple platforms including mobile support in beta](https://kotlinlang.org/docs/multiplatform-mobile-getting-started.html). Meaning if this project were to attempt iOS or other support one day, most of the code should be reusable. Though I am partly [risking needing to rewrite other parts of my code](https://kotlinlang.org/docs/multiplatform.html) if "migration steps" for updates are needed.
+I also chose these options as they have support for [multiple platforms including mobile support in beta][link8] [8]. Meaning if this project were to attempt iOS or other support one day, most of the code should be reusable. Though I am partly [risking needing to rewrite other parts of my code][link9] [9] if "migration steps" for updates are needed.
 
 Kotlin is a good choice because I have recent familiarity with it and my research found I can use it server-side if needed as well. 
-And even though multiplatform capabilities are not 100% complete, apps using Kotlin on Android are very stable as Google found they are [20% less likely to crash](https://kotlinlang.org/docs/android-overview.html).
+And even though multiplatform capabilities are not 100% complete, apps using Kotlin on Android are very stable as Google found they are [20% less likely to crash][link10] [10].
 
-An option I considered for a programming langauge is [Dart](https://developers.google.com/learn/topics/dart), which is what [Flutter](https://flutter.dev/) uses. And [both Dart and Kotlin work in Android Studio](https://blog.codemagic.io/dart-vs-kotlin/). This used to be the top choice for cross platform but [Kotlin is prefered for Android development](https://blog.codemagic.io/dart-vs-kotlin/). If I were to for sure push iOS development I might choose Dart over Kotlin, but for this I am satisfied with focusing on just Android but keeping the door open toward crossplatform that Kotlin provides. 
+An option I considered for a programming langauge is [Dart][link11], which is what [Flutter][link12] uses [11][12]. And [both Dart and Kotlin work in Android Studio][link13] [13]. This used to be the top choice for cross platform but [Kotlin is prefered for Android development][link13] [13]. If I were to for sure push iOS development I might choose Dart over Kotlin, but for this I am satisfied with focusing on just Android but keeping the door open toward crossplatform that Kotlin provides. 
 
-Another option is [React Native](https://reactnative.dev/). Reach Native uses JavaScript. When [comparing React Native directly against Kotlin Multiplatform](https://dzone.com/articles/react-native-vs-kotlin-a-quick-comparison), Kotlin is designed "for developing mobile applications". Using JavaScript with React Native requires [third-party libraries](https://dzone.com/articles/react-native-vs-kotlin-a-quick-comparison) to achieve the same thing. React Native offers a quick reload option to see changes but I am currently satisfied with the speed of Android Studio. This artlce also came to the conclusion that if focusing on multiplatform then React Native may be the better option. But for those focusing on Android, "you must consider Kotlin".
+Another option is [React Native][link14] [14]. Reach Native uses JavaScript. When [comparing React Native directly against Kotlin Multiplatform][link15], Kotlin is designed "for developing mobile applications" [15]. Using JavaScript with React Native requires [third-party libraries][link15] to achieve the same thing [15]. React Native offers a quick reload option to see changes but I am currently satisfied with the speed of Android Studio. This artlce also came to the conclusion that if focusing on multiplatform then React Native may be the better option. But for those focusing on Android, "you must consider Kotlin".
 
 ### Server
 
-There are multiple potential server options including major offerings such as [Microsoft Azure](https://azure.microsoft.com/en-us), [AWS](https://aws.amazon.com/), and [Google Cloud](https://cloud.google.com/). 
-Google also offers [Firebase](https://firebase.google.com/), which has easy to follow tutorials that also use Android Studio, making it easier for me to impliment correctly. Google cloud can be used for storage but firebase seems to be better for Realtime Databases. https://blog.back4app.com/firebase-vs-google-cloud/
+There are multiple potential server options including major offerings such as [Microsoft Azure][link16], [AWS][link17], and [Google Cloud][link18] [16][17][18]. 
+Google also offers [Firebase][link19], which has easy to follow tutorials that also use Android Studio, making it easier for me to impliment correctly [19]. Google cloud can be used for storage but [firebase seems to be better for Realtime Databases][link20] [20]. 
 
 ### References
 
@@ -111,26 +111,33 @@ Google also offers [Firebase](https://firebase.google.com/), which has easy to f
 
 [6] F. Lardinois, “Five years later, Google is still all-in on Kotlin,” TechCrunch, Aug. 18, 2022. https://techcrunch.com/2022/08/18/five-years-later-google-is-still-all-in-on-kotlin/ (accessed Sep. 06, 2023).
 
-WIP
-[?] J. Clark, “Firebase vs Google Cloud - What are the differences?,” Jun. 09, 2022. https://blog.back4app.com/firebase-vs-google-cloud/ (accessed Sep. 04, 2023).
+[7] “IDEs for Kotlin development | Kotlin,” Kotlin Help. https://kotlinlang.org/docs/kotlin-ide.html#intellij-idea (accessed Aug. 31, 2023).
 
-[1] “Cloud Computing Services,” Google Cloud [Online]. Available: https://cloud.google.com/ (accessed Aug. 31, 2023).
+[8] “Get started with Kotlin Multiplatform for mobile | Kotlin,” Kotlin Help. https://kotlinlang.org/docs/multiplatform-mobile-getting-started.html (accessed Aug. 31, 2023).
 
-[2] “Cloud Computing Services, Microsoft Azure.” Microsoft Azure [Online]. Available: https://azure.microsoft.com/en-us (accessed Aug. 31, 2023).
+[9] “Kotlin Multiplatform | Kotlin,” Kotlin Help. https://kotlinlang.org/docs/multiplatform.html (accessed Aug. 31, 2023).
 
-[3] “Cloud Computing Services - Amazon Web Services (AWS),” Amazon Web Services, Inc [Online]. Available: https://aws.amazon.com/ (accessed Aug. 31, 2023).
+[10] “Kotlin for Android | Kotlin,” Kotlin Help. https://kotlinlang.org/docs/android-overview.html (accessed Aug. 31, 2023).
 
-[4] S. Biswas, “Dart vs Kotlin: detailed comparison,” Codemagic blog, Feb. 02, 2021 [Online]. Available: https://blog.codemagic.io/dart-vs-kotlin/ (accessed Jul. 20, 2023).
+[11] “Dart,” Google for Developers. https://developers.google.com/learn/topics/dart (accessed Aug. 31, 2023).
 
-[5] Nanthini, “React Native vs Kotlin: A Quick Comparison - DZone,” dzone.com [Online]. Available: https://dzone.com/articles/react-native-vs-kotlin-a-quick-comparison (accessed Jul. 20, 2023).
+[12] “Flutter - Build apps for any screen.” //flutter.dev/ (accessed Aug. 31, 2023).
 
-[7] “Chipotle - Fresh Food Fast - Apps on Google Play.” [Online]. Available: https://play.google.com/store/apps/details?id=com.chipotle.ordering&hl=en_US (accessed Jul. 2, 2023).
+[13] S. Biswas, “Dart vs Kotlin: detailed comparison,” Codemagic blog, Feb. 02, 2021 [Online]. Available: https://blog.codemagic.io/dart-vs-kotlin/ (accessed Jul. 20, 2023).
 
-[7] “Make your Android application work on iOS – tutorial, Kotlin,” Kotlin Help [Online]. Available: https://kotlinlang.org/docs/multiplatform-mobile-integrate-in-existing-app.html (accessed Jul. 9, 2023).
+[14] “React Native · Learn once, write anywhere.” https://reactnative.dev/ (accessed Aug. 31, 2023).
 
-[8] “Pricing & fees,” Supabase [Online]. Available:  https://supabase.com//pricing (accessed Jul. 9, 2023).
+[15] Nanthini, “React Native vs Kotlin: A Quick Comparison - DZone,” dzone.com [Online]. Available: https://dzone.com/articles/react-native-vs-kotlin-a-quick-comparison (accessed Jul. 20, 2023).
 
-[9] C. Luuk, “Photo of Underground Ordering Sheet.” May 24, 2023 [Photo]. Available: https://github-production-user-asset-6210df.s3.amazonaws.com/32851596/250412801-19be7b5f-ed5d-42bb-882a-7042fcce4b22.jpg (accessed Jul. 22, 2023)
+[16] “Cloud Computing Services, Microsoft Azure.” Microsoft Azure [Online]. Available: https://azure.microsoft.com/en-us (accessed Aug. 31, 2023).
+
+[17] “Cloud Computing Services - Amazon Web Services (AWS),” Amazon Web Services, Inc [Online]. Available: https://aws.amazon.com/ (accessed Aug. 31, 2023).
+
+[18] “Cloud Computing Services,” Google Cloud [Online]. Available: https://cloud.google.com/ (accessed Aug. 31, 2023).
+
+[19] “Firebase | Google’s Mobile and Web App Development Platform,” Firebase. https://firebase.google.com/ (accessed Sep. 06, 2023).
+
+[20] J. Clark, “Firebase vs Google Cloud - What are the differences?,” Jun. 09, 2022. https://blog.back4app.com/firebase-vs-google-cloud/ (accessed Sep. 04, 2023).
 
 [link1]: https://www.chipotle.com/
 [link2]: https://play.google.com/store/apps/details?id=com.chipotle.ordering&hl=en_US
@@ -138,5 +145,17 @@ WIP
 [link4]: https://kotlinlang.org/docs/multiplatform-mobile-integrate-in-existing-app.html#create-an-ios-project-in-xcode
 [link5]: https://developer.android.com/studio
 [link6]: https://techcrunch.com/2022/08/18/five-years-later-google-is-still-all-in-on-kotlin
-
-
+[link7]: https://kotlinlang.org/docs/kotlin-ide.html#intellij-idea
+[link8]: https://kotlinlang.org/docs/multiplatform-mobile-getting-started.html
+[link9]: https://kotlinlang.org/docs/multiplatform.html
+[link10]: https://kotlinlang.org/docs/android-overview.html
+[link11]: https://developers.google.com/learn/topics/dart
+[link12]: https://flutter.dev/
+[link13]: https://blog.codemagic.io/dart-vs-kotlin/
+[link14]: https://reactnative.dev/
+[link15]: https://dzone.com/articles/react-native-vs-kotlin-a-quick-comparison
+[link16]: https://azure.microsoft.com/en-us
+[link17]: https://aws.amazon.com/
+[link18]: https://cloud.google.com/
+[link19]: https://firebase.google.com/
+[link20]: https://blog.back4app.com/firebase-vs-google-cloud/
