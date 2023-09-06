@@ -25,9 +25,9 @@ My intention for this project is to create a way for people to order ahead of ti
 
 ### Comparable solution (focusing on interface choices)
 
-#### [Chipotle][1] [1]
+#### [Chipotle][link1] [1]
 
-[Chipotle on Android][2] loads to a [welcome login screen](https://github.com/Hanover-CS/HC24-Luuk-Crawford-Senior-Project/assets/32851596/b88ffab7-d7fd-40e7-ab57-f08167a983dc =250x150) [2]. Though it can be skipped to view the menu and start to fill a cart after choosing a location.
+[Chipotle on Android][link2] loads to a [welcome login screen](https://github.com/Hanover-CS/HC24-Luuk-Crawford-Senior-Project/assets/32851596/b88ffab7-d7fd-40e7-ab57-f08167a983dc =250x150) [2]. Though it can be skipped to view the menu and start to fill a cart after choosing a location.
 I will make a landing screen that has a menu preview or a button to log in to Hanover email through Microsoft. The login will only be implemented if I happen to have extra time to figure out how that works.
 
 Once login is confirmed, the next page of actual ordering will show up.
@@ -76,12 +76,12 @@ I'm not sure if I am going to use actual pictures of items or the emoji images.
 ### Development Plan
 
 #### What platform to support?
-**My current plan is to make it an Android app.** I might try to use the cross-platform development capabilities of my other choices below but Apple makes things difficult as Kotlin, which is in development but available for cross-platform, [expects me to have Xcode][4] to test on iOS phones which is exclusive to macs [4].
+**My current plan is to make it an Android app.** I might try to use the cross-platform development capabilities of my other choices below but Apple makes things difficult as Kotlin, which is in development but available for cross-platform, [expects me to have Xcode][link4] to test on iOS phones which is exclusive to macs [4].
 
 #### Language and Integrated Development Environment (IDE) decisions
-I intend to continue using [Android Studio][5] as my IDE for this project. I chose this because I am more familiar with it as I used it during my May term Android development class and it's Google's official Android app IDE. This means it will be up to date and have a lot of helpful documentation and helpful sources online.
+I intend to continue using [Android Studio][link5] as my IDE for this project. I chose this because I am more familiar with it as I used it during my May term Android development class and it's Google's official Android app IDE [5]. This means it will be up to date and have a lot of helpful documentation and helpful sources online.
 
-I will continue using Kotlin in [Android Studio][5] as I did during my May term. It is [Google's top pick for Android development](https://techcrunch.com/2022/08/18/five-years-later-google-is-still-all-in-on-kotlin/). [JetBrains, the creator of Kotlin, also officially supports IntelliJ IDEA and Android Studio](https://kotlinlang.org/docs/kotlin-ide.html#intellij-idea) so this will be a stable coding environment to work in.
+I will continue using Kotlin in [Android Studio][link5] as I did during my May term. It is [Google's top pick for Android development][link6] [5][6]. [JetBrains, the creator of Kotlin, also officially supports IntelliJ IDEA and Android Studio](https://kotlinlang.org/docs/kotlin-ide.html#intellij-idea) so this will be a stable coding environment to work in.
 
 I also chose these options as they have support for [multiple platforms including mobile support in beta](https://kotlinlang.org/docs/multiplatform-mobile-getting-started.html). Meaning if this project were to attempt iOS or other support one day, most of the code should be reusable. Though I am partly [risking needing to rewrite other parts of my code](https://kotlinlang.org/docs/multiplatform.html) if "migration steps" for updates are needed.
 
@@ -109,6 +109,8 @@ Google also offers [Firebase](https://firebase.google.com/), which has easy to f
 
 [5] “Download Android Studio & App Tools,” Android Developers. https://developer.android.com/studio (accessed Aug. 31, 2023).
 
+[6] F. Lardinois, “Five years later, Google is still all-in on Kotlin,” TechCrunch, Aug. 18, 2022. https://techcrunch.com/2022/08/18/five-years-later-google-is-still-all-in-on-kotlin/ (accessed Sep. 06, 2023).
+
 WIP
 [?] J. Clark, “Firebase vs Google Cloud - What are the differences?,” Jun. 09, 2022. https://blog.back4app.com/firebase-vs-google-cloud/ (accessed Sep. 04, 2023).
 
@@ -130,10 +132,11 @@ WIP
 
 [9] C. Luuk, “Photo of Underground Ordering Sheet.” May 24, 2023 [Photo]. Available: https://github-production-user-asset-6210df.s3.amazonaws.com/32851596/250412801-19be7b5f-ed5d-42bb-882a-7042fcce4b22.jpg (accessed Jul. 22, 2023)
 
-[1]: https://www.chipotle.com/
-[2]: https://play.google.com/store/apps/details?id=com.chipotle.ordering&hl=en_US
+[link1]: https://www.chipotle.com/
+[link2]: https://play.google.com/store/apps/details?id=com.chipotle.ordering&hl=en_US
 
-[4]: https://kotlinlang.org/docs/multiplatform-mobile-integrate-in-existing-app.html#create-an-ios-project-in-xcode
-[5]: https://developer.android.com/studio
+[link4]: https://kotlinlang.org/docs/multiplatform-mobile-integrate-in-existing-app.html#create-an-ios-project-in-xcode
+[link5]: https://developer.android.com/studio
+[link6]: https://techcrunch.com/2022/08/18/five-years-later-google-is-still-all-in-on-kotlin
 
 
