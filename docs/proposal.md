@@ -95,7 +95,7 @@ Another option is [React Native][link14] [14]. Reach Native uses JavaScript. Whe
 ### Server
 
 There are multiple potential server options including major offerings such as [Microsoft Azure][link16], [AWS][link17], and [Google Cloud][link18] [16][17][18]. 
-Google also offers [Firebase][link19], which has easy to follow tutorials that also use Android Studio, making it easier for me to impliment correctly [19]. Google cloud can be used for storage but [firebase seems to be better for Realtime Databases][link20] [20]. 
+Google also offers [Firebase][link19], which is what I intend to use [19]. This is my top choice because the setup was most clear to follow even including video tutorials using the same setup I have with Kotlin and Android Studio, making it easier for me to impliment correctly. [Google cloud][link20] can be used for storage including realtime databases but [firebase seems to be better for focusing on Realtime Databases][link21] [20][21]. I expect it would be a realtime database to ensure the flow of orders works well.
 
 ### References
 
@@ -137,7 +137,9 @@ Google also offers [Firebase][link19], which has easy to follow tutorials that a
 
 [19] “Firebase | Google’s Mobile and Web App Development Platform,” Firebase. https://firebase.google.com/ (accessed Sep. 06, 2023).
 
-[20] J. Clark, “Firebase vs Google Cloud - What are the differences?,” Jun. 09, 2022. https://blog.back4app.com/firebase-vs-google-cloud/ (accessed Sep. 04, 2023).
+[20] “Cloud Computing Services,” Google Cloud. https://cloud.google.com/ (accessed Sep. 06, 2023).
+
+[21] J. Clark, “Firebase vs Google Cloud - What are the differences?,” Jun. 09, 2022. https://blog.back4app.com/firebase-vs-google-cloud/ (accessed Sep. 04, 2023).
 
 [link1]: https://www.chipotle.com/
 [link2]: https://play.google.com/store/apps/details?id=com.chipotle.ordering&hl=en_US
@@ -158,4 +160,5 @@ Google also offers [Firebase][link19], which has easy to follow tutorials that a
 [link17]: https://aws.amazon.com/
 [link18]: https://cloud.google.com/
 [link19]: https://firebase.google.com/
-[link20]: https://blog.back4app.com/firebase-vs-google-cloud/
+[link20]: https://cloud.google.com/
+[link21]: https://blog.back4app.com/firebase-vs-google-cloud/
