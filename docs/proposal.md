@@ -92,20 +92,20 @@ And even though multiplatform capabilities are not 100% complete, apps using Kot
 
 An option I considered for a programming langauge is [Dart][link11], which is what [Flutter][link12] uses [11][12]. And [both Dart and Kotlin work in Android Studio][link13] [13]. This used to be the top choice for cross platform but [Kotlin is prefered for Android development][link13] [13]. If I were to for sure push iOS development I might choose Dart over Kotlin, but for this I am satisfied with focusing on just Android but keeping the door open toward crossplatform that Kotlin provides. 
 
-Another option is [React Native][link14] [14]. Reach Native uses JavaScript. When [comparing React Native directly against Kotlin Multiplatform][link15], Kotlin is designed "for developing mobile applications" [15]. Using JavaScript with React Native requires [third-party libraries][link15] to achieve the same thing [15]. React Native offers a quick reload option to see changes but I am currently satisfied with the speed of Android Studio. This artlce also came to the conclusion that if focusing on multiplatform then React Native may be the better option. But for those focusing on Android, "you must consider Kotlin".
+Another option is [React Native][link14] [14]. Reach Native uses JavaScript. When [comparing React Native directly against Kotlin Multiplatform][link15], Kotlin is designed "for developing mobile applications" [15]. Using JavaScript with React Native requires [third-party libraries][link15] to achieve the same thing [15]. React Native offers a quick reload option to see changes but I am currently satisfied with the speed of Android Studio. This artlce also came to the conclusion that if focusing on multiplatform then React Native may be the better option. But for those focusing on Android, "you must consider Kotlin". 
 
 ### Server
 
 There are multiple potential server options including major offerings such as [Microsoft Azure][link16], [AWS][link17], and [Google Cloud][link18] [16][17][18]. 
-Google also offers [Firebase][link19], which is what I intend to use [19]. This is my top choice because the setup was most clear to follow even including video tutorials using the same setup I have with Kotlin and Android Studio, making it easier for me to impliment correctly. [Google cloud][link20] can be used for storage including realtime databases but [firebase seems to be better for focusing on Realtime Databases][link21] [20][21]. I expect it would be a realtime database to ensure the flow of orders works well.
+Google also offers [Firebase][link19], which is what I intend to use [19]. This is my top choice because the setup was most clear to follow even including video tutorials using the same setup I have with Kotlin and Android Studio, making it easier for me to impliment correctly. [Google cloud][link20] can be used for storage including realtime databases but [firebase seems to be better for focusing on Realtime Databases][link21] [20][21]. I expect it would be a realtime database to ensure the flow of orders works well. Another option I explored and made an attempt to use was [Supabase][link22] [22]. I liked it as it seemed simple to use with a nice interface but I had trouble getting it setup with Kotlin in Android Studio so I swapped to Firebase which was easier to follow.
 
 ### References
 
 [1] “Mexican Food - Restaurant & Catering - Chipotle Mexican Grill,” Chipotle. https://www.chipotle.com (accessed Aug. 31, 2023).
 
-[2] “Chipotle - Fresh Food Fast - Apps on Google Play.” [Online]. Available: https://play.google.com/store/apps/details?id=com.chipotle.ordering&hl=en_US (accessed Jul. 2, 2023).
+[2] “Chipotle - Fresh Food Fast - Apps on Google Play.”. Available: https://play.google.com/store/apps/details?id=com.chipotle.ordering&hl=en_US (accessed Jul. 2, 2023).
 
-[3] C. Luuk, “Photo of Underground Ordering Sheet.” May 24, 2023 [Photo]. Available: https://github-production-user-asset-6210df.s3.amazonaws.com/32851596/250412801-19be7b5f-ed5d-42bb-882a-7042fcce4b22.jpg (accessed Jul. 22, 2023)
+[3] C. Luuk, “Photo of Underground Ordering Sheet.” May 24, 2023. Available: https://github-production-user-asset-6210df.s3.amazonaws.com/32851596/250412801-19be7b5f-ed5d-42bb-882a-7042fcce4b22.jpg (accessed Jul. 22, 2023)
 
 [4] “Make your Android application work on iOS – tutorial | Kotlin,” Kotlin Help. https://kotlinlang.org/docs/multiplatform-mobile-integrate-in-existing-app.html#create-an-ios-project-in-xcode (accessed Jul. 9, 2023).
 
@@ -125,23 +125,25 @@ Google also offers [Firebase][link19], which is what I intend to use [19]. This 
 
 [12] “Flutter - Build apps for any screen.” //flutter.dev/ (accessed Aug. 31, 2023).
 
-[13] S. Biswas, “Dart vs Kotlin: detailed comparison,” Codemagic blog, Feb. 02, 2021 [Online]. Available: https://blog.codemagic.io/dart-vs-kotlin/ (accessed Jul. 20, 2023).
+[13] S. Biswas, “Dart vs Kotlin: detailed comparison,” Codemagic blog, Feb. 02, 2021. Available: https://blog.codemagic.io/dart-vs-kotlin/ (accessed Jul. 20, 2023).
 
 [14] “React Native · Learn once, write anywhere.” https://reactnative.dev/ (accessed Aug. 31, 2023).
 
-[15] Nanthini, “React Native vs Kotlin: A Quick Comparison - DZone,” dzone.com [Online]. Available: https://dzone.com/articles/react-native-vs-kotlin-a-quick-comparison (accessed Jul. 20, 2023).
+[15] Nanthini, “React Native vs Kotlin: A Quick Comparison - DZone,” dzone.com. Available: https://dzone.com/articles/react-native-vs-kotlin-a-quick-comparison (accessed Jul. 20, 2023).
 
-[16] “Cloud Computing Services, Microsoft Azure.” Microsoft Azure [Online]. Available: https://azure.microsoft.com/en-us (accessed Aug. 31, 2023).
+[16] “Cloud Computing Services, Microsoft Azure.” Microsoft Azure. Available: https://azure.microsoft.com/en-us (accessed Aug. 31, 2023).
 
-[17] “Cloud Computing Services - Amazon Web Services (AWS),” Amazon Web Services, Inc [Online]. Available: https://aws.amazon.com/ (accessed Aug. 31, 2023).
+[17] “Cloud Computing Services - Amazon Web Services (AWS),” Amazon Web Services, Inc. Available: https://aws.amazon.com/ (accessed Aug. 31, 2023).
 
-[18] “Cloud Computing Services,” Google Cloud [Online]. Available: https://cloud.google.com/ (accessed Aug. 31, 2023).
+[18] “Cloud Computing Services,” Google Cloud. Available: https://cloud.google.com/ (accessed Aug. 31, 2023).
 
 [19] “Firebase | Google’s Mobile and Web App Development Platform,” Firebase. https://firebase.google.com/ (accessed Sep. 06, 2023).
 
 [20] “Cloud Computing Services,” Google Cloud. https://cloud.google.com/ (accessed Sep. 06, 2023).
 
 [21] J. Clark, “Firebase vs Google Cloud - What are the differences?,” Jun. 09, 2022. https://blog.back4app.com/firebase-vs-google-cloud/ (accessed Sep. 04, 2023).
+
+[22] “Pricing & fees,” Supabase. https://supabase.com//pricing (Accessed Sep. 11, 2023)
 
 [link1]: https://www.chipotle.com/
 [link2]: https://play.google.com/store/apps/details?id=com.chipotle.ordering&hl=en_US
@@ -164,3 +166,4 @@ Google also offers [Firebase][link19], which is what I intend to use [19]. This 
 [link19]: https://firebase.google.com/
 [link20]: https://cloud.google.com/
 [link21]: https://blog.back4app.com/firebase-vs-google-cloud/
+[link22]: https://supabase.com/
