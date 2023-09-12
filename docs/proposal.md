@@ -9,7 +9,7 @@ My intention for this project is to create a way for people to order ahead of ti
    - confirm and submit
    
 
-   Once that works, if I have time it would be nice to also implement...
+   Once that works, if I have time it would be nice to also implement these below...
 
 2. A server
    - store orders
@@ -34,18 +34,18 @@ I will make a landing screen that has a menu preview or a button to log in to Ha
 
 Once login is confirmed, the next page of actual ordering will show up.
 
-Chipotle's menu loads as a series of labeled pictures showing each of the kinds of items [2]. And once an item is selected, it then loads the options specific for that menu item. 
+Chipotle's menu loads as a series of labeled pictures showing each of the kinds of items [2]. Once an item is selected, it then loads the options specific to that menu item. 
 
 <img src="https://github.com/Hanover-CS/HC24-Luuk-Crawford-Senior-Project/assets/32851596/aa747fa0-f0eb-485d-9742-ce18ebf854f0" alt="Chipotle toppings example"  height="450">
 
 
-One option would be to just recreate the current ordering sheets with the same format with checboxes next to each item. 
+One option would be to just recreate the current ordering sheets with the same format with checkboxes next to each item. 
 
 <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/32851596/250412801-19be7b5f-ed5d-42bb-882a-7042fcce4b22.jpg" alt="Ordering Sheets image"  height="450">
 
 I think a screen more similar to Chipotle would be better if I included pictures [3]. Using a scrolling list also means I can add and remove available items to fit the current menu without redesigning the interface.
 
-Chipotle's customization of orders is done by having the customer select which items to include, with meant being split into half portions if two are selected [2]. 
+Chipotle's customization of orders is done by having the customer select which items to include, with toppings able to be split into half portions when two are selected [2]. 
 
 
 <img src="https://github.com/Hanover-CS/HC24-Luuk-Crawford-Senior-Project/assets/32851596/76fddee4-b6bc-4153-ac04-6c2a0af3affb" alt="half portions Chipotle displayed"  height="450">
@@ -54,7 +54,7 @@ Chipotle's customization of orders is done by having the customer select which i
 
 I would like to have a list of toppings presented similarly once an item is chosen. Checkboxes next to the options or the topping buttons are highlighted if selected.
 
-Chipotle takes the possible customizations further with quantity of ingredient customization with option to put it on the side [2]. 
+Chipotle takes the possible customizations further with the quantity of ingredient customization with the option to put it on the side [2]. 
 
 
 <img src="https://github.com/Hanover-CS/HC24-Luuk-Crawford-Senior-Project/assets/32851596/aa747fa0-f0eb-485d-9742-ce18ebf854f0" alt="side option displayed"  height="450">
@@ -67,18 +67,18 @@ Chipotle gives the option to add other items to the order. Since mealswipes only
 
 Once an order is confirmed the next screen would have something to keep track of the order if I get server communication both ways working.
 
-This is what I have in mind right now, in terms of the interface coices I have made:
+This is what I have in mind right now, in terms of the interface choices I have made:
 
 ![undergroundAppDraftCropped](https://github.com/Hanover-CS/HC24-Luuk-Crawford-Senior-Project/assets/32851596/5ae39d76-aec3-47c2-b9fb-a7024692bebe)
 
-I'm not sure if I am going to use actual pictures of items or the emoji images.
+I am likely going to use more realistic pictures than the emojis pictured above.
 
 
 
 ### Development Plan
 
 #### What platform to support?
-**My current plan is to make it an Android app.** I might try to use the cross-platform development capabilities of my other choices below but Apple makes things difficult as Kotlin, which is in development but available for cross-platform, [expects me to have Xcode][link4] to test on iOS phones which is exclusive to macs [4].
+**My current plan is to make it an Android app.** I might try to use the cross-platform development capabilities of my other choices below but Apple makes things difficult as Kotlin, which is in development but available for cross-platform, [expects me to have Xcode][link4] to test on iOS phones which are exclusive to macs [4].
 
 #### Language and Integrated Development Environment (IDE) decisions
 I intend to continue using [Android Studio][link5] as my IDE for this project. I chose this because I am more familiar with it as I used it during my May term Android development class and it's Google's official Android app IDE [5]. This means it will be up to date and have a lot of helpful documentation and helpful sources online.
@@ -90,14 +90,14 @@ I also chose these options as they have support for [multiple platforms includin
 Kotlin is a good choice because I have recent familiarity with it and my research found I can use it server-side if needed as well. 
 And even though multiplatform capabilities are not 100% complete, apps using Kotlin on Android are very stable as Google found they are [20% less likely to crash][link10] [10].
 
-An option I considered for a programming langauge is [Dart][link11], which is what [Flutter][link12] uses [11][12]. And [both Dart and Kotlin work in Android Studio][link13] [13]. This used to be the top choice for cross platform but [Kotlin is prefered for Android development][link13] [13]. If I were to for sure push iOS development I might choose Dart over Kotlin, but for this I am satisfied with focusing on just Android but keeping the door open toward crossplatform that Kotlin provides. 
+An option I considered for a programming language is [Dart][link11], which is what [Flutter][link12] uses [11][12]. And [both Dart and Kotlin work in Android Studio][link13] [13]. This used to be the top choice for cross-platform but [Kotlin is preferred for Android development][link13] [13]. If I were to for sure push iOS development I might choose Dart over Kotlin, but for this, I am satisfied with focusing on just Android but keeping the door open for cross-platform possibilities which Kotlin supports. 
 
-Another option is [React Native][link14] [14]. Reach Native uses JavaScript. When [comparing React Native directly against Kotlin Multiplatform][link15], Kotlin is designed "for developing mobile applications" [15]. Using JavaScript with React Native requires [third-party libraries][link15] to achieve the same thing [15]. React Native offers a quick reload option to see changes but I am currently satisfied with the speed of Android Studio. This artlce also came to the conclusion that if focusing on multiplatform then React Native may be the better option. But for those focusing on Android, "you must consider Kotlin". 
+Another option is [React Native][link14] [14]. Reach Native uses JavaScript. When [comparing React Native directly against Kotlin Multiplatform][link15], Kotlin is designed "for developing mobile applications" [15]. Using JavaScript with React Native requires [third-party libraries][link15] to achieve the same thing [15]. React Native offers a quick reload option to see changes but I am currently satisfied with the speed of Android Studio. This article also concluded that if focusing on multiplatform then React Native may be the better option. But for those focusing on Android, "you must consider Kotlin". 
 
 ### Server
 
 There are multiple potential server options including major offerings such as [Microsoft Azure][link16], [AWS][link17], and [Google Cloud][link18] [16][17][18]. 
-Google also offers [Firebase][link19], which is what I intend to use [19]. This is my top choice because the setup was most clear to follow even including video tutorials using the same setup I have with Kotlin and Android Studio, making it easier for me to impliment correctly. [Google cloud][link20] can be used for storage including realtime databases but [firebase seems to be better for focusing on Realtime Databases][link21] [20][21]. I expect it would be a realtime database to ensure the flow of orders works well. Another option I explored and made an attempt to use was [Supabase][link22] [22]. I liked it as it seemed simple to use with a nice interface but I had trouble getting it setup with Kotlin in Android Studio so I swapped to Firebase which was easier to follow.
+Google also offers [Firebase][link19], which is what I intend to use [19]. This is my top choice because the setup was the most clear to follow even including video tutorials using the same setup I have with Kotlin and Android Studio, making it easier for me to implement correctly. [Google Cloud][link20] can be used for storage including realtime databases but [Firebase seems to be better for focusing on realtime databases][link21] [20][21]. I expect it would be a realtime database to ensure the flow of orders works well. Another option I explored and made an attempt to use was [Supabase][link22] [22]. I liked it as it seemed simple to use with a nice interface but I had trouble getting it set up with Kotlin in Android Studio so I swapped to Firebase which was easier to follow.
 
 ### References
 
