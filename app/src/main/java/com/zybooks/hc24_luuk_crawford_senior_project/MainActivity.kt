@@ -8,6 +8,32 @@ import com.google.firebase.FirebaseApp
 import com.google.firebase.analytics.ktx.analytics
 import com.google.firebase.ktx.Firebase
 
+
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import androidx.compose.material3.Text
+
+
+// ...
+import androidx.compose.runtime.Composable
+
+class MainActivity : ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContent {
+            MessageCard("Android")
+        }
+    }
+}
+
+@Composable
+fun MessageCard(name: String) {
+    Text(text = "Hello $name!")
+}
+
+
+
+/*
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -16,6 +42,7 @@ class MainActivity : AppCompatActivity() {
         FirebaseApp.initializeApp(this)
         Firebase.analytics.logEvent("app_opened",null)
     }
+
 
     private fun setupButton() {
         val buttonClick = findViewById<Button>(R.id.toSelectionActivity)
@@ -26,4 +53,4 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-}
+}*/
