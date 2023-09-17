@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.material.Button
@@ -20,6 +21,10 @@ import androidx.compose.material.Button
 
 // ...
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -34,19 +39,26 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-
-            //MessageCard("Android")
-            WelcomeScreen()
-
+            ComposableManager()
         }
     }
 }
+@Composable
+fun ComposableManager(){
+    val welcomeScreenEnabled by remember { mutableStateOf(true) }
+    val foodOptionsScreenEnabled by remember { mutableStateOf(false) }
+
+    if (welcomeScreenEnabled){ WelcomeScreen()}
+    if (foodOptionsScreenEnabled){ FoodOptionsScreen() }
+}
+
 @Composable
 fun MessageCard(name: String) {
     Text(text = "Hello $name!")
 }
 @Composable
 fun WelcomeScreen() {
+
     Column {
         Spacer(modifier = Modifier.height(8.dp))
         Text(
@@ -93,6 +105,25 @@ fun ShowMenuButton() {
     }
 }
 
+@Composable
+fun FoodOptionsScreen(){
+    LazyColumn {//https://developer.android.com/jetpack/compose/lists#lazy
+        // Add a single item
+        item {
+            Text(text = "First item")
+        }
+
+        // Add 5 items
+        items(5) { index ->
+            Text(text = "Item: $index")
+        }
+
+        // Add another single item
+        item {
+            Text(text = "Last item")
+        }
+    }
+}
 
 
 /* https://developer.android.com/jetpack/compose/layouts/basics
