@@ -1,7 +1,6 @@
 package com.zybooks.hc24_luuk_crawford_senior_project
 
 import android.os.Bundle
-import android.widget.TextView
 
 
 import androidx.activity.ComponentActivity
@@ -22,10 +21,6 @@ import androidx.compose.material.Button
 
 // ...
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -35,50 +30,61 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 import com.google.firebase.firestore.FirebaseFirestore
 
-import androidx.compose.runtime.remember
-import androidx.navigation.NavController
-import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            ComposableManager()
+            MyAppNavHost()
+            //ComposableManager()
         }
     }
 }
 
 @Composable
-fun ComposableManager(){
-    val navController = rememberNavController()
-
-    NavHost(navController = navController, startDestination = "screen1") {
-        composable("screen1") {
-            Screen1 {
-                navController.navigate("screen2")
-            }
+fun MyAppNavHost(
+    modifier: Modifier = Modifier,
+    navController: NavHostController = rememberNavController(),
+    startDestination: String = "profile"
+) {
+    NavHost(
+        modifier = modifier,
+        navController = navController,
+        startDestination = startDestination
+    ) {
+        composable("profile") {
+            ProfileScreen(
+                onNavigateToFriends = { navController.navigate("friendsList") },
+                /*...*/
+            )
         }
-        composable("screen2") { Screen2() }
-    }
-}
-@Composable
-fun Screen1(onNavigateToScreen2: () -> Unit) {
-    // UI for Screen1
-    Button(onClick = { onNavigateToScreen2() }) {
-        Text("Go to Screen 2")
+        composable("friendslist") { FriendsListScreen(/*...*/) }
     }
 }
 
-
 @Composable
-fun Screen2() {
-    Text("This is Screen 2")
+fun ProfileScreen(
+    onNavigateToFriends: () -> Unit,
+    /*...*/
+) {
+    /*...*/
+    Button(onClick = onNavigateToFriends) {
+        Text(text = "See friends list")
+    }
 }
+@Composable
+fun FriendsListScreen(){
+    Text(text = "wow friends list screen")
+}
+
+
 
 @Composable
 fun MessageCard(name: String) {
