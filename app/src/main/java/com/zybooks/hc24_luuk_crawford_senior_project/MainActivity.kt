@@ -58,16 +58,22 @@ fun ComposableManager(){
     val navController = rememberNavController()
 
     NavHost(navController = navController, startDestination = "screen1") {
-        composable("screen1") { Screen1(navController) }
+        composable("screen1") {
+            Screen1 {
+                navController.navigate("screen2")
+            }
+        }
         composable("screen2") { Screen2() }
     }
 }
 @Composable
-fun Screen1(navController: NavController) {
-    Button(onClick = { navController.navigate("screen2") }) {
+fun Screen1(onNavigateToScreen2: () -> Unit) {
+    // UI for Screen1
+    Button(onClick = { onNavigateToScreen2() }) {
         Text("Go to Screen 2")
     }
 }
+
 
 @Composable
 fun Screen2() {
