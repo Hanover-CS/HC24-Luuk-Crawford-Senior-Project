@@ -48,6 +48,8 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+
+
 @Composable
 fun MyAppNavHost(
     modifier: Modifier = Modifier,
@@ -61,11 +63,11 @@ fun MyAppNavHost(
     ) {
         composable("profile") {
             ExampleComposable(
-                onNavigateToPlace = { navController.navigate("placeToGo") },
+                onNavigateToPlace = { navController.navigate(Routes.placeToGo.name) },
                 /*...*/
             )
         }
-        composable("placeToGo") { locationToGo(/*...*/) }
+        composable(Routes.placeToGo.name) { locationToGo(/*...*/) }
 
     }
 }
