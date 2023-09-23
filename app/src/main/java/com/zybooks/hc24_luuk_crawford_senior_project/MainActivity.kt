@@ -1,6 +1,7 @@
 package com.zybooks.hc24_luuk_crawford_senior_project
 
 import android.os.Bundle
+import android.widget.TextView
 
 
 import androidx.activity.ComponentActivity
@@ -34,6 +35,14 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.google.firebase.firestore.FirebaseFirestore
+
+import androidx.compose.runtime.remember
+import androidx.navigation.NavController
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,13 +52,26 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
+
 @Composable
 fun ComposableManager(){
-    val welcomeScreenEnabled by remember { mutableStateOf(true) }
-    val foodOptionsScreenEnabled by remember { mutableStateOf(false) }
+    val navController = rememberNavController()
 
-    if (welcomeScreenEnabled){ WelcomeScreen()}
-    if (foodOptionsScreenEnabled){ FoodOptionsScreen() }
+    NavHost(navController = navController, startDestination = "screen1") {
+        composable("screen1") { Screen1(navController) }
+        composable("screen2") { Screen2() }
+    }
+}
+@Composable
+fun Screen1(navController: NavController) {
+    Button(onClick = { navController.navigate("screen2") }) {
+        Text("Go to Screen 2")
+    }
+}
+
+@Composable
+fun Screen2() {
+    Text("This is Screen 2")
 }
 
 @Composable
@@ -94,7 +116,22 @@ fun ShowMenuButton() {
             contentAlignment = Alignment.Center
         ) {
 
-    Button(onClick = { /* do something on click */ },
+    Button(onClick = { /* do something on click */
+        val dataToSave = HashMap<String, String>()
+
+        //val itemName = findViewById<TextView>(R.id.itemName).text.toString()
+
+
+        dataToSave.put("item", "itemName")
+        dataToSave.put("side", "Lava Tater Tots")
+        dataToSave.put("toppings", "sprinkles")
+
+
+        FirebaseFirestore.getInstance().document("sampleData/order002").set(dataToSave)
+
+
+
+    },
     shape = RoundedCornerShape(18.dp),
     ) {
         Text(
