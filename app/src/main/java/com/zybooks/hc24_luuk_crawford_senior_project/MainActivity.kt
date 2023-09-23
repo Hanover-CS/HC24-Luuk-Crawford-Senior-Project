@@ -60,28 +60,29 @@ fun MyAppNavHost(
         startDestination = startDestination
     ) {
         composable("profile") {
-            ProfileScreen(
-                onNavigateToFriends = { navController.navigate("friendsList") },
+            ExampleComposable(
+                onNavigateToPlace = { navController.navigate("placeToGo") },
                 /*...*/
             )
         }
-        composable("friendslist") { FriendsListScreen(/*...*/) }
+        composable("placeToGo") { locationToGo(/*...*/) }
+
     }
 }
 
 @Composable
-fun ProfileScreen(
-    onNavigateToFriends: () -> Unit,
+fun ExampleComposable(
+    onNavigateToPlace: () -> Unit,
     /*...*/
 ) {
     /*...*/
-    Button(onClick = onNavigateToFriends) {
-        Text(text = "See friends list")
+    Button(onClick = onNavigateToPlace) {
+        Text(text = "visit the place to go")
     }
 }
 @Composable
-fun FriendsListScreen(){
-    Text(text = "wow friends list screen")
+fun locationToGo(){
+    Text(text = "wow you went to the place to go")
 }
 
 
