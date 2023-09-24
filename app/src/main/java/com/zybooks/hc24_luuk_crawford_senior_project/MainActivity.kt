@@ -31,7 +31,6 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
-import com.google.firebase.firestore.FirebaseFirestore
 
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -59,7 +58,7 @@ Nav host is the composable manager
 fun AppNavHost(
     modifier: Modifier = Modifier,
     navController: NavHostController = rememberNavController(),
-    startDestination: String = Routes.startLocation.name
+    startDestination: String = Routes.welcomeScreen.name
 ) {
     NavHost(
         modifier = modifier,
@@ -75,14 +74,13 @@ fun AppNavHost(
         composable(Routes.placeToGo.name) { locationToGo(/*...*/) }
         //test example done
 
-        setupTravelFromTo(Routes.startLocation, ExampleComposable, Routes.placeToGo, locationToGo)
-/*
+
         composable(Routes.welcomeScreen.name){
             WelcomeScreen(
-                //onNavigateToMenu = {navController.navigate()}
+                onNavigateToMenu = {navController.navigate(Routes.menuScreen.name)},
             )
         }
-*/
+        composable(Routes.menuScreen.name) { MenuScreen()}
 
 
 
@@ -90,15 +88,7 @@ fun AppNavHost(
     }
 
 }
-@Composable
-fun setupTravelFromTo(fromRoute : Routes, fromComposable :Composable, toRoute : Routes, toComposable : Composable){
-    composable(fromRoute) {
-        fromComposable(
-            onNavigateToPlace = { navController.navigate(toRoute) },
-        )
-    }
-    composable(toRoute) { toComposable(/*...*/) }
-}
+
 /*
 Test example to test onNavigate interaction with NavHost
 */
@@ -127,7 +117,7 @@ fun MessageCard(name: String) {
 * - button to navigate to menu
 * */
 @Composable
-fun WelcomeScreen() {
+fun WelcomeScreen(onNavigateToMenu: () -> Unit) {
 
     Column {
         Spacer(modifier = Modifier.height(8.dp))
@@ -139,59 +129,42 @@ fun WelcomeScreen() {
             textAlign = TextAlign.Center,
             color = colorResource(id = R.color.hanoverWebRed)
         )
-        Text(text = stringResource(id = R.string.underground),fontSize = 35.sp,
+        Text(
+            text = stringResource(id = R.string.underground), fontSize = 35.sp,
             fontWeight = FontWeight.Bold,
             textAlign = TextAlign.Center,
         )
-        ShowMenuButton()
-
-    }
-}
-
-@Composable
-fun ShowMenuButton() {
-    Column(
-        verticalArrangement = Arrangement.Bottom,
-        horizontalAlignment = Alignment.CenterHorizontally,
-        modifier = Modifier.fillMaxHeight()
+        Column(
+            verticalArrangement = Arrangement.Bottom,
+            horizontalAlignment = Alignment.CenterHorizontally,
+            modifier = Modifier.fillMaxHeight()
 
 
-    ){
-        Box(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(16.dp),
-            contentAlignment = Alignment.Center
         ) {
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(16.dp),
+                contentAlignment = Alignment.Center
+            ) {
+                Button(
+                    onClick = { onNavigateToMenu() },
+                    shape = RoundedCornerShape(18.dp),
+                ) {
+                    Text(
+                        text = stringResource(id = R.string.beginOrder),
+                        fontSize = 40.sp,
+                        color = Color.White, textAlign = TextAlign.Center
+                    )
+                }
+            }
+        }
 
-    Button(onClick = { /* do something on click */
-        val dataToSave = HashMap<String, String>()
-
-        //val itemName = findViewById<TextView>(R.id.itemName).text.toString()
-
-
-        dataToSave.put("item", "itemName")
-        dataToSave.put("side", "Lava Tater Tots")
-        dataToSave.put("toppings", "sprinkles")
-
-
-        FirebaseFirestore.getInstance().document("sampleData/order002").set(dataToSave)
-
-
-
-    },
-    shape = RoundedCornerShape(18.dp),
-    ) {
-        Text(
-            text = stringResource(id = R.string.beginOrder),
-            fontSize = 40.sp,
-            color = Color.White, textAlign = TextAlign.Center)
-    }}
     }
 }
 
 @Composable
-fun FoodOptionsScreen(){
+fun MenuScreen(){
     LazyColumn {//https://developer.android.com/jetpack/compose/lists#lazy
         // Add a single item
         item {
