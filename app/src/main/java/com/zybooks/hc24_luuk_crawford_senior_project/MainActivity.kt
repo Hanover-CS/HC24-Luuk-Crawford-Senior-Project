@@ -120,47 +120,56 @@ fun MessageCard(name: String) {
 fun WelcomeScreen(onNavigateToMenu: () -> Unit) {
 
     Column {
-        Spacer(modifier = Modifier.height(8.dp))
-        Text(
-            text = stringResource(id = R.string.collegeNameCaps),
-            fontSize = 35.sp,
-            fontWeight = FontWeight.Bold,
+        locationInfoLogo()
+        beginOrderButton(onNavigateToMenu)
+    }
+}
 
-            textAlign = TextAlign.Center,
-            color = colorResource(id = R.color.hanoverWebRed)
-        )
-        Text(
-            text = stringResource(id = R.string.underground), fontSize = 35.sp,
-            fontWeight = FontWeight.Bold,
-            textAlign = TextAlign.Center,
-        )
-        Column(
-            verticalArrangement = Arrangement.Bottom,
-            horizontalAlignment = Alignment.CenterHorizontally,
-            modifier = Modifier.fillMaxHeight()
+@Composable
+private fun beginOrderButton(onNavigateToMenu: () -> Unit) {
+    Column(
+        verticalArrangement = Arrangement.Bottom,
+        horizontalAlignment = Alignment.CenterHorizontally,
+        modifier = Modifier.fillMaxHeight()
 
 
+    ) {
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp),
+            contentAlignment = Alignment.Center
         ) {
-            Box(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(16.dp),
-                contentAlignment = Alignment.Center
+            Button(
+                onClick = { onNavigateToMenu() },
+                shape = RoundedCornerShape(18.dp),
             ) {
-                Button(
-                    onClick = { onNavigateToMenu() },
-                    shape = RoundedCornerShape(18.dp),
-                ) {
-                    Text(
-                        text = stringResource(id = R.string.beginOrder),
-                        fontSize = 40.sp,
-                        color = Color.White, textAlign = TextAlign.Center
-                    )
-                }
+                Text(
+                    text = stringResource(id = R.string.beginOrder),
+                    fontSize = 40.sp,
+                    color = Color.White, textAlign = TextAlign.Center
+                )
             }
         }
-
     }
+}
+
+@Composable
+private fun locationInfoLogo() {
+    Spacer(modifier = Modifier.height(8.dp))
+    Text(
+        text = stringResource(id = R.string.collegeNameCaps),
+        fontSize = 35.sp,
+        fontWeight = FontWeight.Bold,
+
+        textAlign = TextAlign.Center,
+        color = colorResource(id = R.color.hanoverWebRed)
+    )
+    Text(
+        text = stringResource(id = R.string.underground), fontSize = 35.sp,
+        fontWeight = FontWeight.Bold,
+        textAlign = TextAlign.Center,
+    )
 }
 
 @Composable
@@ -182,37 +191,3 @@ fun MenuScreen(){
         }
     }
 }
-
-
-/* https://developer.android.com/jetpack/compose/layouts/basics
-@Composable
-fun ArtistAvatar(artist: Artist) {
-    Box {
-        Image(bitmap = artist.image, contentDescription = "Artist image")
-        Icon(Icons.Filled.Check, contentDescription = "Check mark")
-    }
-}
-*/
-
-
-/*
-class MainActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        setupButton()
-        FirebaseApp.initializeApp(this)
-        Firebase.analytics.logEvent("app_opened",null)
-    }
-
-
-    private fun setupButton() {
-        val buttonClick = findViewById<Button>(R.id.toSelectionActivity)
-        buttonClick.setOnClickListener {
-            Firebase.analytics.logEvent("started_order",null)
-            val intent = Intent(this, SelectionActivity::class.java)
-            startActivity(intent)
-        }
-    }
-
-}*/
