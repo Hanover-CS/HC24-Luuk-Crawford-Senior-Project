@@ -1,6 +1,8 @@
 package com.zybooks.hc24_luuk_crawford_senior_project
 
+import android.content.ContentValues.TAG
 import android.os.Bundle
+import android.util.Log
 
 
 import androidx.activity.ComponentActivity
@@ -35,6 +37,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.google.firebase.firestore.FirebaseFirestore
 
 //This setups loading to make my composable's work.
 //- Starts AppNavHost
@@ -173,8 +176,26 @@ private fun locationInfoLogo() {
 fun MenuScreen(){
     LazyColumn {//https://developer.android.com/jetpack/compose/lists#lazy
         // Add a single item
+        //FirebaseFirestore.getInstance().document("sampleData/order002").get()
+        val db = FirebaseFirestore.getInstance()
+        val docRef = db.collection("menuContent").document("100")
+        var menuItem: Map<String, Any>? = null
+        docRef.get()
+            .addOnSuccessListener { document ->
+                if (document != null) {
+                    Log.d(TAG, "DocumentSnapshot data: ${document.data}")
+                    menuItem = document.data
+                } else {
+                    Log.d(TAG, "No such document")
+                }
+            }
+            .addOnFailureListener { exception ->
+                Log.d(TAG, "get failed with ", exception)
+            }
+
+
         item {
-            Text(text = "First item")
+            Text(text = "testing")
         }
 
         // Add 5 items
