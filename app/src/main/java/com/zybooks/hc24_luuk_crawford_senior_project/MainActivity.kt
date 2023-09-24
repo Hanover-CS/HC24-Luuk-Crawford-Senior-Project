@@ -42,36 +42,66 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            MyAppNavHost()
+            AppNavHost()
             //ComposableManager()
         }
     }
 }
 
 
+/*
+Nav host is the composable manager
+- set start location
+- handles which composable to load if when triggered
+ */
 
 @Composable
-fun MyAppNavHost(
+fun AppNavHost(
     modifier: Modifier = Modifier,
     navController: NavHostController = rememberNavController(),
-    startDestination: String = "profile"
+    startDestination: String = Routes.startLocation.name
 ) {
     NavHost(
         modifier = modifier,
         navController = navController,
         startDestination = startDestination
     ) {
-        composable("profile") {
+        //TEST EXAMPLE TO FOLLOW
+        composable(Routes.startLocation.name) {
             ExampleComposable(
                 onNavigateToPlace = { navController.navigate(Routes.placeToGo.name) },
-                /*...*/
             )
         }
         composable(Routes.placeToGo.name) { locationToGo(/*...*/) }
+        //test example done
+
+        setupTravelFromTo(Routes.startLocation, ExampleComposable, Routes.placeToGo, locationToGo)
+/*
+        composable(Routes.welcomeScreen.name){
+            WelcomeScreen(
+                //onNavigateToMenu = {navController.navigate()}
+            )
+        }
+*/
+
+
+
 
     }
-}
 
+}
+@Composable
+fun setupTravelFromTo(fromRoute : Routes, fromComposable :Composable, toRoute : Routes, toComposable : Composable){
+    composable(fromRoute) {
+        fromComposable(
+            onNavigateToPlace = { navController.navigate(toRoute) },
+        )
+    }
+    composable(toRoute) { toComposable(/*...*/) }
+}
+/*
+Test example to test onNavigate interaction with NavHost
+*/
 @Composable
 fun ExampleComposable(
     onNavigateToPlace: () -> Unit,
@@ -86,13 +116,16 @@ fun ExampleComposable(
 fun locationToGo(){
     Text(text = "wow you went to the place to go")
 }
-
-
-
 @Composable
 fun MessageCard(name: String) {
     Text(text = "Hello $name!")
 }
+
+/*
+* This is the starting screen.
+* - shows underground and school name and such
+* - button to navigate to menu
+* */
 @Composable
 fun WelcomeScreen() {
 
