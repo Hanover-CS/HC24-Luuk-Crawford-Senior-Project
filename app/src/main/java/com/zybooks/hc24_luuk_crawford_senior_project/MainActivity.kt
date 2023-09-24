@@ -36,7 +36,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 
-
+//This setups loading to make my composable's work.
+//- Starts AppNavHost
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,7 +52,7 @@ class MainActivity : ComponentActivity() {
 /*
 Nav host is the composable manager
 - set start location
-- handles which composable to load if when triggered
+- handles which composable to load when triggered
  */
 
 @Composable
@@ -105,10 +106,6 @@ fun ExampleComposable(
 @Composable
 fun locationToGo(){
     Text(text = "wow you went to the place to go")
-}
-@Composable
-fun MessageCard(name: String) {
-    Text(text = "Hello $name!")
 }
 
 /*
