@@ -38,6 +38,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.google.firebase.firestore.FirebaseFirestore
+import kotlinx.coroutines.android.awaitFrame
 
 //This setups loading to make my composable's work.
 //- Starts AppNavHost
@@ -179,12 +180,23 @@ fun MenuScreen(){
         //FirebaseFirestore.getInstance().document("sampleData/order002").get()
         val db = FirebaseFirestore.getInstance()
         val docRef = db.collection("menuContent").document("100")
-        var menuItem: Map<String, Any>? = null
+        //var menuItem: Map<String, Any>? = null
+
+        val myMenuList = mutableListOf<MenuItem>()
+
         docRef.get()
             .addOnSuccessListener { document ->
                 if (document != null) {
                     Log.d(TAG, "DocumentSnapshot data: ${document.data}")
-                    menuItem = document.data
+                    //menuItem = document.data
+                    val menuExample = MenuItem(
+                        name = "Hamburger",
+                        id = 100,
+                        customizationType = "Burger",
+                        imageID = "your_image_id")
+                    myMenuList.add(menuExample)
+
+
                 } else {
                     Log.d(TAG, "No such document")
                 }
@@ -193,9 +205,9 @@ fun MenuScreen(){
                 Log.d(TAG, "get failed with ", exception)
             }
 
-
         item {
-            Text(text = "testing")
+            val firstMenuItem: MenuItem = myMenuList[0]
+                Text(text = firstMenuItem.name)
         }
 
         // Add 5 items
