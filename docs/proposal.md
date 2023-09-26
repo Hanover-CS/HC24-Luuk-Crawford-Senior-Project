@@ -11,7 +11,7 @@ My intention for this project is to create a way for people to order ahead of ti
 
    Once that works, if I have time it would be nice to also implement these below...
 
-2. A server
+2. Cloud storage
    - store orders
 
 3. Chef's screen
@@ -65,7 +65,7 @@ This would add a level of complexity I don't think I will be able to support in 
 
 Chipotle gives the option to add other items to the order. Since mealswipes only support one main item I will likely just have a confirm order button after a single item's customization.
 
-Once an order is confirmed the next screen would have something to keep track of the order if I get server communication both ways working.
+Once an order is confirmed the next screen would have something to keep track of the order with cloud storage.
 
 This is what I have in mind right now, in terms of the interface choices I have made:
 
@@ -87,16 +87,16 @@ I will continue using Kotlin in [Android Studio][link5] as I did during my May t
 
 I also chose these options as they have support for [multiple platforms including mobile support in beta][link8] [8]. Meaning if this project were to attempt iOS or other support one day, most of the code should be reusable. Though I am partly [risking needing to rewrite other parts of my code][link9] [9] if "migration steps" for updates are needed.
 
-Kotlin is a good choice because I have recent familiarity with it and my research found I can use it server-side if needed as well. 
+Kotlin is a good choice because I have recent familiarity with it.
 And even though multiplatform capabilities are not 100% complete, apps using Kotlin on Android are very stable as Google found they are [20% less likely to crash][link10] [10].
 
 An option I considered for a programming language is [Dart][link11], which is what [Flutter][link12] uses [11][12]. And [both Dart and Kotlin work in Android Studio][link13] [13]. This used to be the top choice for cross-platform but [Kotlin is preferred for Android development][link13] [13]. If I were to for sure push iOS development I might choose Dart over Kotlin, but for this, I am satisfied with focusing on just Android but keeping the door open for cross-platform possibilities which Kotlin supports. 
 
 Another option is [React Native][link14] [14]. Reach Native uses JavaScript. When [comparing React Native directly against Kotlin Multiplatform][link15], Kotlin is designed "for developing mobile applications" [15]. Using JavaScript with React Native requires [third-party libraries][link15] to achieve the same thing [15]. React Native offers a quick reload option to see changes but I am currently satisfied with the speed of Android Studio. This article also concluded that if focusing on multiplatform then React Native may be the better option. But for those focusing on Android, "you must consider Kotlin". 
 
-### Server
+### Cloud Storage
 
-There are multiple potential server options including major offerings such as [Microsoft Azure][link16], [AWS][link17], and [Google Cloud][link18] [16][17][18]. 
+There are multiple potential cloud infrastructure providers including major offerings such as [Microsoft Azure][link16], [AWS][link17], and [Google Cloud][link18] [16][17][18]. 
 Google also offers [Firebase][link19], which is what I intend to use [19]. This is my top choice because the setup was the most clear to follow even including video tutorials using the same setup I have with Kotlin and Android Studio, making it easier for me to implement correctly. [Google Cloud][link20] can be used for storage including realtime databases but [Firebase seems to be better for focusing on realtime databases][link21] [20][21]. I expect it would be a realtime database to ensure the flow of orders works well. Another option I explored and made an attempt to use was [Supabase][link22] [22]. I liked it as it seemed simple to use with a nice interface but I had trouble getting it set up with Kotlin in Android Studio so I swapped to Firebase which was easier to follow.
 
 ### References
@@ -107,19 +107,19 @@ Google also offers [Firebase][link19], which is what I intend to use [19]. This 
 
 [3] C. Luuk, “Photo of Underground Ordering Sheet.” May 24, 2023. Available: https://github-production-user-asset-6210df.s3.amazonaws.com/32851596/250412801-19be7b5f-ed5d-42bb-882a-7042fcce4b22.jpg (accessed Jul. 22, 2023)
 
-[4] “Make your Android application work on iOS – tutorial | Kotlin,” Kotlin Help. https://kotlinlang.org/docs/multiplatform-mobile-integrate-in-existing-app.html#create-an-ios-project-in-xcode (accessed Jul. 9, 2023).
+[4] “Make your Android application work on iOS – tutorial, Kotlin,” Kotlin Help. https://kotlinlang.org/docs/multiplatform-mobile-integrate-in-existing-app.html#create-an-ios-project-in-xcode (accessed Jul. 9, 2023).
 
 [5] “Download Android Studio & App Tools,” Android Developers. https://developer.android.com/studio (accessed Aug. 31, 2023).
 
 [6] F. Lardinois, “Five years later, Google is still all-in on Kotlin,” TechCrunch, Aug. 18, 2022. https://techcrunch.com/2022/08/18/five-years-later-google-is-still-all-in-on-kotlin/ (accessed Sep. 06, 2023).
 
-[7] “IDEs for Kotlin development | Kotlin,” Kotlin Help. https://kotlinlang.org/docs/kotlin-ide.html#intellij-idea (accessed Aug. 31, 2023).
+[7] “IDEs for Kotlin development, Kotlin,” Kotlin Help. https://kotlinlang.org/docs/kotlin-ide.html#intellij-idea (accessed Aug. 31, 2023).
 
-[8] “Get started with Kotlin Multiplatform for mobile | Kotlin,” Kotlin Help. https://kotlinlang.org/docs/multiplatform-mobile-getting-started.html (accessed Aug. 31, 2023).
+[8] “Get started with Kotlin Multiplatform for mobile, Kotlin,” Kotlin Help. https://kotlinlang.org/docs/multiplatform-mobile-getting-started.html (accessed Aug. 31, 2023).
 
-[9] “Kotlin Multiplatform | Kotlin,” Kotlin Help. https://kotlinlang.org/docs/multiplatform.html (accessed Aug. 31, 2023).
+[9] “Kotlin Multiplatform, Kotlin,” Kotlin Help. https://kotlinlang.org/docs/multiplatform.html (accessed Aug. 31, 2023).
 
-[10] “Kotlin for Android | Kotlin,” Kotlin Help. https://kotlinlang.org/docs/android-overview.html (accessed Aug. 31, 2023).
+[10] “Kotlin for Android, Kotlin,” Kotlin Help. https://kotlinlang.org/docs/android-overview.html (accessed Aug. 31, 2023).
 
 [11] “Dart,” Google for Developers. https://developers.google.com/learn/topics/dart (accessed Aug. 31, 2023).
 
@@ -137,7 +137,7 @@ Google also offers [Firebase][link19], which is what I intend to use [19]. This 
 
 [18] “Cloud Computing Services,” Google Cloud. Available: https://cloud.google.com/ (accessed Aug. 31, 2023).
 
-[19] “Firebase | Google’s Mobile and Web App Development Platform,” Firebase. https://firebase.google.com/ (accessed Sep. 06, 2023).
+[19] “Firebase, Google’s Mobile and Web App Development Platform,” Firebase. https://firebase.google.com/ (accessed Sep. 06, 2023).
 
 [20] “Cloud Computing Services,” Google Cloud. https://cloud.google.com/ (accessed Sep. 06, 2023).
 
