@@ -56,7 +56,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             AppNavHost()
         }
-        //downloadMenuServer()
+        //downloadMenuFirebase()
         downloadMenuLocal()
 
     }
@@ -79,7 +79,7 @@ class MainActivity : ComponentActivity() {
         myMenuList.add(menuExample2)
     }
 
-    private fun downloadMenuServer() {
+    private fun downloadMenuFirebase() {
         val db = FirebaseFirestore.getInstance()
         val docRef = db.collection("menuContent")
 
