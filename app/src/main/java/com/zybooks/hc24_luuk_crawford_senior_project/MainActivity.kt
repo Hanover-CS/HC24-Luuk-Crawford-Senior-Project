@@ -51,39 +51,37 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             AppNavHost()
-            //ComposableManager()
         }
-        downloadMenu()
+        //downloadMenuServer()
+        downloadMenuLocal()
+
     }
 
-    private fun downloadMenu() {
-        /*
+    private fun downloadMenuLocal() {
         val menuExample = MenuItem(
             name = "HamburgerTest",
             id = 100,
             customizationType = "Burger",
-            imageID = "https://i.imgur.com/N22z5gY.jpeg"
+            imageLink = "https://i.imgur.com/N22z5gY.jpeg"
         )
         myMenuList.add(menuExample)
         val menuExample2 = MenuItem(
             name = "VeggieBurgerTest",
             id = 101,
             customizationType = "Burger",
-            imageID = "https://i.imgur.com/K6alfDv.jpeg"
+            imageLink = "https://i.imgur.com/K6alfDv.jpeg"
         )
 
-        myMenuList.add(menuExample2)*/
-        // Add a single item
-        //FirebaseFirestore.getInstance().document("sampleData/order002").get()
-        val db = FirebaseFirestore.getInstance()
-        val docRef = db.collection("menuContent")//.document("100")
-        //var menuItem: Map<String, Any>? = null
+        myMenuList.add(menuExample2)
+    }
 
+    private fun downloadMenuServer() {
+        val db = FirebaseFirestore.getInstance()
+        val docRef = db.collection("menuContent")
 
         docRef.get()
             .addOnSuccessListener { document ->
                 if (document != null) {
-                    //Log.d(TAG, "DocumentSnapshot data: ${document.data}")
                     for (foodOffering in document){
                         val food = foodOffering.data
                         Log.d(TAG, "TEST ${food} is food id${food["id"]}")
@@ -95,11 +93,6 @@ class MainActivity : ComponentActivity() {
                         )
                         myMenuList.add(nextItem)
                     }
-                    //var menuItem = document.data
-                    //val menuItem = MenuItem()
-                    //myMenuList.add(menuItem)
-
-
 
                 } else {
                     Log.d(TAG, "No such document")
