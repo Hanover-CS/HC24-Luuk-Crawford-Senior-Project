@@ -42,16 +42,33 @@ import kotlinx.coroutines.android.awaitFrame
 
 //This setups loading to make my composable's work.
 //- Starts AppNavHost
+
+val myMenuList = mutableListOf<MenuItem>()
 class MainActivity : ComponentActivity() {
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContent {
             AppNavHost()
             //ComposableManager()
         }
+        val menuExample = MenuItem(
+            name = "HamburgerTest",
+            id = 100,
+            customizationType = "Burger",
+            imageID = "your_image_id")
+        myMenuList.add(menuExample)
+        val menuExample2 = MenuItem(
+            name = "VeggieBurgerTest",
+            id = 400,
+            customizationType = "Burger",
+            imageID = "your_image_id")
+        myMenuList.add(menuExample2)
     }
 }
-
 
 /*
 Nav host is the composable manager
@@ -176,40 +193,10 @@ private fun locationInfoLogo() {
 @Composable
 fun MenuScreen(){
     LazyColumn {//https://developer.android.com/jetpack/compose/lists#lazy
-        // Add a single item
-        //FirebaseFirestore.getInstance().document("sampleData/order002").get()
-        val db = FirebaseFirestore.getInstance()
-        val docRef = db.collection("menuContent").document("100")
-        //var menuItem: Map<String, Any>? = null
+        items(myMenuList.size){index ->
+            Text(text = myMenuList[index].name)
 
-        val myMenuList = mutableListOf<MenuItem>()
-
-        docRef.get()
-            .addOnSuccessListener { document ->
-                if (document != null) {
-                    Log.d(TAG, "DocumentSnapshot data: ${document.data}")
-                    //menuItem = document.data
-                    val menuExample = MenuItem(
-                        name = "Hamburger",
-                        id = 100,
-                        customizationType = "Burger",
-                        imageID = "your_image_id")
-                    myMenuList.add(menuExample)
-
-
-                } else {
-                    Log.d(TAG, "No such document")
-                }
-            }
-            .addOnFailureListener { exception ->
-                Log.d(TAG, "get failed with ", exception)
-            }
-
-        item {
-            val firstMenuItem: MenuItem = myMenuList[0]
-                Text(text = firstMenuItem.name)
         }
-
         // Add 5 items
         items(5) { index ->
             Text(text = "Item: $index")
