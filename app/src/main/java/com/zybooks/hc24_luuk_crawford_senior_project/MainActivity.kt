@@ -38,7 +38,6 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.google.firebase.firestore.FirebaseFirestore
-import kotlinx.coroutines.android.awaitFrame
 
 //This setups loading to make my composable's work.
 //- Starts AppNavHost
@@ -50,23 +49,67 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         setContent {
             AppNavHost()
             //ComposableManager()
         }
+        downloadMenu()
+    }
+
+    private fun downloadMenu() {
+        /*
         val menuExample = MenuItem(
             name = "HamburgerTest",
             id = 100,
             customizationType = "Burger",
-            imageID = "your_image_id")
+            imageID = "https://i.imgur.com/N22z5gY.jpeg"
+        )
         myMenuList.add(menuExample)
         val menuExample2 = MenuItem(
             name = "VeggieBurgerTest",
-            id = 400,
+            id = 101,
             customizationType = "Burger",
-            imageID = "your_image_id")
-        myMenuList.add(menuExample2)
+            imageID = "https://i.imgur.com/K6alfDv.jpeg"
+        )
+
+        myMenuList.add(menuExample2)*/
+        // Add a single item
+        //FirebaseFirestore.getInstance().document("sampleData/order002").get()
+        val db = FirebaseFirestore.getInstance()
+        val docRef = db.collection("menuContent")//.document("100")
+        //var menuItem: Map<String, Any>? = null
+
+
+        docRef.get()
+            .addOnSuccessListener { document ->
+                if (document != null) {
+                    //Log.d(TAG, "DocumentSnapshot data: ${document.data}")
+                    for (foodOffering in document){
+                        val food = foodOffering.data
+                        Log.d(TAG, "TEST ${food} is food id${food["id"]}")
+                        val nextItem = MenuItem(
+                            name = "${food["name"]}",
+                            id = "${food["id"]}".toInt(),
+                            customizationType = "${food["customizationType"]}",
+                            imageLink = "${food["imageLink"]}"
+                        )
+                        myMenuList.add(nextItem)
+                    }
+                    //var menuItem = document.data
+                    //val menuItem = MenuItem()
+                    //myMenuList.add(menuItem)
+
+
+
+                } else {
+                    Log.d(TAG, "No such document")
+                }
+            }
+            .addOnFailureListener { exception ->
+                Log.d(TAG, "get failed with ", exception)
+            }
+
+
     }
 }
 
@@ -194,8 +237,9 @@ private fun locationInfoLogo() {
 fun MenuScreen(){
     LazyColumn {//https://developer.android.com/jetpack/compose/lists#lazy
         items(myMenuList.size){index ->
-            Text(text = myMenuList[index].name)
 
+
+            Text(text = myMenuList[index].name)
         }
         // Add 5 items
         items(5) { index ->
