@@ -240,8 +240,8 @@ fun MenuScreen(){
                 modifier = Modifier.padding(10.dp)
             ) {
                 Image(
-                    painter = rememberImagePainter("https://i.imgur.com/N22z5gY.jpeg"),
-                    contentDescription = stringResource(R.string.collegeNameCaps),
+                    painter = rememberImagePainter(myMenuList[index].imageLink),
+                    contentDescription = stringResource(R.string.unknown),
                     modifier = Modifier.size(70.dp)
                 )
                 Text(text = myMenuList[index].name)
