@@ -99,6 +99,32 @@ Another option is [React Native][link14] [14]. Reach Native uses JavaScript. Whe
 There are multiple potential cloud infrastructure providers including major offerings such as [Microsoft Azure][link16], [AWS][link17], and [Google Cloud][link18] [16][17][18]. 
 Google also offers [Firebase][link19], which is what I intend to use [19]. This is my top choice because the setup was the most clear to follow even including video tutorials using the same setup I have with Kotlin and Android Studio, making it easier for me to implement correctly. [Google Cloud][link20] can be used for storage including realtime databases but [Firebase seems to be better for focusing on realtime databases][link21] [20][21]. I expect it would be a realtime database to ensure the flow of orders works well. Another option I explored and made an attempt to use was [Supabase][link22] [22]. I liked it as it seemed simple to use with a nice interface but I had trouble getting it set up with Kotlin in Android Studio so I swapped to Firebase which was easier to follow.
 
+## Features I intend to deliver
+
+1. Ability to pick from a list of items
+   - Select the item you want to customize
+   - Example items from Underground
+   - Uses menu that's on Firebase
+     
+3. Ability to select toppings/side
+   - Available toppings for item shown
+   - Select and unselect toppings
+
+4. Ability to submit an order (with your toppings/side)
+   - Sends personalized order to Firebase
+
+Since I've restarted and now have to rewrite my code using Jetpack Compose, I'm hesitant to push this further with more features not knowing what issues I may run into. 
+
+If/when I get those completed, I would love to add these **stretch goals** to let users keep track of their order.
+
+4. Ability to track order(s)
+   - View your order and the status of it
+   - Or atleast a view of all the orders
+
+5. Push notification
+   - notification when the order is complete
+
+
 ### References
 
 [1] “Mexican Food - Restaurant & Catering - Chipotle Mexican Grill,” Chipotle. https://www.chipotle.com (accessed Aug. 31, 2023).
