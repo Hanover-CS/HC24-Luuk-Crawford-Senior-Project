@@ -56,8 +56,14 @@ class MainActivity : ComponentActivity() {
         setContent {
             AppNavHost()
         }
-        //downloadMenuFirebase()
-        downloadMenuLocal()
+
+        val firebaseEnabled = false
+        if (firebaseEnabled){
+            downloadMenuFirebase()
+        }else{
+            downloadMenuLocal()
+        }
+
 
     }
 
@@ -89,12 +95,7 @@ class MainActivity : ComponentActivity() {
                     for (foodOffering in document){
                         val food = foodOffering.data
                         Log.d(TAG, "TEST ${food} is food id${food["id"]}")
-                        val nextItem = MenuItem(
-                            name = "${food["name"]}",
-                            id = "${food["id"]}".toInt(),
-                            customizationType = "${food["customizationType"]}",
-                            imageLink = "${food["imageLink"]}"
-                        )
+                        val nextItem = createItemFrom(food)
                         myMenuList.add(nextItem)
                     }
 
@@ -108,6 +109,16 @@ class MainActivity : ComponentActivity() {
 
 
     }
+
+}
+
+fun createItemFrom(food: Map<String, Any>): MenuItem {
+    return MenuItem(
+        name = "${food["name"]}",
+        id = "${food["id"]}".toInt(),
+        customizationType = "${food["customizationType"]}",
+        imageLink = "${food["imageLink"]}"
+    )
 }
 
 /*
