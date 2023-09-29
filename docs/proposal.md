@@ -122,7 +122,7 @@ If/when I get those completed, I would love to add these **stretch goals** to le
    - Or atleast a view of all the orders
 
 5. Push notification
-   - notification when the order is complete
+   - Notification when the order is complete
 
 
 ### References
