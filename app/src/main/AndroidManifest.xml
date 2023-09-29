@@ -22,16 +22,6 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name=".MenuItem"
-            android:exported="true">
-
-        </activity>
-        <activity
-            android:name=".Routes"
-            android:exported="true">
-
-        </activity>
 
 
 
