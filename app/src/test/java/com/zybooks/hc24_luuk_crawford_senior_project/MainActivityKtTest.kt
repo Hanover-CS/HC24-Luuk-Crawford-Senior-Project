@@ -1,5 +1,8 @@
 package com.zybooks.hc24_luuk_crawford_senior_project
 
+import android.content.ContentValues
+import android.util.Log
+import com.google.firebase.firestore.QuerySnapshot
 import junit.framework.TestCase.assertEquals
 import junit.framework.TestCase.assertNotSame
 import org.junit.Test
@@ -66,6 +69,20 @@ internal class MainActivityKtTest {
         //different name string
         val testItemDifferentName = MenuItem("not apple", 10, "burger", "www.something../jpeg")
         assertNotSame(testItemDifferentName, createdItem)
+    }
+
+    @Test
+    fun listDocumentContentsInTest(){
+        val pretendDB = mutableMapOf<String, MutableMap<String, Any?>>()
+
+        val hamburgerMap = mutableMapOf(
+            "customizationType" to "Burger",
+            "id" to 100,
+            "imageLink" to "https://i.imgur.com/N22z5gY.jpeg",
+            "name" to "Hamburger"
+        )
+        //pretendDB["Burger"] = hamburgerMap
+
     }
 
 

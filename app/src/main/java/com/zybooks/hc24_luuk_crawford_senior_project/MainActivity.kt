@@ -42,6 +42,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import coil.compose.rememberImagePainter
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.QuerySnapshot
 
 //This setups loading to make my composable's work.
 //- Starts AppNavHost
@@ -92,13 +93,7 @@ class MainActivity : ComponentActivity() {
         docRef.get()
             .addOnSuccessListener { document ->
                 if (document != null) {
-                    for (foodOffering in document){
-                        val food = foodOffering.data
-                        Log.d(TAG, "TEST ${food} is food id${food["id"]}")
-                        val nextItem = createItemFrom(food)
-                        myMenuList.add(nextItem)
-                    }
-
+                    listDocumentContentsIn(document, myMenuList)
                 } else {
                     Log.d(TAG, "No such document")
                 }
@@ -110,6 +105,17 @@ class MainActivity : ComponentActivity() {
 
     }
 
+}
+
+
+fun listDocumentContentsIn(document: QuerySnapshot, list: MutableList<MenuItem>) {
+    Log.d(TAG, "TEST ${document} is food document")
+    for (foodOffering in document) {
+        val food = foodOffering.data
+        Log.d(TAG, "TEST ${food} is food id${food["id"]}")
+        val nextItem = createItemFrom(food)
+        list.add(nextItem)
+    }
 }
 
 fun createItemFrom(food: Map<String, Any>): MenuItem {
