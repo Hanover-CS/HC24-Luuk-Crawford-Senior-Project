@@ -201,7 +201,7 @@ fun WelcomeScreen(onNavigateToMenu: () -> Unit) {
 
 //todo: needs test
 @Composable
-private fun beginOrderButton(onNavigateToMenu: () -> Unit) {
+fun beginOrderButton(onNavigateToMenu: () -> Unit) {
     Column(
         verticalArrangement = Arrangement.Bottom,
         horizontalAlignment = Alignment.CenterHorizontally,

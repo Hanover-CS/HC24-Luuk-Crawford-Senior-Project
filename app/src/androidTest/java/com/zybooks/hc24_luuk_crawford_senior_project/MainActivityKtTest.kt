@@ -1,11 +1,11 @@
 package com.zybooks.hc24_luuk_crawford_senior_project
 
 
-import androidx.activity.ComponentActivity
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.hasTestTag
-import androidx.compose.ui.test.junit4.createAndroidComposeRule
+import androidx.compose.ui.test.junit4.createComposeRule
+import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
 import androidx.navigation.compose.ComposeNavigator
 import androidx.navigation.testing.TestNavHostController
@@ -23,7 +23,7 @@ internal class MainActivityKtTest {
 //valcomposeTestRule = createComposeRule()
 
     @get:Rule
-    val composeTestRule = createAndroidComposeRule<ComponentActivity>()
+    val composeTestRule = createComposeRule() //createAndroidComposeRule<ComponentActivity>()
 
     @Before
     fun setupAppNavHost() {
@@ -127,17 +127,21 @@ internal class MainActivityKtTest {
         fun beginOrderButtonTest(){
 
         composeTestRule.setContent {
-            AppNavHost(Routes.welcomeScreen.name)
+            beginOrderButton {
+
+            }
+            //AppNavHost(Routes.welcomeScreen.name)
         }
             val button = composeTestRule.onNode(hasTestTag("welcomeToMenuButton"), true)
 
-            button.assertIsDisplayed()
-            button.performClick()
+            composeTestRule.onNodeWithText("").performClick()
+
+            //button.assertIsDisplayed()
+            //button.performClick()
         }
 
 
 
-*/
 
 
 }
