@@ -1,20 +1,44 @@
 package com.zybooks.hc24_luuk_crawford_senior_project
 
-import android.content.ContentValues
-import android.util.Log
-import com.google.firebase.firestore.QuerySnapshot
+
+import androidx.activity.ComponentActivity
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.test.assertIsDisplayed
+import androidx.compose.ui.test.hasTestTag
+import androidx.compose.ui.test.junit4.createAndroidComposeRule
+import androidx.compose.ui.test.performClick
+import androidx.navigation.compose.ComposeNavigator
+import androidx.navigation.testing.TestNavHostController
 import junit.framework.TestCase.assertEquals
 import junit.framework.TestCase.assertNotSame
+import org.junit.Before
+import org.junit.Rule
 import org.junit.Test
+//import org.robolectric.RobolectricTestRunner
 
+//@RunWith(RobolectricTestRunner::class)
 internal class MainActivityKtTest {
+    private lateinit var navController: TestNavHostController
+
+//valcomposeTestRule = createComposeRule()
+
+    @get:Rule
+    val composeTestRule = createAndroidComposeRule<ComponentActivity>()
+
+    @Before
+    fun setupAppNavHost() {
+        composeTestRule.setContent {
+            navController = TestNavHostController(LocalContext.current)
+            navController.navigatorProvider.addNavigator(ComposeNavigator())
+            AppNavHost(navController = navController)
+        }
+    }
+
+
     @Test
     fun newMenuListTest() {
-        assertEquals(3, 3)
         val testMenuList = mutableListOf<MenuItem>()
-
         assertEquals(testMenuList, myMenuList)
-
     }
 
     @Test
@@ -71,6 +95,7 @@ internal class MainActivityKtTest {
         assertNotSame(testItemDifferentName, createdItem)
     }
 
+//todo: not working cuz document weird
     @Test
     fun listDocumentContentsInTest(){
         val pretendDB = mutableMapOf<String, MutableMap<String, Any?>>()
@@ -81,13 +106,38 @@ internal class MainActivityKtTest {
             "imageLink" to "https://i.imgur.com/N22z5gY.jpeg",
             "name" to "Hamburger"
         )
+        //listDocumentContentsIn(documentExample, listTest)
         //pretendDB["Burger"] = hamburgerMap
 
     }
+        @Test
+        fun locationInfoLogoTest(){
+
+            composeTestRule.setContent {
+                val infoLogo = locationInfoLogoTest()
+            }
+            val button = composeTestRule.onNode(hasTestTag("yourTestTag"), true)
+
+            button.assertIsDisplayed()
+            button.performClick()
+        }
+//TESTINGGGGGGGG
+
+        @Test
+        fun beginOrderButtonTest(){
+
+        composeTestRule.setContent {
+            AppNavHost(Routes.welcomeScreen.name)
+        }
+            val button = composeTestRule.onNode(hasTestTag("welcomeToMenuButton"), true)
+
+            button.assertIsDisplayed()
+            button.performClick()
+        }
 
 
 
-
+*/
 
 
 }

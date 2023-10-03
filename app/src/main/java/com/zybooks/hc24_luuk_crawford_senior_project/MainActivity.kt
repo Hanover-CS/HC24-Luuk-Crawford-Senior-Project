@@ -1,10 +1,11 @@
 package com.zybooks.hc24_luuk_crawford_senior_project
 
+
+// ...
+
 import android.content.ContentValues.TAG
 import android.os.Bundle
 import android.util.Log
-
-
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
@@ -20,15 +21,13 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.Text
 import androidx.compose.material.Button
-
-
-// ...
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
@@ -36,7 +35,6 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
-
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
@@ -58,8 +56,8 @@ class MainActivity : ComponentActivity() {
             AppNavHost()
         }
 
-        val firebaseEnabled = false
-        if (firebaseEnabled){
+        val firebaseIsEnabled = false
+        if (firebaseIsEnabled){
             downloadMenuFirebase()
         }else{
             downloadMenuLocal()
@@ -107,8 +105,9 @@ class MainActivity : ComponentActivity() {
 
 }
 
-
+//todo: test once document can be faked
 fun listDocumentContentsIn(document: QuerySnapshot, list: MutableList<MenuItem>) {
+
     Log.d(TAG, "TEST ${document} is food document")
     for (foodOffering in document) {
         val food = foodOffering.data
@@ -118,6 +117,7 @@ fun listDocumentContentsIn(document: QuerySnapshot, list: MutableList<MenuItem>)
     }
 }
 
+//test created
 fun createItemFrom(food: Map<String, Any>): MenuItem {
     return MenuItem(
         name = "${food["name"]}",
@@ -131,13 +131,14 @@ fun createItemFrom(food: Map<String, Any>): MenuItem {
 Nav host is the composable manager
 - set start location
 - handles which composable to load when triggered
+todo: test
  */
 
 @Composable
 fun AppNavHost(
+    startDestination: String = Routes.welcomeScreen.name,
     modifier: Modifier = Modifier,
-    navController: NavHostController = rememberNavController(),
-    startDestination: String = Routes.welcomeScreen.name
+    navController: NavHostController = rememberNavController()
 ) {
     NavHost(
         modifier = modifier,
@@ -151,7 +152,7 @@ fun AppNavHost(
             )
         }
         composable(Routes.placeToGo.name) { locationToGo(/*...*/) }
-        //test example done
+        //test example end
 
 
         composable(Routes.welcomeScreen.name){
@@ -160,9 +161,6 @@ fun AppNavHost(
             )
         }
         composable(Routes.menuScreen.name) { MenuScreen()}
-
-
-
 
     }
 
@@ -190,6 +188,7 @@ fun locationToGo(){
 * This is the starting screen.
 * - shows underground and school name and such
 * - button to navigate to menu
+* todo: needs test
 * */
 @Composable
 fun WelcomeScreen(onNavigateToMenu: () -> Unit) {
@@ -200,6 +199,7 @@ fun WelcomeScreen(onNavigateToMenu: () -> Unit) {
     }
 }
 
+//todo: needs test
 @Composable
 private fun beginOrderButton(onNavigateToMenu: () -> Unit) {
     Column(
@@ -218,6 +218,7 @@ private fun beginOrderButton(onNavigateToMenu: () -> Unit) {
             Button(
                 onClick = { onNavigateToMenu() },
                 shape = RoundedCornerShape(18.dp),
+                modifier = Modifier.testTag("welcomeToMenuButton")
             ) {
                 Text(
                     text = stringResource(id = R.string.beginOrder),
@@ -229,6 +230,7 @@ private fun beginOrderButton(onNavigateToMenu: () -> Unit) {
     }
 }
 
+// todo: started test
 @Composable
 private fun locationInfoLogo() {
     Spacer(modifier = Modifier.height(8.dp))
@@ -247,11 +249,11 @@ private fun locationInfoLogo() {
     )
 }
 
+//todo: needs test
 @Composable
 fun MenuScreen(){
     LazyColumn {//https://developer.android.com/jetpack/compose/lists#lazy
         items(myMenuList.size){index ->
-
             Row(
                 verticalAlignment = Alignment.CenterVertically,
                 modifier = Modifier.padding(10.dp)
@@ -262,21 +264,7 @@ fun MenuScreen(){
                     modifier = Modifier.size(70.dp)
                 )
                 Text(text = myMenuList[index].name)
-
             }
-
-        }
-
-
-
-        // Add 5 items
-        items(5) { index ->
-            Text(text = "Item: $index")
-        }
-
-        // Add another single item
-        item {
-            Text(text = "Last item")
         }
     }
 }
