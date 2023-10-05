@@ -106,24 +106,12 @@ Google also offers [Firebase][link19], which is what I intend to use [19]. This 
    - Example items from Underground
    - Uses menu that's on Firebase
      
-3. Ability to select toppings/side
+2. Ability to select toppings/side
    - Available toppings for item shown
    - Select and unselect toppings
 
-4. Ability to submit an order (with your toppings/side)
-   - Sends personalized order to Firebase
-
-Since I've restarted and now have to rewrite my code using Jetpack Compose, I'm hesitant to push this further with more features not knowing what issues I may run into. 
-
-If/when I get those completed, I would love to add these **stretch goals** to let users keep track of their order.
-
-4. Ability to track order(s)
-   - View your order and the status of it
-   - Or atleast a view of all the orders
-
-5. Push notification
-   - Notification when the order is complete
-
+3. Ability to submit an order (with your toppings/side)
+   - Send personalized order to Firebase
 
 ### References
 
