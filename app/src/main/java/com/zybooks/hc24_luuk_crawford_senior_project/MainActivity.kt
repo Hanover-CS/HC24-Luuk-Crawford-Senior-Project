@@ -84,28 +84,25 @@ class MainActivity : ComponentActivity() {
         myMenuList.add(menuExample2)
     }
 
-    private fun downloadMenuFirebase() {
-        val db = FirebaseFirestore.getInstance()
-        val docRef = db.collection("menuContent")
-
-        docRef.get()
-            .addOnSuccessListener { document ->
-                if (document != null) {
-                    listDocumentContentsIn(document, myMenuList)
-                } else {
-                    Log.d(TAG, "No such document")
-                }
-            }
-            .addOnFailureListener { exception ->
-                Log.d(TAG, "get failed with ", exception)
-            }
-
-
-    }
 
 }
+fun downloadMenuFirebase() {
+    val db = FirebaseFirestore.getInstance()
+    val docRef = db.collection("menuContent")
+    docRef.get()
+        .addOnSuccessListener { document ->
+            if (document != null) {
+                listDocumentContentsIn(document, myMenuList)
+            } else {
+                Log.d(TAG, "No such document")
+            }
+        }
+        .addOnFailureListener { exception ->
+            Log.d(TAG, "get failed with ", exception)
+        }
 
-//todo: test once document can be faked
+
+}
 fun listDocumentContentsIn(document: QuerySnapshot, list: MutableList<MenuItem>) {
 
     Log.d(TAG, "TEST ${document} is food document")
@@ -117,7 +114,6 @@ fun listDocumentContentsIn(document: QuerySnapshot, list: MutableList<MenuItem>)
     }
 }
 
-//test created
 fun createItemFrom(food: Map<String, Any>): MenuItem {
     return MenuItem(
         name = "${food["name"]}",
@@ -131,9 +127,7 @@ fun createItemFrom(food: Map<String, Any>): MenuItem {
 Nav host is the composable manager
 - set start location
 - handles which composable to load when triggered
-todo: test
  */
-
 @Composable
 fun AppNavHost(
     startDestination: String = Routes.welcomeScreen.name,
@@ -188,7 +182,6 @@ fun locationToGo(){
 * This is the starting screen.
 * - shows underground and school name and such
 * - button to navigate to menu
-* todo: needs test
 * */
 @Composable
 fun WelcomeScreen(onNavigateToMenu: () -> Unit) {
@@ -198,7 +191,6 @@ fun WelcomeScreen(onNavigateToMenu: () -> Unit) {
     }
 }
 
-//todo: needs test
 @Composable
 fun beginOrderButton(onNavigateToMenu: () -> Unit) {
     Column(
@@ -229,7 +221,6 @@ fun beginOrderButton(onNavigateToMenu: () -> Unit) {
     }
 }
 
-// todo: started test
 @Composable
 fun locationInfoLogo() {
     Spacer(modifier = Modifier.height(8.dp))
@@ -242,7 +233,6 @@ fun locationInfoLogo() {
     )
 }
 
-//todo: needs test
 @Composable
 fun MenuScreen(){
     hcLogoText()

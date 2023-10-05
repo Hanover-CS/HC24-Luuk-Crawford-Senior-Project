@@ -76,19 +76,4 @@ class itemListTest {
         TestCase.assertNotSame(testItemDifferentName, createdItem)
     }
 
-    //todo: not working cuz document weird
-    @Test
-    fun listDocumentContentsInTest() {
-        val pretendDB = mutableMapOf<String, MutableMap<String, Any?>>()
-
-        val hamburgerMap = mutableMapOf(
-            "customizationType" to "Burger",
-            "id" to 100,
-            "imageLink" to "https://i.imgur.com/N22z5gY.jpeg",
-            "name" to "Hamburger"
-        )
-        //listDocumentContentsIn(documentExample, listTest)
-        //pretendDB["Burger"] = hamburgerMap
-        //assertEquals(1,1)// todo: finish this test
-    }
 }

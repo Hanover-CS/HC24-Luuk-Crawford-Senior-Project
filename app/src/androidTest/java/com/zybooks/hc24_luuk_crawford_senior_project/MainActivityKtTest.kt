@@ -20,7 +20,7 @@ import org.junit.runner.RunWith
 //@RunWith(RobolectricTestRunner::class)
 @RunWith(AndroidJUnit4::class)
 internal class MainActivityKtTest {
-    private lateinit var navController: TestNavHostController
+    //private lateinit var navController: TestNavHostController
 
     @get:Rule
     val composeTestRule = createComposeRule() //createAndroidComposeRule<ComponentActivity>()
