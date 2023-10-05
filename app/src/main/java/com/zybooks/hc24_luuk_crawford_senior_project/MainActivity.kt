@@ -192,7 +192,6 @@ fun locationToGo(){
 * */
 @Composable
 fun WelcomeScreen(onNavigateToMenu: () -> Unit) {
-
     Column {
         locationInfoLogo()
         beginOrderButton(onNavigateToMenu)
@@ -218,7 +217,7 @@ fun beginOrderButton(onNavigateToMenu: () -> Unit) {
             Button(
                 onClick = { onNavigateToMenu() },
                 shape = RoundedCornerShape(18.dp),
-                modifier = Modifier.testTag("welcomeToMenuButton")
+                modifier = Modifier.testTag("beginOrderButton")
             ) {
                 Text(
                     text = stringResource(id = R.string.beginOrder),
@@ -232,31 +231,31 @@ fun beginOrderButton(onNavigateToMenu: () -> Unit) {
 
 // todo: started test
 @Composable
-private fun locationInfoLogo() {
+fun locationInfoLogo() {
     Spacer(modifier = Modifier.height(8.dp))
-    Text(
-        text = stringResource(id = R.string.collegeNameCaps),
-        fontSize = 35.sp,
-        fontWeight = FontWeight.Bold,
-
-        textAlign = TextAlign.Center,
-        color = colorResource(id = R.color.hanoverWebRed)
-    )
+    hcLogoText()
     Text(
         text = stringResource(id = R.string.underground), fontSize = 35.sp,
         fontWeight = FontWeight.Bold,
         textAlign = TextAlign.Center,
+        modifier = Modifier.testTag("undergroundText")
     )
 }
 
 //todo: needs test
 @Composable
 fun MenuScreen(){
-    LazyColumn {//https://developer.android.com/jetpack/compose/lists#lazy
+    hcLogoText()
+
+    LazyColumn {
+        item(){
+            Spacer(modifier = Modifier.height(40.dp))
+        }
+        //https://developer.android.com/jetpack/compose/lists#lazy
         items(myMenuList.size){index ->
             Row(
                 verticalAlignment = Alignment.CenterVertically,
-                modifier = Modifier.padding(10.dp)
+                modifier = Modifier.padding(10.dp).testTag("anItemExists")
             ) {
                 Image(
                     painter = rememberImagePainter(myMenuList[index].imageLink),
@@ -267,4 +266,17 @@ fun MenuScreen(){
             }
         }
     }
+}
+
+@Composable
+private fun hcLogoText() {
+    Text(
+        text = stringResource(id = R.string.collegeNameCaps),
+        fontSize = 35.sp,
+        fontWeight = FontWeight.Bold,
+
+        textAlign = TextAlign.Center,
+        color = colorResource(id = R.color.hanoverWebRed),
+        modifier = Modifier.testTag("collegeNameText")
+    )
 }
