@@ -1,9 +1,11 @@
 package com.zybooks.hc24_luuk_crawford_senior_project
 
 
+import androidx.compose.ui.test.assertHasClickAction
 import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.hasTestTag
 import androidx.compose.ui.test.junit4.createComposeRule
+import androidx.compose.ui.test.performClick
 import androidx.navigation.testing.TestNavHostController
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
@@ -20,28 +22,15 @@ import org.junit.runner.RunWith
 internal class MainActivityKtTest {
     private lateinit var navController: TestNavHostController
 
-//valcomposeTestRule = createComposeRule()
-
     @get:Rule
     val composeTestRule = createComposeRule() //createAndroidComposeRule<ComponentActivity>()
 
-
-    fun putSomethingInList(){
+    @Before
+    fun onlySomethingInList(){
+        myMenuList.clear()
         myMenuList.add(MenuItem())
     }
 
-    /*
-    @Before
-    fun setupAppNavHost() {
-        composeTestRule.setContent {
-            navController = TestNavHostController(LocalContext.current)
-            navController.navigatorProvider.addNavigator(ComposeNavigator())
-            AppNavHost(navController = navController)
-        }
-    }*/
-
-
-    //@RunWith(AndroidJUnit4::class)
 
     @Test
     fun useAppContext() {
@@ -70,10 +59,14 @@ internal class MainActivityKtTest {
 
     @Test
     fun menuScreenExists(){
-        putSomethingInList()
+        //putSomethingInList()
         composeTestRule.setContent {
             MenuScreen()
         }
+        checkMenuScreenContents()
+    }
+
+    private fun checkMenuScreenContents() {
         val hcLogoText = composeTestRule.onNode(hasTestTag("collegeNameText"))
         hcLogoText.assertIsDisplayed()
         val otherPageUndergroundText = composeTestRule.onNode(hasTestTag("undergroundText"))
@@ -81,6 +74,20 @@ internal class MainActivityKtTest {
 
         val itemExistsInList = composeTestRule.onNode(hasTestTag("anItemExists"))
         itemExistsInList.assertIsDisplayed()
+    }
+
+    @Test
+    fun navigateFromWelcomeToMenu(){
+        composeTestRule.setContent {
+            AppNavHost(Routes.welcomeScreen.name)
+        }
+        val beginOrderButton = composeTestRule.onNode(hasTestTag("beginOrderButton"), true)
+        beginOrderButton.assertExists()
+        beginOrderButton.assertIsDisplayed()
+        beginOrderButton.assertHasClickAction()
+        beginOrderButton.performClick()
+        checkMenuScreenContents()
+        beginOrderButton.assertDoesNotExist()
     }
 
 
