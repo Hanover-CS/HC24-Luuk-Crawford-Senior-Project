@@ -9,12 +9,14 @@ import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -29,6 +31,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.layout
+import androidx.compose.ui.modifier.modifierLocalConsumer
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
@@ -40,9 +43,11 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import coil.compose.rememberImagePainter
+import coil.compose.rememberAsyncImagePainter
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.QuerySnapshot
+
+
 
 //This setups loading to make my composable's work.
 //- Starts AppNavHost
@@ -240,28 +245,30 @@ fun MenuScreen(){
     hcLogoText()
 
     LazyColumn {
-        item(){
+        item {
             Spacer(modifier = Modifier.height(40.dp))
         }
         //https://developer.android.com/jetpack/compose/lists#lazy
         items(myMenuList.size){index ->
-            Row(
-                verticalAlignment = Alignment.CenterVertically,
-                modifier = Modifier
-                    .padding(10.dp)
-                    .testTag("anItemExists")
-            ) {
-                Button(onClick = { /*TODO*/ }, Modifier.fillMaxWidth()) {
 
-                    Image(
-                        painter = rememberImagePainter(myMenuList[index].imageLink),
-                        contentDescription = stringResource(R.string.lostImage),
-                        modifier = Modifier.size(70.dp)
-                    )
+            //Button(onClick = { /*TODO*/ }, Modifier.fillMaxWidth().layout()) {
+            Row(Modifier.fillMaxWidth()
+                .padding(10.dp).
+                clickable { /*TODO*/ })
+            {
+                Image(
+                    painter = rememberAsyncImagePainter(myMenuList[index].imageLink),
+                    contentDescription = stringResource(R.string.lostImage),
+                    modifier = Modifier.size(70.dp)
+                )
+
+                Column(Modifier.padding(10.dp)) {
                     Text(text = myMenuList[index].name)
-
+                    Text(text = "test")
                 }
+
             }
+
         }
     }
 }
