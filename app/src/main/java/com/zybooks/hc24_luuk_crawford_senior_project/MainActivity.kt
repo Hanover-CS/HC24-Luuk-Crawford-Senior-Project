@@ -35,10 +35,13 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.core.os.bundleOf
 import androidx.navigation.NavHostController
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
 import coil.compose.rememberAsyncImagePainter
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.QuerySnapshot
@@ -49,6 +52,7 @@ import com.google.firebase.firestore.QuerySnapshot
 //- Starts AppNavHost
 
 val myMenuList = mutableListOf<MenuItem>()
+var itemToLoad = MenuItem()
 class MainActivity : ComponentActivity() {
 
 
@@ -154,11 +158,13 @@ fun AppNavHost(
 
 
         val onNavigateToMenu = {navController.navigate(Routes.menuScreen.name)}
-        val onNavigateToToppings = { navController.navigate(Routes.toppingsScreen.name) }
+        val onNavigateToToppings = { navController.navigate(Routes.toppingsScreen.name,
+
+             ) }
 
         composable(Routes.menuScreen.name) { MenuScreen(onNavigateToToppings)}
 
-        composable(Routes.toppingsScreen.name){ToppingsScreen()}
+        composable(Routes.toppingsScreen.name){ToppingsScreen(itemToLoad)}
 
 
         composable(Routes.welcomeScreen.name){
@@ -262,7 +268,10 @@ fun MenuScreen(onNavigateToToppings: () -> Unit){
                     .fillMaxWidth()
                     .padding(10.dp)
                     .testTag("item${index}Exists")
-                    .clickable { onNavigateToToppings() })
+                    .clickable {
+                        itemToLoad = myMenuList[index]
+                        onNavigateToToppings()
+                    })
             {
                 Image(
                     painter = rememberAsyncImagePainter(myMenuList[index].imageLink),
@@ -282,8 +291,13 @@ fun MenuScreen(onNavigateToToppings: () -> Unit){
 }
 
 @Composable
-fun ToppingsScreen(){
-    Text(text = "This is the toppings screen!")
+fun ToppingsScreen(item: MenuItem){
+    LazyColumn(){
+        item(){
+            Text(text = "This is the toppings screen!")
+            Text(text = item.name)
+        }
+    }
 }
 
 @Composable
