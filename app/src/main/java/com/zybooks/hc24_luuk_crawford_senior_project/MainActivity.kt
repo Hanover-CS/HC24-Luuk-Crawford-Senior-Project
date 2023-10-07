@@ -143,31 +143,32 @@ fun AppNavHost(
         startDestination = startDestination
     ) {
         //TEST EXAMPLE TO FOLLOW
+        val onNavigateToPlace = { navController.navigate(Routes.placeToGo.name) }
         composable(Routes.startLocation.name) {
             ExampleComposable(
-                onNavigateToPlace = { navController.navigate(Routes.placeToGo.name) },
-            )
+                onNavigateToPlace)
         }
         composable(Routes.placeToGo.name) { locationToGo(/*...*/) }
         //test example end
 
 
+
+        val onNavigateToMenu = {navController.navigate(Routes.menuScreen.name)}
+        val onNavigateToToppings = { navController.navigate(Routes.toppingsScreen.name) }
+
+        composable(Routes.menuScreen.name) { MenuScreen(onNavigateToToppings)}
+
+        composable(Routes.toppingsScreen.name){ToppingsScreen()}
+
+
         composable(Routes.welcomeScreen.name){
             WelcomeScreen(
-                onNavigateToMenu = {navController.navigate(Routes.menuScreen.name)},
-            )
+                onNavigateToMenu)
         }
-        composable(Routes.menuScreen.name) { MenuScreen(onNavigateToToppings = {navController.navigate(Routes.toppingsScreen.name)}
-        )}
-
         composable(Routes.menuScreen.name){
             MenuScreen(
-                onNavigateToToppings = {navController.navigate(Routes.toppingsScreen.name)}
-            )
+                onNavigateToToppings)
         }
-
-       // val onNavigateToToppings = { navController.navigate(Routes.toppingsScreen.name) }
-        composable(Routes.toppingsScreen.name){ToppingsScreen()}
 
     }
 

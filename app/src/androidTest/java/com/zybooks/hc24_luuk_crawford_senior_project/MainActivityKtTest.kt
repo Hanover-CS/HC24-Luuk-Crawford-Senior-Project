@@ -61,7 +61,8 @@ internal class MainActivityKtTest {
     fun menuScreenExists(){
         //putSomethingInList()
         composeTestRule.setContent {
-            MenuScreen()
+            //MenuScreen()
+            AppNavHost(Routes.menuScreen.name)
         }
         checkMenuScreenContents()
     }
