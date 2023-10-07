@@ -252,9 +252,9 @@ fun MenuScreen(){
         items(myMenuList.size){index ->
 
             //Button(onClick = { /*TODO*/ }, Modifier.fillMaxWidth().layout()) {
-            Row(Modifier.fillMaxWidth()
-                .padding(10.dp).
-                clickable { /*TODO*/ })
+            Row(Modifier.fillMaxWidth().padding(10.dp)
+                .testTag("item${index}Exists")
+                .clickable { /*TODO*/ })
             {
                 Image(
                     painter = rememberAsyncImagePainter(myMenuList[index].imageLink),
