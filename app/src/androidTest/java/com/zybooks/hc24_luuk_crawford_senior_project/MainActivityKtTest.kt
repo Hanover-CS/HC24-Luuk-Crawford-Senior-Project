@@ -6,7 +6,6 @@ import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.hasTestTag
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.performClick
-import androidx.navigation.testing.TestNavHostController
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
 import org.junit.Assert
@@ -62,7 +61,7 @@ internal class MainActivityKtTest {
         //putSomethingInList()
         composeTestRule.setContent {
             //MenuScreen()
-            AppNavHost(Routes.menuScreen.name)
+            AppNavHost(Destination.menuScreen.name)
         }
         checkMenuScreenContents()
     }
@@ -83,7 +82,7 @@ internal class MainActivityKtTest {
     @Test
     fun navigateFromWelcomeToMenu(){
         composeTestRule.setContent {
-            AppNavHost(Routes.welcomeScreen.name)
+            AppNavHost(Destination.welcomeScreen.name)
         }
         val beginOrderButton = composeTestRule.onNode(hasTestTag("beginOrderButton"), true)
         beginOrderButton.assertExists()

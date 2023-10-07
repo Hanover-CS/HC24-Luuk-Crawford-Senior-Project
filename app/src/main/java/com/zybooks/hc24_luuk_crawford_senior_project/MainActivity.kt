@@ -35,13 +35,10 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.core.os.bundleOf
 import androidx.navigation.NavHostController
-import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import androidx.navigation.navArgument
 import coil.compose.rememberAsyncImagePainter
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.QuerySnapshot
@@ -137,7 +134,7 @@ Nav host is the composable manager
  */
 @Composable
 fun AppNavHost(
-    startDestination: String = Routes.welcomeScreen.name,
+    startDestination: String = Destination.welcomeScreen.name,
     modifier: Modifier = Modifier,
     navController: NavHostController = rememberNavController()
 ) {
@@ -147,34 +144,21 @@ fun AppNavHost(
         startDestination = startDestination
     ) {
         //TEST EXAMPLE TO FOLLOW
-        val onNavigateToPlace = { navController.navigate(Routes.placeToGo.name) }
-        composable(Routes.startLocation.name) {
-            ExampleComposable(
-                onNavigateToPlace)
-        }
-        composable(Routes.placeToGo.name) { locationToGo(/*...*/) }
+        val onNavigateToPlaceFunction = { navController.navigate(Destination.placeToGo.name) }
+        composable(Destination.startLocation.name) {ExampleComposable(onNavigateToPlaceFunction)}
+        composable(Destination.placeToGo.name) { locationToGo(/*no potential destination*/) }
         //test example end
 
+        //activated when button clicked.
+        val onNavigateToMenuFunction = {navController.navigate(Destination.menuScreen.name)}
+        val onNavigateToToppingsFunction = { navController.navigate(Destination.toppingsScreen.name)}
 
+        //composable(destination.place.name){ Destination(navigateButtonInstruction)}
+        composable(Destination.welcomeScreen.name){ WelcomeScreen(onNavigateToMenuFunction) }
 
-        val onNavigateToMenu = {navController.navigate(Routes.menuScreen.name)}
-        val onNavigateToToppings = { navController.navigate(Routes.toppingsScreen.name,
+        composable(Destination.menuScreen.name) { MenuScreen(onNavigateToToppingsFunction)}
 
-             ) }
-
-        composable(Routes.menuScreen.name) { MenuScreen(onNavigateToToppings)}
-
-        composable(Routes.toppingsScreen.name){ToppingsScreen(itemToLoad)}
-
-
-        composable(Routes.welcomeScreen.name){
-            WelcomeScreen(
-                onNavigateToMenu)
-        }
-        composable(Routes.menuScreen.name){
-            MenuScreen(
-                onNavigateToToppings)
-        }
+        composable(Destination.toppingsScreen.name){ToppingsScreen(itemToLoad)}
 
     }
 
