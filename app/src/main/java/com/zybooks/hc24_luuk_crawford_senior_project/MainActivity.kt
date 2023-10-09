@@ -20,17 +20,27 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.selection.toggleable
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
+import androidx.compose.material3.Checkbox
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -112,17 +122,8 @@ private fun downloadToppings() {
     docRef.get()
         .addOnSuccessListener { document ->
             if (document != null) {
-                //listDocumentItemsIn(document, myMenuList)
-                Log.d(
-                    TAG,
-                    "TEST ${document} is CUSTOMIZATION document ${document?.javaClass?.simpleName}"
-                )
                 for (itemType in document) {
                     val customizationData = itemType.data
-                    Log.d(TAG, "TEST ${customizationData} is ${customizationData?.javaClass?.simpleName} cutomizationData")
-
-                    Log.d(TAG, "test sides ${customizationData["sides"]}")
-                    //val customization = Customization(customizationData["sides"] as List<String>,customizationData["toppings"] as List<String>)
 
                     val sides = customizationData["sides"] as? List<String> ?: emptyList()
                     val toppings = customizationData["toppings"] as? List<String> ?: emptyList()
@@ -130,11 +131,6 @@ private fun downloadToppings() {
                     val customization = Customization(sides, toppings)
 
                     customizationOptions["${itemType.id}"] = customization
-
-                    for( i in customizationOptions){
-                        Log.d(TAG, "item i i i i ${i} in customizationOptions")
-                        Log.d(TAG, "the id is ${itemType.id} keyyy ${i.key} valueee ${i.value}")
-                    }
                 }
             } else {
                 Log.d(TAG, "No such document")
@@ -334,16 +330,45 @@ fun ToppingsScreen(item: MenuItem){
         item(){
             Text(text = "This is the toppings screen!")
             Text(text = item.name)
-            
         }
+
         val itemCustomizations = customizationOptions[item.customizationType]
+
+
         itemCustomizations?.toppings?.let {
             items(it.size){ index ->
-                Text(text = itemCustomizations.toppings[index])
+                Selectable(itemCustomizations.toppings[index])
             }
+        }
+
+    }
+
+}
+@Composable
+private fun Selectable(selectionName: String) {
+    MaterialTheme {
+        var checked by remember { mutableStateOf(false) }
+        Row(
+            Modifier
+                .toggleable(
+                    value = checked,
+                    role = Role.Checkbox,
+                    onValueChange = { checked = !checked }
+                )
+                .padding(10.dp)
+                //.fillMaxWidth()
+
+        ) {
+            Text(selectionName, Modifier.weight(1f))
+            Checkbox(checked = checked, onCheckedChange = null)
+
+
+
         }
     }
 }
+
+
 
 @Composable
 private fun hcLogoText() {
