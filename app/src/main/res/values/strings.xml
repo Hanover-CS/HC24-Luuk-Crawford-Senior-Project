@@ -31,5 +31,7 @@
     <string name="collegeNameCaps">HANOVER COLLEGE</string>
     <string name="underground">Underground</string>
     <string name="lostImage">image of item</string>
+    <string name="sides">Sides:</string>
+    <string name="toppings">Toppings:</string>
 
 </resources>

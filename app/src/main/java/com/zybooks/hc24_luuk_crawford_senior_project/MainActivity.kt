@@ -9,10 +9,13 @@ import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.ExperimentalLayoutApi
+import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
@@ -21,13 +24,12 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.selection.toggleable
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.Checkbox
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -54,7 +56,6 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.QuerySnapshot
 
 
-
 //This setups loading to make my composable's work.
 //- Starts AppNavHost
 
@@ -66,7 +67,6 @@ val customizationOptions = mutableMapOf<String, Customization>()
 class MainActivity : ComponentActivity() {
 
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -74,9 +74,9 @@ class MainActivity : ComponentActivity() {
         }
 
         val firebaseIsEnabled = false
-        if (firebaseIsEnabled){
+        if (firebaseIsEnabled) {
             downloadMenuFirebase()
-        }else{
+        } else {
             downloadMenuLocal()
         }
 
@@ -84,8 +84,10 @@ class MainActivity : ComponentActivity() {
     }
 
     private fun downloadMenuLocal() {
+        myMenuList.clear()
+        customizationOptions.clear()
         val menuExample = MenuItem(
-            name = "HamburgerTest",
+            name = "Hamburger__Test",
             id = 100,
             customizationType = "Burger",
             imageLink = "https://i.imgur.com/N22z5gY.jpeg"
@@ -100,16 +102,31 @@ class MainActivity : ComponentActivity() {
         myMenuList.add(menuExample2)
 
         val burgerSides = listOf("Hand Cut Fries Test", "Mac-N-Cheese", "Tater Tots")
-        val burgerToppings = listOf("Lettuce Test", "Tomato", "Onion Test", "Pickle", "Cheese", "Bacon")
-        customizationOptions["Burger"] = Customization(burgerSides,burgerToppings)
+        val burgerToppings =
+            listOf("Lettuce Test", "Tomato", "Onion Test", "Pickle", "Cheese", "Bacon")
+        customizationOptions["Burger"] = Customization(burgerSides, burgerToppings)
 
-        val quesadillaToppings = listOf("Rice Test", "Black Beans", "Queso", "Chicken", "Tomatoes", "Lettuce Test", "Onions", "Jalapenos", "Sour Cream", "Salsa", "Guacamole", "Sub Gluten Free")
+        val quesadillaToppings = listOf(
+            "Rice Test",
+            "Black Beans",
+            "Queso",
+            "Chicken",
+            "Tomatoes",
+            "Lettuce Test",
+            "Onions",
+            "Jalapenos",
+            "Sour Cream",
+            "Salsa",
+            "Guacamole",
+            "Sub Gluten Free"
+        )
         val quesadillaSides = emptyList<String>()
-        customizationOptions["Quesadilla"] = Customization(quesadillaSides,quesadillaToppings)
+        customizationOptions["Quesadilla"] = Customization(quesadillaSides, quesadillaToppings)
     }
 
 
 }
+
 fun downloadMenuFirebase() {
     downloadItems()
     downloadToppings()
@@ -117,6 +134,7 @@ fun downloadMenuFirebase() {
 }
 
 private fun downloadToppings() {
+    customizationOptions.clear()
     val db = FirebaseFirestore.getInstance()
     val docRef = db.collection("customization")
     docRef.get()
@@ -142,6 +160,7 @@ private fun downloadToppings() {
 }
 
 private fun downloadItems() {
+    myMenuList.clear()
     val db = FirebaseFirestore.getInstance()
     val docRef = db.collection("menuContent")
     docRef.get()
@@ -195,20 +214,21 @@ fun AppNavHost(
     ) {
         //TEST EXAMPLE TO FOLLOW
         val onNavigateToPlaceFunction = { navController.navigate(Destination.placeToGo.name) }
-        composable(Destination.startLocation.name) {ExampleComposable(onNavigateToPlaceFunction)}
+        composable(Destination.startLocation.name) { ExampleComposable(onNavigateToPlaceFunction) }
         composable(Destination.placeToGo.name) { locationToGo(/*no potential destination*/) }
         //test example end
 
         //activated when button clicked.
-        val onNavigateToMenuFunction = {navController.navigate(Destination.menuScreen.name)}
-        val onNavigateToToppingsFunction = { navController.navigate(Destination.toppingsScreen.name)}
+        val onNavigateToMenuFunction = { navController.navigate(Destination.menuScreen.name) }
+        val onNavigateToToppingsFunction =
+            { navController.navigate(Destination.toppingsScreen.name) }
 
         //composable(destination.place.name){ Destination(navigateButtonInstruction)}
-        composable(Destination.welcomeScreen.name){ WelcomeScreen(onNavigateToMenuFunction) }
+        composable(Destination.welcomeScreen.name) { WelcomeScreen(onNavigateToMenuFunction) }
 
-        composable(Destination.menuScreen.name) { MenuScreen(onNavigateToToppingsFunction)}
+        composable(Destination.menuScreen.name) { MenuScreen(onNavigateToToppingsFunction) }
 
-        composable(Destination.toppingsScreen.name){ToppingsScreen(itemToLoad)}
+        composable(Destination.toppingsScreen.name) { ToppingsScreen(itemToLoad) }
 
     }
 
@@ -227,8 +247,9 @@ fun ExampleComposable(
         Text(text = "visit the place to go")
     }
 }
+
 @Composable
-fun locationToGo(){
+fun locationToGo() {
     Text(text = "wow you went to the place to go")
 }
 
@@ -288,14 +309,36 @@ fun locationInfoLogo() {
 }
 
 @Composable
-fun MenuScreen(onNavigateToToppings: () -> Unit){
+fun MenuScreen(onNavigateToToppings: () -> Unit) {
     hcLogoText()
 
     LazyColumn {
         item {
             Spacer(modifier = Modifier.height(40.dp))
         }
-        items(myMenuList.size){index ->
+
+        for (menuItem in myMenuList){
+            item() {
+                Row(
+                    Modifier
+                        .fillMaxWidth()
+                        .padding(10.dp)
+                        .testTag("itemExists")
+                        .clickable {
+                            //itemToLoad = item
+                            onNavigateToToppings()
+                        })
+                {
+                    imageAndTexFor(menuItem)
+
+                }
+            }
+
+
+
+        }
+
+        items(myMenuList.size) { index ->
 
             Row(
                 Modifier
@@ -307,16 +350,7 @@ fun MenuScreen(onNavigateToToppings: () -> Unit){
                         onNavigateToToppings()
                     })
             {
-                Image(
-                    painter = rememberAsyncImagePainter(myMenuList[index].imageLink),
-                    contentDescription = stringResource(R.string.lostImage),
-                    modifier = Modifier.size(70.dp)
-                )
-
-                Column(Modifier.padding(10.dp)) {
-                    Text(text = myMenuList[index].name)
-                    Text(text = "test")
-                }
+                imageAndTexFor(myMenuList[index])
 
             }
 
@@ -325,49 +359,94 @@ fun MenuScreen(onNavigateToToppings: () -> Unit){
 }
 
 @Composable
-fun ToppingsScreen(item: MenuItem){
-    LazyColumn(){
-        item(){
+private fun imageAndTexFor(menuItem: MenuItem) {
+    Row() {
+        Image(
+            painter = rememberAsyncImagePainter(menuItem.imageLink),
+            contentDescription = stringResource(R.string.lostImage),
+            modifier = Modifier.size(70.dp)
+    )
+        Column(Modifier.padding(10.dp)) {
+            Text(text = menuItem.name)
+            Text(text = "test")
+        }
+    }
+}
+
+//start order, ID,
+@Composable
+fun ToppingsScreen(item: MenuItem) {
+    val itemCustomization = customizationOptions[item.customizationType]
+    Column() {
+
             Text(text = "This is the toppings screen!")
-            Text(text = item.name)
-        }
+            //Text(text = item.name)
+            imageAndTexFor(menuItem = item)
 
-        val itemCustomizations = customizationOptions[item.customizationType]
+        Text(text = stringResource(R.string.toppings))
+        createCheckboxForEach(itemCustomization!!.toppings)
 
+        Text(text = stringResource(R.string.sides))
+        createCheckboxForEach(itemCustomization!!.sides)
 
-        itemCustomizations?.toppings?.let {
-            items(it.size){ index ->
-                Selectable(itemCustomizations.toppings[index])
-            }
-        }
+        /*
+        if (myToppingsList.isNotEmpty()) {
+            item{
+                Text(text = "Toppings:", textAlign = TextAlign.Center)
+                createCheckboxForEach(myToppingsList)
+            }}*/
+/*
+        val mySidesList = itemCustomization!!.sides
+        if (mySidesList.isNotEmpty()) {
+            item{
+                Text(text = "Sides:", textAlign = TextAlign.Center)
+                createCheckboxForEach(mySidesList)
+            }}*/
+
 
     }
 
 }
+
 @Composable
-private fun Selectable(selectionName: String) {
-    MaterialTheme {
-        var checked by remember { mutableStateOf(false) }
-        Row(
-            Modifier
-                .toggleable(
-                    value = checked,
-                    role = Role.Checkbox,
-                    onValueChange = { checked = !checked }
-                )
-                .padding(10.dp)
-                //.fillMaxWidth()
-
-        ) {
-            Text(selectionName, Modifier.weight(1f))
-            Checkbox(checked = checked, onCheckedChange = null)
-
-
-
+@OptIn(ExperimentalLayoutApi::class)
+private fun createCheckboxForEach(strings: List<String>) {
+    FlowRow() {
+        for (item in strings) {
+            CheckButtonFor(selectionName = item)
         }
     }
 }
 
+
+@Composable
+private fun CheckButtonFor(selectionName: String) {
+    //MaterialTheme {
+    var checked by remember { mutableStateOf(false) }
+    Row(
+        Modifier
+            .toggleable(
+                value = checked,
+                role = Role.Checkbox,
+                onValueChange = {
+                    checked = !checked
+                }
+            )
+            .padding(10.dp)
+            .wrapContentWidth()
+            .width(100.dp)
+            .background(color = Color(32))
+
+        //.fillMaxWidth()
+
+
+    ) {
+        Checkbox(checked = checked, onCheckedChange = null)
+        Text(selectionName, Modifier.weight(1f))
+
+    }
+    //}
+}
 
 
 @Composable
