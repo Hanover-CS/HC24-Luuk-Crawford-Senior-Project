@@ -59,6 +59,7 @@ internal class MainActivityKtTest {
     @Test
     fun menuScreenExists(){
         //putSomethingInList()
+
         composeTestRule.setContent {
             //MenuScreen()
             AppNavHost(Destination.menuScreen.name)
@@ -72,11 +73,8 @@ internal class MainActivityKtTest {
         val otherPageUndergroundText = composeTestRule.onNode(hasTestTag("undergroundText"))
         otherPageUndergroundText.assertDoesNotExist()
 
-        val itemExistsInList = composeTestRule.onNode(hasTestTag("item0Exists"))
+        val itemExistsInList = composeTestRule.onNode(hasTestTag("default item"))
         itemExistsInList.assertIsDisplayed()
-
-        val noOtherItemsInList = composeTestRule.onNode(hasTestTag("item1Exists"))
-        noOtherItemsInList.assertDoesNotExist()
     }
 
     @Test

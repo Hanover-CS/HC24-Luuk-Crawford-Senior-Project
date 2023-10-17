@@ -79,8 +79,6 @@ class MainActivity : ComponentActivity() {
         } else {
             downloadMenuLocal()
         }
-
-
     }
 
     private fun downloadMenuLocal() {
@@ -316,16 +314,16 @@ fun MenuScreen(onNavigateToToppings: () -> Unit) {
         item {
             Spacer(modifier = Modifier.height(40.dp))
         }
-
         for (menuItem in myMenuList){
+
             item() {
                 Row(
                     Modifier
                         .fillMaxWidth()
                         .padding(10.dp)
-                        .testTag("itemExists")
+                        .testTag(menuItem.name)
                         .clickable {
-                            //itemToLoad = item
+                            itemToLoad = menuItem
                             onNavigateToToppings()
                         })
                 {
@@ -333,11 +331,8 @@ fun MenuScreen(onNavigateToToppings: () -> Unit) {
 
                 }
             }
-
-
-
         }
-
+/*
         items(myMenuList.size) { index ->
 
             Row(
@@ -354,7 +349,7 @@ fun MenuScreen(onNavigateToToppings: () -> Unit) {
 
             }
 
-        }
+        }*/
     }
 }
 
