@@ -316,7 +316,7 @@ fun MenuScreen(onNavigateToToppings: () -> Unit) {
         }
         for (menuItem in myMenuList){
 
-            item() {
+            item {
                 Row(
                     Modifier
                         .fillMaxWidth()
@@ -332,30 +332,12 @@ fun MenuScreen(onNavigateToToppings: () -> Unit) {
                 }
             }
         }
-/*
-        items(myMenuList.size) { index ->
-
-            Row(
-                Modifier
-                    .fillMaxWidth()
-                    .padding(10.dp)
-                    .testTag("item${index}Exists")
-                    .clickable {
-                        itemToLoad = myMenuList[index]
-                        onNavigateToToppings()
-                    })
-            {
-                imageAndTexFor(myMenuList[index])
-
-            }
-
-        }*/
     }
 }
 
 @Composable
 private fun imageAndTexFor(menuItem: MenuItem) {
-    Row() {
+    Row {
         Image(
             painter = rememberAsyncImagePainter(menuItem.imageLink),
             contentDescription = stringResource(R.string.lostImage),
@@ -372,41 +354,26 @@ private fun imageAndTexFor(menuItem: MenuItem) {
 @Composable
 fun ToppingsScreen(item: MenuItem) {
     val itemCustomization = customizationOptions[item.customizationType]
-    Column() {
-
+    Column {
             Text(text = "This is the toppings screen!")
-            //Text(text = item.name)
             imageAndTexFor(menuItem = item)
 
         Text(text = stringResource(R.string.toppings))
-        createCheckboxForEach(itemCustomization!!.toppings)
+
+        if (itemCustomization != null){
+            createCheckboxForEach(itemCustomization.toppings)}
+        else throw NullPointerException("Expression 'itemCustomization' must not be null")
 
         Text(text = stringResource(R.string.sides))
-        createCheckboxForEach(itemCustomization!!.sides)
-
-        /*
-        if (myToppingsList.isNotEmpty()) {
-            item{
-                Text(text = "Toppings:", textAlign = TextAlign.Center)
-                createCheckboxForEach(myToppingsList)
-            }}*/
-/*
-        val mySidesList = itemCustomization!!.sides
-        if (mySidesList.isNotEmpty()) {
-            item{
-                Text(text = "Sides:", textAlign = TextAlign.Center)
-                createCheckboxForEach(mySidesList)
-            }}*/
-
+        createCheckboxForEach(itemCustomization.sides)
 
     }
-
 }
 
 @Composable
 @OptIn(ExperimentalLayoutApi::class)
 private fun createCheckboxForEach(strings: List<String>) {
-    FlowRow() {
+    FlowRow {
         for (item in strings) {
             CheckButtonFor(selectionName = item)
         }
@@ -416,7 +383,6 @@ private fun createCheckboxForEach(strings: List<String>) {
 
 @Composable
 private fun CheckButtonFor(selectionName: String) {
-    //MaterialTheme {
     var checked by remember { mutableStateOf(false) }
     Row(
         Modifier
@@ -431,16 +397,10 @@ private fun CheckButtonFor(selectionName: String) {
             .wrapContentWidth()
             .width(100.dp)
             .background(color = Color(32))
-
-        //.fillMaxWidth()
-
-
     ) {
         Checkbox(checked = checked, onCheckedChange = null)
         Text(selectionName, Modifier.weight(1f))
-
     }
-    //}
 }
 
 
