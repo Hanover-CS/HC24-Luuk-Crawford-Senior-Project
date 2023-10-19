@@ -1,4 +1,4 @@
-package com.zybooks.hc24_luuk_crawford_senior_project
+package edu.hanover.hc24_luuk_crawford_senior_project
 
 
 import androidx.compose.ui.test.assertHasClickAction
