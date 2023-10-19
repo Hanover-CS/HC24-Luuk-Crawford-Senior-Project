@@ -55,14 +55,13 @@ import coil.compose.rememberAsyncImagePainter
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.QuerySnapshot
 
-
 //This setups loading to make my composable's work.
 //- Starts AppNavHost
 
 val myMenuList = mutableListOf<MenuItem>()
 var itemToLoad = MenuItem()
 val customizationOptions = mutableMapOf<String, Customization>()
-
+var mySelections = mutableListOf<String>()
 
 class MainActivity : ComponentActivity() {
 
@@ -370,11 +369,16 @@ fun ToppingsScreen(item: MenuItem) {
     }
 }
 
+
+
+
+
 @Composable
 @OptIn(ExperimentalLayoutApi::class)
-private fun createCheckboxForEach(strings: List<String>) {
+private fun createCheckboxForEach(itemList: List<String>) {
+    var checkedItems by remember { mutableStateOf(emptyList<String>()) }
     FlowRow {
-        for (item in strings) {
+        for (item in itemList) {
             CheckButtonFor(selectionName = item)
         }
     }
@@ -392,16 +396,33 @@ private fun CheckButtonFor(selectionName: String) {
                 onValueChange = {
                     checked = !checked
                 }
+
             )
             .padding(10.dp)
             .wrapContentWidth()
             .width(100.dp)
             .background(color = Color(32))
+    
     ) {
-        Checkbox(checked = checked, onCheckedChange = null)
+        Checkbox(checked = checked,  { newValue ->
+            checked = newValue
+        })//onCheckedChange = null)
+        //Text(text = if (checked) "Checked" else "Not Checked")
+        if (checked){
+            mySelections.add(selectionName)
+            Log.d(TAG, "added ${selectionName}")
+            Log.d(TAG, mySelections.toString())
+        }else{
+            mySelections.remove(selectionName)
+            Log.d(TAG, "removed ${selectionName}")
+            Log.d(TAG, mySelections.toString())
+        }
+        
         Text(selectionName, Modifier.weight(1f))
     }
 }
+
+
 
 
 @Composable
