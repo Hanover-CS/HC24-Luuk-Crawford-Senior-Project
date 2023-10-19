@@ -1,4 +1,4 @@
-package com.zybooks.hc24_luuk_crawford_senior_project
+package edu.hanover.hc24_luuk_crawford_senior_project
 
 
 // ...
@@ -8,7 +8,6 @@ import android.os.Bundle
 import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -22,7 +21,6 @@ import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.lazy.LazyColumn
@@ -51,17 +49,17 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import coil.compose.rememberAsyncImagePainter
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.QuerySnapshot
+import com.zybooks.hc24_luuk_crawford_senior_project.R
 
 //This setups loading to make my composable's work.
 //- Starts AppNavHost
 
-val myMenuList = mutableListOf<MenuItem>()
-var itemToLoad = MenuItem()
-val customizationOptions = mutableMapOf<String, Customization>()
-var mySelections = mutableListOf<String>()
+private val myMenuList = mutableListOf<MenuItem>()
+private var itemToLoad = MenuItem()
+private val customizationOptions = mutableMapOf<String, Customization>()
+private var mySelections = mutableListOf<String>()
 
 class MainActivity : ComponentActivity() {
 
@@ -334,21 +332,6 @@ fun MenuScreen(onNavigateToToppings: () -> Unit) {
     }
 }
 
-@Composable
-private fun imageAndTexFor(menuItem: MenuItem) {
-    Row {
-        Image(
-            painter = rememberAsyncImagePainter(menuItem.imageLink),
-            contentDescription = stringResource(R.string.lostImage),
-            modifier = Modifier.size(70.dp)
-    )
-        Column(Modifier.padding(10.dp)) {
-            Text(text = menuItem.name)
-            Text(text = "test")
-        }
-    }
-}
-
 //start order, ID,
 @Composable
 fun ToppingsScreen(item: MenuItem) {
@@ -360,7 +343,8 @@ fun ToppingsScreen(item: MenuItem) {
         Text(text = stringResource(R.string.toppings))
 
         if (itemCustomization != null){
-            createCheckboxForEach(itemCustomization.toppings)}
+            createCheckboxForEach(itemCustomization.toppings)
+        }
         else throw NullPointerException("Expression 'itemCustomization' must not be null")
 
         Text(text = stringResource(R.string.sides))
@@ -417,7 +401,6 @@ private fun CheckButtonFor(selectionName: String) {
             Log.d(TAG, "removed ${selectionName}")
             Log.d(TAG, mySelections.toString())
         }
-        
         Text(selectionName, Modifier.weight(1f))
     }
 }

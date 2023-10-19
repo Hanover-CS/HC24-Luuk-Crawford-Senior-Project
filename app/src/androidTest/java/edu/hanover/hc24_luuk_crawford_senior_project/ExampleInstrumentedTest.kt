@@ -1,4 +1,4 @@
-package com.zybooks.hc24_luuk_crawford_senior_project
+package edu.hanover.hc24_luuk_crawford_senior_project
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

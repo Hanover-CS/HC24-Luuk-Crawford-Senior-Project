@@ -1,4 +1,4 @@
-package com.zybooks.hc24_luuk_crawford_senior_project
+package edu.hanover.hc24_luuk_crawford_senior_project
 
 import org.junit.Assert
 import org.junit.Test
