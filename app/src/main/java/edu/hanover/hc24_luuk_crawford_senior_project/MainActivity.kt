@@ -49,7 +49,6 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.QuerySnapshot
 import com.zybooks.hc24_luuk_crawford_senior_project.R
 
@@ -57,9 +56,9 @@ import com.zybooks.hc24_luuk_crawford_senior_project.R
 //- Starts AppNavHost
 
 private val myMenuList = mutableListOf<MenuItem>()
-private var itemToLoad = MenuItem()
+var itemToLoad = MenuItem()
 private val customizationOptions = mutableMapOf<String, Customization>()
-private var mySelections = mutableListOf<String>()
+var mySelections = mutableListOf<String>()
 
 class MainActivity : ComponentActivity() {
 
@@ -72,106 +71,17 @@ class MainActivity : ComponentActivity() {
 
         val firebaseIsEnabled = false
         if (firebaseIsEnabled) {
-            downloadMenuFirebase()
+            val menuInfo = downloadMenuFirebase()
         } else {
-            downloadMenuLocal()
+            val menuInfo = downloadMenuLocal()
         }
     }
 
-    private fun downloadMenuLocal() {
-        myMenuList.clear()
-        customizationOptions.clear()
-        val menuExample = MenuItem(
-            name = "Hamburger__Test",
-            id = 100,
-            customizationType = "Burger",
-            imageLink = "https://i.imgur.com/N22z5gY.jpeg"
-        )
-        myMenuList.add(menuExample)
-        val menuExample2 = MenuItem(
-            name = "VeggieBurgerTest",
-            id = 101,
-            customizationType = "Burger",
-            imageLink = "https://i.imgur.com/K6alfDv.jpeg"
-        )
-        myMenuList.add(menuExample2)
-
-        val burgerSides = listOf("Hand Cut Fries Test", "Mac-N-Cheese", "Tater Tots")
-        val burgerToppings =
-            listOf("Lettuce Test", "Tomato", "Onion Test", "Pickle", "Cheese", "Bacon")
-        customizationOptions["Burger"] = Customization(burgerSides, burgerToppings)
-
-        val quesadillaToppings = listOf(
-            "Rice Test",
-            "Black Beans",
-            "Queso",
-            "Chicken",
-            "Tomatoes",
-            "Lettuce Test",
-            "Onions",
-            "Jalapenos",
-            "Sour Cream",
-            "Salsa",
-            "Guacamole",
-            "Sub Gluten Free"
-        )
-        val quesadillaSides = emptyList<String>()
-        customizationOptions["Quesadilla"] = Customization(quesadillaSides, quesadillaToppings)
-    }
 
 
 }
 
-fun downloadMenuFirebase() {
-    downloadItems()
-    downloadToppings()
-
-}
-
-private fun downloadToppings() {
-    customizationOptions.clear()
-    val db = FirebaseFirestore.getInstance()
-    val docRef = db.collection("customization")
-    docRef.get()
-        .addOnSuccessListener { document ->
-            if (document != null) {
-                for (itemType in document) {
-                    val customizationData = itemType.data
-
-                    val sides = customizationData["sides"] as? List<String> ?: emptyList()
-                    val toppings = customizationData["toppings"] as? List<String> ?: emptyList()
-
-                    val customization = Customization(sides, toppings)
-
-                    customizationOptions["${itemType.id}"] = customization
-                }
-            } else {
-                Log.d(TAG, "No such document")
-            }
-        }
-        .addOnFailureListener { exception ->
-            Log.d(TAG, "get failed with ", exception)
-        }
-}
-
-private fun downloadItems() {
-    myMenuList.clear()
-    val db = FirebaseFirestore.getInstance()
-    val docRef = db.collection("menuContent")
-    docRef.get()
-        .addOnSuccessListener { document ->
-            if (document != null) {
-                listDocumentItemsIn(document, myMenuList)
-            } else {
-                Log.d(TAG, "No such document")
-            }
-        }
-        .addOnFailureListener { exception ->
-            Log.d(TAG, "get failed with ", exception)
-        }
-}
-
-fun listDocumentItemsIn(document: QuerySnapshot, list: MutableList<MenuItem>) {
+fun listDocumentItemsIn(document: QuerySnapshot, list: MutableList<MenuItem>): MutableList<MenuItem> {
 
     Log.d(TAG, "TEST ${document} is food document")
     for (foodOffering in document) {
@@ -180,6 +90,7 @@ fun listDocumentItemsIn(document: QuerySnapshot, list: MutableList<MenuItem>) {
         val nextItem = createItemFrom(food)
         list.add(nextItem)
     }
+    return list
 }
 
 fun createItemFrom(food: Map<String, Any>): MenuItem {
