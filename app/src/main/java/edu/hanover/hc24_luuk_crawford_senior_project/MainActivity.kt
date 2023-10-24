@@ -228,7 +228,7 @@ fun MenuScreen(onNavigateToToppings: () -> Unit) {
         item {
             Spacer(modifier = Modifier.height(40.dp))
         }
-        for (menuItem in MenuData.myMenu.menuItemList){
+        for (menuItem in MenuData.get().menuItemList){
 
             item {
                 Row(
@@ -253,7 +253,7 @@ fun MenuScreen(onNavigateToToppings: () -> Unit) {
 @Composable
 fun ToppingsScreen(item: MenuItem) {
     //val itemCustomization = customizationOptions[item.customizationType]
-    val itemCustomization = MenuData.myMenu.customizationOptions[item.customizationType]
+    val itemCustomization = MenuData.get().customizationOptions[item.customizationType]
     Column {
             Text(text = "This is the toppings screen!")
             imageAndTextFor(menuItem = item)

@@ -19,7 +19,7 @@ class itemListTest {
     @Test
     fun newMenuListTest() {
         val testMenuList = mutableListOf<MenuItem>()
-        TestCase.assertEquals(testMenuList, MenuData.myMenu.menuItemList)
+        TestCase.assertEquals(testMenuList, MenuData.get().menuItemList)
     }
 
     @Test
@@ -32,10 +32,10 @@ class itemListTest {
             imageLink = "https://i.imgur.com/K6alfDv.jpeg"
         )
         MenuData.addMenuItem(itemExample)
-        TestCase.assertNotSame(testMenuList, MenuData.myMenu.menuItemList)
+        TestCase.assertNotSame(testMenuList, MenuData.get().menuItemList)
 
         testMenuList.add(itemExample)
-        TestCase.assertEquals(testMenuList, MenuData.myMenu.menuItemList)
+        TestCase.assertEquals(testMenuList, MenuData.get().menuItemList)
     }
 
     @Test

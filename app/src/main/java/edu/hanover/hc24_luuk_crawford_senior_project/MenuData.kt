@@ -5,7 +5,7 @@ data class MenuData(
     var customizationOptions: MutableMap<String, Customization>
 ) {
     companion object {
-        var myMenu = MenuData(mutableListOf<MenuItem>(), mutableMapOf<String, Customization>())
+        private var myMenu = MenuData(mutableListOf<MenuItem>(), mutableMapOf<String, Customization>())
 
         fun set(
             menuItemList: MutableList<MenuItem>,
