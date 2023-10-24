@@ -24,10 +24,12 @@ internal class MainActivityKtTest {
     @get:Rule
     val composeTestRule = createComposeRule() //createAndroidComposeRule<ComponentActivity>()
 
+
     @Before
     fun onlySomethingInList(){
-        myMenuList.clear()
-        myMenuList.add(MenuItem())
+        MenuData.clear()
+        //myMenuList.add(MenuItem())
+        MenuData.addMenuItem(MenuItem())
     }
 
 

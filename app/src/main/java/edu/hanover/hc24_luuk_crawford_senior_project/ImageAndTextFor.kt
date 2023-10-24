@@ -14,7 +14,7 @@ import coil.compose.rememberAsyncImagePainter
 import com.zybooks.hc24_luuk_crawford_senior_project.R
 
 @Composable
-fun imageAndTexFor(menuItem: MenuItem) {
+fun imageAndTextFor(menuItem: MenuItem) {
     Row {
         Image(
             painter = rememberAsyncImagePainter(menuItem.imageLink),

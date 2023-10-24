@@ -55,9 +55,11 @@ import com.zybooks.hc24_luuk_crawford_senior_project.R
 //This setups loading to make my composable's work.
 //- Starts AppNavHost
 
-private val myMenuList = mutableListOf<MenuItem>()
+//var myMenuList = mutableListOf<MenuItem>()//
 var itemToLoad = MenuItem()
-private val customizationOptions = mutableMapOf<String, Customization>()
+//var customizationOptions = mutableMapOf<String, Customization>()//
+
+
 var mySelections = mutableListOf<String>()
 
 class MainActivity : ComponentActivity() {
@@ -74,7 +76,11 @@ class MainActivity : ComponentActivity() {
             val menuInfo = downloadMenuFirebase()
         } else {
             val menuInfo = downloadMenuLocal()
+            MenuData.set(menuInfo.menuItemList, menuInfo.customizationOptions)
+            //myMenuList = menuInfo.menuItemList
+            //customizationOptions = menuInfo.customizationOptions
         }
+
     }
 
 
@@ -222,7 +228,7 @@ fun MenuScreen(onNavigateToToppings: () -> Unit) {
         item {
             Spacer(modifier = Modifier.height(40.dp))
         }
-        for (menuItem in myMenuList){
+        for (menuItem in MenuData.myMenu.menuItemList){
 
             item {
                 Row(
@@ -235,7 +241,7 @@ fun MenuScreen(onNavigateToToppings: () -> Unit) {
                             onNavigateToToppings()
                         })
                 {
-                    imageAndTexFor(menuItem)
+                    imageAndTextFor(menuItem)
 
                 }
             }
@@ -246,10 +252,11 @@ fun MenuScreen(onNavigateToToppings: () -> Unit) {
 //start order, ID,
 @Composable
 fun ToppingsScreen(item: MenuItem) {
-    val itemCustomization = customizationOptions[item.customizationType]
+    //val itemCustomization = customizationOptions[item.customizationType]
+    val itemCustomization = MenuData.myMenu.customizationOptions[item.customizationType]
     Column {
             Text(text = "This is the toppings screen!")
-            imageAndTexFor(menuItem = item)
+            imageAndTextFor(menuItem = item)
 
         Text(text = stringResource(R.string.toppings))
 
