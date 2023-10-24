@@ -14,7 +14,7 @@ import androidx.compose.ui.unit.dp
 import edu.hanover.hc24_luuk_crawford_senior_project.composables.hcLogoText
 import edu.hanover.hc24_luuk_crawford_senior_project.composables.imageAndTextFor
 import edu.hanover.hc24_luuk_crawford_senior_project.data.MenuData
-import edu.hanover.hc24_luuk_crawford_senior_project.itemToLoad
+import edu.hanover.hc24_luuk_crawford_senior_project.activities.itemToLoad
 
 @Composable
 fun MenuScreen(onNavigateToToppings: () -> Unit) {

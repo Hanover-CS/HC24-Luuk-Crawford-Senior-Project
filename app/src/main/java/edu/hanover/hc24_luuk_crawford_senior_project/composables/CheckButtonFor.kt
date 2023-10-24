@@ -19,7 +19,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.unit.dp
-import edu.hanover.hc24_luuk_crawford_senior_project.mySelections
+import edu.hanover.hc24_luuk_crawford_senior_project.activities.mySelections
 
 @Composable
 fun CheckButtonFor(selectionName: String) {

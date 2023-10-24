@@ -8,7 +8,9 @@ import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.performClick
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
+import edu.hanover.hc24_luuk_crawford_senior_project.composables.AppNavHost
 import edu.hanover.hc24_luuk_crawford_senior_project.composables.screens.WelcomeScreen
+import edu.hanover.hc24_luuk_crawford_senior_project.data.Destination
 import edu.hanover.hc24_luuk_crawford_senior_project.data.MenuData
 import edu.hanover.hc24_luuk_crawford_senior_project.data.MenuItem
 import org.junit.Assert
