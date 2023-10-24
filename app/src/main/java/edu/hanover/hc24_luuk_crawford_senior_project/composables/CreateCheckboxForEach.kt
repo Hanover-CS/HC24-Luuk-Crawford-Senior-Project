@@ -7,7 +7,6 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
-import edu.hanover.hc24_luuk_crawford_senior_project.CheckButtonFor
 
 @Composable
 @OptIn(ExperimentalLayoutApi::class)
