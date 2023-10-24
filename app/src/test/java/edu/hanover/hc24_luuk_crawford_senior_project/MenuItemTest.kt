@@ -1,5 +1,6 @@
 package edu.hanover.hc24_luuk_crawford_senior_project
 
+import edu.hanover.hc24_luuk_crawford_senior_project.data.MenuItem
 import junit.framework.TestCase
 import org.junit.Test
 import org.junit.jupiter.api.Assertions.*

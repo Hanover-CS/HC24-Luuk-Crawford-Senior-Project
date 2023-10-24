@@ -1,8 +1,11 @@
-package edu.hanover.hc24_luuk_crawford_senior_project
+package edu.hanover.hc24_luuk_crawford_senior_project.services
 
 import android.content.ContentValues
 import android.util.Log
 import com.google.firebase.firestore.FirebaseFirestore
+import edu.hanover.hc24_luuk_crawford_senior_project.data.Customization
+import edu.hanover.hc24_luuk_crawford_senior_project.data.MenuData
+import edu.hanover.hc24_luuk_crawford_senior_project.data.MenuItem
 
 fun downloadMenuFirebase(): MenuData {
 

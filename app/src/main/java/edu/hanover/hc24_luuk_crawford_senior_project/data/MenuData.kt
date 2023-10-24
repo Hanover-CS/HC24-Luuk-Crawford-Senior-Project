@@ -1,4 +1,4 @@
-package edu.hanover.hc24_luuk_crawford_senior_project
+package edu.hanover.hc24_luuk_crawford_senior_project.data
 
 data class MenuData(
     var menuItemList: MutableList<MenuItem>,
