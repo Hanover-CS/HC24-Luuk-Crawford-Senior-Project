@@ -7,8 +7,11 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import edu.hanover.hc24_luuk_crawford_senior_project.composables.AppNavHost
+import edu.hanover.hc24_luuk_crawford_senior_project.data.Customization
+import edu.hanover.hc24_luuk_crawford_senior_project.data.ItemStatus
 import edu.hanover.hc24_luuk_crawford_senior_project.data.MenuData
 import edu.hanover.hc24_luuk_crawford_senior_project.data.MenuItem
+import edu.hanover.hc24_luuk_crawford_senior_project.data.UserOrder
 import edu.hanover.hc24_luuk_crawford_senior_project.services.downloadMenuFirebase
 import edu.hanover.hc24_luuk_crawford_senior_project.services.downloadMenuLocal
 
@@ -41,11 +44,15 @@ class MainActivity : ComponentActivity() {
         }
 
     }
-
-
-
+}
+// could try https://developer.android.com/training/data-storage/room
+private val currentOrder = UserOrder("",0,0,0, Customization(),ItemStatus.inProgress,"notOrdered","unknown")
+public fun setUsersName(name: String){
+    currentOrder.user = name
 }
 
-
+public fun getUserName(): String {
+    return currentOrder.user
+}
 
 
