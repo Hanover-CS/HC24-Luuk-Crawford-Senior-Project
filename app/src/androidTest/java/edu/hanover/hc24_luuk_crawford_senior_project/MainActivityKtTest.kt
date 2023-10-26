@@ -3,16 +3,21 @@ package edu.hanover.hc24_luuk_crawford_senior_project
 
 import androidx.compose.ui.test.assertHasClickAction
 import androidx.compose.ui.test.assertIsDisplayed
+import androidx.compose.ui.test.assertIsNotDisplayed
 import androidx.compose.ui.test.hasTestTag
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.performClick
+import androidx.compose.ui.test.performKeyPress
+import androidx.compose.ui.test.performTextInput
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
+import com.google.common.base.Predicates.equalTo
 import edu.hanover.hc24_luuk_crawford_senior_project.composables.AppNavHost
 import edu.hanover.hc24_luuk_crawford_senior_project.composables.screens.WelcomeScreen
 import edu.hanover.hc24_luuk_crawford_senior_project.data.Destination
 import edu.hanover.hc24_luuk_crawford_senior_project.data.MenuData
 import edu.hanover.hc24_luuk_crawford_senior_project.data.MenuItem
+import org.hamcrest.MatcherAssert.assertThat
 import org.junit.Assert
 import org.junit.Before
 import org.junit.Rule
@@ -93,7 +98,15 @@ internal class MainActivityKtTest {
         beginOrderButton.assertExists()
         beginOrderButton.assertIsDisplayed()
         beginOrderButton.assertHasClickAction()
+
+        val inputUserNameArea = composeTestRule.onNode(hasTestTag("inputUserName"))
+        inputUserNameArea.assertExists()
+        inputUserNameArea.assertIsDisplayed()
         beginOrderButton.performClick()
+        beginOrderButton.assertIsDisplayed()
+        inputUserNameArea.performTextInput("My Name")
+        beginOrderButton.performClick()
+        beginOrderButton.assertDoesNotExist()
         checkMenuScreenContents()
         beginOrderButton.assertDoesNotExist()
     }

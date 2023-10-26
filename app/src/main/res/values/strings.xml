@@ -33,5 +33,6 @@
     <string name="lostImage">image of item</string>
     <string name="sides">Sides:</string>
     <string name="toppings">Toppings:</string>
+    <string name="please_enter_your_name">Please enter your name.</string>
 
 </resources>
