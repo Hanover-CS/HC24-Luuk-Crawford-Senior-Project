@@ -1,9 +1,6 @@
 package edu.hanover.hc24_luuk_crawford_senior_project.composables
 
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -22,30 +19,22 @@ import com.zybooks.hc24_luuk_crawford_senior_project.R
 
 @Composable
 fun beginOrderButton(onNavigateToMenu: () -> Unit) {
-    Column(
-        verticalArrangement = Arrangement.Bottom,
-        horizontalAlignment = Alignment.CenterHorizontally,
-        modifier = Modifier.fillMaxHeight()
-
-
+    Box(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(16.dp),
+        contentAlignment = Alignment.Center
     ) {
-        Box(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(16.dp),
-            contentAlignment = Alignment.Center
-        ) {
-            Button(
-                onClick = { onNavigateToMenu() },
-                shape = RoundedCornerShape(18.dp),
-                modifier = Modifier.testTag("beginOrderButton")
+        Button(
+            onClick = { onNavigateToMenu() },
+            shape = RoundedCornerShape(18.dp),
+            modifier = Modifier.testTag("beginOrderButton")
             ) {
-                Text(
-                    text = stringResource(id = R.string.beginOrder),
-                    fontSize = 40.sp,
-                    color = Color.White, textAlign = TextAlign.Center
-                )
-            }
+            Text(
+                text = stringResource(id = R.string.beginOrder),
+                fontSize = 40.sp,
+                color = Color.White, textAlign = TextAlign.Center
+            )
         }
     }
 }
