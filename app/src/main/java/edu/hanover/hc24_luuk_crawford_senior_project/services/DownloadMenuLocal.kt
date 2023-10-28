@@ -28,12 +28,12 @@ fun downloadMenuLocal(){
     )
     addMenuItem(menuExample2)
 
-    val burgerSides = listOf("Hand Cut Fries Test", "Mac-N-Cheese", "Tater Tots")
+    val burgerSides = mutableListOf("Hand Cut Fries Test", "Mac-N-Cheese", "Tater Tots")
     val burgerToppings =
-        listOf("Lettuce Test", "Tomato", "Onion Test", "Pickle", "Cheese", "Bacon")
+        mutableListOf("Lettuce Test", "Tomato", "Onion Test", "Pickle", "Cheese", "Bacon")
     //customizationType["Burger"] = Customization(burgerSides, burgerToppings)
     addCustomizationOption("Burger",Customization(burgerSides, burgerToppings))
-    val quesadillaToppings = listOf(
+    val quesadillaToppings = mutableListOf(
         "Rice Test",
         "Black Beans",
         "Queso",
@@ -47,7 +47,7 @@ fun downloadMenuLocal(){
         "Guacamole",
         "Sub Gluten Free"
     )
-    val quesadillaSides = emptyList<String>()
+    val quesadillaSides = mutableListOf<String>()//no sides
     //customizationType["Quesadilla"] = Customization(quesadillaSides, quesadillaToppings)
     addCustomizationOption("Quesadilla", Customization(quesadillaSides, quesadillaToppings))
     //return MenuData(menuList,customizationType)

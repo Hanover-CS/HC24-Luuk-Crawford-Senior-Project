@@ -16,7 +16,7 @@ import edu.hanover.hc24_luuk_crawford_senior_project.services.downloadMenuLocal
 //This setups loading to make my composable's work.
 //- Starts AppNavHost
 
-var mySelections = mutableListOf<String>()
+//var mySelections = mutableListOf<String>()
 
 class MainActivity : ComponentActivity() {
 
@@ -36,18 +36,33 @@ class MainActivity : ComponentActivity() {
 }
 private val currentOrder = UserOrder("",0,0,0, Customization(),ItemStatus.inProgress,"notOrdered","unknown")
 
-public fun getCurrentUserOrder(): UserOrder {
+fun getCurrentUserOrder(): UserOrder {
     return currentOrder
 }
-public fun setUsersName(name: String){
+fun setUsersName(name: String){
     currentOrder.user = name
 }
 
-public fun getUserName(): String {
+fun getUserName(): String {
     return currentOrder.user
 }
 
 
-public fun setOrderItemID(id: Int){
+fun setOrderItemID(id: Int){
     currentOrder.itemID = id
 }
+
+fun addOrderCustomization(customizationItem: String, customizationCategory: String){
+    when (customizationCategory) {
+        "toppings" -> currentOrder.customization.toppings.add(customizationItem)
+        "sides" -> currentOrder.customization.sides.add(customizationItem)
+    }
+}
+
+fun removeOrderCustomization(customizationItem: String, customizationCategory: String){
+    when (customizationCategory) {
+        "toppings" -> currentOrder.customization.toppings.remove(customizationItem)
+        "sides" -> currentOrder.customization.sides.remove(customizationItem)
+    }
+}
+

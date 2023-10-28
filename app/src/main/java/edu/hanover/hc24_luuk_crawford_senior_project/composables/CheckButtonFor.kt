@@ -1,7 +1,5 @@
 package edu.hanover.hc24_luuk_crawford_senior_project.composables
 
-import android.content.ContentValues
-import android.util.Log
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
@@ -19,10 +17,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.unit.dp
-import edu.hanover.hc24_luuk_crawford_senior_project.activities.mySelections
+import edu.hanover.hc24_luuk_crawford_senior_project.activities.addOrderCustomization
+import edu.hanover.hc24_luuk_crawford_senior_project.activities.removeOrderCustomization
 
 @Composable
-fun CheckButtonFor(selectionName: String) {
+fun CheckButtonFor(selectionName: String, customizationCategory: String) {
     var checked by remember { mutableStateOf(false) }
     Row(
         Modifier
@@ -42,16 +41,17 @@ fun CheckButtonFor(selectionName: String) {
     ) {
         Checkbox(checked = checked, { newValue ->
             checked = newValue
-        })//onCheckedChange = null)
-        //Text(text = if (checked) "Checked" else "Not Checked")
+        })
         if (checked) {
-            mySelections.add(selectionName)
-            Log.d(ContentValues.TAG, "added ${selectionName}")
-            Log.d(ContentValues.TAG, mySelections.toString())
+            addOrderCustomization(selectionName,customizationCategory)
+            //mySelections.add(selectionName)
+            //Log.d(ContentValues.TAG, "added ${selectionName}")
+            //Log.d(ContentValues.TAG, mySelections.toString())
         } else {
-            mySelections.remove(selectionName)
-            Log.d(ContentValues.TAG, "removed ${selectionName}")
-            Log.d(ContentValues.TAG, mySelections.toString())
+            removeOrderCustomization(selectionName,customizationCategory)
+            //mySelections.remove(selectionName)
+            //Log.d(ContentValues.TAG, "removed ${selectionName}")
+            //Log.d(ContentValues.TAG, mySelections.toString())
         }
         Text(selectionName, Modifier.weight(1f))
     }

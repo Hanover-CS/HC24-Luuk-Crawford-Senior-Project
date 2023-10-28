@@ -20,10 +20,10 @@ fun ToppingsScreen(order: UserOrder) {
         imageAndTextFor(menuItem = getMenuItemFromOrderID(order.itemID))
 
         Text(text = stringResource(R.string.toppings))
-        createCheckboxForEach(itemCustomization.toppings)
+        createCheckboxForEach(itemCustomization.toppings, "toppings")
 
         Text(text = stringResource(R.string.sides))
-        createCheckboxForEach(itemCustomization.sides)
+        createCheckboxForEach(itemCustomization.sides, "sides")
 
     }
 }

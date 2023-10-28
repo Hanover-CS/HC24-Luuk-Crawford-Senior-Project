@@ -20,8 +20,11 @@ private fun downloadToppings(){
                 for (itemType in document) {
                     val customizationData = itemType.data
 
-                    val sides = customizationData["sides"] as? List<String> ?: emptyList()
-                    val toppings = customizationData["toppings"] as? List<String> ?: emptyList()
+                    //val sides = customizationData["sides"] as MutableList<String> ?: emptyList<String>()
+                    //val toppings = customizationData["toppings"] = emptyList()
+                    val sides = (customizationData["sides"] as? MutableList<String>) ?: mutableListOf()
+                    val toppings = (customizationData["toppings"] as? MutableList<String>) ?: mutableListOf()
+
                     addCustomizationOption(itemType.id,Customization(sides, toppings))
                 }
             } else {
