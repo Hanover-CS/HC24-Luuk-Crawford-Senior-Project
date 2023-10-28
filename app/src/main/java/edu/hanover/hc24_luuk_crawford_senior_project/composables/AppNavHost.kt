@@ -6,11 +6,11 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import edu.hanover.hc24_luuk_crawford_senior_project.activities.getCurrentUserOrder
 import edu.hanover.hc24_luuk_crawford_senior_project.data.Destination
 import edu.hanover.hc24_luuk_crawford_senior_project.composables.screens.MenuScreen
 import edu.hanover.hc24_luuk_crawford_senior_project.composables.screens.ToppingsScreen
 import edu.hanover.hc24_luuk_crawford_senior_project.composables.screens.WelcomeScreen
-import edu.hanover.hc24_luuk_crawford_senior_project.activities.itemToLoad
 
 /*
 Nav host is the composable manager
@@ -38,7 +38,7 @@ fun AppNavHost(
 
         composable(Destination.menuScreen.name) { MenuScreen(onNavigateToToppingsFunction) }
 
-        composable(Destination.toppingsScreen.name) { ToppingsScreen(itemToLoad) }
+        composable(Destination.toppingsScreen.name) { ToppingsScreen(getCurrentUserOrder()) }
 
     }
 }

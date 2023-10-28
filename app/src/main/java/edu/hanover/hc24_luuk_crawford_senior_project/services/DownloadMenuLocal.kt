@@ -2,33 +2,37 @@ package edu.hanover.hc24_luuk_crawford_senior_project.services
 
 import edu.hanover.hc24_luuk_crawford_senior_project.data.Customization
 import edu.hanover.hc24_luuk_crawford_senior_project.data.MenuData
+import edu.hanover.hc24_luuk_crawford_senior_project.data.MenuData.Companion.addCustomizationOption
+import edu.hanover.hc24_luuk_crawford_senior_project.data.MenuData.Companion.addMenuItem
+import edu.hanover.hc24_luuk_crawford_senior_project.data.MenuData.Companion.clearMenuContents
 import edu.hanover.hc24_luuk_crawford_senior_project.data.MenuItem
 
-fun downloadMenuLocal(): MenuData {
+fun downloadMenuLocal(){
     //myMenuList.clear()
-    val menuList = mutableListOf<MenuItem>()
-    val customizationType = mutableMapOf<String, Customization>()
-    customizationType.clear()
+    clearMenuContents()
+    //val menuList = mutableListOf<MenuItem>()
+    //val customizationType = mutableMapOf<String, Customization>()
+    //customizationType.clear()
     val menuExample = MenuItem(
         name = "Hamburger__Test",
         id = 100,
         customizationType = "Burger",
         imageLink = "https://i.imgur.com/N22z5gY.jpeg"
     )
-    menuList.add(menuExample)
+    addMenuItem(menuExample)
     val menuExample2 = MenuItem(
         name = "VeggieBurgerTest",
         id = 101,
         customizationType = "Burger",
         imageLink = "https://i.imgur.com/K6alfDv.jpeg"
     )
-    menuList.add(menuExample2)
+    addMenuItem(menuExample2)
 
     val burgerSides = listOf("Hand Cut Fries Test", "Mac-N-Cheese", "Tater Tots")
     val burgerToppings =
         listOf("Lettuce Test", "Tomato", "Onion Test", "Pickle", "Cheese", "Bacon")
-    customizationType["Burger"] = Customization(burgerSides, burgerToppings)
-
+    //customizationType["Burger"] = Customization(burgerSides, burgerToppings)
+    addCustomizationOption("Burger",Customization(burgerSides, burgerToppings))
     val quesadillaToppings = listOf(
         "Rice Test",
         "Black Beans",
@@ -44,7 +48,7 @@ fun downloadMenuLocal(): MenuData {
         "Sub Gluten Free"
     )
     val quesadillaSides = emptyList<String>()
-    customizationType["Quesadilla"] = Customization(quesadillaSides, quesadillaToppings)
-
-    return MenuData(menuList,customizationType)
+    //customizationType["Quesadilla"] = Customization(quesadillaSides, quesadillaToppings)
+    addCustomizationOption("Quesadilla", Customization(quesadillaSides, quesadillaToppings))
+    //return MenuData(menuList,customizationType)
 }

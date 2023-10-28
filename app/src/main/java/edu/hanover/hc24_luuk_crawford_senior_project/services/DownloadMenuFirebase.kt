@@ -4,29 +4,14 @@ import android.content.ContentValues
 import android.util.Log
 import com.google.firebase.firestore.FirebaseFirestore
 import edu.hanover.hc24_luuk_crawford_senior_project.data.Customization
-import edu.hanover.hc24_luuk_crawford_senior_project.data.MenuData
-import edu.hanover.hc24_luuk_crawford_senior_project.data.MenuItem
+import edu.hanover.hc24_luuk_crawford_senior_project.data.MenuData.Companion.addCustomizationOption
 
-fun downloadMenuFirebase(): MenuData {
-
-
-
-
-    val menuList = downloadItems()
-    val customizationMap = downloadToppings()
-
-    val downloadedMenuData = MenuData(
-        menuItemList = menuList,//mutableListOf<MenuItem>()
-        customizationOptions = customizationMap//mutableMapOf<String, Customization>()
-    )
-    return downloadedMenuData
-
+fun downloadMenuFirebase(){
+    downloadToppings()
+    downloadItems()
 }
 
-private fun downloadToppings(): MutableMap<String, Customization> {
-    //customizationOptions.clear()
-    val customizationMap = mutableMapOf<String, Customization>()
-
+private fun downloadToppings(){
     val db = FirebaseFirestore.getInstance()
     val docRef = db.collection("customization")
     docRef.get()
@@ -37,10 +22,7 @@ private fun downloadToppings(): MutableMap<String, Customization> {
 
                     val sides = customizationData["sides"] as? List<String> ?: emptyList()
                     val toppings = customizationData["toppings"] as? List<String> ?: emptyList()
-
-                    val customization = Customization(sides, toppings)
-
-                    customizationMap["${itemType.id}"] = customization
+                    addCustomizationOption(itemType.id,Customization(sides, toppings))
                 }
             } else {
                 Log.d(ContentValues.TAG, "No such document")
@@ -49,18 +31,15 @@ private fun downloadToppings(): MutableMap<String, Customization> {
         .addOnFailureListener { exception ->
             Log.d(ContentValues.TAG, "get failed with ", exception)
         }
-    return customizationMap
 }
 
-private fun downloadItems(): MutableList<MenuItem> {
-    //myMenuList.clear()
-    var myMenuList = mutableListOf<MenuItem>()
+private fun downloadItems(){
     val db = FirebaseFirestore.getInstance()
     val docRef = db.collection("menuContent")
     docRef.get()
         .addOnSuccessListener { document ->
             if (document != null) {
-                myMenuList = listDocumentItemsIn(document, myMenuList)
+                addItemsToMenuFrom(document)
             } else {
                 Log.d(ContentValues.TAG, "No such document")
             }
@@ -68,5 +47,4 @@ private fun downloadItems(): MutableList<MenuItem> {
         .addOnFailureListener { exception ->
             Log.d(ContentValues.TAG, "get failed with ", exception)
         }
-    return myMenuList
 }

@@ -2,36 +2,40 @@ package edu.hanover.hc24_luuk_crawford_senior_project.data
 
 data class MenuData(
     var menuItemList: MutableList<MenuItem>,
-    var customizationOptions: MutableMap<String, Customization>
-) {
+    var customizationOptions: MutableMap<String, Customization>,
+    var idToMenuItem: MutableMap<Int, MenuItem> ) {
     companion object {
-        private var myMenu = MenuData(mutableListOf<MenuItem>(), mutableMapOf<String, Customization>())
+        private var myMenu = MenuData(mutableListOf<MenuItem>(), mutableMapOf<String, Customization>(),mutableMapOf<Int, MenuItem>())
 
-        fun set(
-            menuItemList: MutableList<MenuItem>,
-            customizationOptions: MutableMap<String, Customization>
-        ) {
-            myMenu = MenuData(menuItemList,customizationOptions)
-        }
+
         fun get(): MenuData {
             return myMenu
         }
 
-        fun clear() {
-            myMenu = MenuData(mutableListOf<MenuItem>(), mutableMapOf<String, Customization>())
+        fun clearMenuContents() {
+            myMenu = MenuData(mutableListOf<MenuItem>(), mutableMapOf<String, Customization>(), mutableMapOf<Int, MenuItem>())
         }
 
         fun addMenuItem(menuItem: MenuItem) {
             myMenu.menuItemList.add(menuItem)
+            myMenu.idToMenuItem[menuItem.id] = menuItem
+        }
 
+        fun addCustomizationOption(itemName: String, customization: Customization){
+            myMenu.customizationOptions[itemName] = customization
+        }
+
+        fun getCustomizationTypeOfItemID(id: Int): String{
+            return myMenu.idToMenuItem[id]!!.customizationType
+        }
+
+        fun getCustomizationOfItemID(id: Int): Customization{
+            val customizationType = getCustomizationTypeOfItemID(id)
+            return myMenu.customizationOptions[customizationType]!!
+        }
+
+        fun getMenuItemFromOrderID(id: Int): MenuItem{
+            return myMenu.idToMenuItem[id]!!
         }
     }
 }
-/*
-fun getMenu(): MenuData {
-    return myMenu
-}
-fun setMenu(newMenuList: MutableList<MenuItem>, newCustomizations: MutableMap<String, Customization>) {
-    myMenu.menuItemList = newMenuList
-    myMenu.customizationOptions = newCustomizations
-}*/
