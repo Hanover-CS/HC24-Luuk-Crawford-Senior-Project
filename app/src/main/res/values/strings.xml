@@ -18,7 +18,7 @@
     <string name="americanCheese">Americn Cheese</string>
     <string name="back">Cancel and go back.</string>
     <string name="selectToppings">Toppings</string>
-    <string name="submitOrder">Submit/Confirm Order</string>
+    <string name="submitConfirmOrder">Submit/Confirm Order</string>
     <string name="limeRice">Lime Rice</string>
     <string name="blackBeans">Black Beans</string>
     <string name="queso">Queso</string>
@@ -34,5 +34,9 @@
     <string name="sides">Sides:</string>
     <string name="toppings">Toppings:</string>
     <string name="please_enter_your_name">Please enter your name.</string>
+    <string name="orderSubmitted">Order submitted</string>
+    <string name="submitOrder">Submit Order</string>
+    <string name="connectionFailed">Connection Failed</string>
+    <string name="tryingToSubmit">Trying to submit order</string>
 
 </resources>

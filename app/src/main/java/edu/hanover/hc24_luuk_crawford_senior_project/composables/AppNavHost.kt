@@ -9,6 +9,7 @@ import androidx.navigation.compose.rememberNavController
 import edu.hanover.hc24_luuk_crawford_senior_project.activities.getCurrentUserOrder
 import edu.hanover.hc24_luuk_crawford_senior_project.data.Destination
 import edu.hanover.hc24_luuk_crawford_senior_project.composables.screens.MenuScreen
+import edu.hanover.hc24_luuk_crawford_senior_project.composables.screens.OrdersScreen
 import edu.hanover.hc24_luuk_crawford_senior_project.composables.screens.ToppingsScreen
 import edu.hanover.hc24_luuk_crawford_senior_project.composables.screens.WelcomeScreen
 
@@ -32,13 +33,15 @@ fun AppNavHost(
         val onNavigateToMenuFunction = { navController.navigate(Destination.menuScreen.name) }
         val onNavigateToToppingsFunction =
             { navController.navigate(Destination.toppingsScreen.name) }
+        val onNavigateToOrdersScreen =
+            { navController.navigate(Destination.ordersScreen.name) }
 
-        //composable(destination.place.name){ Destination(navigateButtonInstruction)}
         composable(Destination.welcomeScreen.name) { WelcomeScreen(onNavigateToMenuFunction) }
 
         composable(Destination.menuScreen.name) { MenuScreen(onNavigateToToppingsFunction) }
 
-        composable(Destination.toppingsScreen.name) { ToppingsScreen(getCurrentUserOrder()) }
+        composable(Destination.toppingsScreen.name) { ToppingsScreen( onNavigateToOrdersScreen,getCurrentUserOrder()) }
 
+        composable(Destination.ordersScreen.name){ OrdersScreen()}
     }
 }
