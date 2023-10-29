@@ -8,7 +8,7 @@ import java.util.Date
 object CurrentOrderManager {
     //basically a singleton
     private val currentOrder =
-        UserOrder("", 0, 0, 0, Customization(), ItemStatus.inProgress, null, null)
+        UserOrder("", 0, 0, 0, Customization(), ItemStatus.inProgress, Date(1), null)
 
     fun getCurrentUserOrder(): UserOrder {
         return currentOrder
@@ -45,8 +45,12 @@ object CurrentOrderManager {
         return getCurrentUserOrder().hashCode()
     }
 
-    fun setOrderTime() {
+    fun setCurrentOrderTime() {
         currentOrder.orderTime = Date(System.currentTimeMillis())
+    }
+
+    fun getCurrentOrderTime(): Date? {
+        return currentOrder.orderTime
     }
 
 }

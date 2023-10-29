@@ -8,6 +8,10 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -25,6 +29,7 @@ import edu.hanover.hc24_luuk_crawford_senior_project.data.MenuData.Companion.get
 import edu.hanover.hc24_luuk_crawford_senior_project.data.MenuData.Companion.getMenuItemFromOrderID
 import edu.hanover.hc24_luuk_crawford_senior_project.data.currentOrder.submitCurrentOrder
 import edu.hanover.hc24_luuk_crawford_senior_project.data.UserOrder
+import edu.hanover.hc24_luuk_crawford_senior_project.data.currentOrder.CurrentOrderManager.getCurrentOrderTime
 
 //start order, ID,
 @Composable
@@ -47,8 +52,8 @@ fun ToppingsScreen(onNavigateToOrders: () -> Unit,order: UserOrder) {
 @Composable
 fun SubmitOrderButton(onNavigateToOrders: () -> Unit) {
     val context = LocalContext.current
-    val orderSubmitted = stringResource(R.string.orderSubmitted)
 
+    var submitButtonEnabled by remember { mutableStateOf(true) }
     Box(
         modifier = Modifier
             .fillMaxWidth()
@@ -57,8 +62,11 @@ fun SubmitOrderButton(onNavigateToOrders: () -> Unit) {
     ) {
         Button(
             onClick = {
+                submitButtonEnabled = false
                 if (firebaseIsEnabled){
-                    submitCurrentOrder(onNavigateToOrders, context)
+                    if (25000 <(System.currentTimeMillis() - getCurrentOrderTime()!!.time)){
+                        submitCurrentOrder(onNavigateToOrders, context)
+                    }
                 }
             },
             shape = RoundedCornerShape(18.dp),

@@ -38,5 +38,6 @@
     <string name="submitOrder">Submit Order</string>
     <string name="connectionFailed">Connection Failed</string>
     <string name="tryingToSubmit">Trying to submit order</string>
+    <string name="menu_could_not_be_found">Menu could not be found. Please try again.</string>
 
 </resources>
