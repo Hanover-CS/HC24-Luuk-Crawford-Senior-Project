@@ -6,7 +6,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import edu.hanover.hc24_luuk_crawford_senior_project.activities.getCurrentUserOrder
+import edu.hanover.hc24_luuk_crawford_senior_project.data.currentOrder.CurrentOrderManager.getCurrentUserOrder
 import edu.hanover.hc24_luuk_crawford_senior_project.data.Destination
 import edu.hanover.hc24_luuk_crawford_senior_project.composables.screens.MenuScreen
 import edu.hanover.hc24_luuk_crawford_senior_project.composables.screens.OrdersScreen

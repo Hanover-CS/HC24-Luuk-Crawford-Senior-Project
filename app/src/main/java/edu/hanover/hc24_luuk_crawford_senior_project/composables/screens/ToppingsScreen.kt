@@ -1,6 +1,5 @@
 package edu.hanover.hc24_luuk_crawford_senior_project.composables.screens
 
-import android.widget.Toast
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -20,11 +19,11 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.zybooks.hc24_luuk_crawford_senior_project.R
 import edu.hanover.hc24_luuk_crawford_senior_project.activities.firebaseIsEnabled
-import edu.hanover.hc24_luuk_crawford_senior_project.activities.submitCurrentOrder
 import edu.hanover.hc24_luuk_crawford_senior_project.composables.createCheckboxForEach
 import edu.hanover.hc24_luuk_crawford_senior_project.composables.imageAndTextFor
 import edu.hanover.hc24_luuk_crawford_senior_project.data.MenuData.Companion.getCustomizationOfItemID
 import edu.hanover.hc24_luuk_crawford_senior_project.data.MenuData.Companion.getMenuItemFromOrderID
+import edu.hanover.hc24_luuk_crawford_senior_project.data.currentOrder.submitCurrentOrder
 import edu.hanover.hc24_luuk_crawford_senior_project.data.UserOrder
 
 //start order, ID,
@@ -60,10 +59,7 @@ fun SubmitOrderButton(onNavigateToOrders: () -> Unit) {
             onClick = {
                 if (firebaseIsEnabled){
                     submitCurrentOrder(onNavigateToOrders, context)
-
                 }
-
-
             },
             shape = RoundedCornerShape(18.dp),
             modifier = Modifier.testTag("submitOrderButton")

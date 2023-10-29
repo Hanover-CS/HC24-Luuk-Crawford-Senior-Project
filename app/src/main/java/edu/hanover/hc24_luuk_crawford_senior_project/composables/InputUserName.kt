@@ -16,8 +16,8 @@ import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import edu.hanover.hc24_luuk_crawford_senior_project.activities.getUserName
-import edu.hanover.hc24_luuk_crawford_senior_project.activities.setUsersName
+import edu.hanover.hc24_luuk_crawford_senior_project.data.currentOrder.CurrentOrderManager.getUserName
+import edu.hanover.hc24_luuk_crawford_senior_project.data.currentOrder.CurrentOrderManager.setUsersName
 
 @Composable
 fun inputUserName() {

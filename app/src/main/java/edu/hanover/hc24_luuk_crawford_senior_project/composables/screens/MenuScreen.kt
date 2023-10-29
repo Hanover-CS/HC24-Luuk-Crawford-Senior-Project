@@ -14,7 +14,7 @@ import androidx.compose.ui.unit.dp
 import edu.hanover.hc24_luuk_crawford_senior_project.composables.hcLogoText
 import edu.hanover.hc24_luuk_crawford_senior_project.composables.imageAndTextFor
 import edu.hanover.hc24_luuk_crawford_senior_project.data.MenuData
-import edu.hanover.hc24_luuk_crawford_senior_project.activities.setOrderItemID
+import edu.hanover.hc24_luuk_crawford_senior_project.data.currentOrder.CurrentOrderManager.setOrderItemID
 
 @Composable
 fun MenuScreen(onNavigateToToppings: () -> Unit) {

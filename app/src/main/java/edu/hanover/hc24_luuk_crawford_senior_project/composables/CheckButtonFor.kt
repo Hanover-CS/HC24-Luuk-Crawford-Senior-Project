@@ -17,8 +17,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.unit.dp
-import edu.hanover.hc24_luuk_crawford_senior_project.activities.addOrderCustomization
-import edu.hanover.hc24_luuk_crawford_senior_project.activities.removeOrderCustomization
+import edu.hanover.hc24_luuk_crawford_senior_project.data.currentOrder.CurrentOrderManager.addOrderCustomization
+import edu.hanover.hc24_luuk_crawford_senior_project.data.currentOrder.CurrentOrderManager.removeOrderCustomization
 
 @Composable
 fun CheckButtonFor(selectionName: String, customizationCategory: String) {
