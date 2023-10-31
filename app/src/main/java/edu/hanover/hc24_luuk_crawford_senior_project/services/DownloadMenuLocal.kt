@@ -7,6 +7,9 @@ import edu.hanover.hc24_luuk_crawford_senior_project.data.MenuData.Companion.add
 import edu.hanover.hc24_luuk_crawford_senior_project.data.MenuData.Companion.clearMenuContents
 import edu.hanover.hc24_luuk_crawford_senior_project.data.MenuItem
 
+/**
+ * local menu for testing
+ */
 fun downloadMenuLocal(){
     //myMenuList.clear()
     clearMenuContents()

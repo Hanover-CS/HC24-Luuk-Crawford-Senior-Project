@@ -10,6 +10,9 @@ import edu.hanover.hc24_luuk_crawford_senior_project.composables.imageAndTextFor
 import edu.hanover.hc24_luuk_crawford_senior_project.data.MenuData
 import edu.hanover.hc24_luuk_crawford_senior_project.data.UserOrder
 
+/**
+ * View current active orders
+ */
 @Composable
 fun OrdersScreen() {
     Column {

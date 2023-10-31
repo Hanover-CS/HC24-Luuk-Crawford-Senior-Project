@@ -5,8 +5,12 @@ import edu.hanover.hc24_luuk_crawford_senior_project.data.ItemStatus
 import edu.hanover.hc24_luuk_crawford_senior_project.data.UserOrder
 import java.util.Date
 
+/**
+ * singleton for the order the user is making. A UserOrder.
+ * Set/getters to update user's order.
+ */
 object CurrentOrderManager {
-    //basically a singleton
+
     private val currentOrder =
         UserOrder("", 0, 0, 0, Customization(), ItemStatus.inProgress, Date(1), null)
 
@@ -27,13 +31,22 @@ object CurrentOrderManager {
         currentOrder.itemID = id
     }
 
+    /**
+     * add a customization to current order
+     * @param customizationItem customization item (as string) to add to current order.
+     * @param customizationCategory which category to add to (topping/sides list)
+     */
     fun addOrderCustomization(customizationItem: String, customizationCategory: String) {
         when (customizationCategory) {
             "toppings" -> currentOrder.customization.toppings.add(customizationItem)
             "sides" -> currentOrder.customization.sides.add(customizationItem)
         }
     }
-
+    /**
+     * remove a customization to current order
+     * @param customizationItem customization item (as string) to remove from current order.
+     * @param customizationCategory which category to remove from (topping/sides list)
+     */
     fun removeOrderCustomization(customizationItem: String, customizationCategory: String) {
         when (customizationCategory) {
             "toppings" -> currentOrder.customization.toppings.remove(customizationItem)
@@ -41,6 +54,10 @@ object CurrentOrderManager {
         }
     }
 
+    /**
+     * get hash of current order.
+     * @return hash of current user order
+     */
     fun getCurrentOrderHash(): Int {
         return getCurrentUserOrder().hashCode()
     }

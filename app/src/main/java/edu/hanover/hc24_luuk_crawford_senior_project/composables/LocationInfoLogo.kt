@@ -14,6 +14,9 @@ import androidx.compose.ui.unit.sp
 import com.zybooks.hc24_luuk_crawford_senior_project.R
 import edu.hanover.hc24_luuk_crawford_senior_project.composables.hcLogoText
 
+/**
+ * college name + food location (underground) in big text.
+ */
 @Composable
 fun locationInfoLogo() {
     Spacer(modifier = Modifier.height(8.dp))

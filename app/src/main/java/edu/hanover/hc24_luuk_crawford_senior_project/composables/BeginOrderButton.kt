@@ -20,7 +20,9 @@ import androidx.compose.ui.unit.sp
 import com.zybooks.hc24_luuk_crawford_senior_project.R
 import edu.hanover.hc24_luuk_crawford_senior_project.data.currentOrder.CurrentOrderManager.getUserName
 
-
+/**
+ * @param onNavigateToMenu needs function to change page to Menu.
+ */
 @Composable
 fun beginOrderButton(onNavigateToMenu: () -> Unit) {
     val context = LocalContext.current

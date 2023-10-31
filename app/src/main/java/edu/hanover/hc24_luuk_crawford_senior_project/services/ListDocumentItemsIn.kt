@@ -6,6 +6,10 @@ import com.google.firebase.firestore.QuerySnapshot
 import edu.hanover.hc24_luuk_crawford_senior_project.data.MenuData.Companion.addMenuItem
 import edu.hanover.hc24_luuk_crawford_senior_project.data.MenuItem
 
+/**
+ * Creates MenuItems and adds them to menu from QuerySnapshot.
+ * @param document QuerySnapshot from firebase
+ */
 fun addItemsToMenuFrom(document: QuerySnapshot){
 
     Log.d(ContentValues.TAG, "TEST ${document} is food document")

@@ -1,5 +1,11 @@
 package edu.hanover.hc24_luuk_crawford_senior_project.data
 
+/**
+ * All the data the menu has.
+ * @param menuItemList list of items on menu.
+ * @param customizationOptions map of item TYPE (string) to customization associated to it.
+ * @param idToMenuItem map of item id to MenuItem associated to it.
+ */
 data class MenuData(
     var menuItemList: MutableList<MenuItem>,
     var customizationOptions: MutableMap<String, Customization>,

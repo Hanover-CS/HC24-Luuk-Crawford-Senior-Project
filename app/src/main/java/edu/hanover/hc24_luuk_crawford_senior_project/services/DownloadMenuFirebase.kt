@@ -6,11 +6,14 @@ import com.google.firebase.firestore.FirebaseFirestore
 import edu.hanover.hc24_luuk_crawford_senior_project.data.Customization
 import edu.hanover.hc24_luuk_crawford_senior_project.data.MenuData.Companion.addCustomizationOption
 
+/**
+ * Downloads items and toppings from database.
+ * Stores locally to menu.
+ */
 fun downloadMenuFirebase(){
     downloadToppings()
     downloadItems()
 }
-
 private fun downloadToppings(){
     val db = FirebaseFirestore.getInstance()
     val docRef = db.collection("customization")

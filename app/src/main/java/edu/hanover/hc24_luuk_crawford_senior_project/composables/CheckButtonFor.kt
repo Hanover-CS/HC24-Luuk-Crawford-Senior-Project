@@ -20,6 +20,11 @@ import androidx.compose.ui.unit.dp
 import edu.hanover.hc24_luuk_crawford_senior_project.data.currentOrder.CurrentOrderManager.addOrderCustomization
 import edu.hanover.hc24_luuk_crawford_senior_project.data.currentOrder.CurrentOrderManager.removeOrderCustomization
 
+/**
+ * creates a check button that updates order.
+ * @param selectionName name of customization topping/side
+ * @param customizationCategory category of item type (topping/side)
+ */
 @Composable
 fun CheckButtonFor(selectionName: String, customizationCategory: String) {
     var checked by remember { mutableStateOf(false) }

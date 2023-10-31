@@ -10,10 +10,10 @@ import edu.hanover.hc24_luuk_crawford_senior_project.composables.AppNavHost
 import edu.hanover.hc24_luuk_crawford_senior_project.services.downloadMenuFirebase
 import edu.hanover.hc24_luuk_crawford_senior_project.services.downloadMenuLocal
 
-//This setups loading to make my composable's work.
-//- Starts AppNavHost
-
-//var mySelections = mutableListOf<String>()
+/**
+ *On app launch
+ *Starts AppNavHost (the composable that changes pages)
+ */
 val firebaseIsEnabled = true
 class MainActivity : ComponentActivity() {
 

@@ -11,6 +11,9 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.sp
 import com.zybooks.hc24_luuk_crawford_senior_project.R
 
+/**
+ * Colege name in big text.
+ */
 @Composable
 fun hcLogoText() {
     Text(

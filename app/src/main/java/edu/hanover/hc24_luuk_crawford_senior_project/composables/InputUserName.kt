@@ -19,6 +19,10 @@ import androidx.compose.ui.unit.sp
 import edu.hanover.hc24_luuk_crawford_senior_project.data.currentOrder.CurrentOrderManager.getUserName
 import edu.hanover.hc24_luuk_crawford_senior_project.data.currentOrder.CurrentOrderManager.setUsersName
 
+/**
+ * box to for user to input their name.
+ * sets name to the current order.
+ */
 @Composable
 fun inputUserName() {
     Box(

@@ -12,11 +12,13 @@ import edu.hanover.hc24_luuk_crawford_senior_project.composables.beginOrderButto
 import edu.hanover.hc24_luuk_crawford_senior_project.composables.inputUserName
 import edu.hanover.hc24_luuk_crawford_senior_project.composables.locationInfoLogo
 
-/*
-* This is the starting screen.
-* - shows underground and school name and such
-* - button to navigate to menu
-* */
+/**
+ * This is the starting screen.
+ * shows underground and school name and such
+ * box to input name
+ * button to navigate to menu
+ * @param onNavigateToMenu needs function to change page to Menu.
+ * */
 @Composable
 fun WelcomeScreen(onNavigateToMenu: () -> Unit) {
     Column {

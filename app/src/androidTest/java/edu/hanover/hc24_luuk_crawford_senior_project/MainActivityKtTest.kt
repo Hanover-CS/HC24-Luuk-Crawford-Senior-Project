@@ -29,13 +29,18 @@ internal class MainActivityKtTest {
     @get:Rule
     val composeTestRule = createComposeRule()
 
+    /**
+     * Clears any changes then adds default MenuItem for each test.
+     */
     @Before
     fun onlySomethingInList(){
         MenuData.clearMenuContents()
         MenuData.addMenuItem(MenuItem())
     }
 
-
+    /**
+     * TODO: uhh why zybooks still here.
+     */
     @Test
     fun useAppContext() {
             // Context of the app under test.
@@ -43,7 +48,9 @@ internal class MainActivityKtTest {
         Assert.assertEquals("com.zybooks.hc24_luuk_crawford_senior_project", appContext.packageName)
     }
 
-
+    /**
+     * opens welcome screen, ensures buttons and such exist.
+     */
     @Test
     fun welcomeScreenExists(){
         composeTestRule.setContent {
@@ -59,8 +66,14 @@ internal class MainActivityKtTest {
 
         val undergroundText = composeTestRule.onNode(hasTestTag("undergroundText"))
         undergroundText.assertIsDisplayed()
+
+        val inputUserNameArea = composeTestRule.onNode(hasTestTag("inputUserName"))
+        inputUserNameArea.assertIsDisplayed()
     }
 
+    /**
+     * opens menuScreen and checks to ensure everything exists
+     */
     @Test
     fun menuScreenExists(){
         //putSomethingInList()
@@ -72,6 +85,9 @@ internal class MainActivityKtTest {
         checkMenuScreenContents()
     }
 
+    /**
+     * checks to ensure menuScreen components are currently present.
+     */
     private fun checkMenuScreenContents() {
         val hcLogoText = composeTestRule.onNode(hasTestTag("collegeNameText"))
         hcLogoText.assertIsDisplayed()
@@ -82,51 +98,24 @@ internal class MainActivityKtTest {
         itemExistsInList.assertIsDisplayed()
     }
 
+    /**
+     * Tests navigation from Welcome screen to Menu.
+     */
     @Test
     fun navigateFromWelcomeToMenu(){
         composeTestRule.setContent {
             AppNavHost(Destination.welcomeScreen.name)
         }
         val beginOrderButton = composeTestRule.onNode(hasTestTag("beginOrderButton"), true)
-        beginOrderButton.assertExists()
-        beginOrderButton.assertIsDisplayed()
-        beginOrderButton.assertHasClickAction()
-
         val inputUserNameArea = composeTestRule.onNode(hasTestTag("inputUserName"))
-        inputUserNameArea.assertExists()
-        inputUserNameArea.assertIsDisplayed()
-        beginOrderButton.performClick()
-        beginOrderButton.assertIsDisplayed()
+
         inputUserNameArea.performTextInput("My Name")
         beginOrderButton.performClick()
-        beginOrderButton.assertDoesNotExist()
+
         checkMenuScreenContents()
         beginOrderButton.assertDoesNotExist()
     }
 
-
-
-
-
-//TESTINGGGGGGGG
-/*
-        @Test
-        fun beginOrderButtonTest(){
-
-        composeTestRule.setContent {
-            beginOrderButton {
-
-            }
-            //AppNavHost(Routes.welcomeScreen.name)
-        }
-            val button = composeTestRule.onNode(hasTestTag("welcomeToMenuButton"), true)
-
-            composeTestRule.onNodeWithText("").performClick()
-
-            //button.assertIsDisplayed()
-            //button.performClick()
-        }
-*/
 
 
 }

@@ -14,6 +14,10 @@ import coil.compose.rememberAsyncImagePainter
 import com.zybooks.hc24_luuk_crawford_senior_project.R
 import edu.hanover.hc24_luuk_crawford_senior_project.data.MenuItem
 
+/**
+ * Loads imange and name of input menuItem
+ * @param menuItem MenuItem to display
+ */
 @Composable
 fun imageAndTextFor(menuItem: MenuItem) {
     Row {

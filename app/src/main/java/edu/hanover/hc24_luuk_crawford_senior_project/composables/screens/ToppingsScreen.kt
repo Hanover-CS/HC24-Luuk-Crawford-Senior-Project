@@ -31,7 +31,11 @@ import edu.hanover.hc24_luuk_crawford_senior_project.data.currentOrder.submitCur
 import edu.hanover.hc24_luuk_crawford_senior_project.data.UserOrder
 import edu.hanover.hc24_luuk_crawford_senior_project.data.currentOrder.CurrentOrderManager.getCurrentOrderTime
 
-//start order, ID,
+/**
+ * Toppings screen
+ * @param onNavigateToOrders needs function to change page to Orders.
+ * @param order the order it needs to load customizations for.
+ */
 @Composable
 fun ToppingsScreen(onNavigateToOrders: () -> Unit,order: UserOrder) {
     val itemCustomization = getCustomizationOfItemID(order.itemID)

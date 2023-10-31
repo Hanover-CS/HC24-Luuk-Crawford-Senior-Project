@@ -8,6 +8,11 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 
+/**
+ * creates checkbox for the list of a certain category.
+ * @param itemList the list to turn into checkboxes
+ * @param customizationCategory category list belongs to
+ */
 @Composable
 @OptIn(ExperimentalLayoutApi::class)
 fun createCheckboxForEach(itemList: List<String>, customizationCategory: String) {

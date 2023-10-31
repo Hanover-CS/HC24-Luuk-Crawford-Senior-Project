@@ -13,11 +13,15 @@ import edu.hanover.hc24_luuk_crawford_senior_project.composables.screens.OrdersS
 import edu.hanover.hc24_luuk_crawford_senior_project.composables.screens.ToppingsScreen
 import edu.hanover.hc24_luuk_crawford_senior_project.composables.screens.WelcomeScreen
 
-/*
-Nav host is the composable manager
-- set start location
-- handles which composable to load when triggered
- */
+
+/**
+ * Nav host is the composable manager
+ * set start location
+ * handles which composable to load when triggered
+ * It is set up like this to prevent giving navController itself to everything.
+ * @param startDestination Which composable to start at (string). Defaults to WelcomeScreen.
+ * @param navController handles navigation navController.navigate (Destination name). Defaults rememberNavController()
+ *///TODO: remove modifier?
 @Composable
 fun AppNavHost(
     startDestination: String = Destination.welcomeScreen.name,

@@ -7,6 +7,12 @@ import com.zybooks.hc24_luuk_crawford_senior_project.R
 import edu.hanover.hc24_luuk_crawford_senior_project.data.currentOrder.CurrentOrderManager.getCurrentOrderTime
 import java.util.Date
 
+/**
+ * adds order to database.
+ * notifies user with toast popups.
+ * @param onNavigateToOrders needs function to change page to Orders.
+ * @param context where the toast popup should happen
+ */
 fun submitCurrentOrder(onNavigateToOrders: () -> Unit, context: Context) {
     CurrentOrderManager.setCurrentOrderTime()
 

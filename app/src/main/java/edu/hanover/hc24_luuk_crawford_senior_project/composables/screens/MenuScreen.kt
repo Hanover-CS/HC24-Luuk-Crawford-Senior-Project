@@ -26,6 +26,10 @@ import edu.hanover.hc24_luuk_crawford_senior_project.composables.imageAndTextFor
 import edu.hanover.hc24_luuk_crawford_senior_project.data.MenuData
 import edu.hanover.hc24_luuk_crawford_senior_project.data.currentOrder.CurrentOrderManager.setOrderItemID
 import edu.hanover.hc24_luuk_crawford_senior_project.services.downloadMenuFirebase
+/**
+ * MenuScreen to view column of food options in menu (menuItemList).
+ * @param onNavigateToToppings needs function to change page to Toppings.
+ */
 
 @Composable
 fun MenuScreen(onNavigateToToppings: () -> Unit) {
