@@ -100,6 +100,7 @@ internal class MainActivityKtTest {
 
     /**
      * Tests navigation from Welcome screen to Menu.
+     * performs text input to allow navigation.
      */
     @Test
     fun navigateFromWelcomeToMenu(){
@@ -114,6 +115,22 @@ internal class MainActivityKtTest {
 
         checkMenuScreenContents()
         beginOrderButton.assertDoesNotExist()
+    }
+
+    /**
+     * ensures it does not switch pages without a name
+     * (beginOrderButton would go away if page changed)
+     */
+    @Test
+    fun preventNavigateFromWelcomeToMenu(){
+        composeTestRule.setContent {
+            AppNavHost(Destination.welcomeScreen.name)
+        }
+        val beginOrderButton = composeTestRule.onNode(hasTestTag("beginOrderButton"), true)
+
+        beginOrderButton.performClick()
+
+        beginOrderButton.assertIsDisplayed()
     }
 
 
