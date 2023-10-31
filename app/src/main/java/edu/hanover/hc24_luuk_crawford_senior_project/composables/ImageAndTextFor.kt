@@ -28,7 +28,6 @@ fun imageAndTextFor(menuItem: MenuItem) {
         )
         Column(Modifier.padding(10.dp)) {
             Text(text = menuItem.name)
-            Text(text = "test")
         }
     }
 }
