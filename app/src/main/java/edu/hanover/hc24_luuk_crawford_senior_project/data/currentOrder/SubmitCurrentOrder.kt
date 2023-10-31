@@ -10,6 +10,7 @@ import java.util.Date
 /**
  * adds order to database.
  * notifies user with toast popups.
+ * navigates to Orders page on success
  * @param onNavigateToOrders needs function to change page to Orders.
  * @param context where the toast popup should happen
  */

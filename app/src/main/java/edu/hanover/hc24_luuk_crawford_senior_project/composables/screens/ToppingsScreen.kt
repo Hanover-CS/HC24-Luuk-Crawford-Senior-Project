@@ -53,6 +53,10 @@ fun ToppingsScreen(onNavigateToOrders: () -> Unit,order: UserOrder) {
     }
 }
 
+/**
+ * Creates button to submit order / navigate to Orders screen.
+ * @param onNavigateToOrders needs function to change page to Orders.
+ */
 @Composable
 fun SubmitOrderButton(onNavigateToOrders: () -> Unit) {
     val context = LocalContext.current
