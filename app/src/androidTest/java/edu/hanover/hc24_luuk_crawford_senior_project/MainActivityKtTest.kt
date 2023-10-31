@@ -1,7 +1,6 @@
 package edu.hanover.hc24_luuk_crawford_senior_project
 
 
-import androidx.compose.ui.test.assertHasClickAction
 import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.hasTestTag
 import androidx.compose.ui.test.junit4.createComposeRule
@@ -58,6 +57,30 @@ internal class MainActivityKtTest {
 
             }
         }
+        checkWelcomeScreenDisplayed()
+    }
+
+    /**
+     * Tests navigation from Welcome screen to Menu.
+     * performs text input to allow navigation.
+     */
+    @Test
+    fun navigateFromWelcomeToMenu(){
+        composeTestRule.setContent {
+            AppNavHost(Destination.welcomeScreen.name)
+        }
+        val beginOrderButton = composeTestRule.onNode(hasTestTag("beginOrderButton"), true)
+        val inputUserNameArea = composeTestRule.onNode(hasTestTag("inputUserName"))
+
+        inputUserNameArea.assertExists()
+        inputUserNameArea.performTextInput("My Name")
+        beginOrderButton.performClick()
+
+        checkMenuScreenContents()
+        beginOrderButton.assertDoesNotExist()
+    }
+
+    private fun checkWelcomeScreenDisplayed() {
         val beginOrderButton = composeTestRule.onNode(hasTestTag("beginOrderButton"), true)
         beginOrderButton.assertIsDisplayed()
 
@@ -99,38 +122,24 @@ internal class MainActivityKtTest {
     }
 
     /**
-     * Tests navigation from Welcome screen to Menu.
-     * performs text input to allow navigation.
-     */
-    @Test
-    fun navigateFromWelcomeToMenu(){
-        composeTestRule.setContent {
-            AppNavHost(Destination.welcomeScreen.name)
-        }
-        val beginOrderButton = composeTestRule.onNode(hasTestTag("beginOrderButton"), true)
-        val inputUserNameArea = composeTestRule.onNode(hasTestTag("inputUserName"))
-
-        inputUserNameArea.performTextInput("My Name")
-        beginOrderButton.performClick()
-
-        checkMenuScreenContents()
-        beginOrderButton.assertDoesNotExist()
-    }
-
-    /**
      * ensures it does not switch pages without a name
      * (beginOrderButton would go away if page changed)
      */
     @Test
-    fun preventNavigateFromWelcomeToMenu(){
+    fun noNamePreventNavigateFromWelcomeToMenu(){
         composeTestRule.setContent {
             AppNavHost(Destination.welcomeScreen.name)
         }
+
+        checkWelcomeScreenDisplayed()
+
         val beginOrderButton = composeTestRule.onNode(hasTestTag("beginOrderButton"), true)
+        val inputUserNameArea = composeTestRule.onNode(hasTestTag("inputUserName"))
 
         beginOrderButton.performClick()
-
-        beginOrderButton.assertIsDisplayed()
+        inputUserNameArea.performTextInput("")
+        beginOrderButton.performClick()
+        checkWelcomeScreenDisplayed()
     }
 
 
