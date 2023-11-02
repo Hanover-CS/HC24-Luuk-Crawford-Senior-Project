@@ -46,6 +46,6 @@ fun AppNavHost(
 
         composable(Destination.toppingsScreen.name) { ToppingsScreen( onNavigateToOrdersScreen,getCurrentUserOrder()) }
 
-        composable(Destination.ordersScreen.name){ OrdersScreen()}
+        composable(Destination.ordersScreen.name){ OrdersScreen(onNavigateToOrdersScreen)}
     }
 }
