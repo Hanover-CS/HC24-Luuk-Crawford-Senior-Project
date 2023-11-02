@@ -19,9 +19,6 @@ import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 
-//import org.robolectric.RobolectricTestRunner
-
-//@RunWith(RobolectricTestRunner::class)
 @RunWith(AndroidJUnit4::class)
 internal class MainActivityKtTest {
 
@@ -99,10 +96,8 @@ internal class MainActivityKtTest {
      */
     @Test
     fun menuScreenExists(){
-        //putSomethingInList()
 
         composeTestRule.setContent {
-            //MenuScreen()
             AppNavHost(Destination.menuScreen.name)
         }
         checkMenuScreenContents()

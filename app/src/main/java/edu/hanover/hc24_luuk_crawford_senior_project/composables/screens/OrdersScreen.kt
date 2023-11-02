@@ -21,6 +21,7 @@ import edu.hanover.hc24_luuk_crawford_senior_project.data.UserOrder
 var downloadedList = mutableListOf<UserOrder>()
 /**
  * View current active orders
+ * TODO: THIS SECTION WIP not cleaned
  */
 @Composable
 fun OrdersScreen(onNavigateToOrders: () -> Unit) {
@@ -51,7 +52,7 @@ fun OrdersScreen(onNavigateToOrders: () -> Unit) {
 
 
                     }
-                
+
 
             }
         } else {
@@ -61,10 +62,7 @@ fun OrdersScreen(onNavigateToOrders: () -> Unit) {
             downloadOrders(onNavigateToOrders)
         }
     }
-    
 
-
-    //wait(1000)
 
 
 

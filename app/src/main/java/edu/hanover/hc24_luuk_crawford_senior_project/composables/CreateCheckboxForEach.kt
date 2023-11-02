@@ -16,7 +16,6 @@ import androidx.compose.runtime.setValue
 @Composable
 @OptIn(ExperimentalLayoutApi::class)
 fun createCheckboxForEach(itemList: List<String>, customizationCategory: String) {
-    //var checkedItems by remember { mutableStateOf(emptyList<String>()) }
     FlowRow {
         for (item in itemList) {
             CheckButtonFor(selectionName = item, customizationCategory)

@@ -25,7 +25,6 @@ fun WelcomeScreen(onNavigateToMenu: () -> Unit) {
         locationInfoLogo()
         Spacer(modifier = Modifier.height(20.dp))
         inputUserName()
-        //inputID()
         beginOrderButton(onNavigateToMenu)
     }
 }
