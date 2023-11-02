@@ -9,7 +9,7 @@ data class UserOrder(
     var user: String,
     var userID: Int,
     val orderID: Int,
-    var itemID: Int,
+    var itemID: Long,
     var customization: Customization,
     var itemStatus: ItemStatus,
     var orderTime: Date?,

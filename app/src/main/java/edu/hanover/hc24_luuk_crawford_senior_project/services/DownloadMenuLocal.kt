@@ -1,7 +1,6 @@
 package edu.hanover.hc24_luuk_crawford_senior_project.services
 
 import edu.hanover.hc24_luuk_crawford_senior_project.data.Customization
-import edu.hanover.hc24_luuk_crawford_senior_project.data.MenuData
 import edu.hanover.hc24_luuk_crawford_senior_project.data.MenuData.Companion.addCustomizationOption
 import edu.hanover.hc24_luuk_crawford_senior_project.data.MenuData.Companion.addMenuItem
 import edu.hanover.hc24_luuk_crawford_senior_project.data.MenuData.Companion.clearMenuContents
@@ -18,14 +17,14 @@ fun downloadMenuLocal(){
     //customizationType.clear()
     val menuExample = MenuItem(
         name = "Hamburger__Test",
-        id = 100,
+        id = 100L,
         customizationType = "Burger",
         imageLink = "https://i.imgur.com/N22z5gY.jpeg"
     )
     addMenuItem(menuExample)
     val menuExample2 = MenuItem(
         name = "VeggieBurgerTest",
-        id = 101,
+        id = 101L,
         customizationType = "Burger",
         imageLink = "https://i.imgur.com/K6alfDv.jpeg"
     )

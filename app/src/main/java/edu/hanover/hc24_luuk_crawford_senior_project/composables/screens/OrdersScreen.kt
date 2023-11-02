@@ -129,10 +129,10 @@ fun createUserOrderFrom(order: Map<String, Any>): UserOrder {
     val endTimeFixed = endTime?.toDate()
 
     return UserOrder(
-        user = "${order["user"]}",
-        userID = "${order["userID"]}".toInt(),
-        orderID = "${order["orderID"]}".toInt(),
-        itemID = "${order["itemID"]}".toInt(),
+        user = order["user"] as String,
+        userID = order["userID"] as Int,
+        orderID = order["orderID"] as Int,
+        itemID = order["itemID"] as Long,
         customization = Customization(
             customizationMap["sides"] as MutableList<String>,
             customizationMap["toppings"] as MutableList<String>

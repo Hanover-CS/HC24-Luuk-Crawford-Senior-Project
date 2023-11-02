@@ -12,7 +12,7 @@ import java.util.Date
 object CurrentOrderManager {
 
     private val currentOrder =
-        UserOrder("", 0, 0, 0, Customization(), ItemStatus.inProgress, Date(1), null)
+        UserOrder("", 0, 0, 0L, Customization(), ItemStatus.inProgress, Date(1), null)
 
     fun getCurrentUserOrder(): UserOrder {
         return currentOrder
@@ -27,7 +27,7 @@ object CurrentOrderManager {
     }
 
 
-    fun setOrderItemID(id: Int) {
+    fun setOrderItemID(id: Long) {
         currentOrder.itemID = id
     }
 

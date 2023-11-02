@@ -45,7 +45,7 @@ class itemListTest {
     fun createItemFromFoodTest() {
         val food = mapOf(
             "name" to "candy Apple",
-            "id" to 300,
+            "id" to 300L,
             "customizationType" to "burger",
             "imageLink" to "www.something../jpeg"
         )
@@ -64,7 +64,7 @@ class itemListTest {
     fun createItemFromFoodTestSmallDifferences(){
         val food = mapOf(
             "name" to "veggie Burger",
-            "id" to 10,
+            "id" to 10L,
             "customizationType" to "burger",
             "imageLink" to "www.something../jpeg"
         )
