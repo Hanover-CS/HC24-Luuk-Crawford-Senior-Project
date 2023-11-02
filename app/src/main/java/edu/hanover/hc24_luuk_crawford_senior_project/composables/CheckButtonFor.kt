@@ -49,14 +49,8 @@ fun CheckButtonFor(selectionName: String, customizationCategory: String) {
         })
         if (checked) {
             addOrderCustomization(selectionName,customizationCategory)
-            //mySelections.add(selectionName)
-            //Log.d(ContentValues.TAG, "added ${selectionName}")
-            //Log.d(ContentValues.TAG, mySelections.toString())
         } else {
             removeOrderCustomization(selectionName,customizationCategory)
-            //mySelections.remove(selectionName)
-            //Log.d(ContentValues.TAG, "removed ${selectionName}")
-            //Log.d(ContentValues.TAG, mySelections.toString())
         }
         Text(selectionName, Modifier.weight(1f))
     }
