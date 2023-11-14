@@ -24,6 +24,7 @@ import com.zybooks.hc24_luuk_crawford_senior_project.R
 import edu.hanover.hc24_luuk_crawford_senior_project.activities.firebaseIsEnabled
 import edu.hanover.hc24_luuk_crawford_senior_project.data.currentOrder.CurrentOrderManager
 import edu.hanover.hc24_luuk_crawford_senior_project.data.currentOrder.submitCurrentOrder
+import edu.hanover.hc24_luuk_crawford_senior_project.data.currentOrder.toastShow
 
 /**
  * Creates button to submit order / navigate to Orders screen.
@@ -46,6 +47,9 @@ fun SubmitOrderButton(onNavigateToOrders: () -> Unit) {
                 if (firebaseIsEnabled) {
                     if (25000 < (System.currentTimeMillis() - CurrentOrderManager.getCurrentOrderTime()!!.time)) {
                         submitCurrentOrder(onNavigateToOrders, context)
+                    }
+                    else{
+                        toastShow(context, R.string.alreadyOrderedRecently)
                     }
                 }
             },

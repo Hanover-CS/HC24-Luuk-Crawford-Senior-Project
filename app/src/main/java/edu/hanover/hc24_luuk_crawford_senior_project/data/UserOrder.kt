@@ -7,8 +7,8 @@ import java.util.Date
  */
 data class UserOrder(
     var user: String,
-    var userID: Int,
-    val orderID: Int,
+    var userID: Long,
+    val orderID: Long,
     var itemID: Long,
     var customization: Customization,
     var itemStatus: ItemStatus,

@@ -4,8 +4,6 @@ import android.content.Context
 import android.widget.Toast
 import com.google.firebase.firestore.FirebaseFirestore
 import com.zybooks.hc24_luuk_crawford_senior_project.R
-import edu.hanover.hc24_luuk_crawford_senior_project.data.currentOrder.CurrentOrderManager.getCurrentOrderTime
-import java.util.Date
 
 /**
  * adds order to database.
@@ -14,6 +12,7 @@ import java.util.Date
  * @param onNavigateToOrders needs function to change page to Orders.
  * @param context where the toast popup should happen
  */
+
 fun submitCurrentOrder(onNavigateToOrders: () -> Unit, context: Context) {
     CurrentOrderManager.setCurrentOrderTime()
 
@@ -29,19 +28,19 @@ fun submitCurrentOrder(onNavigateToOrders: () -> Unit, context: Context) {
         .document("orders/${orderID}")
         .set(CurrentOrderManager.getCurrentUserOrder())
         .addOnSuccessListener {
-            showTryingToSubmitToast.cancel()
-            Toast.makeText(
-                context,
-                R.string.orderSubmitted, Toast.LENGTH_LONG
-            )
-                .show()
-            onNavigateToOrders()
+            showTryingToSubmitToast.cancel()//TODO: either allow cancel (UI stuff) or only data
+            toastShow(context, R.string.orderSubmitted)
+            onNavigateToOrders()//TODO: removethis replace with ordersscreenloading?
         }
         .addOnFailureListener {
-            Toast.makeText(
-                context,
-                R.string.connectionFailed, Toast.LENGTH_LONG
-            )
-                .show()
+            toastShow(context, R.string.connectionFailed)
         }
+}
+//TODO: refactor to diff files if I keep this
+fun toastShow(context: Context, rDotStringDotMessage: Int) {
+    Toast.makeText(
+        context,
+        rDotStringDotMessage, Toast.LENGTH_LONG
+    )
+        .show()
 }
