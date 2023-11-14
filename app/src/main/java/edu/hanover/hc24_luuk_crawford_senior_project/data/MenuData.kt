@@ -27,7 +27,12 @@ data class MenuData(
             myMenu.idToMenuItem[menuItem.id] = menuItem
         }
 
-        fun addCustomizationOption(itemName: String, customization: Customization){
+        /**
+         * add name of item and its available toppings to menu
+         * @param itemName name of item (string)
+         * @param customization avialable toppings (Customization type)
+         * */
+        fun addMenuOption(itemName: String, customization: Customization){
             myMenu.customizationOptions[itemName] = customization
         }
 
