@@ -4,7 +4,7 @@ import android.content.ContentValues
 import android.util.Log
 import com.google.firebase.firestore.FirebaseFirestore
 import edu.hanover.hc24_luuk_crawford_senior_project.data.Customization
-import edu.hanover.hc24_luuk_crawford_senior_project.data.MenuData.Companion.addMenuOption
+import edu.hanover.hc24_luuk_crawford_senior_project.data.MenuData.Companion.setItemTypeToCustomization
 
 /**
  * Downloads items and toppings from database.
@@ -28,7 +28,7 @@ private fun downloadToppings(){
                     val sides = (customizationData["sides"] as? MutableList<String>) ?: mutableListOf()
                     val toppings = (customizationData["toppings"] as? MutableList<String>) ?: mutableListOf()
 
-                    addMenuOption(itemType.id,Customization(sides, toppings))
+                    setItemTypeToCustomization(itemType.id,Customization(sides, toppings))
                 }
             } else {
                 Log.d(ContentValues.TAG, "No such document")

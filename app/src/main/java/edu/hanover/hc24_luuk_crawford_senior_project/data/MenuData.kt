@@ -29,18 +29,18 @@ data class MenuData(
 
         /**
          * add name of item and its available toppings to menu
-         * @param itemName name of item (string)
+         * @param itemType name of item type (string)
          * @param customization avialable toppings (Customization type)
          * */
-        fun addMenuOption(itemName: String, customization: Customization){
-            myMenu.customizationOptions[itemName] = customization
+        fun setItemTypeToCustomization(itemType: String, customization: Customization){
+            myMenu.customizationOptions[itemType] = customization
         }
 
         fun getCustomizationTypeOfItemID(id: Long): String{
             return myMenu.idToMenuItem[id]!!.customizationType
         }
 
-        fun getCustomizationOfItemID(id: Long): Customization{
+        fun getCustomizationOptionsOfItemID(id: Long): Customization{
             val customizationType = getCustomizationTypeOfItemID(id)
             return myMenu.customizationOptions[customizationType]!!
         }

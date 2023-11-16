@@ -1,7 +1,7 @@
 package edu.hanover.hc24_luuk_crawford_senior_project.services
 
 import edu.hanover.hc24_luuk_crawford_senior_project.data.Customization
-import edu.hanover.hc24_luuk_crawford_senior_project.data.MenuData.Companion.addMenuOption
+import edu.hanover.hc24_luuk_crawford_senior_project.data.MenuData.Companion.setItemTypeToCustomization
 import edu.hanover.hc24_luuk_crawford_senior_project.data.MenuData.Companion.addMenuItem
 import edu.hanover.hc24_luuk_crawford_senior_project.data.MenuData.Companion.clearMenuContents
 import edu.hanover.hc24_luuk_crawford_senior_project.data.MenuItem
@@ -34,7 +34,7 @@ fun downloadMenuLocal(){
     val burgerToppings =
         mutableListOf("Lettuce Test", "Tomato", "Onion Test", "Pickle", "Cheese", "Bacon")
     //customizationType["Burger"] = Customization(burgerSides, burgerToppings)
-    addMenuOption("Burger",Customization(burgerSides, burgerToppings))
+    setItemTypeToCustomization("Burger",Customization(burgerSides, burgerToppings))
     val quesadillaToppings = mutableListOf(
         "Rice Test",
         "Black Beans",
@@ -51,6 +51,6 @@ fun downloadMenuLocal(){
     )
     val quesadillaSides = mutableListOf<String>()//no sides
     //customizationType["Quesadilla"] = Customization(quesadillaSides, quesadillaToppings)
-    addMenuOption("Quesadilla", Customization(quesadillaSides, quesadillaToppings))
+    setItemTypeToCustomization("Quesadilla", Customization(quesadillaSides, quesadillaToppings))
     //return MenuData(menuList,customizationType)
 }

@@ -8,7 +8,7 @@ import com.zybooks.hc24_luuk_crawford_senior_project.R
 import edu.hanover.hc24_luuk_crawford_senior_project.composables.SubmitOrderButton
 import edu.hanover.hc24_luuk_crawford_senior_project.composables.createCheckboxForEach
 import edu.hanover.hc24_luuk_crawford_senior_project.composables.imageAndTextFor
-import edu.hanover.hc24_luuk_crawford_senior_project.data.MenuData.Companion.getCustomizationOfItemID
+import edu.hanover.hc24_luuk_crawford_senior_project.data.MenuData.Companion.getCustomizationOptionsOfItemID
 import edu.hanover.hc24_luuk_crawford_senior_project.data.MenuData.Companion.getMenuItemFromOrderID
 import edu.hanover.hc24_luuk_crawford_senior_project.data.UserOrder
 
@@ -19,7 +19,7 @@ import edu.hanover.hc24_luuk_crawford_senior_project.data.UserOrder
  */
 @Composable
 fun ToppingsScreen(onNavigateToOrders: () -> Unit,order: UserOrder) {
-    val itemCustomization = getCustomizationOfItemID(order.itemID)
+    val itemCustomization = getCustomizationOptionsOfItemID(order.itemID)
     Column {
         Text(text = "This is the toppings screen!")
         imageAndTextFor(menuItem = getMenuItemFromOrderID(order.itemID))
