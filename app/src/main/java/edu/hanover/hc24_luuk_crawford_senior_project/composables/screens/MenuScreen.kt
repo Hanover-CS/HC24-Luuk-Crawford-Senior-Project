@@ -30,7 +30,6 @@ import edu.hanover.hc24_luuk_crawford_senior_project.services.downloadMenuFireba
  * MenuScreen to view column of food options in menu (menuItemList).
  * @param onNavigateToToppings needs function to change page to Toppings.
  */
-
 @Composable
 fun MenuScreen(onNavigateToToppings: () -> Unit) {
     hcLogoText()
@@ -40,7 +39,6 @@ fun MenuScreen(onNavigateToToppings: () -> Unit) {
             Spacer(modifier = Modifier.height(70.dp))
             Text(text = stringResource(R.string.menu_could_not_be_found))
         }
-
     }
     LazyColumn {
         item {

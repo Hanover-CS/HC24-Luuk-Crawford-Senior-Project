@@ -14,11 +14,11 @@ import edu.hanover.hc24_luuk_crawford_senior_project.data.UserOrder
 
 /**
  * Toppings screen
- * @param onNavigateToOrders needs function to change page to Orders.
+ * @param onNavigate needs function to change page.
  * @param order the order it needs to load customizations for.
  */
 @Composable
-fun ToppingsScreen(onNavigateToOrders: () -> Unit,order: UserOrder) {
+fun ToppingsScreen(onNavigate: () -> Unit, order: UserOrder) {
     val itemCustomization = getCustomizationOptionsOfItemID(order.itemID)
     Column {
         Text(text = "This is the toppings screen!")
@@ -30,7 +30,7 @@ fun ToppingsScreen(onNavigateToOrders: () -> Unit,order: UserOrder) {
         Text(text = stringResource(R.string.sides))
         createCheckboxForEach(itemCustomization.sides, "sides")
 
-        SubmitOrderButton(onNavigateToOrders)
+        SubmitOrderButton(onNavigate)
     }
 }
 
