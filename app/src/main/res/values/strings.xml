@@ -41,5 +41,6 @@
     <string name="menu_could_not_be_found">Menu could not be found. Please try again.</string>
     <string name="alreadyOrderedRecently">Sorry, you already ordered recently.</string>
     <string name="refresh">Refresh</string>
+    <string name="yourName">Your name:</string>
 
 </resources>

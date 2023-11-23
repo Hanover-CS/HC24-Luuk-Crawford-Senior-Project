@@ -21,15 +21,13 @@ import edu.hanover.hc24_luuk_crawford_senior_project.composables.screens.Welcome
  * It is set up like this to prevent giving navController itself to everything.
  * @param startDestination Which composable to start at (string). Defaults to WelcomeScreen.
  * @param navController handles navigation navController.navigate (Destination name). Defaults rememberNavController()
- *///TODO: remove modifier?
+ */
 @Composable
 fun AppNavHost(
     startDestination: String = Destination.welcomeScreen.name,
-    modifier: Modifier = Modifier,
     navController: NavHostController = rememberNavController()
 ) {
     NavHost(
-        modifier = modifier,
         navController = navController,
         startDestination = startDestination
     ) {

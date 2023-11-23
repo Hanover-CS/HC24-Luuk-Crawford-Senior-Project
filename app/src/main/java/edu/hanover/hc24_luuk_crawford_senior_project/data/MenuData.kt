@@ -13,7 +13,6 @@ data class MenuData(
     companion object {
         private var myMenu = MenuData(mutableListOf<MenuItem>(), mutableMapOf<String, Customization>(),mutableMapOf<Long, MenuItem>())
 
-
         fun get(): MenuData {
             return myMenu
         }

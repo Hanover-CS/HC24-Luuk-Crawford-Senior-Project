@@ -10,11 +10,7 @@ import edu.hanover.hc24_luuk_crawford_senior_project.data.MenuItem
  * local menu for testing
  */
 fun downloadMenuLocal(){
-    //myMenuList.clear()
     clearMenuContents()
-    //val menuList = mutableListOf<MenuItem>()
-    //val customizationType = mutableMapOf<String, Customization>()
-    //customizationType.clear()
     val menuExample = MenuItem(
         name = "Hamburger__Test",
         id = 100L,
@@ -33,7 +29,6 @@ fun downloadMenuLocal(){
     val burgerSides = mutableListOf("Hand Cut Fries Test", "Mac-N-Cheese", "Tater Tots")
     val burgerToppings =
         mutableListOf("Lettuce Test", "Tomato", "Onion Test", "Pickle", "Cheese", "Bacon")
-    //customizationType["Burger"] = Customization(burgerSides, burgerToppings)
     setItemTypeToCustomization("Burger",Customization(burgerSides, burgerToppings))
     val quesadillaToppings = mutableListOf(
         "Rice Test",
@@ -49,8 +44,6 @@ fun downloadMenuLocal(){
         "Guacamole",
         "Sub Gluten Free"
     )
-    val quesadillaSides = mutableListOf<String>()//no sides
-    //customizationType["Quesadilla"] = Customization(quesadillaSides, quesadillaToppings)
+    val quesadillaSides = mutableListOf<String>()
     setItemTypeToCustomization("Quesadilla", Customization(quesadillaSides, quesadillaToppings))
-    //return MenuData(menuList,customizationType)
 }

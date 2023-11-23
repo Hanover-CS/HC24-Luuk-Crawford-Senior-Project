@@ -36,7 +36,6 @@ fun CheckButtonFor(selectionName: String, customizationCategory: String) {
                 onValueChange = {
                     checked = !checked
                 }
-
             )
             .padding(10.dp)
             .wrapContentWidth()
