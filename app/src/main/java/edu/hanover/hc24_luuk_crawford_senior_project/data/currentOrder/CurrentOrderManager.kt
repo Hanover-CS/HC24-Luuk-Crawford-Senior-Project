@@ -12,7 +12,7 @@ import java.util.Date
 object CurrentOrderManager {
 
     private val currentOrder =
-        UserOrder("", 0, 0, 0L, Customization(), ItemStatus.inProgress, Date(1), null)
+        UserOrder("", 0, 0, 0L, Customization(), ItemStatus.inProgress, 404L, null)
 
     fun getCurrentUserOrder(): UserOrder {
         return currentOrder
@@ -63,10 +63,10 @@ object CurrentOrderManager {
     }
 
     fun setCurrentOrderTime() {
-        currentOrder.orderTime = Date(System.currentTimeMillis())
+        currentOrder.orderTime = System.currentTimeMillis()
     }
 
-    fun getCurrentOrderTime(): Date? {
+    fun getCurrentOrderTime(): Long {
         return currentOrder.orderTime
     }
 

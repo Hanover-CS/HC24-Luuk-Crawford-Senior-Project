@@ -73,11 +73,9 @@ fun createUserOrderFrom(order: Map<String, Any>): UserOrder {
         "cancelled" -> ItemStatus.cancelled
         else -> ItemStatus.inProgress
     }
-    val orderTime = order["orderTime"] as com.google.firebase.Timestamp
-    val orderTimeFixed = orderTime.toDate()
+    val orderTime = order["orderTime"]
 
-    val endTime = order["orderEndTime"] as? com.google.firebase.Timestamp
-    val endTimeFixed = endTime?.toDate()
+    val endTime = order["orderEndTime"]
 
     return UserOrder(
         user = order["user"] as String,
@@ -89,8 +87,8 @@ fun createUserOrderFrom(order: Map<String, Any>): UserOrder {
             customizationMap["toppings"] as MutableList<String>
         ),
         itemStatus = itemStatus,
-        orderTime = orderTimeFixed,
-        orderEndTime = endTimeFixed
+        orderTime = orderTime as Long,
+        orderEndTime = endTime as Long
     )
 }
 

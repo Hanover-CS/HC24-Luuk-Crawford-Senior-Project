@@ -57,6 +57,7 @@ fun OrdersScreen(onReloadOrders: () -> Unit){
                 }
                 Row() {
                     Text(text = "Time Ordered: ${item.orderTime}")
+                //TODO: convert to readable instead of unix time
                 }
             }
 

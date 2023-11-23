@@ -45,7 +45,7 @@ fun SubmitOrderButton(onNavigateToOrders: () -> Unit) {
             onClick = {
                 submitButtonEnabled = false
                 if (firebaseIsEnabled) {
-                    if (25000 < (System.currentTimeMillis() - CurrentOrderManager.getCurrentOrderTime()!!.time)) {
+                    if (25000 < (System.currentTimeMillis() - CurrentOrderManager.getCurrentOrderTime())){
                         submitCurrentOrder(onNavigateToOrders, context)
                     }
                     else{

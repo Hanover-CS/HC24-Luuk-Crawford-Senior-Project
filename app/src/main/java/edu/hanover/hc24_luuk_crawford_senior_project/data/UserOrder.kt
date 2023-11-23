@@ -12,6 +12,6 @@ data class UserOrder(
     var itemID: Long,
     var customization: Customization,
     var itemStatus: ItemStatus,
-    var orderTime: Date?,
-    var orderEndTime: Date?
+    var orderTime: Long,
+    var orderEndTime: Long?
 )
