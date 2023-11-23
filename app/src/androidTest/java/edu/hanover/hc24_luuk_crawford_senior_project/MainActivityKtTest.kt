@@ -35,11 +35,11 @@ internal class MainActivityKtTest {
     }
 
     /**
-     * TODO: uhh why zybooks still here.
+     * This was an example provided test,
+     * unsure about it needing com.zybooks instead of edu.hanover
      */
     @Test
     fun useAppContext() {
-            // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
         Assert.assertEquals("com.zybooks.hc24_luuk_crawford_senior_project", appContext.packageName)
     }

@@ -21,7 +21,6 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.zybooks.hc24_luuk_crawford_senior_project.R
-import edu.hanover.hc24_luuk_crawford_senior_project.activities.firebaseIsEnabled
 import edu.hanover.hc24_luuk_crawford_senior_project.data.currentOrder.CurrentOrderManager
 import edu.hanover.hc24_luuk_crawford_senior_project.data.currentOrder.submitCurrentOrder
 import edu.hanover.hc24_luuk_crawford_senior_project.data.currentOrder.toastShow
@@ -44,13 +43,11 @@ fun SubmitOrderButton(onNavigateToOrders: () -> Unit) {
         Button(
             onClick = {
                 submitButtonEnabled = false
-                if (firebaseIsEnabled) {
-                    if (25000 < (System.currentTimeMillis() - CurrentOrderManager.getCurrentOrderTime())){
-                        submitCurrentOrder(onNavigateToOrders, context)
-                    }
-                    else{
-                        toastShow(context, R.string.alreadyOrderedRecently)
-                    }
+                if (25000 < (System.currentTimeMillis() - CurrentOrderManager.getCurrentOrderTime())){
+                    submitCurrentOrder(onNavigateToOrders, context)
+                }
+                else{
+                    toastShow(context, R.string.alreadyOrderedRecently)
                 }
             },
             shape = RoundedCornerShape(18.dp),

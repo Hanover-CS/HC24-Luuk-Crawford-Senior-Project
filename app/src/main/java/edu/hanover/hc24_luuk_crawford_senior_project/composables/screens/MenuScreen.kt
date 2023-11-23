@@ -36,7 +36,7 @@ fun MenuScreen(onNavigateToToppings: () -> Unit) {
     hcLogoText()
 
     if (MenuData.get().menuItemList.isEmpty()){
-        Column() {
+        Column {
             Spacer(modifier = Modifier.height(70.dp))
             Text(text = stringResource(R.string.menu_could_not_be_found))
         }
