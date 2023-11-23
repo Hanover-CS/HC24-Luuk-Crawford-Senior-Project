@@ -45,7 +45,7 @@ data class MenuData(
             return myMenu.customizationOptions[customizationType]!!
         }
 
-        fun getMenuItemFromOrderID(id: Long): MenuItem{
+        fun getMenuItemFromItemID(id: Long): MenuItem{
             return myMenu.idToMenuItem[id]!!
         }
     }

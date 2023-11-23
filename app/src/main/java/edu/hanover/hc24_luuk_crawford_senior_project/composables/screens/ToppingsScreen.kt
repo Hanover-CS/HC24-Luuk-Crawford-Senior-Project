@@ -9,7 +9,7 @@ import edu.hanover.hc24_luuk_crawford_senior_project.composables.SubmitOrderButt
 import edu.hanover.hc24_luuk_crawford_senior_project.composables.createCheckboxForEach
 import edu.hanover.hc24_luuk_crawford_senior_project.composables.imageAndTextFor
 import edu.hanover.hc24_luuk_crawford_senior_project.data.MenuData.Companion.getCustomizationOptionsOfItemID
-import edu.hanover.hc24_luuk_crawford_senior_project.data.MenuData.Companion.getMenuItemFromOrderID
+import edu.hanover.hc24_luuk_crawford_senior_project.data.MenuData.Companion.getMenuItemFromItemID
 import edu.hanover.hc24_luuk_crawford_senior_project.data.UserOrder
 
 /**
@@ -22,7 +22,7 @@ fun ToppingsScreen(onNavigateToOrders: () -> Unit,order: UserOrder) {
     val itemCustomization = getCustomizationOptionsOfItemID(order.itemID)
     Column {
         Text(text = "This is the toppings screen!")
-        imageAndTextFor(menuItem = getMenuItemFromOrderID(order.itemID))
+        imageAndTextFor(menuItem = getMenuItemFromItemID(order.itemID))
 
         Text(text = stringResource(R.string.toppings))
         createCheckboxForEach(itemCustomization.toppings, "toppings")

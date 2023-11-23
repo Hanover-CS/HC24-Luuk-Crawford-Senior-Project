@@ -8,11 +8,6 @@ import org.junit.jupiter.api.Assertions.*
 internal class MenuItemTest{
 
     @Test
-    fun test(){
-        TestCase.assertEquals(3, 3)
-    }
-
-    @Test
     fun createDefaultItem(){
         val itemExample = MenuItem()
         assertEquals("default item",itemExample.name)

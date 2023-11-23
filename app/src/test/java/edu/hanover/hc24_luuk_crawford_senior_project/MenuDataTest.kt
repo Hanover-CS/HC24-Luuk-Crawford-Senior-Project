@@ -89,6 +89,23 @@ class MenuDataTest {
 
         assertEquals(customizationBurger,burgerOptionsRecieved)
         assertEquals(customizationPotato, potatoOptionsRecieved)
+
+        assertNotEquals(customizationBurger, potatoOptionsRecieved)
+        assertEquals(customizationBurger.toppings.get(0), burgerOptionsRecieved.toppings.get(0))
+    }
+
+    @Test
+    fun getMenuItemFromItemIDTest(){
+        val customItemBurger = MenuItem("burger", 325, "burgerType", "https something")
+        MenuData.addMenuItem(customItemBurger)
+
+        val customItemPotato = MenuItem("Potato", 220, "customPotato", "https")
+
+
+        val recievedItemBurger = MenuData.getMenuItemFromItemID(325)
+        assertEquals(customItemBurger, recievedItemBurger)
+
+        assertNotEquals(customItemPotato, recievedItemBurger)
     }
 
 }
