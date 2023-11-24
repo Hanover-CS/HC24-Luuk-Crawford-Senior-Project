@@ -36,7 +36,7 @@ internal class MainActivityKtTest {
 
     /**
      * This was an example provided test,
-     * unsure about it needing com.zybooks instead of edu.hanover
+     * folder was originally called zybooks.
      */
     @Test
     fun useAppContext() {
@@ -53,6 +53,7 @@ internal class MainActivityKtTest {
             WelcomeScreen {
 
             }
+
         }
         checkWelcomeScreenDisplayed()
     }
@@ -117,7 +118,22 @@ internal class MainActivityKtTest {
     }
 
     /**
-     * ensures it does not switch pages without a name
+     * opens menuScreen and checks to ensure everything exists
+     */
+    @Test
+    fun menuScreenWorks(){
+
+        composeTestRule.setContent {
+            AppNavHost(Destination.menuScreen.name)
+        }
+        val itemExistsInList = composeTestRule.onNode(hasTestTag("default item"))
+        itemExistsInList.assertIsDisplayed()
+        itemExistsInList.performClick()
+        itemExistsInList
+    }
+
+    /**
+     * ensures it does not switch pages without user's name
      * (beginOrderButton would go away if page changed)
      */
     @Test

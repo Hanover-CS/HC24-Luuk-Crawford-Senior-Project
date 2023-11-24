@@ -15,6 +15,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.unit.dp
 import edu.hanover.hc24_luuk_crawford_senior_project.data.currentOrder.CurrentOrderManager.addOrderCustomization
@@ -45,7 +46,8 @@ fun CheckButtonFor(selectionName: String, customizationCategory: String) {
     ) {
         Checkbox(checked = checked, { newValue ->
             checked = newValue
-        })
+        },
+            modifier = Modifier.testTag(selectionName))
         if (checked) {
             addOrderCustomization(selectionName,customizationCategory)
         } else {
