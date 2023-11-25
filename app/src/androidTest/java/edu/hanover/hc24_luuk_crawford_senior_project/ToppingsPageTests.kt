@@ -91,12 +91,39 @@ internal class ToppingsPageTests {
         }
         navigateFromMenu("ExampleName")
 
-        val checkbox = composeTestRule.onNode(hasTestTag("Bacon"))
-        val toppings = CurrentOrderManager.getCurrentUserOrder().customization.toppings
-        assert(toppings.isEmpty())
+        testToppingsCheckbox("Bacon", "toppings")
+    }
+
+    private fun testToppingsCheckbox(checkboxTestTag: String, customizationCategory: String) {
+        val checkbox = composeTestRule.onNode(hasTestTag(checkboxTestTag))
+        assert(receiveCustomCategoryList(customizationCategory).isEmpty())
+
         checkbox.performClick()
-        //assertEquals(mutableListOf("Bacon"),CurrentOrderManager.getCurrentUserOrder().customization.toppings)
-    //TODO: WIP
+        checkbox.performClick()
+        assertEquals(
+            mutableListOf(checkboxTestTag),
+            receiveCustomCategoryList(customizationCategory)
+        )
+        checkbox.performClick()
+        assert(
+            receiveCustomCategoryList(customizationCategory).isEmpty()
+        )
+    }
+
+    private fun receiveCustomCategoryList(
+        customizationCategory: String
+    ): MutableList<String> {
+        var customList = mutableListOf<String>()
+        when (customizationCategory) {
+            "toppings" -> {
+                customList = CurrentOrderManager.getCurrentUserOrder().customization.toppings
+            }
+            "sides" -> {
+                customList = CurrentOrderManager.getCurrentUserOrder().customization.sides
+            }
+
+        }
+        return customList
     }
 
 }
