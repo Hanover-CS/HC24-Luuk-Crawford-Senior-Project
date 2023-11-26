@@ -47,7 +47,6 @@ internal class ToppingsPageTests {
                 "https://i.imgur.com/BDa36Zp.jpeg"
             )
         )
-
         val burgerSides = mutableListOf("Hand Cut Fries Test", "Mac-N-Cheese", "Tater Tots")
         val burgerToppings =
             mutableListOf("Lettuce Test", "Tomato", "Onion Test", "Pickle", "Cheese", "Bacon")
@@ -58,8 +57,12 @@ internal class ToppingsPageTests {
         MenuData.addMenuItem(MenuItem())
     }
 
+    /**
+     * Loads menuScreen, navigates to toppings.
+     * Confirms toppings contents loaded correctly.
+     */
     @Test
-    fun menuToToppingsPage() {
+    fun menuToToppingsPageTest() {
         composeTestRule.setContent {
             AppNavHost(Destination.menuScreen.name)
         }
@@ -92,6 +95,9 @@ internal class ToppingsPageTests {
         checkbox.assertHasClickAction()
     }
 
+    /**
+     * Clicks button to navigate then makes sure it is no longer displayed.
+     */
     private fun navigateToToppingsWith(itemToClick: String) {
         val itemExistsInList = composeTestRule.onNode(hasTestTag(itemToClick))
         itemExistsInList.assertIsDisplayed()
@@ -100,8 +106,11 @@ internal class ToppingsPageTests {
         itemExistsInList.assertIsNotDisplayed()
     }
 
+    /**
+     * Test to make sure a few checkboxes are interact correctly.
+     */
     @Test
-    fun menuTestSingleCheckbox() {
+    fun menuTestSingleCheckboxTest() {
         composeTestRule.setContent {
             AppNavHost(Destination.menuScreen.name)
         }
@@ -110,23 +119,27 @@ internal class ToppingsPageTests {
         testCheckbox("Tater Tots", "sides")
     }
 
-    private fun testCheckbox(checkboxTestTag: String, customizationCategory: String) {
+    private fun testCheckbox(checkboxTestTag: String, category: String) {
         val checkbox = composeTestRule.onNode(hasTestTag(checkboxTestTag))
-        assert(receiveCustomCategoryList(customizationCategory).isEmpty())
+        assert(receiveCategoryList(category).isEmpty())
 
         checkbox.performClick()
         checkbox.performClick()
         assertEquals(
             mutableListOf(checkboxTestTag),
-            receiveCustomCategoryList(customizationCategory)
+            receiveCategoryList(category)
         )
         checkbox.performClick()
         assert(
-            receiveCustomCategoryList(customizationCategory).isEmpty()
+            receiveCategoryList(category).isEmpty()
         )
     }
 
-    private fun receiveCustomCategoryList(
+    /**
+     * Exists to easily return either .toppings or .sides list.
+     * @return customization category contents in list
+     */
+    private fun receiveCategoryList(
         customizationCategory: String
     ): MutableList<String> {
         var customList = mutableListOf<String>()
@@ -134,7 +147,6 @@ internal class ToppingsPageTests {
             "toppings" -> {
                 customList = CurrentOrderManager.getCurrentUserOrder().customization.toppings
             }
-
             "sides" -> {
                 customList = CurrentOrderManager.getCurrentUserOrder().customization.sides
             }
@@ -142,6 +154,9 @@ internal class ToppingsPageTests {
         return customList
     }
 
+    /**
+     * Test to ensure CurrentOrderManager lists and checkboxes update correctly.
+     */
     @Test
     fun checkboxesModifyListCorrectlyTest() {
         composeTestRule.setContent {
@@ -184,5 +199,4 @@ internal class ToppingsPageTests {
             CurrentOrderManager.getCurrentUserOrder().customization.toppings
         )
     }
-
 }

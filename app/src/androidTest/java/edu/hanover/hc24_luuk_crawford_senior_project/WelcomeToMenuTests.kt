@@ -2,6 +2,7 @@ package edu.hanover.hc24_luuk_crawford_senior_project
 
 
 import androidx.compose.ui.test.assertIsDisplayed
+import androidx.compose.ui.test.assertIsNotDisplayed
 import androidx.compose.ui.test.hasTestTag
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.performClick
@@ -20,7 +21,7 @@ import org.junit.Test
 import org.junit.runner.RunWith
 
 @RunWith(AndroidJUnit4::class)
-internal class MainActivityKtTest {
+internal class WelcomeToMenuTests {
 
     @get:Rule
     val composeTestRule = createComposeRule()
@@ -35,8 +36,7 @@ internal class MainActivityKtTest {
     }
 
     /**
-     * This was an example provided test,
-     * folder was originally called zybooks.
+     * Folder was originally called zybooks.
      */
     @Test
     fun useAppContext() {
@@ -45,25 +45,23 @@ internal class MainActivityKtTest {
     }
 
     /**
-     * opens welcome screen, ensures buttons and such exist.
+     * Opens welcome screen, ensures buttons and such exist.
      */
     @Test
-    fun welcomeScreenExists(){
+    fun welcomeScreenExistsTest(){
         composeTestRule.setContent {
             WelcomeScreen {
-
             }
-
         }
         checkWelcomeScreenDisplayed()
     }
 
     /**
      * Tests navigation from Welcome screen to Menu.
-     * performs text input to allow navigation.
+     * Performs text input to allow navigation.
      */
     @Test
-    fun navigateFromWelcomeToMenu(){
+    fun navigateFromWelcomeToMenuTest(){
         composeTestRule.setContent {
             AppNavHost(Destination.welcomeScreen.name)
         }
@@ -93,11 +91,10 @@ internal class MainActivityKtTest {
     }
 
     /**
-     * opens menuScreen and checks to ensure everything exists
+     * Opens menuScreen and checks to ensure everything exists
      */
     @Test
-    fun menuScreenExists(){
-
+    fun menuScreenExistsTest(){
         composeTestRule.setContent {
             AppNavHost(Destination.menuScreen.name)
         }
@@ -105,43 +102,26 @@ internal class MainActivityKtTest {
     }
 
     /**
-     * checks to ensure menuScreen components are currently present.
+     * Checks to ensure basic menuScreen components are currently present.
      */
     private fun checkMenuScreenContents() {
         val hcLogoText = composeTestRule.onNode(hasTestTag("collegeNameText"))
         hcLogoText.assertIsDisplayed()
         val otherPageUndergroundText = composeTestRule.onNode(hasTestTag("undergroundText"))
         otherPageUndergroundText.assertDoesNotExist()
-
         val itemExistsInList = composeTestRule.onNode(hasTestTag("default item"))
         itemExistsInList.assertIsDisplayed()
     }
 
     /**
-     * opens menuScreen and checks to ensure everything exists
-     */
-    @Test
-    fun menuScreenWorks(){
-
-        composeTestRule.setContent {
-            AppNavHost(Destination.menuScreen.name)
-        }
-        val itemExistsInList = composeTestRule.onNode(hasTestTag("default item"))
-        itemExistsInList.assertIsDisplayed()
-        itemExistsInList.performClick()
-        itemExistsInList
-    }
-
-    /**
-     * ensures it does not switch pages without user's name
-     * (beginOrderButton would go away if page changed)
+     * Ensures it does not switch pages without user's name.
+     * (beginOrderButton would go away if page changed).
      */
     @Test
     fun noNamePreventNavigateFromWelcomeToMenu(){
         composeTestRule.setContent {
             AppNavHost(Destination.welcomeScreen.name)
         }
-
         checkWelcomeScreenDisplayed()
 
         val beginOrderButton = composeTestRule.onNode(hasTestTag("beginOrderButton"), true)
@@ -152,8 +132,5 @@ internal class MainActivityKtTest {
         beginOrderButton.performClick()
         checkWelcomeScreenDisplayed()
     }
-
-
-
 }
 
