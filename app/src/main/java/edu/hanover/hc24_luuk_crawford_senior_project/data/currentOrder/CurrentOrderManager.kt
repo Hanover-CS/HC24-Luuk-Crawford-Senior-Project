@@ -25,8 +25,6 @@ object CurrentOrderManager {
     fun getUserName(): String {
         return currentOrder.user
     }
-
-
     fun setOrderItemID(id: Long) {
         currentOrder.itemID = id
     }

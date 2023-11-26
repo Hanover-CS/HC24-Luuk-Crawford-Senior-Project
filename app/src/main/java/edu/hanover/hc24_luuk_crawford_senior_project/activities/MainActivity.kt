@@ -7,9 +7,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import edu.hanover.hc24_luuk_crawford_senior_project.composables.AppNavHost
-import edu.hanover.hc24_luuk_crawford_senior_project.data.UserOrder
 import edu.hanover.hc24_luuk_crawford_senior_project.services.downloadMenuFirebase
-import edu.hanover.hc24_luuk_crawford_senior_project.services.downloadMenuLocal
 
 /**
  *On app launch

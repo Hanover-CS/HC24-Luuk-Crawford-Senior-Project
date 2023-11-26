@@ -84,14 +84,14 @@ class MenuDataTest {
         val customItemPotato = MenuItem("Potato", 220, "customPotato", "https")
         MenuData.addMenuItem(customItemPotato)
 
-        val burgerOptionsRecieved = MenuData.getCustomizationOptionsOfItemID(customItemBurger.id)
+        val burgerOptionsReceived = MenuData.getCustomizationOptionsOfItemID(customItemBurger.id)
         val potatoOptionsRecieved = MenuData.getCustomizationOptionsOfItemID(220L)
 
-        assertEquals(customizationBurger,burgerOptionsRecieved)
+        assertEquals(customizationBurger,burgerOptionsReceived)
         assertEquals(customizationPotato, potatoOptionsRecieved)
 
         assertNotEquals(customizationBurger, potatoOptionsRecieved)
-        assertEquals(customizationBurger.toppings.get(0), burgerOptionsRecieved.toppings.get(0))
+        assertEquals(customizationBurger.toppings.get(0), burgerOptionsReceived.toppings.get(0))
     }
 
     @Test
@@ -101,11 +101,9 @@ class MenuDataTest {
 
         val customItemPotato = MenuItem("Potato", 220, "customPotato", "https")
 
+        val receivedItemBurger = MenuData.getMenuItemFromItemID(325)
+        assertEquals(customItemBurger, receivedItemBurger)
 
-        val recievedItemBurger = MenuData.getMenuItemFromItemID(325)
-        assertEquals(customItemBurger, recievedItemBurger)
-
-        assertNotEquals(customItemPotato, recievedItemBurger)
+        assertNotEquals(customItemPotato, receivedItemBurger)
     }
-
 }

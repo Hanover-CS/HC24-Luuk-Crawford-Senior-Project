@@ -69,7 +69,7 @@ class itemListTest {
         val testItemDifferentID = MenuItem("veggie Burger", 22, "burger", "www.something../jpeg")
         TestCase.assertNotSame(testItemDifferentID, createdItem)
 
-        //different name string
+        //different name
         val testItemDifferentName = MenuItem("not apple", 10, "burger", "www.something../jpeg")
         TestCase.assertNotSame(testItemDifferentName, createdItem)
     }

@@ -29,6 +29,4 @@ internal class MenuItemTest{
         assertEquals("Burger", itemExample.customizationType)
         assertEquals("https://i.imgur.com/K6alfDv.jpeg", itemExample.imageLink)
     }
-
-
 }
