@@ -42,5 +42,6 @@
     <string name="alreadyOrderedRecently">Sorry, you already ordered recently.</string>
     <string name="refresh">Refresh</string>
     <string name="yourName">Your name:</string>
+    <string name="sauces">Sauces:</string>
 
 </resources>

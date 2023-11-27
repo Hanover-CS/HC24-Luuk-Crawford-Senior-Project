@@ -23,23 +23,25 @@ fun ToppingsScreen(onNavigate: () -> Unit, order: UserOrder) {
     Column {
         imageAndTextFor(menuItem = getMenuItemFromItemID(order.itemID))
 
-
-        loadCheckboxesOf(itemCustomization.toppings, "Toppings:")
-        loadCheckboxesOf(itemCustomization.sides, "Sides:")
-        loadCheckboxesOf(itemCustomization.sauces, "Sauces:")
+        loadCategoryOptions(itemCustomization.toppings, R.string.toppings, "toppings")
+        loadCategoryOptions(itemCustomization.sides, R.string.sides , "sides")
+        loadCategoryOptions(itemCustomization.sauces, R.string.sauces , "sauces")
 
         SubmitOrderButton(onNavigate)
     }
 }
 
 @Composable
-private fun loadCheckboxesOf(
-    category: MutableList<String>,
-    categoryText: String
+private fun loadCategoryOptions(
+    itemList: MutableList<String>,
+    stringResource: Int,
+    category: String
 ) {
-    if (category.size > 0) {
-        Text(text = stringResource(R.string.toppings))
-        createCheckboxForEach(category, categoryText)
+    if (itemList.size > 0) {
+        Text(text = stringResource(stringResource))
+        createCheckboxForEach(itemList = itemList, customizationCategory = category)
     }
 }
+
+
 
