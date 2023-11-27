@@ -21,16 +21,25 @@ import edu.hanover.hc24_luuk_crawford_senior_project.data.UserOrder
 fun ToppingsScreen(onNavigate: () -> Unit, order: UserOrder) {
     val itemCustomization = getCustomizationOptionsOfItemID(order.itemID)
     Column {
-        Text(text = "This is the toppings screen!")
         imageAndTextFor(menuItem = getMenuItemFromItemID(order.itemID))
 
-        Text(text = stringResource(R.string.toppings))
-        createCheckboxForEach(itemCustomization.toppings, "toppings")
 
-        Text(text = stringResource(R.string.sides))
-        createCheckboxForEach(itemCustomization.sides, "sides")
+        loadCheckboxesOf(itemCustomization.toppings, "Toppings:")
+        loadCheckboxesOf(itemCustomization.sides, "Sides:")
+        loadCheckboxesOf(itemCustomization.sauces, "Sauces:")
 
         SubmitOrderButton(onNavigate)
+    }
+}
+
+@Composable
+private fun loadCheckboxesOf(
+    category: MutableList<String>,
+    categoryText: String
+) {
+    if (category.size > 0) {
+        Text(text = stringResource(R.string.toppings))
+        createCheckboxForEach(category, categoryText)
     }
 }
 
