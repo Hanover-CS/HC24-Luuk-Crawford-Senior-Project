@@ -51,6 +51,8 @@ object CurrentOrderManager {
         when (customizationCategory) {
             "toppings" -> currentOrder.customization.toppings.remove(customizationItem)
             "sides" -> currentOrder.customization.sides.remove(customizationItem)
+            "sauces" -> currentOrder.customization.sauces.remove(customizationItem)
+            "glutenFree" -> currentOrder.customization.glutenFree.remove(customizationItem)
         }
     }
 
@@ -68,6 +70,13 @@ object CurrentOrderManager {
 
     fun getCurrentOrderTime(): Long {
         return currentOrder.orderTime
+    }
+
+    fun clearSelections() {
+        currentOrder.customization.toppings.clear()
+        currentOrder.customization.sides.clear()
+        currentOrder.customization.glutenFree.clear()
+        currentOrder.customization.sauces.clear()
     }
 
 }

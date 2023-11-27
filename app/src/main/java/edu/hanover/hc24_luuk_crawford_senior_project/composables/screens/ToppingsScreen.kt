@@ -11,6 +11,7 @@ import edu.hanover.hc24_luuk_crawford_senior_project.composables.imageAndTextFor
 import edu.hanover.hc24_luuk_crawford_senior_project.data.MenuData.Companion.getCustomizationOptionsOfItemID
 import edu.hanover.hc24_luuk_crawford_senior_project.data.MenuData.Companion.getMenuItemFromItemID
 import edu.hanover.hc24_luuk_crawford_senior_project.data.UserOrder
+import edu.hanover.hc24_luuk_crawford_senior_project.data.currentOrder.CurrentOrderManager
 
 /**
  * Toppings screen
@@ -30,6 +31,7 @@ fun ToppingsScreen(onNavigate: () -> Unit, order: UserOrder) {
 
         SubmitOrderButton(onNavigate)
     }
+    CurrentOrderManager.clearSelections()
 }
 
 @Composable

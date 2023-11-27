@@ -11,6 +11,7 @@ import androidx.compose.ui.unit.dp
 import edu.hanover.hc24_luuk_crawford_senior_project.composables.beginOrderButton
 import edu.hanover.hc24_luuk_crawford_senior_project.composables.inputUserName
 import edu.hanover.hc24_luuk_crawford_senior_project.composables.locationInfoLogo
+import edu.hanover.hc24_luuk_crawford_senior_project.data.currentOrder.CurrentOrderManager
 
 /**
  * This is the starting screen.

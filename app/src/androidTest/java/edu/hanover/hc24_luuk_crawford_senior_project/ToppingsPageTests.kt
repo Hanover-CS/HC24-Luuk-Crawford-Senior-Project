@@ -19,6 +19,7 @@ import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
+import androidx.test.espresso.Espresso.pressBack
 
 @RunWith(AndroidJUnit4::class)
 internal class ToppingsPageTests {
@@ -194,6 +195,36 @@ internal class ToppingsPageTests {
         )
         checkboxCheese.performClick()
         checkboxFries.performClick()
+        assertEquals(
+            mutableListOf<String>(),
+            CurrentOrderManager.getCurrentUserOrder().customization.toppings
+        )
+    }
+    @Test
+    fun ensureSelectionsClear(){
+        composeTestRule.setContent {
+            AppNavHost(Destination.menuScreen.name)
+        }
+        navigateToToppingsWith("ExampleTwo")
+
+        val checkboxMacNCheese = composeTestRule.onNode(hasTestTag("Mac-N-Cheese"))
+        val checkboxFries = composeTestRule.onNode(hasTestTag("Hand Cut Fries Test"))
+        val checkboxLettuce = composeTestRule.onNode(hasTestTag("Lettuce Test"))
+
+
+        checkboxFries.performClick()
+        checkboxMacNCheese.performClick()
+        checkboxLettuce.performClick()
+        assertEquals(
+            mutableListOf("Hand Cut Fries Test", "Mac-N-Cheese"),
+            CurrentOrderManager.getCurrentUserOrder().customization.sides
+        )
+
+        pressBack()
+        assertEquals(
+            mutableListOf<String>(),
+            CurrentOrderManager.getCurrentUserOrder().customization.sides
+        )
         assertEquals(
             mutableListOf<String>(),
             CurrentOrderManager.getCurrentUserOrder().customization.toppings
