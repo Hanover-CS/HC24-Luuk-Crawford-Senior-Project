@@ -201,7 +201,7 @@ internal class ToppingsPageTests {
         )
     }
     @Test
-    fun ensureSelectionsClear(){
+    fun ensureSelectionsClearTest(){
         composeTestRule.setContent {
             AppNavHost(Destination.menuScreen.name)
         }

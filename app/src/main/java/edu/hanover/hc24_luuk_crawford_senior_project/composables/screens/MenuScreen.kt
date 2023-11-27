@@ -32,9 +32,8 @@ import edu.hanover.hc24_luuk_crawford_senior_project.services.downloadMenuFireba
  */
 @Composable
 fun MenuScreen(onNavigateToToppings: () -> Unit) {
-    hcLogoText()
-
     if (MenuData.get().menuItemList.isEmpty()){
+        hcLogoText()
         Column {
             Spacer(modifier = Modifier.height(70.dp))
             Text(text = stringResource(R.string.menu_could_not_be_found))
@@ -42,7 +41,7 @@ fun MenuScreen(onNavigateToToppings: () -> Unit) {
     }
     LazyColumn {
         item {
-            Spacer(modifier = Modifier.height(40.dp))
+            hcLogoText()
         }
         for (menuItem in MenuData.get().menuItemList) {
 

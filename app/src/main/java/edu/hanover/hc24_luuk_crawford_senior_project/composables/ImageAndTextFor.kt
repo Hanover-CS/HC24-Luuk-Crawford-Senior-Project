@@ -8,8 +8,12 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import coil.compose.rememberAsyncImagePainter
 import com.zybooks.hc24_luuk_crawford_senior_project.R
 import edu.hanover.hc24_luuk_crawford_senior_project.data.MenuItem
@@ -24,10 +28,16 @@ fun imageAndTextFor(menuItem: MenuItem) {
         Image(
             painter = rememberAsyncImagePainter(menuItem.imageLink),
             contentDescription = stringResource(R.string.lostImage),
-            modifier = Modifier.size(70.dp)
+            modifier = Modifier.size(80.dp)
         )
         Column(Modifier.padding(10.dp)) {
-            Text(text = menuItem.name)
+            Text(text = menuItem.name,
+                style = TextStyle(fontSize = 30.sp),
+                fontWeight = FontWeight.Bold,
+            )
+            Text(text = menuItem.price,
+                style = TextStyle(fontSize = 20.sp),
+            )
         }
     }
 }
