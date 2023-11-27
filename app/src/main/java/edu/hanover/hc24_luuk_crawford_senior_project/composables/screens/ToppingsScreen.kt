@@ -1,9 +1,19 @@
 package edu.hanover.hc24_luuk_crawford_senior_project.composables.screens
 
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.graphicsLayer
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.sp
+import coil.compose.rememberAsyncImagePainter
 import com.zybooks.hc24_luuk_crawford_senior_project.R
 import edu.hanover.hc24_luuk_crawford_senior_project.composables.SubmitOrderButton
 import edu.hanover.hc24_luuk_crawford_senior_project.composables.createCheckboxForEach
@@ -32,6 +42,7 @@ fun ToppingsScreen(onNavigate: () -> Unit, order: UserOrder) {
         SubmitOrderButton(onNavigate)
     }
     CurrentOrderManager.clearSelections()
+
 }
 
 @Composable
@@ -41,7 +52,9 @@ private fun loadCheckboxesOf(
     category: String
 ) {
     if (itemList.size > 0) {
-        Text(text = stringResource(stringResource))
+        Text(text = stringResource(stringResource),
+            style = TextStyle(fontSize = 25.sp),
+            fontWeight = FontWeight.Bold)
         createCheckboxForEach(itemList = itemList, customizationCategory = category)
     }
 }
