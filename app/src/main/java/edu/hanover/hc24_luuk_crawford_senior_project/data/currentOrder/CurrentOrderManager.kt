@@ -38,6 +38,8 @@ object CurrentOrderManager {
         when (customizationCategory) {
             "toppings" -> currentOrder.customization.toppings.add(customizationItem)
             "sides" -> currentOrder.customization.sides.add(customizationItem)
+            "sauces" -> currentOrder.customization.sauces.add(customizationItem)
+            "glutenFree" -> currentOrder.customization.glutenFree.add(customizationItem)
         }
     }
     /**

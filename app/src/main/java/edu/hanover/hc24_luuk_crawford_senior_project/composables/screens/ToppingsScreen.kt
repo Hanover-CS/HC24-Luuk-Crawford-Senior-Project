@@ -26,6 +26,7 @@ fun ToppingsScreen(onNavigate: () -> Unit, order: UserOrder) {
         loadCheckboxesOf(itemCustomization.toppings, R.string.toppings, "toppings")
         loadCheckboxesOf(itemCustomization.sides, R.string.sides , "sides")
         loadCheckboxesOf(itemCustomization.sauces, R.string.sauces , "sauces")
+        loadCheckboxesOf(itemCustomization.glutenFree, R.string.glutenFree, "glutenFree")
 
         SubmitOrderButton(onNavigate)
     }

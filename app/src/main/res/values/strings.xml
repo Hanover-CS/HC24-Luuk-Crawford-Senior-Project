@@ -43,5 +43,6 @@
     <string name="refresh">Refresh</string>
     <string name="yourName">Your name:</string>
     <string name="sauces">Sauces:</string>
+    <string name="glutenFree">Gluten Free:</string>
 
 </resources>

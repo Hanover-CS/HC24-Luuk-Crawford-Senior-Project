@@ -7,4 +7,5 @@ data class Customization(
     val sides: MutableList<String> = mutableListOf(),
     val toppings: MutableList<String> = mutableListOf(),
     val sauces: MutableList<String> = mutableListOf(),
+    val glutenFree: MutableList<String> = mutableListOf(),
     )

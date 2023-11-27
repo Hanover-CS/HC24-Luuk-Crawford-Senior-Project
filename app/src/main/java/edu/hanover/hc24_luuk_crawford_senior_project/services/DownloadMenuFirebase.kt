@@ -24,7 +24,9 @@ private fun downloadToppings(){
                     val customizationData = itemType.data
                     val sides = (customizationData["sides"] as? MutableList<String>) ?: mutableListOf()
                     val toppings = (customizationData["toppings"] as? MutableList<String>) ?: mutableListOf()
-                    setItemTypeToCustomization(itemType.id,Customization(sides, toppings))
+                    val glutenFree = (customizationData["glutenFree"] as? MutableList<String>) ?: mutableListOf()
+                    val sauces = (customizationData["sauces"] as? MutableList<String>) ?: mutableListOf()
+                    setItemTypeToCustomization(itemType.id,Customization(sides, toppings, sauces, glutenFree))
                 }
             } else {
                 Log.d(ContentValues.TAG, "No such document")
