@@ -23,7 +23,7 @@ import androidx.compose.ui.unit.sp
 import com.zybooks.hc24_luuk_crawford_senior_project.R
 import edu.hanover.hc24_luuk_crawford_senior_project.data.currentOrder.CurrentOrderManager
 import edu.hanover.hc24_luuk_crawford_senior_project.data.currentOrder.submitCurrentOrder
-import edu.hanover.hc24_luuk_crawford_senior_project.data.currentOrder.toastShow
+import edu.hanover.hc24_luuk_crawford_senior_project.services.ToastShow
 
 /**
  * Creates button to submit order / navigate to Orders screen.
@@ -47,7 +47,7 @@ fun SubmitOrderButton(onNavigateToOrders: () -> Unit) {
                     submitCurrentOrder(onNavigateToOrders, context)
                 }
                 else{
-                    toastShow(context, R.string.alreadyOrderedRecently)
+                    ToastShow(context, R.string.alreadyOrderedRecently)
                 }
             },
             shape = RoundedCornerShape(18.dp),

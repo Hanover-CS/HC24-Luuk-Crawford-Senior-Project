@@ -1,6 +1,5 @@
 package edu.hanover.hc24_luuk_crawford_senior_project.composables
 
-import android.widget.Toast
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -19,14 +18,17 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.zybooks.hc24_luuk_crawford_senior_project.R
 import edu.hanover.hc24_luuk_crawford_senior_project.data.currentOrder.CurrentOrderManager.getUserName
+import edu.hanover.hc24_luuk_crawford_senior_project.services.ToastShow
 
 /**
+ * Button on Welcome page triggers navigation to Menu if name inputted.
+ * Also
  * @param onNavigateToMenu needs function to change page to Menu.
  */
 @Composable
 fun beginOrderButton(onNavigateToMenu: () -> Unit) {
     val context = LocalContext.current
-    val errorMessage = stringResource(R.string.please_enter_your_name)
+    var lastTimeClicked = 100L
     Box(
         modifier = Modifier
             .fillMaxWidth()
@@ -36,11 +38,16 @@ fun beginOrderButton(onNavigateToMenu: () -> Unit) {
         Button(
             onClick = {
                 if (getUserName() != "" ){
-                    onNavigateToMenu()
-                } else{
-                    val duration = Toast.LENGTH_SHORT
-                    val toast = Toast.makeText(context, errorMessage, duration)
-                    toast.show()
+                    val newClickTime = System.currentTimeMillis()
+                    val milisPassed = newClickTime-lastTimeClicked
+                    if(milisPassed > 5000){
+                        lastTimeClicked = newClickTime
+                        onNavigateToMenu()
+                        ToastShow(context,R.string.loadingMenu)
+                    }
+                }
+                else{
+                    ToastShow(context, R.string.please_enter_your_name)
                 }
                       },
             shape = RoundedCornerShape(18.dp),

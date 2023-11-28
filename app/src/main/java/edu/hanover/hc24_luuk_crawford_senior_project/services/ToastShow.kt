@@ -1,4 +1,4 @@
-package edu.hanover.hc24_luuk_crawford_senior_project.data.currentOrder
+package edu.hanover.hc24_luuk_crawford_senior_project.services
 
 import android.content.Context
 import android.widget.Toast
@@ -6,7 +6,7 @@ import android.widget.Toast
 /**
  * @param message R.string.message
  */
-fun toastShow(context: Context, message: Int) {
+fun ToastShow(context: Context, message: Int) {
     Toast.makeText(
         context,
         message, Toast.LENGTH_LONG

@@ -44,5 +44,6 @@
     <string name="yourName">Your name:</string>
     <string name="sauces">Sauces:</string>
     <string name="glutenFree">Gluten Free:</string>
+    <string name="loadingMenu">Loading Menu</string>
 
 </resources>

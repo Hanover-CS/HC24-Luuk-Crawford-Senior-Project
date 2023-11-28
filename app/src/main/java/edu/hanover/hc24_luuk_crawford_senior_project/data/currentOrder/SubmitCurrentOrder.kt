@@ -4,6 +4,7 @@ import android.content.Context
 import android.widget.Toast
 import com.google.firebase.firestore.FirebaseFirestore
 import com.zybooks.hc24_luuk_crawford_senior_project.R
+import edu.hanover.hc24_luuk_crawford_senior_project.services.ToastShow
 
 /**
  * adds order to database.
@@ -28,10 +29,10 @@ fun submitCurrentOrder(onNavigate: () -> Unit, context: Context) {
         .set(CurrentOrderManager.getCurrentUserOrder())
         .addOnSuccessListener {
             showTryingToSubmitToast.cancel()
-            toastShow(context, R.string.orderSubmitted)
+            ToastShow(context, R.string.orderSubmitted)
             onNavigate()
         }
         .addOnFailureListener {
-            toastShow(context, R.string.connectionFailed)
+            ToastShow(context, R.string.connectionFailed)
         }
 }
