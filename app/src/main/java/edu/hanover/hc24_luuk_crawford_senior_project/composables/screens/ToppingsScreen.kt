@@ -1,19 +1,12 @@
 package edu.hanover.hc24_luuk_crawford_senior_project.composables.screens
 
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.graphicsLayer
-import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
-import coil.compose.rememberAsyncImagePainter
 import com.zybooks.hc24_luuk_crawford_senior_project.R
 import edu.hanover.hc24_luuk_crawford_senior_project.composables.SubmitOrderButton
 import edu.hanover.hc24_luuk_crawford_senior_project.composables.createCheckboxForEach
@@ -31,18 +24,15 @@ import edu.hanover.hc24_luuk_crawford_senior_project.data.currentOrder.CurrentOr
 @Composable
 fun ToppingsScreen(onNavigate: () -> Unit, order: UserOrder) {
     val itemCustomization = getCustomizationOptionsOfItemID(order.itemID)
-    Column {
-        imageAndTextFor(menuItem = getMenuItemFromItemID(order.itemID))
-
-        loadCheckboxesOf(itemCustomization.toppings, R.string.toppings, "toppings")
-        loadCheckboxesOf(itemCustomization.sides, R.string.sides , "sides")
-        loadCheckboxesOf(itemCustomization.sauces, R.string.sauces , "sauces")
-        loadCheckboxesOf(itemCustomization.glutenFree, R.string.glutenFree, "glutenFree")
-
-        SubmitOrderButton(onNavigate)
+    LazyColumn {
+        item{imageAndTextFor(menuItem = getMenuItemFromItemID(order.itemID))}
+        item{loadCheckboxesOf(itemCustomization.toppings, R.string.toppings, "toppings") }
+        item{loadCheckboxesOf(itemCustomization.sides, R.string.sides, "sides")}
+        item{loadCheckboxesOf(itemCustomization.sauces, R.string.sauces, "sauces")}
+        item{loadCheckboxesOf(itemCustomization.glutenFree, R.string.glutenFree, "glutenFree")}
+        item{SubmitOrderButton(onNavigate)}
     }
     CurrentOrderManager.clearSelections()
-
 }
 
 @Composable

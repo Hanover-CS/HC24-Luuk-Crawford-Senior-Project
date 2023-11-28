@@ -1,5 +1,6 @@
 package edu.hanover.hc24_luuk_crawford_senior_project
 
+import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.test.assertHasClickAction
 import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.assertIsEnabled
@@ -7,6 +8,8 @@ import androidx.compose.ui.test.assertIsNotDisplayed
 import androidx.compose.ui.test.hasTestTag
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.performClick
+import androidx.compose.ui.test.performTouchInput
+import androidx.test.espresso.Espresso.pressBack
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import edu.hanover.hc24_luuk_crawford_senior_project.composables.AppNavHost
 import edu.hanover.hc24_luuk_crawford_senior_project.data.Customization
@@ -19,7 +22,6 @@ import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
-import androidx.test.espresso.Espresso.pressBack
 
 @RunWith(AndroidJUnit4::class)
 internal class ToppingsPageTests {
@@ -71,6 +73,9 @@ internal class ToppingsPageTests {
         toppingsPageContentsExist()
     }
 
+
+
+
     private fun toppingsPageContentsExist() {
         confirmCheckboxExists("Lettuce Test")
         confirmCheckboxExists("Tomato")
@@ -84,6 +89,13 @@ internal class ToppingsPageTests {
         confirmCheckboxExists("Tater Tots")
 
         val submitOrderButton = composeTestRule.onNode(hasTestTag("submitOrderButton"))
+
+        composeTestRule.onNode(hasTestTag("Cheese")).performTouchInput {
+            down(center)
+            moveBy(Offset(0f, -300f))
+            up()
+        }
+
         submitOrderButton.assertExists()
         submitOrderButton.assertIsDisplayed()
         submitOrderButton.assertIsEnabled()
