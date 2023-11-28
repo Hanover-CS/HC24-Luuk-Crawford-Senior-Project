@@ -3,6 +3,8 @@ package edu.hanover.hc24_luuk_crawford_senior_project.composables
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.text.KeyboardActions
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -15,6 +17,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.zybooks.hc24_luuk_crawford_senior_project.R
@@ -41,6 +44,8 @@ fun inputUserName() {
                 text = it
                 setUsersName(text)
             },
+            keyboardOptions = KeyboardOptions(capitalization = KeyboardCapitalization.Words),
+            singleLine = true,
             label = { Text(stringResource(id = R.string.yourName), fontSize = 25.sp) },
             textStyle = TextStyle(fontSize = 30.sp),
             modifier = Modifier.testTag("inputUserName")
