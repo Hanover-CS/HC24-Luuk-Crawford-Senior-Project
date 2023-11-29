@@ -5,6 +5,7 @@ import edu.hanover.hc24_luuk_crawford_senior_project.data.Destination
 import edu.hanover.hc24_luuk_crawford_senior_project.data.ItemStatus
 import edu.hanover.hc24_luuk_crawford_senior_project.data.UserOrder
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertNotEquals
 import org.junit.Test
 
 /**
@@ -13,7 +14,7 @@ import org.junit.Test
 class ConfirmDataAndEnumExistsTest {
 
     @Test
-    fun DestinationEnumExists(){
+    fun destinationEnumExists(){
         val welcomeName = Destination.welcomeScreen.name
         val menuName = Destination.menuScreen.name
         val toppingName = Destination.toppingsScreen.name
@@ -23,7 +24,7 @@ class ConfirmDataAndEnumExistsTest {
         assertEquals("toppingsScreen",toppingName)
     }
     @Test
-    fun ItemStatusEnumExists(){
+    fun itemStatusEnumExists(){
         val cancelledName = ItemStatus.cancelled.name
         val inProgressName = ItemStatus.inProgress.name
         val completeName = ItemStatus.complete.name
@@ -34,7 +35,7 @@ class ConfirmDataAndEnumExistsTest {
     }
 
     @Test
-    fun UserOrderDataClassExists(){
+    fun userOrderDataClassExists(){
         val sides: MutableList<String> = mutableListOf("side1","side2")
         val toppings: MutableList<String> = mutableListOf("topping1", "topping2")
         val userOrder = UserOrder("userName",1000L,2000L,3000L,
@@ -49,6 +50,20 @@ class ConfirmDataAndEnumExistsTest {
         assertEquals(ItemStatus.inProgress, userOrder.itemStatus)
         assertEquals(4000L, userOrder.orderTime)
         assertEquals(5000L, userOrder.orderEndTime)
+    }
+
+    @Test
+    fun testCustomizationDataClassExists(){
+        val sides: MutableList<String> = mutableListOf("a","3")
+        val toppings: MutableList<String> = mutableListOf("b")
+        val sauces: MutableList<String> = mutableListOf("c")
+        val glutenFree: MutableList<String> = mutableListOf("d","_")
+        val custom = Customization(sides,toppings, sauces, glutenFree)
+        assertEquals(sides, custom.sides)
+        assertEquals(toppings, custom.toppings)
+        assertEquals(sauces, custom.sauces)
+        assertEquals(glutenFree, custom.glutenFree)
+        assertNotEquals(custom.toppings, custom.glutenFree)
     }
 
 }

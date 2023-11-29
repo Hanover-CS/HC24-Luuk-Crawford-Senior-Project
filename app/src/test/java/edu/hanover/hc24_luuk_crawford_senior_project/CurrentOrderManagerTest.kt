@@ -7,7 +7,7 @@ import org.junit.Test
 
 class CurrentOrderManagerTest {
     @Test
-    fun SetNameTest(){
+    fun setNameTest(){
         CurrentOrderManager.setUsersName("Bob")
         assertEquals("Bob", CurrentOrderManager.getUserName())
 
@@ -19,7 +19,7 @@ class CurrentOrderManagerTest {
     }
 
     @Test
-    fun GetCurrentUserTest(){
+    fun getCurrentUserTest(){
         CurrentOrderManager.setUsersName("Sam")
         CurrentOrderManager.setOrderItemID(202L)
         val currentOrder = CurrentOrderManager.getCurrentUserOrder()
@@ -70,7 +70,6 @@ class CurrentOrderManagerTest {
         val hash2 = CurrentOrderManager.getCurrentOrderHash()
         CurrentOrderManager.setOrderItemID(3323L)
         val hash3 = CurrentOrderManager.getCurrentOrderHash()
-
 
         assertNotEquals(hash1,hash2)
         assertNotEquals(hash2,hash3)

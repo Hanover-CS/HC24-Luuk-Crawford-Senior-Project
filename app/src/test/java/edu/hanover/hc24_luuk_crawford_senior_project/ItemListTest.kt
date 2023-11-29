@@ -6,13 +6,7 @@ import edu.hanover.hc24_luuk_crawford_senior_project.services.createItemFrom
 import junit.framework.TestCase
 import org.junit.Test
 
-import org.junit.Assert.*
-
-class itemListTest {
-    @Test
-    fun addition_isCorrect() {
-        assertEquals(4, 2 + 2)
-    }
+class ItemListTest {
 
     @Test
     fun newMenuListTest() {
@@ -46,15 +40,16 @@ class itemListTest {
         )
         val createdItem = createItemFrom(food)
 
-        //ensure created correctly
         val testItemSame = MenuItem("candy Apple", 300, "burger", "www.something../jpeg")
         TestCase.assertEquals(testItemSame, createdItem)
 
-        //making sure it's not always returning same
         val testItemDifferent = MenuItem()
         TestCase.assertNotSame(testItemDifferent, createdItem)
     }
 
+    /**
+     * Tests different ID then different name tp ensure they are not considered the same.
+     */
     @Test
     fun createItemFromFoodTestSmallDifferences(){
         val food = mapOf(
@@ -65,11 +60,9 @@ class itemListTest {
         )
         val createdItem = createItemFrom(food)
 
-        //different ID
         val testItemDifferentID = MenuItem("veggie Burger", 22, "burger", "www.something../jpeg")
         TestCase.assertNotSame(testItemDifferentID, createdItem)
 
-        //different name
         val testItemDifferentName = MenuItem("not apple", 10, "burger", "www.something../jpeg")
         TestCase.assertNotSame(testItemDifferentName, createdItem)
     }
