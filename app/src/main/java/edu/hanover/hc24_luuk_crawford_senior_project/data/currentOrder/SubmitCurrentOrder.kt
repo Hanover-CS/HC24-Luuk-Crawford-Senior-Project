@@ -17,6 +17,7 @@ fun submitCurrentOrder(onNavigate: () -> Unit, context: Context) {
     CurrentOrderManager.setCurrentOrderTime()
 
     val orderID = CurrentOrderManager.getCurrentOrderHash()
+    val name = CurrentOrderManager.getUserName()
 
     val showTryingToSubmitToast = Toast.makeText(
         context,
@@ -25,7 +26,7 @@ fun submitCurrentOrder(onNavigate: () -> Unit, context: Context) {
     showTryingToSubmitToast.show()
 
     FirebaseFirestore.getInstance()
-        .document("orders/${orderID}")
+        .document("orders/${name}${orderID}")
         .set(CurrentOrderManager.getCurrentUserOrder())
         .addOnSuccessListener {
             showTryingToSubmitToast.cancel()
