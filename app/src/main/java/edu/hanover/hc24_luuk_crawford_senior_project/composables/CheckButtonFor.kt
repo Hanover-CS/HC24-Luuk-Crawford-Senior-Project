@@ -26,7 +26,7 @@ import edu.hanover.hc24_luuk_crawford_senior_project.data.currentOrder.CurrentOr
 import edu.hanover.hc24_luuk_crawford_senior_project.data.currentOrder.CurrentOrderManager.removeOrderCustomization
 
 /**
- * creates a check button that updates order.
+ * Creates a check button that updates order. And labels checkbox.
  * @param selectionName name of customization topping/side
  * @param customizationCategory category of item type (topping/side)
  */

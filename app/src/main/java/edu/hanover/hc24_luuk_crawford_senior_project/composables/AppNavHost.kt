@@ -13,11 +13,11 @@ import edu.hanover.hc24_luuk_crawford_senior_project.data.currentOrder.CurrentOr
 
 
 /**
- * Nav host is the composable manager
- * handles which composable to load when triggered
+ * Nav host is the composable navigation manager.
+ * Handles which composable to load when triggered
  * It is set up like this to prevent giving navController itself to everything.
  * @param startDestination Which composable to start at (string). Defaults to WelcomeScreen.
- * @param navController handles navigation navController.navigate (Destination name). Defaults rememberNavController()
+ * @param navController Handles navigation navController.navigate (Destination name). Defaults rememberNavController()
  */
 @Composable
 fun AppNavHost(

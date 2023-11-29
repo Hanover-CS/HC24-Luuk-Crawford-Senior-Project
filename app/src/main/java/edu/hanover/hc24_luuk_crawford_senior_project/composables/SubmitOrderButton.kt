@@ -60,7 +60,4 @@ fun SubmitOrderButton(onNavigateToOrders: () -> Unit) {
             )
         }
     }
-
-
-
 }

@@ -18,18 +18,18 @@ import com.zybooks.hc24_luuk_crawford_senior_project.R
 import edu.hanover.hc24_luuk_crawford_senior_project.composables.hcLogoText
 
 /**
- * college name + food location (underground) in big text.
+ * College name + food location (underground) in big text.
  */
 @Composable
 fun locationInfoLogo() {
     Spacer(modifier = Modifier.height(8.dp))
     hcLogoText()
     Box(modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.Center){
-
-    Text(
-        text = stringResource(id = R.string.underground), fontSize = 35.sp,
-        fontWeight = FontWeight.Bold,
-        textAlign = TextAlign.Center,
-        modifier = Modifier.testTag("undergroundText")
-    )}
+        Text(
+            text = stringResource(id = R.string.underground), fontSize = 35.sp,
+            fontWeight = FontWeight.Bold,
+            textAlign = TextAlign.Center,
+            modifier = Modifier.testTag("undergroundText")
+        )
+    }
 }

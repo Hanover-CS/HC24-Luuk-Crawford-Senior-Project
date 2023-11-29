@@ -19,7 +19,7 @@ import com.zybooks.hc24_luuk_crawford_senior_project.R
 import edu.hanover.hc24_luuk_crawford_senior_project.data.MenuItem
 
 /**
- * Loads imange and name of input menuItem
+ * Loads image and name of input menuItem
  * @param menuItem MenuItem to display
  */
 @Composable

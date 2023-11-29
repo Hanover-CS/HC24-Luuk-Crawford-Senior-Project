@@ -25,7 +25,7 @@ import edu.hanover.hc24_luuk_crawford_senior_project.data.currentOrder.CurrentOr
 import edu.hanover.hc24_luuk_crawford_senior_project.data.currentOrder.CurrentOrderManager.setUsersName
 
 /**
- * box to for user to input their name.
+ * box for user to input their name.
  * sets name to the current order.
  */
 @Composable

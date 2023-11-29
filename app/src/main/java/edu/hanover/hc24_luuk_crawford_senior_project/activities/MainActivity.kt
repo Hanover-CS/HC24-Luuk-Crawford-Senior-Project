@@ -17,14 +17,13 @@ import edu.hanover.hc24_luuk_crawford_senior_project.composables.AppNavHost
 import edu.hanover.hc24_luuk_crawford_senior_project.services.downloadMenuFirebase
 
 /**
- *On app launch
- *Starts AppNavHost (the composable that changes pages)
+ * On app launch
+ * Starts AppNavHost (the composable that changes pages)
  */
 class MainActivity : ComponentActivity() {
-
-
     /**
-     * Launches AppNavHost and downloads menu from database
+     * Launches AppNavHost, download menu from database, and set background.
+     * Background is the same everywhere, thus not set in the individual pages.
      */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,6 +34,9 @@ class MainActivity : ComponentActivity() {
         downloadMenuFirebase()
     }
 
+    /**
+     * Background set, mostly transparent to allow easy reading.
+     */
     @Composable
     private fun setBackground() {
         Image(
@@ -45,7 +47,8 @@ class MainActivity : ComponentActivity() {
                 .fillMaxSize()
                 .graphicsLayer {
                     alpha = 0.1f
-                })
+                }
+        )
     }
 }
 
