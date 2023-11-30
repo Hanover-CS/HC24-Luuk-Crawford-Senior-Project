@@ -25,6 +25,7 @@ import edu.hanover.hc24_luuk_crawford_senior_project.data.currentOrder.CurrentOr
  */
 @Composable
 fun ToppingsScreen(onNavigate: () -> Unit, order: UserOrder) {
+    CurrentOrderManager.clearSelections()
     val itemCustomization = getCustomizationOptionsOfItemID(order.itemID)
     LazyColumn {
         item{imageAndTextFor(menuItem = getMenuItemFromItemID(order.itemID))}
@@ -36,7 +37,6 @@ fun ToppingsScreen(onNavigate: () -> Unit, order: UserOrder) {
 
         item{SubmitOrderButton(onNavigate)}
     }
-    CurrentOrderManager.clearSelections()
 }
 
 /**
